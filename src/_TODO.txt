@@ -1,0 +1,13 @@
+1. Outflows card
+2. Add constituent IC's to input Parameters list
+3. Vertical profile files, etc., for IC, etc.
+4. Add support for multi-line cards and - worse - multiline fields within cards. Use the ConstituentsCard.java class as an example.
+5. GCL constituents bug:
+Tributary 1                   N2-CTR        Ammonium                      g/m^3       1       3         ctr_tr1_BanksL_N2_O2.csv           inflow          input
+Tributary 1                   -CTR          Nitrate-Nitrite               g/m^3       2       3         ctr_tr1_BanksL_N2_O2.csv           inflow          input
+Tributary 1                   -CTR          Dissolved silica              g/m^3       3       3         ctr_tr1_BanksL_N2_O2.csv           inflow          input
+6. Handle cards that have more records than predicted, like the withdrawal frequency card in the particle tracking
+model.
+7. Handle updating record to have fewer lines, deleting excess lines from the record and the w2con
+list of lines, as needed.
+
