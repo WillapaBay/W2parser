@@ -45,29 +45,24 @@ public class ActiveDerivedConstituentsCard extends Card {
     public void parseText() {
         constituentNames = new ArrayList<>();
         Data = new ArrayList<>();
-        int numLinesPerConstituent = (int) Math.ceil(numConstituents/9.0);
-        int numLines = numLinesPerConstituent * numConstituents;
+        List<List<String>> Records = new ArrayList<>();
 
-        for (int jwb = 0; jwb < numWaterbodies; jwb++) {
+        for (int jc = 0; jc < numConstituents; jc++) {
+            List<String> Values = parseRecord(recordLines, jc, numWaterbodies);
+            Records.add(Values);
+        }
+
+        for (int i = 0; i < numWaterbodies; i++) {
             Data.add(new ArrayList<>());
         }
 
-        int lineIndex = 0;
-        for (int jc = 0; jc < numConstituents; jc++) {
-            List<String> Fields = parseLine(recordLines.get(lineIndex),
-                   8, 1, 10);
-            constituentNames.add(Fields.get(0));
-            int col = 1;
-            for (int jwb = 0; jwb < numWaterbodies; jwb++) {
-                if (col > 10) {
-                    col = 1;
-                    lineIndex++;
-                }
-                Data.get(jwb).add(Fields.get(col));
-                col++;
+        Records.forEach(record -> {
+            constituentNames.add(record.get(0));
+            for (int i = 0; i < numWaterbodies; i++) {
+                int col = i + 1;
+                Data.get(i).add(record.get(col));
             }
-            lineIndex++;
-        }
+        });
     }
 
     @Override
