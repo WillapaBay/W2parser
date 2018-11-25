@@ -37,7 +37,8 @@ public class RepeatingDoubleCard extends Card {
 
     @Override
     public void parseTable() {
-        int numLines = (int) Math.ceil(numFields/9.0); // This needs to be recomputed each time, as Data changes size
+        // numLines needs to be recomputed each time, as Data changes size
+        int numLines = (int) Math.ceil(numFields/9.0);
         for (int i = 0; i < numLines; i++) {
             String line = recordLines.get(i);
             List<String> Fields = parseLine(line, 8, 2, 10);

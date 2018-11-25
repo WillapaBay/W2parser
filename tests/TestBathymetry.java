@@ -12,8 +12,8 @@ public class TestBathymetry {
         GridCard gridCard = new GridCard(w2con);
         int numLayers = gridCard.setNumLayers();
         BathymetryFile bathymetryFile =
-                new BathymetryFile(w2con, "data/TDA/TDA_NAVD88_BTH_2014_121117.csv",
-                        numLayers);
+                new BathymetryFile(w2con, "TDA_NAVD88_BTH_2014_121117.csv",
+                        numLayers); // Uses path from w2con
         BathymetryRecord<Integer> Segments = bathymetryFile.getSegments();
         BathymetryRecord<Double> ELWS = new BathymetryRecord<>("ELWS");
         for (int i = 0; i < Segments.size(); i++) {
@@ -25,7 +25,7 @@ public class TestBathymetry {
         System.out.println(bathymetryFile);
     }
 
-    public BathymetryRecord<Double> scaleData(BathymetryRecord<Double> record, double scale,
+    private BathymetryRecord<Double> scaleData(BathymetryRecord<Double> record, double scale,
                                               double offset) {
         for (int i = 0; i < record.size(); i++) {
             double value = record.get(i) * scale + offset;
@@ -56,11 +56,11 @@ public class TestBathymetry {
         FileCard bathymetryFileCard = new FileCard(w2con,
                 "BTH FILE", numWaterBodies);
         List<String> fileNames = bathymetryFileCard.getFileNames();
-        fileNames.forEach(f ->
+        fileNames.forEach(filename ->
                 {
                     try {
                         BathymetryFile bathymetryFile =
-                                new BathymetryFile(w2con, "data/GCL/" + f, numLayers);
+                                new BathymetryFile(w2con, filename, numLayers);
 
                         // Scale the original values as a tracer
                         BathymetryRecord<Double> DLX = bathymetryFile.getDLX();
@@ -75,7 +75,7 @@ public class TestBathymetry {
                         bathymetryFile.setELWS(ELWS);
                         bathymetryFile.setPHIO(PHIO);
                         bathymetryFile.setFRICT(FRICT);
-                        String outfile = "results/GCL/" + f + "_NEW_ELWS";
+                        String outfile = "results/GCL/" + filename + "_NEW_ELWS";
                         bathymetryFile.save(outfile);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();

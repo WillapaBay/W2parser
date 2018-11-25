@@ -12,8 +12,9 @@ public class TestRepeatingDoubleCard {
     public void testRepeatingDoubleCard() throws FileNotFoundException {
         String infile = "data/ParticleTracking/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
+        int numDates = 1;
         RepeatingDoubleCard rdc = new RepeatingDoubleCard(w2con,
-                CardNames.WithdrawalOutputDate, 20, "%8.5f");
+                CardNames.WithdrawalOutputDate, numDates, "%8.5f");
         List<Double> data = rdc.getData();
         data.forEach(System.out::println);
         for (int i = 0; i < data.size(); i++) {
