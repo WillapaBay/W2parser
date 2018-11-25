@@ -9,16 +9,16 @@ import java.util.List;
  * This card has one line per water body
  */
 public class NumberStructuresCard extends Card {
-    List<Integer> NSTR;     // Number of branch outlet structures
-    List<String> DYNELEV;   // Use the dynamic centerline elevation for the structure? (ON, OFF, blank (equals OFF))
-    List<String> Identifiers;
-    String DYNELEV_default = Globals.OFF;
-    int numBranches;
+    private List<Integer> NSTR;     // Number of branch outlet structures
+    private List<String> DYNELEV;   // Use the dynamic centerline elevation for the structure? (ON, OFF, blank (equals OFF))
+    private List<String> Identifiers;
+    private String DYNELEV_default = Globals.OFF;
+    private int numBranches;
 
     public NumberStructuresCard(W2ControlFile w2ControlFile, int numBranches) {
         super(w2ControlFile, CardNames.NumberStructures, numBranches);
         this.numBranches = numBranches;
-        parseText();
+        parseTable();
     }
 
     public List<Integer> getNSTR() {
@@ -40,7 +40,7 @@ public class NumberStructuresCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         NSTR = new ArrayList<>();
         DYNELEV = new ArrayList<>();
         Identifiers = new ArrayList<>();

@@ -13,7 +13,7 @@ public class FileCard extends Card {
 
     public FileCard(W2ControlFile w2ControlFile, String cardName, int numRecordLines) {
         super(w2ControlFile, cardName, numRecordLines);
-        parseText();
+        parseTable();
     }
 
 
@@ -41,15 +41,15 @@ public class FileCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         String[] records = new String[2];
         String line;
         identifiers = new ArrayList<>();
         fileNames = new ArrayList<>();
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             line = recordLines.get(i);
             records[0] = line.substring(0, 7);
-            records[1] = line.substring(8, line.length());
+            records[1] = line.substring(8);
             identifiers.add(records[0].trim());
             fileNames.add(records[1].trim());
         }
@@ -58,7 +58,7 @@ public class FileCard extends Card {
     @Override
     public void updateText() {
         String str;
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             str = String.format("%-8s%s", identifiers.get(i), fileNames.get(i));
             recordLines.set(i, str);
         }

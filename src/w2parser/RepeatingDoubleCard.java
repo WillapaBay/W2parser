@@ -13,7 +13,7 @@ public class RepeatingDoubleCard extends Card {
         this.numFields = numFields;
         this.format = format;
         this.Data = new ArrayList<>();
-        parseText();
+        parseTable();
     }
 
     public List<Double> getData() {
@@ -36,7 +36,7 @@ public class RepeatingDoubleCard extends Card {
 
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         int numLines = (int) Math.ceil(numFields/9.0); // This needs to be recomputed each time, as Data changes size
         for (int i = 0; i < numLines; i++) {
             String line = recordLines.get(i);
@@ -50,20 +50,20 @@ public class RepeatingDoubleCard extends Card {
 
     @Override
     public void updateText() {
-        String str = String.format("%8s", "");
+        StringBuilder str = new StringBuilder(String.format("%8s", ""));
         int line = 0;
         for (int i = 0; i < Data.size(); i++) {
             double data = Data.get(i);
             if ((i > 0 && i % 9 == 0)) {
-                recordLines.set(line, str);
-                str = String.format("%8s", "");
+                recordLines.set(line, str.toString());
+                str = new StringBuilder(String.format("%8s", ""));
                 line++;
             }
 
-            str += String.format(format, data);
+            str.append(String.format(format, data));
 
             if (i == (Data.size() - 1)) {
-                recordLines.set(line, str);
+                recordLines.set(line, str.toString());
             }
         }
     }

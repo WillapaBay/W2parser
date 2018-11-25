@@ -16,7 +16,7 @@ public class ConstituentDimensionsCard extends Card {
 
     public ConstituentDimensionsCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "CONSTITU", 1);
-        parseText();
+        parseTable();
     }
 
     public int getNGC() {
@@ -83,7 +83,7 @@ public class ConstituentDimensionsCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
         ngc = Integer.parseInt(Fields.get(0));
         nss = Integer.parseInt(Fields.get(1));

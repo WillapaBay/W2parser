@@ -9,21 +9,21 @@ import java.util.List;
  * This card has one line per water body
  */
 public class IceCoverCard extends Card {
-    List<String> ICEC;
-    List<String> SLICEC;
-    List<Double> ALBEDO;
-    List<Double> HWICE;
-    List<Double> BICE;
-    List<Double> GICE;
-    List<Double> ICEMIN;
-    List<Double> ICET2;
-    List<String> Identifiers;
-    int numWaterbodies;
+    private List<String> ICEC;
+    private List<String> SLICEC;
+    private List<Double> ALBEDO;
+    private List<Double> HWICE;
+    private List<Double> BICE;
+    private List<Double> GICE;
+    private List<Double> ICEMIN;
+    private List<Double> ICET2;
+    private List<String> Identifiers;
+    private int numWaterbodies;
 
     public IceCoverCard(W2ControlFile w2ControlFile, int numWaterbodies) {
         super(w2ControlFile, "ICE COVE", numWaterbodies);
         this.numWaterbodies = numWaterbodies;
-        parseText();
+        parseTable();
     }
 
     public List<String> getICEC() {
@@ -99,7 +99,7 @@ public class IceCoverCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         ICEC = new ArrayList<>();
         SLICEC = new ArrayList<>();
         ALBEDO = new ArrayList<>();

@@ -20,7 +20,7 @@ public class ActiveDerivedConstituentsCard extends Card {
                 (int) Math.ceil(numConstituents/9.0) * numConstituents);
         this.numConstituents = numConstituents;
         this.numWaterbodies = numWaterbodies;
-        parseText();
+        parseTable();
     }
 
     public List<String> getConstituentNames() {
@@ -42,7 +42,7 @@ public class ActiveDerivedConstituentsCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         constituentNames = new ArrayList<>();
         Data = new ArrayList<>();
         List<List<String>> Records = new ArrayList<>();

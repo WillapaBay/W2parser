@@ -9,17 +9,17 @@ import java.util.List;
  * This card has one line per water body
  */
 public class CalculationsCard extends Card {
-    List<String> VBC; // Volume balance calculation, ON or OFF
-    List<String> EBC; // Thermal energy balance calculation, ON or OFF
-    List<String> MBC; // Mass balance calculation, ON or OFF
-    List<String> PQC; // Density placed inflows, ON or OFF
-    List<String> EVC; // Evaporation included in water budget, ON or OFF
-    List<String> PRC; // Precipitation included, ON or OFF
-    List<String> Identifiers;
+    private List<String> VBC; // Volume balance calculation, ON or OFF
+    private List<String> EBC; // Thermal energy balance calculation, ON or OFF
+    private List<String> MBC; // Mass balance calculation, ON or OFF
+    private List<String> PQC; // Density placed inflows, ON or OFF
+    private List<String> EVC; // Evaporation included in water budget, ON or OFF
+    private List<String> PRC; // Precipitation included, ON or OFF
+    private List<String> Identifiers;
 
     public CalculationsCard(W2ControlFile w2ControlFile, int numRecordLines) {
         super(w2ControlFile, CardNames.Calculations, numRecordLines);
-        parseText();
+        parseTable();
     }
 
     public List<String> getVBC() { return VBC; }
@@ -65,7 +65,7 @@ public class CalculationsCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         VBC = new ArrayList<>();
         EBC = new ArrayList<>();
         MBC = new ArrayList<>();
@@ -74,7 +74,7 @@ public class CalculationsCard extends Card {
         PRC = new ArrayList<>();
         Identifiers = new ArrayList<>();
 
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             List<String> Fields = parseLine(recordLines.get(i), 8, 1, 10);
             Identifiers.add(Fields.get(0));
             VBC.add(Fields.get(1));
@@ -88,7 +88,7 @@ public class CalculationsCard extends Card {
 
     @Override
     public void updateText() {
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             String str = String.format("%-8s%8s%8s%8s%8s%8s%8s",
                     Identifiers.get(i), VBC.get(i), EBC.get(i), MBC.get(i), PQC.get(i), EVC.get(i), PRC.get(i));
             recordLines.set(i, str);

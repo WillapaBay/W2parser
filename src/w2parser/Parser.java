@@ -67,7 +67,7 @@ public class Parser {
     private int NGT; // Number of gates
     private int numConstituents; // Number of constituents (total, NCT)
     private int numDerivedConstituents; // Number of constituents (total, NCT)
-    int NIWDO;
+    private int NIWDO;
 
     private List<Integer> UHS; // Upstream Head Segment (upstream BC)
     private List<Integer> DHS; // Downstream Head Segment (downstream BC)
@@ -311,9 +311,9 @@ public class Parser {
             WDOC = Globals.ONS;
         }
         withdrawalOutputCard.setWDOC(WDOC);
-        withdrawalOutputCard.updateRecord();
+        withdrawalOutputCard.updateTable();
         withdrawalFrequencyCard.setData(WDOF);
-        withdrawalFrequencyCard.updateRecord();
+        withdrawalFrequencyCard.updateTable();
     }
 
     /**
@@ -349,7 +349,7 @@ public class Parser {
      * @return List of TSR output parameters
      */
     private List<Parameter> fetchTsrOutputParameters() {
-        List<Parameter> Parameters = new ArrayList<Parameter>();
+        List<Parameter> Parameters = new ArrayList<>();
 
         int NITSR = tsrPlotCard.getNITSR();
         tsrSegCard = new RepeatingIntegerCard(w2con, "TSR SEG", NITSR, "%8d");
@@ -724,15 +724,15 @@ public class Parser {
         return Parameters;
     }
 
-    public void handleVerticalProfiles() {
+    private void handleVerticalProfiles() {
         // TODO Not implemented
     }
 
-    public void handleLongitudinalProfiles() {
+    private void handleLongitudinalProfiles() {
         // TODO Not implemented
     }
 
-    public void handleHabitatVolume() {
+    private void handleHabitatVolume() {
         // TODO Not implemented
     }
 
@@ -748,7 +748,7 @@ public class Parser {
      * Read initial water temperatures from the initial conditions card
      * @return List of initial water temperatures, one per water body
      */
-    public List<Double> fetchInitialTemperatures() {
+    private List<Double> fetchInitialTemperatures() {
         initCondCard = new InitialConditionsCard(w2con, NWB);
         return initCondCard.getT2I();
     }
@@ -784,11 +784,11 @@ public class Parser {
         List<String> lines = new ArrayList<>();
         for (int jwb = 0; jwb < NWB; jwb++) {
             List<Double> Elevations = InitialWaterSurfaceElevations.get(jwb);
-            String line = String.format("%-8s", "WB" + (jwb + 1));
-            for (int jseg = 0; jseg < Elevations.size(); jseg++) {
-                line += String.format("%-8.3f", Elevations.get(jseg));
+            StringBuilder line = new StringBuilder(String.format("%-8s", "WB" + (jwb + 1)));
+            for (Double Elevation : Elevations) {
+                line.append(String.format("%-8.3f", Elevation));
             }
-            lines.add(line);
+            lines.add(line.toString());
         }
 
         Path file = Paths.get(outfileName);
@@ -1297,9 +1297,9 @@ public class Parser {
         String header = String.format(headerFormat, "Location", "Short Name",
                 "Long Name", "Units", "Column", "#Columns", "Filename", "Inflow/Outflow", "Input/Output");
         outputList.add(header);
-        String horizontalBar = "";
-        for (int i = 0; i < header.length(); i++) { horizontalBar += "-"; }
-        outputList.add(horizontalBar);
+        StringBuilder horizontalBar = new StringBuilder();
+        for (int i = 0; i < header.length(); i++) { horizontalBar.append("-"); }
+        outputList.add(horizontalBar.toString());
 
         for (Parameter p : Parameters) {
             String line = String.format(dataFormat, p.getLocation(), p.getShortName(),
@@ -1424,7 +1424,7 @@ public class Parser {
 
     /**
      * Return a list of constituent names, as they appear in the graph.npt file
-     * @return
+     * @return List of constituent names
      */
     public List<String> getConstituentNames() {
         return ConstituentNames;
@@ -1453,7 +1453,7 @@ public class Parser {
     public void setJdayMin(double jdayMin) {
         this.jdayMin = jdayMin;
         timeControlCard.setJdayMin(jdayMin);
-        timeControlCard.updateRecord();
+        timeControlCard.updateTable();
     }
 
     /**
@@ -1471,7 +1471,7 @@ public class Parser {
     public void setJdayMax(double jdayMax) {
         this.jdayMax = jdayMax;
         timeControlCard.setJdayMax(jdayMax);
-        timeControlCard.updateRecord();
+        timeControlCard.updateTable();
     }
 
     /**
@@ -1484,12 +1484,12 @@ public class Parser {
 
     /**
      * Set start year of simulation
-     * @param startYear
+     * @param startYear Start year of simulation
      */
     public void setStartYear(int startYear) {
         this.startYear = startYear;
         timeControlCard.setStartYear(startYear);
-        timeControlCard.updateRecord();
+        timeControlCard.updateTable();
     }
 
     /**
@@ -1580,9 +1580,7 @@ public class Parser {
      */
     private List<Boolean> isOn(List<String> values) {
         List<Boolean> result = new ArrayList<>();
-        values.forEach(value -> {
-            result.add(isOn(value));
-        });
+        values.forEach(value -> result.add(isOn(value)));
         return result;
     }
 
@@ -1602,15 +1600,13 @@ public class Parser {
      */
     private List<Boolean> isOff(List<String> values) {
         List<Boolean> result = new ArrayList<>();
-        values.forEach(value -> {
-            result.add(isOff(value));
-        });
+        values.forEach(value -> result.add(isOff(value)));
         return result;
     }
 
     /**
      * Determine if any value in the list is true
-     * @param values
+     * @param values List of boolean values
      * @return True if any value is true; otherwise false
      */
     private boolean any(List<Boolean> values) {
@@ -1619,7 +1615,7 @@ public class Parser {
 
     /**
      * Count number of true values
-     * @param values
+     * @param values List of boolean values
      * @return Number of true values
      */
     private int count(List<Boolean> values) {

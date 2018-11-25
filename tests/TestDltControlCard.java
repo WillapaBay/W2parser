@@ -15,7 +15,7 @@ public class TestDltControlCard {
         dltControlCard.setNdt(1);
         dltControlCard.setDltMin(0.0001);
         dltControlCard.setDltIntr(Globals.ON);
-        dltControlCard.updateRecord();
+        dltControlCard.updateTable();
 
         // Write updated W2 control file
         String outpath = "results/ColumbiaSlough";

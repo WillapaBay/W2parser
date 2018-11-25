@@ -22,7 +22,7 @@ public class TestRepeatingDoubleCard {
         rdc.setData(data);
         rdc.updateText();
         System.out.println("Done");
-        rdc.updateRecord();
+        rdc.updateTable();
         w2con.save("data/ParticleTracking/w2_con.npt_revised");
     }
 
@@ -48,7 +48,7 @@ public class TestRepeatingDoubleCard {
         ETSR.add(4.0);
 
         rdc.setData(ETSR);
-        rdc.updateRecord();
+        rdc.updateTable();
         w2con.save("results/ParticleTracking/w2_con.npt_revised");
     }
 }

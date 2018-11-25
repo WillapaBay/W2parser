@@ -16,6 +16,6 @@ public class TestHeatExchangeCard {
         List<String> SROC = hCard.getSROC();
         SROC.set(0, "Hello");
         hCard.setSROC(SROC);
-        hCard.updateRecord();
+        hCard.updateTable();
     }
 }

@@ -20,6 +20,6 @@ public class TestCalculationsCard {
         List<String> PRC = cCard.getPRC();
         List<String> VBC = cCard.getVBC();
         EBC.set(0, "Hello");
-        cCard.updateRecord();
+        cCard.updateTable();
     }
 }

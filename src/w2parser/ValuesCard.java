@@ -13,7 +13,7 @@ public class ValuesCard extends Card {
 
     public ValuesCard(W2ControlFile w2ControlFile, String cardName, int numRecordLines) {
         super(w2ControlFile, cardName, numRecordLines);
-        parseText();
+        parseTable();
     }
 
     public List<String> getValues() {
@@ -47,15 +47,15 @@ public class ValuesCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         String[] records = new String[2];
         String line;
         identifiers = new ArrayList<>();
         values = new ArrayList<>();
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             line = recordLines.get(i).trim();
             records[0] = line.substring(0, 7);
-            records[1] = line.substring(8, line.length());
+            records[1] = line.substring(8);
             identifiers.add(records[0].trim());
             values.add(records[1].trim());
         }
@@ -64,7 +64,7 @@ public class ValuesCard extends Card {
     @Override
     public void updateText() {
         String str;
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             str = String.format("%-8s%s", identifiers.get(i), values.get(i));
             recordLines.set(i, str);
         }

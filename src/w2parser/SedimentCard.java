@@ -9,22 +9,22 @@ import java.util.List;
  * This card has one line per water body
  */
 public class SedimentCard extends Card {
-    List<String> SEDC;
-    List<String> SEDPRC;
-    List<Double> SEDCI;
-    List<Double> SEDS;
-    List<Double> SEDK;
-    List<Double> FSOD;
-    List<Double> FSED;
-    List<Double> SEDBR;
-    List<String> DYNSEDK;
-    List<String> Identifiers;
-    int numWaterbodies;
+    private List<String> SEDC;
+    private List<String> SEDPRC;
+    private List<Double> SEDCI;
+    private List<Double> SEDS;
+    private List<Double> SEDK;
+    private List<Double> FSOD;
+    private List<Double> FSED;
+    private List<Double> SEDBR;
+    private List<String> DYNSEDK;
+    private List<String> Identifiers;
+    private int numWaterbodies;
 
     public SedimentCard(W2ControlFile w2ControlFile, int numWaterbodies) {
         super(w2ControlFile, "SEDIMENT", numWaterbodies);
         this.numWaterbodies = numWaterbodies;
-        parseText();
+        parseTable();
     }
 
     public List<String> getSEDC() {
@@ -109,7 +109,7 @@ public class SedimentCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         SEDC = new ArrayList<>();
         SEDPRC = new ArrayList<>();
         SEDCI = new ArrayList<>();
@@ -139,7 +139,7 @@ public class SedimentCard extends Card {
     @Override
     public void updateText() {
         for (int i = 0; i < numWaterbodies; i++) {
-            String str = String.format("%-8s%8s%8s%8.5f%8.5f%8.5f%8.5f%8.5f%8.5f",
+            String str = String.format("%-8s%8s%8s%8.5f%8.5f%8.5f%8.5f%8.5f%8.5f%8s",
                     Identifiers.get(i), SEDC.get(i), SEDPRC.get(i), SEDCI.get(i),
                     SEDS.get(i), SEDK.get(i), FSOD.get(i), FSED.get(i), SEDBR.get(i),
                     DYNSEDK.get(i));

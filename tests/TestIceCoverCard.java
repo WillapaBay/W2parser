@@ -3,7 +3,6 @@ import w2parser.GridCard;
 import w2parser.IceCoverCard;
 import w2parser.W2ControlFile;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 
@@ -17,6 +16,6 @@ public class TestIceCoverCard {
         List<Double> ALBEDO = iCard.getALBEDO();
         ALBEDO.set(0, -99.0);
         iCard.setALBEDO(ALBEDO);
-        iCard.updateRecord();
+        iCard.updateTable();
     }
 }

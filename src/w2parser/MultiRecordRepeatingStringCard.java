@@ -9,20 +9,21 @@ import java.util.List;
  * This card is used to read cards containing one or more records that span multiple lines each.
  */
 public class MultiRecordRepeatingStringCard extends Card {
-    List<String> Names; // Constituent names
-    List<List<String>> Values; // Specifies which constituents are on or off (Values: ON or OFF)
-    int numFields; // Total number of fields -- spread over multiple lines, e.g., number of branches
-    int numRecords; // e.g. number of constituents
-    int numLinesPerRecord;
-    int numLinesPerCard;
+    private List<String> Names; // Constituent names
+    private List<List<String>> Values; // Specifies which constituents are on or off (Values: ON or OFF)
+    private int numFields; // Total number of fields -- spread over multiple lines, e.g., number of branches
+    private int numRecords; // e.g. number of constituents
+    private int numLinesPerRecord;
+    private int numLinesPerCard;
 
-    public MultiRecordRepeatingStringCard(W2ControlFile w2ControlFile, String cardName, int numRecords, int numFields) {
+    public MultiRecordRepeatingStringCard(W2ControlFile w2ControlFile, String cardName,
+                                          int numRecords, int numFields) {
         super(w2ControlFile, cardName, ((int) (numRecords * Math.ceil(numFields/9.0))));
         this.numRecords = numRecords;
         this.numFields = numFields;
         this.numLinesPerRecord = (int) Math.ceil(numFields/9.0);
         this.numLinesPerCard = numLinesPerRecord * numRecords;
-        parseText();
+        parseTable();
     }
 
     public List<String> getNames() {
@@ -44,7 +45,7 @@ public class MultiRecordRepeatingStringCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         Names = new ArrayList<>();
         Values = new ArrayList<>();
 

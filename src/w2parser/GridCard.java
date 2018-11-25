@@ -16,7 +16,7 @@ public class GridCard extends Card {
 
     public GridCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "GRID", 1);
-        parseText();
+        parseTable();
     }
 
     public int getNumWaterBodies() {
@@ -74,7 +74,7 @@ public class GridCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         List<String> Fields = parseLine(recordLines.get(0), 8, 1, 10);
         identifier = Fields.get(0);
         NWB = Integer.parseInt(Fields.get(1));

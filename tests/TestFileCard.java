@@ -31,15 +31,15 @@ public class TestFileCard {
         System.out.println(bthCard.getFileNames());
         qinCard.setFileName(0, "QinFile1");
         qinCard.setFileName(1, "QinFile2");
-        qinCard.updateRecord();
+        qinCard.updateTable();
         tinCard.setFileName(0, "TinFile1");
         tinCard.setFileName(1, "TinFile2");
-        tinCard.updateRecord();
+        tinCard.updateTable();
         cinCard.setFileName(0, "CinFile1");
         cinCard.setFileName(1, "CinFile2");
-        cinCard.updateRecord();
+        cinCard.updateTable();
         bthCard.setFileName(0, "BthFile1");
-        bthCard.updateRecord();
+        bthCard.updateTable();
         w2con.save(outfile);
     }
 }

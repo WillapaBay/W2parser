@@ -22,6 +22,6 @@ public class TestLocationCard {
         List<Integer> JBDN = lCard.getJBDN();
         LAT.set(0, 42.42);
         lCard.setLAT(LAT);
-        lCard.updateRecord();
+        lCard.updateTable();
     }
 }

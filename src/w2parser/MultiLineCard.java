@@ -11,7 +11,7 @@ public class MultiLineCard extends Card {
 
     public MultiLineCard(W2ControlFile w2ControlFile, String cardName, int numRecordLines) {
         super(w2ControlFile, cardName, numRecordLines);
-        parseText();
+        parseTable();
     }
 
     public List<List<String>> getData() {
@@ -40,10 +40,10 @@ public class MultiLineCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         Data = new ArrayList<>();
         List<String> lineData;
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             lineData = parseLine(recordLines.get(i), 8, 1, 10);
             Data.add(lineData);
         }
@@ -52,7 +52,7 @@ public class MultiLineCard extends Card {
     @Override
     public void updateText() {
         String line = "";
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             for (int j = 0; i < Data.size(); j++) {
                 if (j == 0) {
                     line = String.format("%-8s", Data.get(j));

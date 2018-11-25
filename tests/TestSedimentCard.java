@@ -15,7 +15,7 @@ public class TestSedimentCard {
         SedimentCard sCard = new SedimentCard(w2con, gridCard.getNumWaterBodies());
         List<String> SEDC = sCard.getSEDC();
         SEDC.set(0, "Hello");
-        sCard.setSEDC(SEDC);;
-        sCard.updateRecord();
+        sCard.setSEDC(SEDC);
+        sCard.updateTable();
     }
 }

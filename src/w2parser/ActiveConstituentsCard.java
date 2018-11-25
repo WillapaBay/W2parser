@@ -10,14 +10,14 @@ import java.util.List;
  * There is one line per constituent.
  */
 public class ActiveConstituentsCard extends Card {
-    List<String> constituentNames; // Constituent names
-    List<String> CAC;     // State of each constituent (ON or OFF)
-    int numConstituents;
+    private List<String> constituentNames; // Constituent names
+    private List<String> CAC;     // State of each constituent (ON or OFF)
+    private int numConstituents;
 
     public ActiveConstituentsCard(W2ControlFile w2ControlFile, int numConstituents) {
         super(w2ControlFile, "CST ACTIVE", numConstituents);
         this.numConstituents = numConstituents;
-        parseText();
+        parseTable();
     }
 
     public List<String> getConstituentNames() {
@@ -39,7 +39,7 @@ public class ActiveConstituentsCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         constituentNames = new ArrayList<>();
         CAC = new ArrayList<>();
 

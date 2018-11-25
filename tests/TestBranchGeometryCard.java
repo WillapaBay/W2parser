@@ -4,7 +4,6 @@ import w2parser.GridCard;
 import w2parser.W2ControlFile;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TestBranchGeometryCard {
@@ -19,7 +18,7 @@ public class TestBranchGeometryCard {
         BranchGeometryCard branchGeometryCard = new BranchGeometryCard(w2con, numBranches);
         List<Integer> DS = branchGeometryCard.getDS();
         DS.set(0, 200);
-        branchGeometryCard.updateRecord();
+        branchGeometryCard.updateTable();
         w2con.save("results/ParticleTracking/w2_con.npt");
     }
 }

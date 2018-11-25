@@ -9,17 +9,17 @@ import java.util.List;
  * This card has one line per water body
  */
 public class InitialConditionsCard extends Card {
-    List<Double> T2I;
-    List<Double> ICEI;
-    List<String> WTYPEC;
-    List<String> GRIDC;
-    List<String> Identifiers;
-    int numWaterbodies;
+    private List<Double> T2I;
+    private List<Double> ICEI;
+    private List<String> WTYPEC;
+    private List<String> GRIDC;
+    private List<String> Identifiers;
+    private int numWaterbodies;
 
     public InitialConditionsCard(W2ControlFile w2ControlFile, int numWaterbodies) {
         super(w2ControlFile, "INIT CND", numWaterbodies);
         this.numWaterbodies = numWaterbodies;
-        parseText();
+        parseTable();
     }
 
     public List<Double> getT2I() {
@@ -68,7 +68,7 @@ public class InitialConditionsCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         T2I = new ArrayList<>();
         ICEI = new ArrayList<>();
         WTYPEC = new ArrayList<>();

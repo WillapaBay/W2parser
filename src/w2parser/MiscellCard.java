@@ -15,7 +15,7 @@ public class MiscellCard extends Card {
 
     public MiscellCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "MISCELL", 1);
-        parseText();
+        parseTable();
     }
 
     public int getNday() {
@@ -73,7 +73,7 @@ public class MiscellCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
         nday = Integer.parseInt(Fields.get(0));
         selectc = Fields.get(1);

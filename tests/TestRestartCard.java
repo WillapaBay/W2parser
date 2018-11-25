@@ -43,10 +43,10 @@ public class TestRestartCard {
         // Turn on restart file....
 
         // Update records (commit to w2 control file array in memory)
-        restartCard.updateRecord();
-        rsoDateCard.updateRecord();
-        rsoFreqCard.updateRecord();
-        rsiFileCard.updateRecord();
+        restartCard.updateTable();
+        rsoDateCard.updateTable();
+        rsoFreqCard.updateTable();
+        rsiFileCard.updateTable();
 
         // Write updated W2 control file
         String outfile = "results/ColumbiaSlough/w2_con.npt.testRestart";

@@ -7,20 +7,20 @@ import java.util.List;
  * Branch Geometry Card
  */
 public class BranchGeometryCard extends Card {
-    List<Integer> US;         // Branch upstream segment
-    List<Integer> DS;         // Branch downstream segment
-    List<Integer> UHS;        // Upstream boundary condition
-    List<Integer> DHS;        // Downstream boundary condition
-    List<Integer> UQB;        // Upstream internal flow boundary condition - IGNORE
-    List<Integer> DQB;        // Downstream internal flow boundary condition - IGNORE
-    List<Integer> NLMIN;      // Minimum number of layers for a segment to be active
-    List<Double> Slope;       // Branch bottom slope (actual)
-    List<Double> SlopeC;      // Hydraulic equivalent branch slope
-    List<String> Identifiers; // Identifiers
+    private List<Integer> US;         // Branch upstream segment
+    private List<Integer> DS;         // Branch downstream segment
+    private List<Integer> UHS;        // Upstream boundary condition
+    private List<Integer> DHS;        // Downstream boundary condition
+    private List<Integer> UQB;        // Upstream internal flow boundary condition - IGNORE
+    private List<Integer> DQB;        // Downstream internal flow boundary condition - IGNORE
+    private List<Integer> NLMIN;      // Minimum number of layers for a segment to be active
+    private List<Double> Slope;       // Branch bottom slope (actual)
+    private List<Double> SlopeC;      // Hydraulic equivalent branch slope
+    private List<String> Identifiers; // Identifiers
 
     public BranchGeometryCard(W2ControlFile w2ControlFile, int numBranches) {
         super(w2ControlFile, "BRANCH G", numBranches);
-        parseText();
+        parseTable();
     }
 
     public List<Integer> getUS() {
@@ -105,7 +105,7 @@ public class BranchGeometryCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         US = new ArrayList<>();
         DS = new ArrayList<>();
         UHS = new ArrayList<>();
@@ -117,7 +117,7 @@ public class BranchGeometryCard extends Card {
         SlopeC = new ArrayList<>();
         Identifiers = new ArrayList<>();
 
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             List<String> records = parseLine(recordLines.get(i), 8, 1, 10);
             Identifiers.add(records.get(0));
             US.add(Integer.parseInt(records.get(1)));
@@ -134,7 +134,7 @@ public class BranchGeometryCard extends Card {
 
     @Override
     public void updateText() {
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             String str = String.format("%-8s%8d%8d%8d%8d%8d%8d%8d%8.5f%8.5f",
                     Identifiers.get(i), US.get(i), DS.get(i), UHS.get(i), DHS.get(i), UQB.get(i),
                     DQB.get(i), NLMIN.get(i), Slope.get(i), SlopeC.get(i));

@@ -18,7 +18,7 @@ public class TestRepeatingIntegerCard {
         }
 
         rdc.setData(IWDO);
-        rdc.updateRecord();
+        rdc.updateTable();
         w2con.save("results/ParticleTracking/w2_con.npt_revised");
     }
 
@@ -51,7 +51,7 @@ public class TestRepeatingIntegerCard {
         tsrSegments.add(95);
 
         rdc.setData(tsrSegments);
-        rdc.updateRecord();
+        rdc.updateTable();
         w2con.save("results/ParticleTracking/w2_con.npt_revised");
     }
 }

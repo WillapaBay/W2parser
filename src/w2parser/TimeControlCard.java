@@ -12,7 +12,7 @@ public class TimeControlCard extends Card {
 
     public TimeControlCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "TIME CON", 1);
-        parseText();
+        parseTable();
     }
 
     public double getJdayMin() {
@@ -43,7 +43,7 @@ public class TimeControlCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
         jdayMin = Double.parseDouble(Fields.get(0));
         jdayMax = Double.parseDouble(Fields.get(1));

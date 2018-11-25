@@ -5,27 +5,26 @@ import w2parser.NumberStructuresCard;
 import w2parser.W2ControlFile;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class TestNumberStructuresCard {
-    NumberStructuresCard nCard;
+    private NumberStructuresCard nCard;
 
-    public List<Integer> getNSTR(String infile) throws FileNotFoundException {
+    private List<Integer> getNSTR(String infile) throws FileNotFoundException {
         W2ControlFile w2con = new W2ControlFile(infile);
         GridCard gridCard = new GridCard(w2con);
         int numBranches = gridCard.getNumBranches();
         nCard = new NumberStructuresCard(w2con, numBranches);
-        List<Integer> NSTR = nCard.getNSTR();
-        return NSTR;
+        return nCard.getNSTR();
     }
 
-    public List<String> getDYNELEV(String infile) throws FileNotFoundException {
+    private List<String> getDYNELEV(String infile) throws FileNotFoundException {
         W2ControlFile w2con = new W2ControlFile(infile);
         GridCard gridCard = new GridCard(w2con);
         int numBranches = gridCard.getNumBranches();
         NumberStructuresCard nCard = new NumberStructuresCard(w2con, numBranches);
-        List<String> DYNELEV = nCard.getDYNELEV();
-        return DYNELEV;
+        return nCard.getDYNELEV();
     }
 
     @Test
@@ -96,7 +95,7 @@ public class TestNumberStructuresCard {
 
     @Test
     public void test_Get_DYNELEV_TheDalles() throws FileNotFoundException {
-        List<String> DYNELEV_expected = Arrays.asList(Globals.OFF);
+        List<String> DYNELEV_expected = Collections.singletonList(Globals.OFF);
         List<String> DYNELEV_actual = getDYNELEV("data/TDA/w2_con.npt");
         assert DYNELEV_expected.equals(DYNELEV_actual);
     }
@@ -106,6 +105,6 @@ public class TestNumberStructuresCard {
         List<Integer> NSTR = getNSTR("data/ParticleTracking/w2_con.npt");
         NSTR.set(0, 20);
         nCard.setNSTR(NSTR);
-        nCard.updateRecord();
+        nCard.updateTable();
     }
 }

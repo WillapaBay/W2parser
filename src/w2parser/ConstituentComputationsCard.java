@@ -12,7 +12,7 @@ public class ConstituentComputationsCard extends Card {
 
     public ConstituentComputationsCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, CardNames.ConstituentComputations, 1);
-        parseText();
+        parseTable();
     }
 
     public String getCCC() {
@@ -43,7 +43,7 @@ public class ConstituentComputationsCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
         ccc = Fields.get(0);
         limc = Fields.get(1);

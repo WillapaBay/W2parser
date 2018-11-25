@@ -9,21 +9,21 @@ public abstract class Card {
     private String titleLine;
     // Number of record lines. For most cards, this equals one.
     // For file cards, this is the number of branches or water bodies.
-    int numRecordLines;
+    int numLines;
     List<String> recordLines = new ArrayList<>();
 
-    public Card(W2ControlFile w2ControlFile, String cardName, int numRecordLines) {
+    public Card(W2ControlFile w2ControlFile, String cardName, int numLines) {
         this.w2ControlFile = w2ControlFile;
         this.cardName = cardName;
-        this.numRecordLines = numRecordLines;
-        getRecord();
+        this.numLines = numLines;
+        fetchTable();
     }
 
-    public Card(W2ControlFile w2ControlFile, int numRecordLines) {
+    public Card(W2ControlFile w2ControlFile, int numLines) {
         this.w2ControlFile = w2ControlFile;
-        this.numRecordLines = numRecordLines;
-        getRecord();
-        parseText();
+        this.numLines = numLines;
+        fetchTable();
+        parseTable();
     }
 
     public void setTitleLine(String titleLine) {
@@ -37,7 +37,7 @@ public abstract class Card {
     /**
      * Retrieve card text from the w2parser.W2ControlFile list
      */
-    public void getRecord() {
+    private void fetchTable() {
         String line;
         for (int i = 0; i < w2ControlFile.size(); i++) {
             // Only check 1st 8 characters
@@ -51,7 +51,7 @@ public abstract class Card {
             line = w2ControlFile.getLine(i).toUpperCase();
             if (line.startsWith(cardNameShort)) {
                 this.titleLine = w2ControlFile.getLine(i);
-                for (int j = 0; j < numRecordLines; j++) {
+                for (int j = 0; j < numLines; j++) {
                     line = w2ControlFile.getLine(i + j + 1);
                     recordLines.add(line);
                 }
@@ -63,14 +63,14 @@ public abstract class Card {
     /**
      * Update card text in the w2parser.W2ControlFile list
      */
-    public void updateRecord() {
+    public void updateTable() {
         updateText();
         String line;
         for (int i = 0; i < w2ControlFile.size(); i++) {
             line = w2ControlFile.getLine(i).toUpperCase();
             if (line.startsWith(cardName)) {
                 w2ControlFile.setLine(i, this.titleLine);
-                for (int j = 0; j < numRecordLines; j++) {
+                for (int j = 0; j < numLines; j++) {
                     w2ControlFile.setLine(i + j + 1, recordLines.get(j));
                 }
             }
@@ -79,17 +79,17 @@ public abstract class Card {
 
     @Override
     public String toString() {
-        String str = titleLine + "\n";
+        StringBuilder str = new StringBuilder(titleLine + "\n");
         for (String line : recordLines) {
-            str += line + "\n";
+            str.append(line).append("\n");
         }
-       return str;
+       return str.toString();
     }
 
     /**
      * Parse the W2 control file text to individual variables
      */
-    public abstract void parseText();
+    public abstract void parseTable();
 
     /**
      * Update the W2 control file text from the current variables
@@ -123,7 +123,8 @@ public abstract class Card {
     }
 
     /**
-     * Parse a multi-line record
+     * Parse a multi-line record. A record consists of all fields for a waterbody,
+     * branch, constituent, etc.
      * @param recordLines List of record lines from control file
      * @param recordIndex Index of record (zero-based)
      * @param numFields Number of fields

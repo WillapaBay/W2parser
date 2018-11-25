@@ -10,16 +10,16 @@ import java.util.List;
  * There is one line per constituent, with a value for each waterbody.
  */
 public class ActiveConstituentFluxesCard extends Card {
-    List<String> constituentNames; // Constituent names
-    List<List<String>> Data;     // State of each constituent (ON or OFF)
-    int numFluxes;
-    int numWaterbodies;
+    private List<String> constituentNames; // Constituent names
+    private List<List<String>> Data;     // State of each constituent (ON or OFF)
+    private int numFluxes;
+    private int numWaterbodies;
 
     public ActiveConstituentFluxesCard(W2ControlFile w2ControlFile, int numFluxes, int numWaterbodies) {
         super(w2ControlFile, "CST FLUX", numFluxes);
         this.numFluxes = numFluxes;
         this.numWaterbodies = numWaterbodies;
-        parseText();
+        parseTable();
     }
 
     public List<String> getConstituentNames() {
@@ -41,7 +41,7 @@ public class ActiveConstituentFluxesCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         constituentNames = new ArrayList<>();
         Data = new ArrayList<>();
         for (int jwb = 0; jwb < numWaterbodies; jwb++) {
@@ -63,7 +63,7 @@ public class ActiveConstituentFluxesCard extends Card {
         for (int i = 0; i < numFluxes; i++) {
             String str = String.format("%-8s", constituentNames.get(i));
             for (int j = 0; j < numWaterbodies; j++) {
-                str += String.format("%%8s", Data.get(j).get(i));
+                str += String.format("%8s", Data.get(j).get(i));
                 recordLines.set(i, str);
             }
         }

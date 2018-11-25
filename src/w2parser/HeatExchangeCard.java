@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HeatExchangeCard extends Card {
-    int numWaterbodies;
-    List<String> SLHTC;
-    List<String> SROC;
-    List<String> RHEVAP;
-    List<String> METIC;
-    List<String> FETCHC;
-    List<Double> AFW;
-    List<Double> BFW;
-    List<Double> CFW;
-    List<Double> WINDH;
-    List<String> Identifiers;
+    private int numWaterbodies;
+    private List<String> SLHTC;
+    private List<String> SROC;
+    private List<String> RHEVAP;
+    private List<String> METIC;
+    private List<String> FETCHC;
+    private List<Double> AFW;
+    private List<Double> BFW;
+    private List<Double> CFW;
+    private List<Double> WINDH;
+    private List<String> Identifiers;
 
     public HeatExchangeCard(W2ControlFile w2ControlFile, int numWaterbodies) {
         super(w2ControlFile, "HEAT EXCH", numWaterbodies);
         this.numWaterbodies = numWaterbodies;
-        parseText();
+        parseTable();
     }
 
     public List<String> getSLHTC() {
@@ -104,7 +104,7 @@ public class HeatExchangeCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         SLHTC = new ArrayList<>();
         SROC = new ArrayList<>();
         RHEVAP = new ArrayList<>();
@@ -116,7 +116,7 @@ public class HeatExchangeCard extends Card {
         WINDH = new ArrayList<>();
         Identifiers = new ArrayList<>();
 
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             List<String> Fields = parseLine(recordLines.get(i), 8, 1, 10);
             Identifiers.add(Fields.get(0));
             SLHTC.add(Fields.get(1));
@@ -133,7 +133,7 @@ public class HeatExchangeCard extends Card {
 
     @Override
     public void updateText() {
-        for (int i = 0; i < numRecordLines; i++) {
+        for (int i = 0; i < numLines; i++) {
             String str = String.format("%-8s%8s%8s%8s%8s%8s%8.5f%8.5f%8.5f%8.5f",
                     Identifiers.get(i), SLHTC.get(i), SROC.get(i), RHEVAP.get(i), METIC.get(i),
                     FETCHC.get(i), AFW.get(i), BFW.get(i), CFW.get(i), WINDH.get(i));

@@ -13,7 +13,7 @@ public class TestGridCard {
         System.out.println(gridCard);
         gridCard.setNumBranches(500);
         gridCard.setNumWaterBodies(1000);
-        gridCard.updateRecord();
+        gridCard.updateTable();
     }
 
 

@@ -9,7 +9,7 @@ public class RestartCard extends Card {
 
     public RestartCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "RESTART", 1);
-        parseText();
+        parseTable();
     }
 
     public String getRsoc() {
@@ -40,7 +40,7 @@ public class RestartCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
         rsoc = Fields.get(0);
         nrso = Integer.parseInt(Fields.get(1));

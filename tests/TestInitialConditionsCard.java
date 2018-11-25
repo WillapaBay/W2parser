@@ -16,6 +16,6 @@ public class TestInitialConditionsCard {
         List<Double> T2I = iCard.getT2I();
         T2I.set(0, -99.0);
         iCard.setT2I(T2I);
-        iCard.updateRecord();
+        iCard.updateTable();
     }
 }

@@ -12,7 +12,7 @@ public class TimestepControlCard extends Card {
 
     public TimestepControlCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, CardNames.TimestepControl, 1);
-        parseText();
+        parseTable();
     }
 
     public int getNdt() {
@@ -43,7 +43,7 @@ public class TimestepControlCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
 //        String[] records = recordLines.get(0).trim().split("\\s+");
         List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
         ndt = Integer.parseInt(Fields.get(0));

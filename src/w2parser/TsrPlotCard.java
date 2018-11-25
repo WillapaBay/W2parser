@@ -12,7 +12,7 @@ public class TsrPlotCard extends Card {
 
     public TsrPlotCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "TSR PLOT", 1);
-        parseText();
+        parseTable();
     }
 
     public String getTSRC() {
@@ -43,7 +43,7 @@ public class TsrPlotCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
         tsrc = Fields.get(0);
         ntsr = Integer.parseInt(Fields.get(1));

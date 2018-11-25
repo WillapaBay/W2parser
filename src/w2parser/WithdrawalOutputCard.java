@@ -13,7 +13,7 @@ public class WithdrawalOutputCard extends Card {
 
     public WithdrawalOutputCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "WITH OUT", 1);
-        parseText();
+        parseTable();
     }
 
     public String getWDOC() {
@@ -44,7 +44,7 @@ public class WithdrawalOutputCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
         List<String> Fields = parseLine(recordLines.get(0), 8, 1, 10);
         identifier = Fields.get(0);
         WDOC = Fields.get(1);

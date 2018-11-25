@@ -17,7 +17,7 @@ public class InOutflowCard extends Card {
 
     public InOutflowCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "IN/OUTFL", 1);
-        parseText();
+        parseTable();
     }
 
     public int getNumTributaries() {
@@ -93,7 +93,7 @@ public class InOutflowCard extends Card {
     }
 
     @Override
-    public void parseText() {
+    public void parseTable() {
 //        String[] records = recordLines.get(0).trim().split("\\s+");
         List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
         ntr = Integer.parseInt(Fields.get(0));

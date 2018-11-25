@@ -18,7 +18,7 @@ public class TestMiscellCard {
         String state = miscellCard.getHabtatc();
         System.out.println("Habitat volume state: " + state);
         miscellCard.setHabtatc(Globals.ON);
-        miscellCard.updateRecord();
+        miscellCard.updateTable();
 
         // Write updated W2 control file
         String outpath = "results/ColumbiaSlough";
