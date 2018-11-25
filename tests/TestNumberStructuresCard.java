@@ -1,5 +1,4 @@
 import org.junit.Test;
-import w2parser.Globals;
 import w2parser.GridCard;
 import w2parser.NumberStructuresCard;
 import w2parser.W2ControlFile;
@@ -7,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import static w2parser.Globals.OFF;
 
 public class TestNumberStructuresCard {
     private NumberStructuresCard nCard;
@@ -67,7 +67,7 @@ public class TestNumberStructuresCard {
 
     @Test
     public void test_Get_DYNELEV_ColumbiaSlough() throws FileNotFoundException {
-        List<String> DYNELEV_expected = Arrays.asList(Globals.OFF, Globals.OFF);
+        List<String> DYNELEV_expected = Arrays.asList(OFF, OFF);
         List<String> DYNELEV_actual = getDYNELEV("data/ColumbiaSlough/w2_con.npt");
         assert DYNELEV_expected.equals(DYNELEV_actual);
     }
@@ -75,27 +75,22 @@ public class TestNumberStructuresCard {
     @Test
     public void test_Get_DYNELEV_GrandCoulee() throws FileNotFoundException {
         List<String> DYNELEV_expected = Arrays.asList(
-                Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF,
-                Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF,
-                Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF,
-                Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF,
-                Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF, Globals.OFF);
+                OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF,
+                OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF);
         List<String> DYNELEV_actual = getDYNELEV("data/GCL/w2_con.npt");
         assert DYNELEV_expected.equals(DYNELEV_actual);
     }
 
     @Test
     public void test_Get_DYNELEV_ParticleTracking() throws FileNotFoundException {
-        List<String> DYNELEV_expected = Arrays.asList(
-                Globals.OFF, Globals.OFF, Globals.OFF,
-                Globals.OFF, Globals.OFF, Globals.OFF);
+        List<String> DYNELEV_expected = Arrays.asList(OFF, OFF, OFF, OFF, OFF, OFF);
         List<String> DYNELEV_actual = getDYNELEV("data/ParticleTracking/w2_con.npt");
         assert DYNELEV_expected.equals(DYNELEV_actual);
     }
 
     @Test
     public void test_Get_DYNELEV_TheDalles() throws FileNotFoundException {
-        List<String> DYNELEV_expected = Collections.singletonList(Globals.OFF);
+        List<String> DYNELEV_expected = Collections.singletonList(OFF);
         List<String> DYNELEV_actual = getDYNELEV("data/TDA/w2_con.npt");
         assert DYNELEV_expected.equals(DYNELEV_actual);
     }
