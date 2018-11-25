@@ -1,0 +1,16 @@
+Location                      Short Name          Long Name                                    Units       Column  #Columns  Filename                           Inflow/Outflow  Input/Output    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Seg 64 Withdrawal             Flow-QWD            Withdrawal Flow                              m^3/s       1       6         qwo_64.opt                         outflow         output          
+Seg 64 Withdrawal             Flow-QWD_outlet_1   Withdrawal Flow - Outlet 1                   m^3/s       2       6         qwo_64.opt                         outflow         output          
+Seg 64 Withdrawal             Flow-QWD_outlet_2   Withdrawal Flow - Outlet 2                   m^3/s       3       6         qwo_64.opt                         outflow         output          
+Seg 64 Withdrawal             Flow-QWD_outlet_3   Withdrawal Flow - Outlet 3                   m^3/s       4       6         qwo_64.opt                         outflow         output          
+Seg 64 Withdrawal             Flow-QWD_outlet_4   Withdrawal Flow - Outlet 4                   m^3/s       5       6         qwo_64.opt                         outflow         output          
+Seg 64 Withdrawal             Flow-QWD_outlet_5   Withdrawal Flow - Outlet 5                   m^3/s       6       6         qwo_64.opt                         outflow         output          
+Seg 64 Withdrawal             Temp-TWO            Withdrawal Temperature                       C           1       6         two_64.opt                         outflow         output          
+Seg 64 Withdrawal             Temp-TWO_outlet_1   Withdrawal Temperature - Outlet 1            C           2       6         two_64.opt                         outflow         output          
+Seg 64 Withdrawal             Temp-TWO_outlet_2   Withdrawal Temperature - Outlet 2            C           3       6         two_64.opt                         outflow         output          
+Seg 64 Withdrawal             Temp-TWO_outlet_3   Withdrawal Temperature - Outlet 3            C           4       6         two_64.opt                         outflow         output          
+Seg 64 Withdrawal             Temp-TWO_outlet_4   Withdrawal Temperature - Outlet 4            C           5       6         two_64.opt                         outflow         output          
+Seg 64 Withdrawal             Temp-TWO_outlet_5   Withdrawal Temperature - Outlet 5            C           6       6         two_64.opt                         outflow         output          
+Seg 84 Withdrawal             Flow-QWD            Withdrawal Flow                              m^3/s       1       1         qwo_84.opt                         outflow         output          
+Seg 84 Withdrawal             Temp-TWO            Withdrawal Temperature                       C           1       1         two_84.opt                         outflow         output          

@@ -35,11 +35,16 @@ public class TestParser {
         parser.printTable(WithdrawalOutputParameters);
 
         // Write tables to output files
-        parser.writeTable(InputParameters, "results/ParticleTracking/W2_input_parameters.txt");
-        parser.writeTable(MetParameters, "results/ParticleTracking/W2_met_parameters.txt");
-        parser.writeTable(TsrOutputParameters, "results/ParticleTracking/W2_TSR_output_parameters.txt");
-        parser.writeTable(WithdrawalOutputParameters, "results/ParticleTracking/W2_Withdrawal_output_parameters.txt");
-        parser.writeInitialWaterSurfaceElevations("results/ParticleTracking/W2_WSEL.txt");
+        parser.writeTable(InputParameters,
+                "results/ParticleTracking/W2_input_parameters.txt");
+        parser.writeTable(MetParameters,
+                "results/ParticleTracking/W2_met_parameters.txt");
+        parser.writeTable(TsrOutputParameters,
+                "results/ParticleTracking/W2_TSR_output_parameters.txt");
+        parser.writeTable(WithdrawalOutputParameters,
+                "results/ParticleTracking/W2_Withdrawal_output_parameters.txt");
+        parser.writeInitialWaterSurfaceElevations(
+                "results/ParticleTracking/W2_WSEL.txt");
 
         // Update time window
         parser.setJdayMin(1.5);
@@ -67,8 +72,11 @@ public class TestParser {
         // Get meteorology input parameters
         List<Parameter> MetParameters = parser.getMeteorologyParameters();
 
-        // Get output parameters for flow, temperature, and constituents
+        // Get TSR output parameters for flow, temperature, and constituents
         List<Parameter> TsrOutputParameters = parser.getTsrOutputParameters();
+
+        // Get withdrawal output parameters for flow, temperature, and constituents
+        List<Parameter> WithdrawalOutputParameters = parser.getWithdrawalOutputParameters();
 
         // Display tables
         System.out.println("\nTable of Flow, Temperature, and Constituent Inputs:\n");
@@ -77,12 +85,20 @@ public class TestParser {
         parser.printTable(MetParameters);
         System.out.println("\nTable of TSR Outputs:\n");
         parser.printTable(TsrOutputParameters);
+        System.out.println("\nTable of Withdrawal Outputs:\n");
+        parser.printTable(WithdrawalOutputParameters);
 
         // Write tables to output files
-        parser.writeTable(InputParameters, "results/GCL/W2_input_parameters.txt");
-        parser.writeTable(MetParameters, "results/GCL/W2_met_parameters.txt");
-        parser.writeTable(TsrOutputParameters, "results/ParticleTracking/W2_TSR_output_parameters.txt");
-        parser.writeInitialWaterSurfaceElevations("results/GCL/W2_WSEL.txt");
+        parser.writeTable(InputParameters,
+                "results/GCL/W2_input_parameters.txt");
+        parser.writeTable(MetParameters,
+                "results/GCL/W2_met_parameters.txt");
+        parser.writeTable(TsrOutputParameters,
+                "results/ParticleTracking/W2_TSR_output_parameters.txt");
+        parser.writeTable(WithdrawalOutputParameters,
+                "results/ParticleTracking/W2_Withdrawal_output_parameters.txt");
+        parser.writeInitialWaterSurfaceElevations(
+                "results/GCL/W2_WSEL.txt");
 
         parser.saveControlFile("results/GCL/w2_con.npt");
     }

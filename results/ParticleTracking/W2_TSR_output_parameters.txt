@@ -1,0 +1,144 @@
+Location                      Short Name          Long Name                                    Units       Column  #Columns  Filename                           Inflow/Outflow  Input/Output    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TSR Seg 64 Depth 0.00         DLT                 Time Step                                    s           1       71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Elev                Water Surface Elevation                      m           2       71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Temp-Water          Water Temperature                            C           3       71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         U                   Velocity                                     m/s         4       71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Flow-Total          Total Vertically Integrated Flow             m^3/s       5       71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Rad-Shortwave       Net Shortwave Solar Radiation                W/m^2       6       71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Ext Coeff           Light Extinction Coefficient                 1/m         7       71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Stage               Depth                                        m           8       71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Surface Width       Surface Width                                m           9       71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Shade               Shade                                                    10      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Temp-VolAvg         Vertically Volume-Weighted Temperature       C           11      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Rad-Net             Net Radiation                                C           12      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Rad-Shortwave       Net Shortwave Solar Radiation                W/m^2       13      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Rad-Longwave        Net Longwave Radiation                       W/m^2       14      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Rad-Back            Back Radiation                               W/m^2       15      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Rad-Evaporative     Evaporative Heat Flux                        W/m^2       16      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Rad-Conductive      Conductive Heat Flux                         W/m^2       17      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         TDS                 TDS                                          g/m^3       18      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Gen1                Age                                          days        19      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Gen2                H2S-d                                        g/m^3       20      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Gen3                CH4-d                                        g/m^3       21      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Gen4                SO4                                          g/m^3       22      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         Gen5                Tracer                                       g/m^3       23      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         ISS2                ISS                                          g/m^3       24      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         PO4                 Phosphate                                    g/m^3       25      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         NH4                 Ammonium                                     g/m^3       26      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         NO3                 Nitrate-Nitrite                              g/m^3       27      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         LDOM                Labile DOM                                   g/m^3       28      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         RDOM                Refractory DOM                               g/m^3       29      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         LPOM                Labile POM                                   g/m^3       30      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         RPOM                Refractory POM                               g/m^3       31      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         ALG1                Algae                                        g/m^3       32      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DO                  Dissolved oxygen                             g/m^3       33      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         TIC                 Inorganic carbon                             g/m^3       34      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         ALK                 Alkalinity                                   g/m^3       35      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         LDOM-P              LDOM P                                       g/m^3       36      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         RDOM-P              RDOM P                                       g/m^3       37      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         LPOM-P              LPOM P                                       g/m^3       38      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         RPOM-P              RPOM P                                       g/m^3       39      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         LDOM-N              LDOM N                                       g/m^3       40      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         RDOM-N              RDOM N                                       g/m^3       41      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         LPOM-N              LPOM N                                       g/m^3       42      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         RPOM-N              RPOM N                                       g/m^3       43      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         EPI1                Epiphython 1                                 g/m^3       44      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         SED                 Sediment                                     g/m^3       45      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         SEDP                Sediment Phosphorus                          g/m^3       46      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         SEDN                Sediment Nitrogen                            g/m^3       47      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         SEDC                Sediment Carbon                              g/m^3       48      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DOC                 Dissolved Organic Carbon                     g/m^3       49      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         TOC                 Total Organic Carbon                         g/m^3       50      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         TKN                 Total Kjeldahl Nitrogen                      g/m^3       51      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         TN                  Total Nitrogen                               g/m^3       52      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         TP                  Total Phosphorus                             g/m^3       53      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         APR                 Algal Production                             g/m^2/day   54      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         CHLA                Chlorophyll a                                ug/m^3      55      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         %DO                 Oxygen % Gas Saturation                                  56      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         pH                  pH                                                       57      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         CO2                 CO2                                                      58      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         HCO3                HCO3                                                     59      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         CO3                 CO3                                                      60      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DOAP                DOAP                                         kg/d        61      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DOEP                DOEP                                         kg/d        62      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DOPOM               DOPOM                                        kg/d        63      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DODOM               DODOM                                        kg/d        64      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DOOM                DOOM                                         kg/d        65      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DONITR              DONITR                                       kg/d        66      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DOREAR              DOREAR                                       kg/d        67      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DOSED               DOSED                                        kg/d        68      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         DOSOD               DOSOD                                        kg/d        69      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         TICAG               TICAG                                        kg/d        70      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 64 Depth 0.00         CO2GASX             CO2GASX                                      kg/d        71      71        tsr_1_seg64.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DLT                 Time Step                                    s           1       71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Elev                Water Surface Elevation                      m           2       71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Temp-Water          Water Temperature                            C           3       71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         U                   Velocity                                     m/s         4       71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Flow-Total          Total Vertically Integrated Flow             m^3/s       5       71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Rad-Shortwave       Net Shortwave Solar Radiation                W/m^2       6       71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Ext Coeff           Light Extinction Coefficient                 1/m         7       71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Stage               Depth                                        m           8       71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Surface Width       Surface Width                                m           9       71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Shade               Shade                                                    10      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Temp-VolAvg         Vertically Volume-Weighted Temperature       C           11      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Rad-Net             Net Radiation                                C           12      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Rad-Shortwave       Net Shortwave Solar Radiation                W/m^2       13      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Rad-Longwave        Net Longwave Radiation                       W/m^2       14      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Rad-Back            Back Radiation                               W/m^2       15      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Rad-Evaporative     Evaporative Heat Flux                        W/m^2       16      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Rad-Conductive      Conductive Heat Flux                         W/m^2       17      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         TDS                 TDS                                          g/m^3       18      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Gen1                Age                                          days        19      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Gen2                H2S-d                                        g/m^3       20      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Gen3                CH4-d                                        g/m^3       21      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Gen4                SO4                                          g/m^3       22      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         Gen5                Tracer                                       g/m^3       23      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         ISS2                ISS                                          g/m^3       24      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         PO4                 Phosphate                                    g/m^3       25      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         NH4                 Ammonium                                     g/m^3       26      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         NO3                 Nitrate-Nitrite                              g/m^3       27      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         LDOM                Labile DOM                                   g/m^3       28      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         RDOM                Refractory DOM                               g/m^3       29      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         LPOM                Labile POM                                   g/m^3       30      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         RPOM                Refractory POM                               g/m^3       31      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         ALG1                Algae                                        g/m^3       32      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DO                  Dissolved oxygen                             g/m^3       33      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         TIC                 Inorganic carbon                             g/m^3       34      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         ALK                 Alkalinity                                   g/m^3       35      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         LDOM-P              LDOM P                                       g/m^3       36      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         RDOM-P              RDOM P                                       g/m^3       37      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         LPOM-P              LPOM P                                       g/m^3       38      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         RPOM-P              RPOM P                                       g/m^3       39      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         LDOM-N              LDOM N                                       g/m^3       40      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         RDOM-N              RDOM N                                       g/m^3       41      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         LPOM-N              LPOM N                                       g/m^3       42      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         RPOM-N              RPOM N                                       g/m^3       43      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         EPI1                Epiphython 1                                 g/m^3       44      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         SED                 Sediment                                     g/m^3       45      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         SEDP                Sediment Phosphorus                          g/m^3       46      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         SEDN                Sediment Nitrogen                            g/m^3       47      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         SEDC                Sediment Carbon                              g/m^3       48      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DOC                 Dissolved Organic Carbon                     g/m^3       49      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         TOC                 Total Organic Carbon                         g/m^3       50      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         TKN                 Total Kjeldahl Nitrogen                      g/m^3       51      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         TN                  Total Nitrogen                               g/m^3       52      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         TP                  Total Phosphorus                             g/m^3       53      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         APR                 Algal Production                             g/m^2/day   54      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         CHLA                Chlorophyll a                                ug/m^3      55      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         %DO                 Oxygen % Gas Saturation                                  56      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         pH                  pH                                                       57      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         CO2                 CO2                                                      58      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         HCO3                HCO3                                                     59      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         CO3                 CO3                                                      60      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DOAP                DOAP                                         kg/d        61      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DOEP                DOEP                                         kg/d        62      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DOPOM               DOPOM                                        kg/d        63      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DODOM               DODOM                                        kg/d        64      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DOOM                DOOM                                         kg/d        65      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DONITR              DONITR                                       kg/d        66      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DOREAR              DOREAR                                       kg/d        67      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DOSED               DOSED                                        kg/d        68      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         DOSOD               DOSOD                                        kg/d        69      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         TICAG               TICAG                                        kg/d        70      71        tsr_2_seg84.csv                    outflow         output          
+TSR Seg 84 Depth 0.00         CO2GASX             CO2GASX                                      kg/d        71      71        tsr_2_seg84.csv                    outflow         output          
