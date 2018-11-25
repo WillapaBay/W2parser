@@ -15,11 +15,19 @@ public class CalculationsCard extends Card {
     private List<String> PQC; // Density placed inflows, ON or OFF
     private List<String> EVC; // Evaporation included in water budget, ON or OFF
     private List<String> PRC; // Precipitation included, ON or OFF
-    private List<String> Identifiers;
+    private List<String> identifiers;
 
     public CalculationsCard(W2ControlFile w2ControlFile, int numRecordLines) {
         super(w2ControlFile, CardNames.Calculations, numRecordLines);
         parseTable();
+    }
+
+    public List<String> getIdentifiers() {
+        return identifiers;
+    }
+
+    public void setIdentifiers(List<String> identifiers) {
+        this.identifiers = identifiers;
     }
 
     public List<String> getVBC() { return VBC; }
@@ -72,11 +80,11 @@ public class CalculationsCard extends Card {
         PQC = new ArrayList<>();
         EVC = new ArrayList<>();
         PRC = new ArrayList<>();
-        Identifiers = new ArrayList<>();
+        identifiers = new ArrayList<>();
 
         for (int i = 0; i < numLines; i++) {
-            List<String> Fields = parseLine(recordLines.get(i), 8, 1, 10);
-            Identifiers.add(Fields.get(0));
+            List<String> Fields = parseLine(table.get(i), 8, 1, 10);
+            identifiers.add(Fields.get(0));
             VBC.add(Fields.get(1));
             EBC.add(Fields.get(2));
             MBC.add(Fields.get(3));
@@ -90,8 +98,8 @@ public class CalculationsCard extends Card {
     public void updateText() {
         for (int i = 0; i < numLines; i++) {
             String str = String.format("%-8s%8s%8s%8s%8s%8s%8s",
-                    Identifiers.get(i), VBC.get(i), EBC.get(i), MBC.get(i), PQC.get(i), EVC.get(i), PRC.get(i));
-            recordLines.set(i, str);
+                    identifiers.get(i), VBC.get(i), EBC.get(i), MBC.get(i), PQC.get(i), EVC.get(i), PRC.get(i));
+            table.set(i, str);
         }
     }
 }

@@ -13,7 +13,7 @@ public class InitialConditionsCard extends Card {
     private List<Double> ICEI;
     private List<String> WTYPEC;
     private List<String> GRIDC;
-    private List<String> Identifiers;
+    private List<String> identifiers;
     private int numWaterbodies;
 
     public InitialConditionsCard(W2ControlFile w2ControlFile, int numWaterbodies) {
@@ -73,15 +73,15 @@ public class InitialConditionsCard extends Card {
         ICEI = new ArrayList<>();
         WTYPEC = new ArrayList<>();
         GRIDC = new ArrayList<>();
-        Identifiers = new ArrayList<>();
+        identifiers = new ArrayList<>();
 
         for (int i = 0; i < numWaterbodies; i++) {
-            List<String> Fields = parseLine(recordLines.get(i), 8, 1, 10);
-            Identifiers.add(Fields.get(0));
-            T2I.add(Double.parseDouble(Fields.get(1)));
-            ICEI.add(Double.parseDouble(Fields.get(2)));
-            WTYPEC.add(Fields.get(3));
-            GRIDC.add(Fields.get(4));
+            List<String> fields = parseLine(table.get(i), 8, 1, 10);
+            identifiers.add(fields.get(0));
+            T2I.add(Double.parseDouble(fields.get(1)));
+            ICEI.add(Double.parseDouble(fields.get(2)));
+            WTYPEC.add(fields.get(3));
+            GRIDC.add(fields.get(4));
         }
     }
 
@@ -89,8 +89,8 @@ public class InitialConditionsCard extends Card {
     public void updateText() {
         for (int i = 0; i < numWaterbodies; i++) {
             String str = String.format("%-8s%8.5f%8.5f%8s%8s",
-                    Identifiers.get(i), T2I.get(i), ICEI.get(i), WTYPEC.get(i), GRIDC.get(i));
-            recordLines.set(i, str);
+                    identifiers.get(i), T2I.get(i), ICEI.get(i), WTYPEC.get(i), GRIDC.get(i));
+            table.set(i, str);
         }
     }
 }

@@ -9,16 +9,16 @@ public class TestRestartCard {
         String infile = "data/ColumbiaSlough/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
         RestartCard restartCard = new RestartCard(w2con);
-        int nrso = restartCard.getNrso();
+        int nrso = restartCard.getNRSO();
         RepeatingDoubleCard rsoDateCard = new RepeatingDoubleCard(w2con,
                 CardNames.RestartDate, nrso, "%8.2f");
         RepeatingDoubleCard rsoFreqCard = new RepeatingDoubleCard(w2con,
                 CardNames.RestartFrequency, nrso, "%8.3f");
 
         // Turn Restart output on
-        restartCard.setRsoc(Globals.ON);
-        restartCard.setRsic(Globals.OFF);
-        restartCard.setNrso(2);
+        restartCard.setRSOC(Globals.ON);
+        restartCard.setRSIC(Globals.OFF);
+        restartCard.setNRSO(2);
 
         // Clear existing RSO dates
         rsoDateCard.clearData();

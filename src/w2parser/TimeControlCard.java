@@ -44,17 +44,17 @@ public class TimeControlCard extends Card {
 
     @Override
     public void parseTable() {
-        List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
-        jdayMin = Double.parseDouble(Fields.get(0));
-        jdayMax = Double.parseDouble(Fields.get(1));
-        startYear = Integer.parseInt(Fields.get(2));
+        List<String> fields = parseLine(table.get(0), 8, 2, 10);
+        jdayMin = Double.parseDouble(fields.get(0));
+        jdayMax = Double.parseDouble(fields.get(1));
+        startYear = Integer.parseInt(fields.get(2));
     }
 
     @Override
     public void updateText() {
         String str = String.format("%8s%8.3f%8.3f%8d", "",
                 jdayMin, jdayMax, startYear);
-        recordLines.set(0, str);
+        table.set(0, str);
     }
 }
 

@@ -7,11 +7,11 @@ import java.util.List;
  */
 public class MiscellCard extends Card {
     private int nday;
-    private String selectc;
-    private String habtatc;
-    private String envirpc;
-    private String aeratec;
-    private String inituwl;
+    private String SELECTC;
+    private String HABTATC;
+    private String ENVIRPC;
+    private String AERATEC;
+    private String INITUWL;
 
     public MiscellCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "MISCELL", 1);
@@ -27,67 +27,67 @@ public class MiscellCard extends Card {
         updateText();
     }
 
-    public String getSelectc() {
-        return selectc;
+    public String getSELECTC() {
+        return SELECTC;
     }
 
-    public void setSelectc(String selectc) {
-        this.selectc = selectc.toUpperCase();
+    public void setSELECTC(String SELECTC) {
+        this.SELECTC = SELECTC.toUpperCase();
         updateText();
     }
 
-    public String getEnvirpc() {
-        return envirpc;
+    public String getENVIRPC() {
+        return ENVIRPC;
     }
 
-    public void setEnvirpc(String envirpc) {
-        this.envirpc = envirpc.toUpperCase();
+    public void setENVIRPC(String ENVIRPC) {
+        this.ENVIRPC = ENVIRPC.toUpperCase();
         updateText();
     }
 
-    public String getAeratec() {
-        return aeratec;
+    public String getAERATEC() {
+        return AERATEC;
     }
 
-    public void setAeratec(String aeratec) {
-        this.aeratec = aeratec.toUpperCase();
+    public void setAERATEC(String AERATEC) {
+        this.AERATEC = AERATEC.toUpperCase();
         updateText();
     }
 
-    public String getInituwl() {
-        return inituwl;
+    public String getINITUWL() {
+        return INITUWL;
     }
 
-    public void setInituwl(String inituwl) {
-        this.inituwl = inituwl.toUpperCase();
+    public void setINITUWL(String INITUWL) {
+        this.INITUWL = INITUWL.toUpperCase();
         updateText();
     }
 
-    public String getHabtatc() {
-        return habtatc;
+    public String getHABTATC() {
+        return HABTATC;
     }
 
-    public void setHabtatc(String habtatc) {
-        this.habtatc = habtatc.toUpperCase();
+    public void setHABTATC(String HABTATC) {
+        this.HABTATC = HABTATC.toUpperCase();
         updateText();
     }
 
     @Override
     public void parseTable() {
-        List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
-        nday = Integer.parseInt(Fields.get(0));
-        selectc = Fields.get(1);
-        habtatc = Fields.get(2);
-        envirpc = Fields.get(3);
-        aeratec = Fields.get(4);
-        inituwl = Fields.get(5);
+        List<String> fields = parseLine(table.get(0), 8, 2, 10);
+        nday = Integer.parseInt(fields.get(0));
+        SELECTC = fields.get(1);
+        HABTATC = fields.get(2);
+        ENVIRPC = fields.get(3);
+        AERATEC = fields.get(4);
+        INITUWL = fields.get(5);
     }
 
     @Override
     public void updateText() {
         String str = String.format("%8s%8d%8s%8s%8s%8s%8s", "",
-                nday, selectc, habtatc, envirpc, aeratec, inituwl);
-        recordLines.set(0, str);
+                nday, SELECTC, HABTATC, ENVIRPC, AERATEC, INITUWL);
+        table.set(0, str);
     }
 }
 

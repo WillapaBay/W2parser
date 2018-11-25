@@ -16,8 +16,8 @@ public class BathymetryFile {
 
     private String bathymetryFilename;
     private List<String> bathymetryData = new ArrayList<>();
-    private BathymetryRecord<Integer> Segments =
-            new BathymetryRecord<>("Segments");
+    private BathymetryRecord<Integer> segments =
+            new BathymetryRecord<>("segments");
     private BathymetryRecord<Double> DLX = new BathymetryRecord<>("DLX");
     private BathymetryRecord<Double> ELWS = new BathymetryRecord<>("ELWS");
     private BathymetryRecord<Double> PHIO = new BathymetryRecord<>("PHIO");
@@ -44,7 +44,7 @@ public class BathymetryFile {
         }
 
         for (T value : record) {
-            sb.append(value + ",");
+            sb.append(value).append(",");
         }
         String line = sb.toString();
         line = line.substring(0, line.length() - 1);
@@ -95,8 +95,8 @@ public class BathymetryFile {
      * Create format string for double-type records using
      * the magnitude (characteristic) of the number to the left
      * of the decimal place.
-     * @param record
-     * @return
+     * @param record Bathymetry record
+     * @return Formatted string
      */
     private String createFormatString(BathymetryRecord<Double> record) {
         int characteristic = record.getCharacteristic();
@@ -110,10 +110,10 @@ public class BathymetryFile {
 
     /**
      * Get segment numbers
-     * @return Segments: list of segment numbers
+     * @return segments: list of segment numbers
      */
     public BathymetryRecord<Integer> getSegments() {
-        return Segments;
+        return segments;
     }
 
     /**
@@ -128,7 +128,7 @@ public class BathymetryFile {
             String formatString = "%" + fieldWidth + "d";
             updateRecordTxt(Segments, numSegments, formatString);
         }
-        this.Segments = Segments;
+        this.segments = Segments;
     }
 
     /**
@@ -229,8 +229,8 @@ public class BathymetryFile {
 
     /**
      * Load bathymetry from file into memory
-     * @param infile
-     * @throws FileNotFoundException
+     * @param infile Bathymetry filename
+     * @throws FileNotFoundException File not found
      */
     private void load(String infile) throws FileNotFoundException {
         File file = new File(w2con.getDirectoryPath().toString(), infile);
@@ -259,7 +259,7 @@ public class BathymetryFile {
             String line = bathymetryData.get(i);
             if (line.toUpperCase().startsWith("SEG")) {
                 // Parse segment lengths (this applies to the new CSV format only)
-                Segments = parseRecordCsvInteger(i);
+                segments = parseRecordCsvInteger(i);
             }
             else if (line.toUpperCase().startsWith("DLX")) {
                 // Parse segment lengths
@@ -309,7 +309,7 @@ public class BathymetryFile {
 
     /**
      * Save bathymetry to file
-     * @param outfile
+     * @param outfile Bathymetry output file
      */
     public void save(String outfile) {
         Path file = Paths.get(outfile);

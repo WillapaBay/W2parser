@@ -75,21 +75,21 @@ public class GridCard extends Card {
 
     @Override
     public void parseTable() {
-        List<String> Fields = parseLine(recordLines.get(0), 8, 1, 10);
-        identifier = Fields.get(0);
-        NWB = Integer.parseInt(Fields.get(1));
-        NBR = Integer.parseInt(Fields.get(2));
-        IMX = Integer.parseInt(Fields.get(3));
-        KMX = Integer.parseInt(Fields.get(4));
-        NPROC = Integer.parseInt(Fields.get(5));
-        CLOSEC = Fields.get(6);
+        List<String> fields = parseLine(table.get(0), 8, 1, 10);
+        identifier = fields.get(0);
+        NWB = Integer.parseInt(fields.get(1));
+        NBR = Integer.parseInt(fields.get(2));
+        IMX = Integer.parseInt(fields.get(3));
+        KMX = Integer.parseInt(fields.get(4));
+        NPROC = Integer.parseInt(fields.get(5));
+        CLOSEC = fields.get(6);
     }
 
     @Override
     public void updateText() {
         String str = String.format("%-8s%8d%8d%8d%8d%8d%8s",
                 identifier, NWB, NBR, IMX, KMX, NPROC, CLOSEC);
-        recordLines.set(0, str);
+        table.set(0, str);
     }
 }
 

@@ -6,13 +6,13 @@ import java.util.List;
  * Constituent Dimensions Card
  */
 public class ConstituentDimensionsCard extends Card {
-    private int ngc;  // Number of generic constituents
-    private int nss;  // Number of inorganic suspended solids
-    private int nal;  // Number of algal groups
-    private int nep;  // Number of epiphyton/periphyton groups
-    private int nbod; // Number of CBOD groups
-    private int nmc;  // Number of macrophyte groups
-    private int nzp;  // Number of zooplankton groups
+    private int NGC;  // Number of generic constituents
+    private int NSS;  // Number of inorganic suspended solids
+    private int NAL;  // Number of algal groups
+    private int NEP;  // Number of epiphyton/periphyton groups
+    private int NBOD; // Number of CBOD groups
+    private int NMC;  // Number of macrophyte groups
+    private int NZP;  // Number of zooplankton groups
 
     public ConstituentDimensionsCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "CONSTITU", 1);
@@ -20,85 +20,85 @@ public class ConstituentDimensionsCard extends Card {
     }
 
     public int getNGC() {
-        return ngc;
+        return NGC;
     }
 
     public void setNGC(int ngc) {
-        this.ngc = ngc;
+        this.NGC = ngc;
         updateText();
     }
 
     public int getNSS() {
-        return nss;
+        return NSS;
     }
 
     public void setNSS(int nss) {
-        this.nss = nss;
+        this.NSS = nss;
         updateText();
     }
 
     public int getNAL() {
-        return nal;
+        return NAL;
     }
 
     public void setNAL(int nal) {
-        this.nal = nal;
+        this.NAL = nal;
         updateText();
     }
 
     public int getNEP() {
-        return nep;
+        return NEP;
     }
 
     public void setNEP(int nep) {
-        this.nep = nep;
+        this.NEP = nep;
         updateText();
     }
 
     public int getNBOD() {
-        return nbod;
+        return NBOD;
     }
 
     public void setNBOD(int nbod) {
-        this.nbod = nbod;
+        this.NBOD = nbod;
         updateText();
     }
 
     public int getNMC() {
-        return nmc;
+        return NMC;
     }
 
     public void setNMC(int nmc) {
-        this.nmc = nmc;
+        this.NMC = nmc;
         updateText();
     }
 
     public int getNZP() {
-        return nzp;
+        return NZP;
     }
 
     public void setNZP(int nzp) {
-        this.nzp = nzp;
+        this.NZP = nzp;
         updateText();
     }
 
     @Override
     public void parseTable() {
-        List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
-        ngc = Integer.parseInt(Fields.get(0));
-        nss = Integer.parseInt(Fields.get(1));
-        nal = Integer.parseInt(Fields.get(2));
-        nep = Integer.parseInt(Fields.get(3));
-        nbod = Integer.parseInt(Fields.get(4));
-        nmc = Integer.parseInt(Fields.get(5));
-        nzp = Integer.parseInt(Fields.get(6));
+        List<String> Fields = parseLine(table.get(0), 8, 2, 10);
+        NGC = Integer.parseInt(Fields.get(0));
+        NSS = Integer.parseInt(Fields.get(1));
+        NAL = Integer.parseInt(Fields.get(2));
+        NEP = Integer.parseInt(Fields.get(3));
+        NBOD = Integer.parseInt(Fields.get(4));
+        NMC = Integer.parseInt(Fields.get(5));
+        NZP = Integer.parseInt(Fields.get(6));
     }
 
     @Override
     public void updateText() {
         String str = String.format("%8s%8d%8d%8d%8d%8d%8d%8d",
-                "", ngc, nss, nal, nep, nbod, nmc, nzp);
-        recordLines.set(0, str);
+                "", NGC, NSS, NAL, NEP, NBOD, NMC, NZP);
+        table.set(0, str);
     }
 }
 

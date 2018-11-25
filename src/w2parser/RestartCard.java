@@ -3,55 +3,55 @@ package w2parser;
 import java.util.List;
 
 public class RestartCard extends Card {
-    private String rsoc;
-    private int nrso;
-    private String rsic;
+    private String RSOC;
+    private int NRSO;
+    private String RSIC;
 
     public RestartCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "RESTART", 1);
         parseTable();
     }
 
-    public String getRsoc() {
-        return rsoc;
+    public String getRSOC() {
+        return RSOC;
     }
 
-    public void setRsoc(String rsoc) {
-        this.rsoc = rsoc;
+    public void setRSOC(String RSOC) {
+        this.RSOC = RSOC;
         updateText();
     }
 
-    public int getNrso() {
-        return nrso;
+    public int getNRSO() {
+        return NRSO;
     }
 
-    public void setNrso(int nrso) {
-        this.nrso = nrso;
+    public void setNRSO(int NRSO) {
+        this.NRSO = NRSO;
         updateText();
     }
 
-    public String getRsic() {
-        return rsic;
+    public String getRSIC() {
+        return RSIC;
     }
 
-    public void setRsic(String rsic) {
-        this.rsic = rsic;
+    public void setRSIC(String RSIC) {
+        this.RSIC = RSIC;
         updateText();
     }
 
     @Override
     public void parseTable() {
-        List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
-        rsoc = Fields.get(0);
-        nrso = Integer.parseInt(Fields.get(1));
-        rsic = Fields.get(2);
+        List<String> fields = parseLine(table.get(0), 8, 2, 10);
+        RSOC = fields.get(0);
+        NRSO = Integer.parseInt(fields.get(1));
+        RSIC = fields.get(2);
     }
 
     @Override
     public void updateText() {
         String str = String.format("%8s%8s%8d%8s", "",
-                rsoc, nrso, rsic);
-        recordLines.set(0, str);
+                RSOC, NRSO, RSIC);
+        table.set(0, str);
     }
 }
 

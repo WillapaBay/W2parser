@@ -44,18 +44,18 @@ public class TimestepControlCard extends Card {
 
     @Override
     public void parseTable() {
-//        String[] records = recordLines.get(0).trim().split("\\s+");
-        List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
-        ndt = Integer.parseInt(Fields.get(0));
-        dltMin = Double.parseDouble(Fields.get(1));
-        dltIntr = Fields.get(2);
+//        String[] records = table.get(0).trim().split("\\s+");
+        List<String> fields = parseLine(table.get(0), 8, 2, 10);
+        ndt = Integer.parseInt(fields.get(0));
+        dltMin = Double.parseDouble(fields.get(1));
+        dltIntr = fields.get(2);
     }
 
     @Override
     public void updateText() {
         String str = String.format("%8s%8d%8.5f%8s", "",
                 ndt, dltMin, dltIntr);
-        recordLines.set(0, str);
+        table.set(0, str);
     }
 }
 

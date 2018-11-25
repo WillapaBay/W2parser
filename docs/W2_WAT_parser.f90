@@ -385,7 +385,7 @@ real,allocatable, save, dimension (:) :: c_cnt,cd_cnt,c_tot,cd_tot,t_class,v_cla
 real,allocatable, save, dimension (:,:) :: c_class,cd_class,conc_c,conc_cd
 real, allocatable, save, dimension (:) :: c_int,c_top,cd_int,cd_top,cn_e,cdn_e
 integer CONE,numclass,iopenfish,nac_e,nacd_e,jj,jacd
-data CONE/1500/
+values CONE/1500/
 END MODULE ENVIRPMOD
 Module MAIN
 USE PREC
@@ -420,7 +420,7 @@ USE PREC
   CHARACTER(1)  :: ESC
   CHARACTER(2)  :: DEG
   CHARACTER(3)  :: GDCH
-  CHARACTER(8)  :: RSOC,   RSIC,   CCC,   LIMC,   WDOC,   TSRC,   EXT, SELECTC, CLOSEC, HABTATC,ENVIRPC, AERATEC, inituwl, DLTINTER      ! SW 7/31/09; 8/24/09
+  CHARACTER(8)  :: RSOC,   RSIC,   CCC,   LIMC,   WDOC,   TSRC,   EXT, SELECTC, CLOSEC, HABTATC,ENVIRPC, AERATEC, INITUWL, DLTINTER      ! SW 7/31/09; 8/24/09
   CHARACTER(8)  ::SYSTDG,   N2BND,   DOBND  ! cb 112917
   CHARACTER(10) :: BLANK,  BLANK1, sedch,   sedpch,   sednch,   sedcch 
   CHARACTER(72) :: WDOFN,  RSOFN,  TSRFN, SEGNUM, LINE, SEGNUM2
@@ -523,13 +523,13 @@ USE PREC
   CHARACTER(72)                                :: TEXT
   integer nproc
 
-! Data declarations
+! values declarations
   Real  :: RK1, RL1, RIMT, RHOA, RHOI, VTOL, CP, thrkti
   DATA RK1   /2.12/,         RL1    /333507.0/, RIMT /0.0/, RHOA /1.25/, RHOI /916.0/, VTOL /1.0E3/, CP /4186.0/
   DATA ICE_TOL /0.005/
   DATA BLANK /'          '/, BLANK1 /'    -99.00'/
   DATA CON   /10/,  RSI /11/
-  data thrkti /0.10/  !v3.5
+  values thrkti /0.10/  !v3.5
 
 END Module Main
 
@@ -613,7 +613,7 @@ endif
         open(8027,file='MISCELL.csv',status='unknown')
         write(8027,151)
 151     format('"SELECTC","HABTATC","ENVIRPC","AERATEC","INITUWL","SYSTDG","N2BND","DOBND"')        
-        write (8027,152)SELECTC,HABTATC,ENVIRPC,AERATEC,inituwl,SYSTDG,N2BND,DOBND
+        write (8027,152)SELECTC,HABTATC,ENVIRPC,AERATEC,INITUWL,SYSTDG,N2BND,DOBND
 152    format('"',a8,'","',a8,'","',a8,'","',a8,'","',a8,'","',a8,'","',a8,'","',a8,'","')
         
 !     w2l filename
@@ -740,7 +740,7 @@ endif
   READ (CON,'(//8X,5I8,2A8)') NWB, NBR, IMX, KMX, NPROC, CLOSEC                     ! SW 7/31/09
   READ (CON,'(//8X,8I8)')     NTR, NST, NIW, NWD, NGT, NSP, NPI, NPU
   READ (CON,'(//8X,7I8,a8)')  NGC, NSS, NAL, NEP, NBOD, nmc, nzp  
-  READ (CON,'(//8X,I8,8A8)')  NOD,SELECTC,HABTATC,ENVIRPC,AERATEC,inituwl,SYSTDG,N2BND,DOBND
+  READ (CON,'(//8X,I8,8A8)')  NOD,SELECTC,HABTATC,ENVIRPC,AERATEC,INITUWL,SYSTDG,N2BND,DOBND
 
   if(NPROC == 0)NPROC=1                                                                 ! SW 7/31/09
   !call omp_set_num_threads(NPROC)   ! set # of processors to NPROC  Moved to INPUT subroutine  TOGGLE FOR DEBUG
@@ -1984,7 +1984,7 @@ end
   write(con,'(/,"CONSTITU     NGC     NSS     NAL     NEP    NBOD     NMC     NZP")')
   write (CON,'(8X,7I8,a8)')  NGC, NSS, NAL, NEP, NBOD, nmc, nzp  !v3.5
   write(con,'(/,"MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL  SYSTDG   N2BND   DOBND")')
-  write (CON,'(8X,I8,8a8)')      NOD,SELECTC,HABTATC,ENVIRPC,AERATEC,inituwl,SYSTDG,N2BND,DOBND
+  write (CON,'(8X,I8,8a8)')      NOD,SELECTC,HABTATC,ENVIRPC,AERATEC,INITUWL,SYSTDG,N2BND,DOBND
 
 ! Time control cards
 
@@ -2696,8 +2696,8 @@ icnt=1  ! debug
    
    tcard=tcard200(1:8)
 
-   if(tcard == 'MISCELL ')READ (cha,*,end=25)  blank, NOD,SELECTC,HABTATC,ENVIRPC,AERATEC,inituwl,SYSTDG,N2BND,DOBND   
-   selectc=adjustr(selectc); HABTATC=adjustr(HABTATC); ENVIRPC=adjustr(ENVIRPC); AERATEC=adjustr(AERATEC); inituwl=adjustr(inituwl)
+   if(tcard == 'MISCELL ')READ (cha,*,end=25)  blank, NOD,SELECTC,HABTATC,ENVIRPC,AERATEC,INITUWL,SYSTDG,N2BND,DOBND
+   SELECTC=adjustr(SELECTC); HABTATC=adjustr(HABTATC); ENVIRPC=adjustr(ENVIRPC); AERATEC=adjustr(AERATEC); INITUWL=adjustr(INITUWL)
    SYSTDG=adjustr(SYSTDG); N2BND=adjustr(N2BND); DOBND=adjustr(DOBND)
    if(tcard == 'TIME CON')READ (cha,*,end=25)blank,  TMSTRT,   TMEND,    YEAR   
  ! restart parameters
@@ -3554,7 +3554,7 @@ if(constituents)then
 ! branch inflows  
   do jb=1,nbr
     if(uhs(jb)==0)then
-! totaling number of data columns in file
+! totaling number of values columns in file
       ncol=0
       do jc=1,nct
         if(CINBRC(JC,JB) == '      ON')then
@@ -3605,7 +3605,7 @@ if(constituents)then
   ! distributed tributaries
   do jb=1,nbr
     if(dtrc(jb)=='      ON')then
-! totaling number of data columns in file
+! totaling number of values columns in file
       ncol=0
       do jc=1,nct
         if(CDTBRC(JC,JB) == '      ON')then
@@ -3655,7 +3655,7 @@ if(constituents)then
 
   ! tributaries
   do jt=1,ntr    
-! totaling number of data columns in file
+! totaling number of values columns in file
       ncol=0
       do jc=1,nct
         if(CTRTRC(JC,JT) == '      ON')then
@@ -3705,7 +3705,7 @@ if(constituents)then
   DO JW=1,NWB
    if(prc(jw) == '      ON')then
     do jb=bs(jw),be(jw)    
-! totaling number of data columns in file
+! totaling number of values columns in file
       ncol=0
       do jc=1,nct
         if(CPRBRC(JC,JB) == '      ON')then
@@ -4143,7 +4143,7 @@ subroutine table_output_files
         END DO
 
 
-        ! totaling number of data columns in file
+        ! totaling number of values columns in file
         ncol=0
         IF (ICE_COMPUTATION) THEN
           IF(SEDIMENT_CALC(JW))THEN

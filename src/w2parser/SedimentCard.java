@@ -18,7 +18,7 @@ public class SedimentCard extends Card {
     private List<Double> FSED;
     private List<Double> SEDBR;
     private List<String> DYNSEDK;
-    private List<String> Identifiers;
+    private List<String> identifiers;
     private int numWaterbodies;
 
     public SedimentCard(W2ControlFile w2ControlFile, int numWaterbodies) {
@@ -119,20 +119,20 @@ public class SedimentCard extends Card {
         FSED = new ArrayList<>();
         SEDBR = new ArrayList<>();
         DYNSEDK = new ArrayList<>();
-        Identifiers = new ArrayList<>();
+        identifiers = new ArrayList<>();
 
         for (int i = 0; i < numWaterbodies; i++) {
-            List<String> Fields = parseLine(recordLines.get(i), 8, 1, 10);
-            Identifiers.add(Fields.get(0));
-            SEDC.add(Fields.get(1));
-            SEDPRC.add(Fields.get(2));
-            SEDCI.add(Double.parseDouble(Fields.get(3)));
-            SEDS.add(Double.parseDouble(Fields.get(4)));
-            SEDK.add(Double.parseDouble(Fields.get(5)));
-            FSOD.add(Double.parseDouble(Fields.get(6)));
-            FSED.add(Double.parseDouble(Fields.get(7)));
-            SEDBR.add(Double.parseDouble(Fields.get(8)));
-            DYNSEDK.add(Fields.get(9));
+            List<String> fields = parseLine(table.get(i), 8, 1, 10);
+            identifiers.add(fields.get(0));
+            SEDC.add(fields.get(1));
+            SEDPRC.add(fields.get(2));
+            SEDCI.add(Double.parseDouble(fields.get(3)));
+            SEDS.add(Double.parseDouble(fields.get(4)));
+            SEDK.add(Double.parseDouble(fields.get(5)));
+            FSOD.add(Double.parseDouble(fields.get(6)));
+            FSED.add(Double.parseDouble(fields.get(7)));
+            SEDBR.add(Double.parseDouble(fields.get(8)));
+            DYNSEDK.add(fields.get(9));
         }
     }
 
@@ -140,10 +140,10 @@ public class SedimentCard extends Card {
     public void updateText() {
         for (int i = 0; i < numWaterbodies; i++) {
             String str = String.format("%-8s%8s%8s%8.5f%8.5f%8.5f%8.5f%8.5f%8.5f%8s",
-                    Identifiers.get(i), SEDC.get(i), SEDPRC.get(i), SEDCI.get(i),
+                    identifiers.get(i), SEDC.get(i), SEDPRC.get(i), SEDCI.get(i),
                     SEDS.get(i), SEDK.get(i), FSOD.get(i), FSED.get(i), SEDBR.get(i),
                     DYNSEDK.get(i));
-            recordLines.set(i, str);
+            table.set(i, str);
         }
     }
 }

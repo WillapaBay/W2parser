@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RepeatingDoubleCard extends Card {
-    private List<Double> Data;
+    private List<Double> values;
     private int numFields;
     private String format;
 
@@ -12,39 +12,39 @@ public class RepeatingDoubleCard extends Card {
         super(w2ControlFile, cardName, (int) Math.ceil(numFields/9.0));
         this.numFields = numFields;
         this.format = format;
-        this.Data = new ArrayList<>();
+        this.values = new ArrayList<>();
         parseTable();
     }
 
-    public List<Double> getData() {
-        return Data;
+    public List<Double> getValues() {
+        return values;
     }
 
-    public void setData(List<Double> Data) {
-        this.Data = Data;
+    public void setValues(List<Double> values) {
+        this.values = values;
         updateText();
     }
 
     public void clearData() {
-        Data.clear();
+        values.clear();
     }
 
     public void addData(Double data) {
-        this.Data.add(data);
+        this.values.add(data);
         updateText();
     }
 
 
     @Override
     public void parseTable() {
-        // numLines needs to be recomputed each time, as Data changes size
+        // numLines needs to be recomputed each time, as values changes size
         int numLines = (int) Math.ceil(numFields/9.0);
         for (int i = 0; i < numLines; i++) {
-            String line = recordLines.get(i);
-            List<String> Fields = parseLine(line, 8, 2, 10);
-            Fields.forEach(field -> {
+            String line = table.get(i);
+            List<String> fields = parseLine(line, 8, 2, 10);
+            fields.forEach(field -> {
                 if (!field.equals(""))
-                        Data.add(Double.parseDouble(field));}
+                        values.add(Double.parseDouble(field));}
             );
         }
     }
@@ -53,18 +53,18 @@ public class RepeatingDoubleCard extends Card {
     public void updateText() {
         StringBuilder str = new StringBuilder(String.format("%8s", ""));
         int line = 0;
-        for (int i = 0; i < Data.size(); i++) {
-            double data = Data.get(i);
+        for (int i = 0; i < values.size(); i++) {
+            double data = values.get(i);
             if ((i > 0 && i % 9 == 0)) {
-                recordLines.set(line, str.toString());
+                table.set(line, str.toString());
                 str = new StringBuilder(String.format("%8s", ""));
                 line++;
             }
 
             str.append(String.format(format, data));
 
-            if (i == (Data.size() - 1)) {
-                recordLines.set(line, str.toString());
+            if (i == (values.size() - 1)) {
+                table.set(line, str.toString());
             }
         }
     }

@@ -15,9 +15,9 @@ public class TestMiscellCard {
         System.out.println(miscellCard);
 
         // Turn habitat volume on
-        String state = miscellCard.getHabtatc();
+        String state = miscellCard.getHABTATC();
         System.out.println("Habitat volume state: " + state);
-        miscellCard.setHabtatc(Globals.ON);
+        miscellCard.setHABTATC(Globals.ON);
         miscellCard.updateTable();
 
         // Write updated W2 control file

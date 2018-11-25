@@ -11,8 +11,8 @@ import java.util.List;
 public class NumberStructuresCard extends Card {
     private List<Integer> NSTR;     // Number of branch outlet structures
     private List<String> DYNELEV;   // Use the dynamic centerline elevation for the structure? (ON, OFF, blank (equals OFF))
-    private List<String> Identifiers;
-    private String DYNELEV_default = Globals.OFF;
+    private List<String> identifiers;
+    private static final String DYNELEV_default = Globals.OFF;
     private int numBranches;
 
     public NumberStructuresCard(W2ControlFile w2ControlFile, int numBranches) {
@@ -43,14 +43,14 @@ public class NumberStructuresCard extends Card {
     public void parseTable() {
         NSTR = new ArrayList<>();
         DYNELEV = new ArrayList<>();
-        Identifiers = new ArrayList<>();
+        identifiers = new ArrayList<>();
 
         for (int i = 0; i < numBranches; i++) {
-            List<String> Fields = parseLine(recordLines.get(i), 8, 1, 10);
-            Identifiers.add(Fields.get(0));
-            NSTR.add(Integer.parseInt(Fields.get(1)));
-            if (Fields.size() > 2) {
-                DYNELEV.add(Fields.get(2));
+            List<String> fields = parseLine(table.get(i), 8, 1, 10);
+            identifiers.add(fields.get(0));
+            NSTR.add(Integer.parseInt(fields.get(1)));
+            if (fields.size() > 2) {
+                DYNELEV.add(fields.get(2));
             } else {
                 DYNELEV.add(DYNELEV_default);
             }
@@ -61,8 +61,8 @@ public class NumberStructuresCard extends Card {
     public void updateText() {
         for (int i = 0; i < numBranches; i++) {
             String str = String.format("%-8s%8d%8s",
-                    Identifiers.get(i), NSTR.get(i), DYNELEV.get(i));
-            recordLines.set(i, str);
+                    identifiers.get(i), NSTR.get(i), DYNELEV.get(i));
+            table.set(i, str);
         }
     }
 }

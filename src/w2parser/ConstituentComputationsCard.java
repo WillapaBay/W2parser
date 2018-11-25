@@ -6,9 +6,9 @@ import java.util.List;
  * Constituent Computations Card
  */
 public class ConstituentComputationsCard extends Card {
-    private String ccc;
-    private String limc;
-    private int cuf;
+    private String CCC;
+    private String LIMC;
+    private int CUF;
 
     public ConstituentComputationsCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, CardNames.ConstituentComputations, 1);
@@ -16,45 +16,45 @@ public class ConstituentComputationsCard extends Card {
     }
 
     public String getCCC() {
-        return ccc;
+        return CCC;
     }
 
     public void setCCC(String ccc) {
-        this.ccc = ccc;
+        this.CCC = ccc;
         updateText();
     }
 
     public String getLIMC() {
-        return limc;
+        return LIMC;
     }
 
     public void setLIMC(String limc) {
-        this.limc = limc;
+        this.LIMC = limc;
         updateText();
     }
 
     public int getCUF() {
-        return cuf;
+        return CUF;
     }
 
     public void setCUF(int cuf) {
-        this.cuf = cuf;
+        this.CUF = cuf;
         updateText();
     }
 
     @Override
     public void parseTable() {
-        List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
-        ccc = Fields.get(0);
-        limc = Fields.get(1);
-        cuf = Integer.parseInt(Fields.get(2));
+        List<String> Fields = parseLine(table.get(0), 8, 2, 10);
+        CCC = Fields.get(0);
+        LIMC = Fields.get(1);
+        CUF = Integer.parseInt(Fields.get(2));
     }
 
     @Override
     public void updateText() {
         String str = String.format("%8s%8s%8s%8d",
-                "", ccc, limc, cuf);
-        recordLines.set(0, str);
+                "", CCC, LIMC, CUF);
+        table.set(0, str);
     }
 }
 

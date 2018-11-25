@@ -11,13 +11,13 @@ public class TestRepeatingIntegerCard {
         W2ControlFile w2con = new W2ControlFile(infile);
         RepeatingIntegerCard rdc = new RepeatingIntegerCard(w2con,
                 CardNames.WithdrawalSegment, 5, "%8d");
-        List<Integer> IWDO = rdc.getData();
+        List<Integer> IWDO = rdc.getValues();
         IWDO.forEach(System.out::println);
         for (int i = 0; i < IWDO.size(); i++) {
             IWDO.set(i, IWDO.get(i) * 2);
         }
 
-        rdc.setData(IWDO);
+        rdc.setValues(IWDO);
         rdc.updateTable();
         w2con.save("results/ParticleTracking/w2_con.npt_revised");
     }
@@ -40,7 +40,7 @@ public class TestRepeatingIntegerCard {
         int nitsr = tsrPlotCard.getNITSR();
 
         RepeatingIntegerCard rdc = new RepeatingIntegerCard(w2con, CardNames.TimeSeriesSegment, nitsr, "%8d");
-        List<Integer> tsrSegments = rdc.getData();
+        List<Integer> tsrSegments = rdc.getValues();
         tsrSegments.forEach(System.out::println);
 
         for (int i = 0; i < tsrSegments.size(); i++) {
@@ -50,7 +50,7 @@ public class TestRepeatingIntegerCard {
         tsrSegments.add(93);
         tsrSegments.add(95);
 
-        rdc.setData(tsrSegments);
+        rdc.setValues(tsrSegments);
         rdc.updateTable();
         w2con.save("results/ParticleTracking/w2_con.npt_revised");
     }

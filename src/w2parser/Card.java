@@ -10,7 +10,8 @@ public abstract class Card {
     // Number of record lines. For most cards, this equals one.
     // For file cards, this is the number of branches or water bodies.
     int numLines;
-    List<String> recordLines = new ArrayList<>();
+    // Table from card (list of lines of text)
+    List<String> table = new ArrayList<>();
 
     public Card(W2ControlFile w2ControlFile, String cardName, int numLines) {
         this.w2ControlFile = w2ControlFile;
@@ -53,7 +54,7 @@ public abstract class Card {
                 this.titleLine = w2ControlFile.getLine(i);
                 for (int j = 0; j < numLines; j++) {
                     line = w2ControlFile.getLine(i + j + 1);
-                    recordLines.add(line);
+                    table.add(line);
                 }
                 break;
             }
@@ -71,7 +72,7 @@ public abstract class Card {
             if (line.startsWith(cardName)) {
                 w2ControlFile.setLine(i, this.titleLine);
                 for (int j = 0; j < numLines; j++) {
-                    w2ControlFile.setLine(i + j + 1, recordLines.get(j));
+                    w2ControlFile.setLine(i + j + 1, table.get(j));
                 }
             }
         }
@@ -80,7 +81,7 @@ public abstract class Card {
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder(titleLine + "\n");
-        for (String line : recordLines) {
+        for (String line : table) {
             str.append(line).append("\n");
         }
        return str.toString();
@@ -111,15 +112,15 @@ public abstract class Card {
      * @return List of fields
      */
     public List<String> parseLine(String line, int fieldWidth, int startField, int endField) {
-        List<String> Fields = new ArrayList<>();
+        List<String> fields = new ArrayList<>();
         for (int j = (startField - 1); j < endField; j++) {
             int start = Math.min(j * fieldWidth, line.length());
             int end = Math.min(j * fieldWidth + fieldWidth, line.length());
             String field = line.substring(start, end);
             if (!field.equals(""))
-                Fields.add(field.trim());
+                fields.add(field.trim());
         }
-        return Fields;
+        return fields;
     }
 
     /**
@@ -137,14 +138,14 @@ public abstract class Card {
         int fieldWidth = 8;
         int startField = 1;
         int endField = 10;
-        List<String> Values = new ArrayList<>();
+        List<String> values = new ArrayList<>();
         for (int i = start; i < end; i++) {
-            List<String> Fields = parseLine(recordLines.get(i), fieldWidth, startField, endField);
-            Values.addAll(Fields);
+            List<String> fields = parseLine(recordLines.get(i), fieldWidth, startField, endField);
+            values.addAll(fields);
             // After the first record line is read, skip the first field of subsequent lines
             startField = 2;
         }
-        return Values;
+        return values;
     }
 
 }

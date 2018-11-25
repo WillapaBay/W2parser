@@ -1,23 +1,21 @@
 package w2parser;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
 public class BathymetryRecord<T> implements Collection<T> {
-    private List<T> Data;
+    private List<T> values;
     private String identifier;
 
     public BathymetryRecord(String identifier) {
-        Data = new ArrayList<>();
+        values = new ArrayList<>();
         this.identifier = identifier;
     }
 
-    BathymetryRecord(List<T> Data, String identifier) {
-        this.Data = Data;
+    BathymetryRecord(List<T> values, String identifier) {
+        this.values = values;
         this.identifier = identifier;
     }
 
@@ -29,12 +27,12 @@ public class BathymetryRecord<T> implements Collection<T> {
         this.identifier = identifier;
     }
 
-    public List<T> getData() {
-        return Data;
+    public List<T> getValues() {
+        return values;
     }
 
-    public void setData(List<T> data) {
-        Data = data;
+    public void setValues(List<T> values) {
+        this.values = values;
     }
 
     /**
@@ -44,7 +42,7 @@ public class BathymetryRecord<T> implements Collection<T> {
      */
     int getCharacteristic() {
         int characteristic = 0;
-        for (T value : Data) {
+        for (T value : values) {
             int c = (int) (Math.floor(Math.log10((Double) value)) + 1);
             if (c > characteristic)
                 characteristic = c;
@@ -54,74 +52,74 @@ public class BathymetryRecord<T> implements Collection<T> {
 
     @Override
     public int size() {
-        return Data.size();
+        return values.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return Data.isEmpty();
+        return values.isEmpty();
     }
 
     @Override
     public boolean contains(Object o) {
-        return Data.contains(o);
+        return values.contains(o);
     }
 
     @Override
     public Iterator<T> iterator() {
-        return Data.iterator();
+        return values.iterator();
     }
 
     @Override
     public Object[] toArray() {
-        return Data.toArray();
+        return values.toArray();
     }
 
     @Override
     public <T1> T1[] toArray(T1[] a) {
-        return Data.toArray(a);
+        return values.toArray(a);
     }
 
     @Override
     public boolean add(T t) {
-        return Data.add(t);
+        return values.add(t);
     }
 
     @Override
     public boolean remove(Object o) {
-        return Data.remove(o);
+        return values.remove(o);
     }
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return Data.containsAll(c);
+        return values.containsAll(c);
     }
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-        return Data.addAll(c);
+        return values.addAll(c);
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        return Data.removeAll(c);
+        return values.removeAll(c);
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        return Data.retainAll(c);
+        return values.retainAll(c);
     }
 
     @Override
     public void clear() {
-        Data.clear();
+        values.clear();
     }
 
     public void set(int index, T value) {
-        Data.set(index, value);
+        values.set(index, value);
     }
 
     public T get(int index) {
-        return Data.get(index);
+        return values.get(index);
     }
 }

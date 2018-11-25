@@ -6,14 +6,14 @@ import java.util.List;
  * Inflow/Outflow Card
  */
 public class InOutflowCard extends Card {
-    private int ntr; // Number of tributaries
-    private int nst; // Number of structures
-    private int niw; // Number of internal weirs
-    private int nwd; // Number of withdrawals
-    private int ngt; // Number of gates
-    private int nsp; // Number of spillways
-    private int npi; // Number of pipes
-    private int npu; // Number of pumps
+    private int NTR; // Number of tributaries
+    private int NST; // Number of structures
+    private int NIW; // Number of internal weirs
+    private int NWD; // Number of withdrawals
+    private int NGT; // Number of gates
+    private int NSP; // Number of spillways
+    private int NPI; // Number of pipes
+    private int NPU; // Number of pumps
 
     public InOutflowCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "IN/OUTFL", 1);
@@ -21,95 +21,95 @@ public class InOutflowCard extends Card {
     }
 
     public int getNumTributaries() {
-        return ntr;
+        return NTR;
     }
 
     public void setNumTributaries(int ntr) {
-        this.ntr = ntr;
+        this.NTR = ntr;
         updateText();
     }
 
     public int getNumStructures() {
-        return nst;
+        return NST;
     }
 
     public void setNumStructures(int nst) {
-        this.nst = nst;
+        this.NST = nst;
         updateText();
     }
 
     public int getNumInternalWeirs() {
-        return niw;
+        return NIW;
     }
 
     public void setNumInternalWeirs(int niw) {
-        this.niw = niw;
+        this.NIW = niw;
         updateText();
     }
 
     public int getNumWithdrawals() {
-        return nwd;
+        return NWD;
     }
 
     public void setNumWithdrawals(int nwd) {
-        this.nwd = nwd;
+        this.NWD = nwd;
         updateText();
     }
 
     public int getNumGates() {
-        return ngt;
+        return NGT;
     }
 
     public void setNumGates(int ngt) {
-        this.ngt = ngt;
+        this.NGT = ngt;
         updateText();
     }
 
     public int getNumSpillways() {
-        return nsp;
+        return NSP;
     }
 
     public void setNumSpillways(int nsp) {
-        this.nsp = nsp;
+        this.NSP = nsp;
         updateText();
     }
 
     public int getNumPipes() {
-        return npi;
+        return NPI;
     }
 
     public void setNumPipes(int npi) {
-        this.npi = npi;
+        this.NPI = npi;
         updateText();
     }
 
     public int getNumPumps() {
-        return npu;
+        return NPU;
     }
 
     public void setNumPumps(int npu) {
-        this.npu = npu;
+        this.NPU = npu;
         updateText();
     }
 
     @Override
     public void parseTable() {
-//        String[] records = recordLines.get(0).trim().split("\\s+");
-        List<String> Fields = parseLine(recordLines.get(0), 8, 2, 10);
-        ntr = Integer.parseInt(Fields.get(0));
-        nst = Integer.parseInt(Fields.get(1));
-        niw = Integer.parseInt(Fields.get(2));
-        nwd = Integer.parseInt(Fields.get(3));
-        ngt = Integer.parseInt(Fields.get(4));
-        nsp = Integer.parseInt(Fields.get(5));
-        npi = Integer.parseInt(Fields.get(6));
-        npu = Integer.parseInt(Fields.get(7));
+//        String[] records = table.get(0).trim().split("\\s+");
+        List<String> Fields = parseLine(table.get(0), 8, 2, 10);
+        NTR = Integer.parseInt(Fields.get(0));
+        NST = Integer.parseInt(Fields.get(1));
+        NIW = Integer.parseInt(Fields.get(2));
+        NWD = Integer.parseInt(Fields.get(3));
+        NGT = Integer.parseInt(Fields.get(4));
+        NSP = Integer.parseInt(Fields.get(5));
+        NPI = Integer.parseInt(Fields.get(6));
+        NPU = Integer.parseInt(Fields.get(7));
     }
 
     @Override
     public void updateText() {
         String str = String.format("%8s%8d%8d%8d%8d%8d%8d%8d%8d",
-                "", ntr, nst, niw, nwd, ngt, nsp, npi, npu);
-        recordLines.set(0, str);
+                "", NTR, NST, NIW, NWD, NGT, NSP, NPI, NPU);
+        table.set(0, str);
     }
 }

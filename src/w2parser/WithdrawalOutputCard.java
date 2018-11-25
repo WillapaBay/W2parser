@@ -45,18 +45,18 @@ public class WithdrawalOutputCard extends Card {
 
     @Override
     public void parseTable() {
-        List<String> Fields = parseLine(recordLines.get(0), 8, 1, 10);
-        identifier = Fields.get(0);
-        WDOC = Fields.get(1);
-        NWDO = Integer.parseInt(Fields.get(2));
-        NIWDO = Integer.parseInt(Fields.get(3));
+        List<String> fields = parseLine(table.get(0), 8, 1, 10);
+        identifier = fields.get(0);
+        WDOC = fields.get(1);
+        NWDO = Integer.parseInt(fields.get(2));
+        NIWDO = Integer.parseInt(fields.get(3));
     }
 
     @Override
     public void updateText() {
         String str = String.format("%-8s%8s%8d%8d",
                 identifier, WDOC, NWDO, NIWDO);
-        recordLines.set(0, str);
+        table.set(0, str);
     }
 }
 

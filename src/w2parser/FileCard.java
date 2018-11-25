@@ -47,7 +47,7 @@ public class FileCard extends Card {
         identifiers = new ArrayList<>();
         fileNames = new ArrayList<>();
         for (int i = 0; i < numLines; i++) {
-            line = recordLines.get(i);
+            line = table.get(i);
             records[0] = line.substring(0, 7);
             records[1] = line.substring(8);
             identifiers.add(records[0].trim());
@@ -60,7 +60,7 @@ public class FileCard extends Card {
         String str;
         for (int i = 0; i < numLines; i++) {
             str = String.format("%-8s%s", identifiers.get(i), fileNames.get(i));
-            recordLines.set(i, str);
+            table.set(i, str);
         }
     }
 }

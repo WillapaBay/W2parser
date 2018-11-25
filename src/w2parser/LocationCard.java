@@ -15,7 +15,7 @@ public class LocationCard extends Card {
     private List<Integer> BS;    // Starting branch of waterbody
     private List<Integer> BE;    // Ending branch of waterbody
     private List<Integer> JBDN;  // Downstream branch of waterbody
-    private List<String> Identifiers;
+    private List<String> identifiers;
 
     public LocationCard(W2ControlFile w2ControlFile, int numRecordLines) {
         super(w2ControlFile, CardNames.Location, numRecordLines);
@@ -84,17 +84,17 @@ public class LocationCard extends Card {
         BS = new ArrayList<>();
         BE = new ArrayList<>();
         JBDN = new ArrayList<>();
-        Identifiers = new ArrayList<>();
+        identifiers = new ArrayList<>();
 
         for (int i = 0; i < numLines; i++) {
-            List<String> Fields = parseLine(recordLines.get(i), 8, 1, 10);
-            Identifiers.add(Fields.get(0));
-            LAT.add(Double.parseDouble(Fields.get(1)));
-            LONG.add(Double.parseDouble(Fields.get(2)));
-            EBOT.add(Double.parseDouble(Fields.get(3)));
-            BS.add(Integer.parseInt(Fields.get(4)));
-            BE.add(Integer.parseInt(Fields.get(5)));
-            JBDN.add(Integer.parseInt(Fields.get(6)));
+            List<String> fields = parseLine(table.get(i), 8, 1, 10);
+            identifiers.add(fields.get(0));
+            LAT.add(Double.parseDouble(fields.get(1)));
+            LONG.add(Double.parseDouble(fields.get(2)));
+            EBOT.add(Double.parseDouble(fields.get(3)));
+            BS.add(Integer.parseInt(fields.get(4)));
+            BE.add(Integer.parseInt(fields.get(5)));
+            JBDN.add(Integer.parseInt(fields.get(6)));
         }
     }
 
@@ -102,8 +102,8 @@ public class LocationCard extends Card {
     public void updateText() {
         for (int i = 0; i < numLines; i++) {
             String str = String.format("%-8s%8.5f%8.5f%8.3f%8d%8d%8d",
-                    Identifiers.get(i), LAT.get(i), LONG.get(i), EBOT.get(i), BS.get(i), BE.get(i), JBDN.get(i));
-            recordLines.set(i, str);
+                    identifiers.get(i), LAT.get(i), LONG.get(i), EBOT.get(i), BS.get(i), BE.get(i), JBDN.get(i));
+            table.set(i, str);
         }
     }
 }

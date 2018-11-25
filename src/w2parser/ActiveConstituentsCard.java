@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Active Constituents Card
+ * Active constituents Card
  *
  * This card contains the status of each constituent as active (ON) or inactive (OFF).
  * There is one line per constituent.
@@ -44,9 +44,9 @@ public class ActiveConstituentsCard extends Card {
         CAC = new ArrayList<>();
 
         for (int i = 0; i < numConstituents; i++) {
-            List<String> Fields = parseLine(recordLines.get(i), 8, 1, 10);
-            constituentNames.add(Fields.get(0));
-            CAC.add(Fields.get(1));
+            List<String> fields = parseLine(table.get(i), 8, 1, 10);
+            constituentNames.add(fields.get(0));
+            CAC.add(fields.get(1));
         }
     }
 
@@ -55,7 +55,7 @@ public class ActiveConstituentsCard extends Card {
         for (int i = 0; i < numConstituents; i++) {
             String str = String.format("%-8s%8s",
                     constituentNames.get(i), CAC.get(i));
-            recordLines.set(i, str);
+            table.set(i, str);
         }
     }
 }

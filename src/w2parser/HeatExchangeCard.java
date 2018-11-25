@@ -14,12 +14,20 @@ public class HeatExchangeCard extends Card {
     private List<Double> BFW;
     private List<Double> CFW;
     private List<Double> WINDH;
-    private List<String> Identifiers;
+    private List<String> identifiers;
 
     public HeatExchangeCard(W2ControlFile w2ControlFile, int numWaterbodies) {
         super(w2ControlFile, "HEAT EXCH", numWaterbodies);
         this.numWaterbodies = numWaterbodies;
         parseTable();
+    }
+
+    public List<String> getIdentifiers() {
+        return identifiers;
+    }
+
+    public void setIdentifiers(List<String> identifiers) {
+        this.identifiers = identifiers;
     }
 
     public List<String> getSLHTC() {
@@ -114,11 +122,11 @@ public class HeatExchangeCard extends Card {
         BFW = new ArrayList<>();
         CFW = new ArrayList<>();
         WINDH = new ArrayList<>();
-        Identifiers = new ArrayList<>();
+        identifiers = new ArrayList<>();
 
         for (int i = 0; i < numLines; i++) {
-            List<String> Fields = parseLine(recordLines.get(i), 8, 1, 10);
-            Identifiers.add(Fields.get(0));
+            List<String> Fields = parseLine(table.get(i), 8, 1, 10);
+            identifiers.add(Fields.get(0));
             SLHTC.add(Fields.get(1));
             SROC.add(Fields.get(2));
             RHEVAP.add(Fields.get(3));
@@ -135,9 +143,9 @@ public class HeatExchangeCard extends Card {
     public void updateText() {
         for (int i = 0; i < numLines; i++) {
             String str = String.format("%-8s%8s%8s%8s%8s%8s%8.5f%8.5f%8.5f%8.5f",
-                    Identifiers.get(i), SLHTC.get(i), SROC.get(i), RHEVAP.get(i), METIC.get(i),
+                    identifiers.get(i), SLHTC.get(i), SROC.get(i), RHEVAP.get(i), METIC.get(i),
                     FETCHC.get(i), AFW.get(i), BFW.get(i), CFW.get(i), WINDH.get(i));
-            recordLines.set(i, str);
+            table.set(i, str);
         }
     }
 }

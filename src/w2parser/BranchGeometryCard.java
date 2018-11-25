@@ -14,9 +14,9 @@ public class BranchGeometryCard extends Card {
     private List<Integer> UQB;        // Upstream internal flow boundary condition - IGNORE
     private List<Integer> DQB;        // Downstream internal flow boundary condition - IGNORE
     private List<Integer> NLMIN;      // Minimum number of layers for a segment to be active
-    private List<Double> Slope;       // Branch bottom slope (actual)
-    private List<Double> SlopeC;      // Hydraulic equivalent branch slope
-    private List<String> Identifiers; // Identifiers
+    private List<Double> slopeList;       // Branch bottom slope (actual)
+    private List<Double> slopeClist;      // Hydraulic equivalent branch slope
+    private List<String> identifiers; // identifiers
 
     public BranchGeometryCard(W2ControlFile w2ControlFile, int numBranches) {
         super(w2ControlFile, "BRANCH G", numBranches);
@@ -86,21 +86,21 @@ public class BranchGeometryCard extends Card {
         updateText();
     }
 
-    public List<Double> getSlope() {
-        return Slope;
+    public List<Double> getSlopeList() {
+        return slopeList;
     }
 
-    public void setSlope(List<Double> Slope) {
-        this.Slope = Slope;
+    public void setSlopeList(List<Double> slopeList) {
+        this.slopeList = slopeList;
         updateText();
     }
 
-    public List<Double> getSlopeC() {
-        return SlopeC;
+    public List<Double> getSlopeClist() {
+        return slopeClist;
     }
 
-    public void setSlopeC(List<Double> SlopeC) {
-        this.SlopeC = SlopeC;
+    public void setSlopeClist(List<Double> slopeClist) {
+        this.slopeClist = slopeClist;
         updateText();
     }
 
@@ -113,13 +113,13 @@ public class BranchGeometryCard extends Card {
         UQB = new ArrayList<>();
         DQB = new ArrayList<>();
         NLMIN = new ArrayList<>();
-        Slope = new ArrayList<>();
-        SlopeC = new ArrayList<>();
-        Identifiers = new ArrayList<>();
+        slopeList = new ArrayList<>();
+        slopeClist = new ArrayList<>();
+        identifiers = new ArrayList<>();
 
         for (int i = 0; i < numLines; i++) {
-            List<String> records = parseLine(recordLines.get(i), 8, 1, 10);
-            Identifiers.add(records.get(0));
+            List<String> records = parseLine(table.get(i), 8, 1, 10);
+            identifiers.add(records.get(0));
             US.add(Integer.parseInt(records.get(1)));
             DS.add(Integer.parseInt(records.get(2)));
             UHS.add(Integer.parseInt(records.get(3)));
@@ -127,8 +127,8 @@ public class BranchGeometryCard extends Card {
             UQB.add(Integer.parseInt(records.get(5)));
             DQB.add(Integer.parseInt(records.get(6)));
             NLMIN.add(Integer.parseInt(records.get(7)));
-            Slope.add(Double.parseDouble(records.get(8)));
-            SlopeC.add(Double.parseDouble(records.get(9)));
+            slopeList.add(Double.parseDouble(records.get(8)));
+            slopeClist.add(Double.parseDouble(records.get(9)));
         }
     }
 
@@ -136,9 +136,9 @@ public class BranchGeometryCard extends Card {
     public void updateText() {
         for (int i = 0; i < numLines; i++) {
             String str = String.format("%-8s%8d%8d%8d%8d%8d%8d%8d%8.5f%8.5f",
-                    Identifiers.get(i), US.get(i), DS.get(i), UHS.get(i), DHS.get(i), UQB.get(i),
-                    DQB.get(i), NLMIN.get(i), Slope.get(i), SlopeC.get(i));
-            recordLines.set(i, str);
+                    identifiers.get(i), US.get(i), DS.get(i), UHS.get(i), DHS.get(i), UQB.get(i),
+                    DQB.get(i), NLMIN.get(i), slopeList.get(i), slopeClist.get(i));
+            table.set(i, str);
         }
     }
 }

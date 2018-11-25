@@ -9,8 +9,8 @@ import java.util.List;
  * This card is used to read cards containing one or more records that span multiple lines each.
  */
 public class MultiRecordRepeatingDoubleCard extends Card {
-    private List<String> Names; // Constituent names
-    private List<List<Double>> Values; // Specifies which constituents are on or off (Values: ON or OFF)
+    private List<String> names; // Constituent names
+    private List<List<Double>> values; // Specifies which constituents are on or off (values: ON or OFF)
     private int numFields; // Total number of fields -- spread over multiple lines, e.g., number of branches
     private int numRecords; // e.g. number of constituents
     private int numLinesPerRecord;
@@ -26,40 +26,40 @@ public class MultiRecordRepeatingDoubleCard extends Card {
     }
 
     public List<String> getNames() {
-        return Names;
+        return names;
     }
 
-    public void setNames(List<String> Names) {
-        this.Names = Names;
+    public void setNames(List<String> names) {
+        this.names = names;
         updateText();
     }
 
     public List<List<Double>> getValues() {
-        return Values;
+        return values;
     }
 
     public void setValues(List<List<Double>> values) {
-        Values = values;
+        this.values = values;
         updateText();
     }
 
     @Override
     public void parseTable() {
-        Names = new ArrayList<>();
-        Values = new ArrayList<>();
+        names = new ArrayList<>();
+        values = new ArrayList<>();
 
         int lineNum = 0;
         for (int jr = 0; jr < numRecords; jr++) {
             List<Double> recordData = new ArrayList<>();
             for (int jf = 0; jf < numLinesPerRecord; jf++) {
-                List<String> Fields = parseLine(recordLines.get(lineNum), 8, 1, 10);
-                for (int j = 1; j < Fields.size(); j++) {
-                    recordData.add(Double.parseDouble(Fields.get(j)));
+                List<String> fields = parseLine(table.get(lineNum), 8, 1, 10);
+                for (int j = 1; j < fields.size(); j++) {
+                    recordData.add(Double.parseDouble(fields.get(j)));
                 }
-                if (jf == 0) Names.add(Fields.get(0));
+                if (jf == 0) names.add(fields.get(0));
                 lineNum++;
             }
-            Values.add(recordData);
+            values.add(recordData);
         }
     }
 
