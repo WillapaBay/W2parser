@@ -24,7 +24,7 @@ public class TestRepeatingDoubleCard {
         rdc.updateText();
         System.out.println("Done");
         rdc.updateTable();
-        w2con.save("data/ParticleTracking/w2_con.npt_revised");
+        w2con.save("results/ParticleTracking/w2_con.npt_revised");
     }
 
 
