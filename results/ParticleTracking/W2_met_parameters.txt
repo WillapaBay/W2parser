@@ -1,7 +1,7 @@
-Location                      Short Name          Long Name                                    Units       Column  #Columns  Filename                           Inflow/Outflow  Input/Output    
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-WB 1 Met                      TAIR                Air Temperature                              C           1       5         met.csv                            inflow          input           
-WB 1 Met                      TDEW                Dew Point Temperature                        C           2       5         met.csv                            inflow          input           
-WB 1 Met                      WS                  Wind Speed                                   m/s         3       5         met.csv                            inflow          input           
-WB 1 Met                      PHI                 Wind Direction                               radians     4       5         met.csv                            inflow          input           
-WB 1 Met                      Cloud               Cloud Cover                                  0-10        5       5         met.csv                            inflow          input           
+Location                    Short Name       Long Name                                 Units     Column  #Columns  Filename                      Inflow/Outflow Input/Output 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WB 1 Met                    TAIR             Air Temperature                           C         1       5         met.csv                       inflow         input        
+WB 1 Met                    TDEW             Dew Point Temperature                     C         2       5         met.csv                       inflow         input        
+WB 1 Met                    WS               Wind Speed                                m/s       3       5         met.csv                       inflow         input        
+WB 1 Met                    PHI              Wind Direction                            radians   4       5         met.csv                       inflow         input        
+WB 1 Met                    Cloud            Cloud Cover                               0-10      5       5         met.csv                       inflow         input        

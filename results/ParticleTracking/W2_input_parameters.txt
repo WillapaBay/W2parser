@@ -1,222 +1,222 @@
-Location                      Short Name          Long Name                                    Units       Column  #Columns  Filename                           Inflow/Outflow  Input/Output    
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Branch 1 Inflow               Flow-QIN            Upstream Branch Inflow                       m^3/s       1       1         qin_br1.csv                        inflow          input           
-Branch 2 Inflow               Flow-QIN            Upstream Branch Inflow                       m^3/s       1       1         qin_br2.csv                        inflow          input           
-Branch 3 Inflow               Flow-QIN            Upstream Branch Inflow                       m^3/s       1       1         qin_br3.csv                        inflow          input           
-Branch 4 Inflow               Flow-QIN            Upstream Branch Inflow                       m^3/s       1       1         qin_br4.csv                        inflow          input           
-Branch 6 Inflow               Flow-QIN            Upstream Branch Inflow                       m^3/s       1       1         qin_br6.csv                        inflow          input           
-Branch 1 Inflow               Temp-TIN            Temperature                                  C           1       1         tin_br1.csv                        inflow          input           
-Branch 2 Inflow               Temp-TIN            Temperature                                  C           1       1         tin_br2.csv                        inflow          input           
-Branch 3 Inflow               Temp-TIN            Temperature                                  C           1       1         tin_br3.csv                        inflow          input           
-Branch 4 Inflow               Temp-TIN            Temperature                                  C           1       1         tin_br4.csv                        inflow          input           
-Branch 6 Inflow               Temp-TIN            Temperature                                  C           1       1         tin_br6.csv                        inflow          input           
-Branch 1 Distr Trib           Flow-QDT            Distributed Tributary Inflow                 m^3/s       1       1         qdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           Temp-TDT            Temperature                                  C           1       1         tdt_br1.csv                        inflow          input           
-Tributary 1                   Flow-QTR            Tributary Inflow                             m^3/s       1       1         qtr_tr1.csv                        inflow          input           
-Tributary 1                   Temp-TTR            Temperature                                  C           1       1         ttr_tr1.csv                        inflow          input           
-Segment 84 Lat Withdrawal 1   Flow-QWD            Lateral Withdrawal                           m^3/s       1       5         qwd.csv                            outflow         input           
-Segment 84 Lat Withdrawal 2   Flow-QWD            Lateral Withdrawal                           m^3/s       2       5         qwd.csv                            outflow         input           
-Segment 84 Lat Withdrawal 3   Flow-QWD            Lateral Withdrawal                           m^3/s       3       5         qwd.csv                            outflow         input           
-Segment 84 Lat Withdrawal 4   Flow-QWD            Lateral Withdrawal                           m^3/s       4       5         qwd.csv                            outflow         input           
-Segment 84 Lat Withdrawal 5   Flow-QWD            Lateral Withdrawal                           m^3/s       5       5         qwd.csv                            outflow         input           
-Branch 1 Struct Withdrawal 1  Flow-QOT            Structural Withdrawal                        m^3/s       1       0         qot_br1.csv                        outflow         input           
-Branch 1 Struct Withdrawal 2  Flow-QOT            Structural Withdrawal                        m^3/s       2       0         qot_br1.csv                        outflow         input           
-Branch 1 Struct Withdrawal 3  Flow-QOT            Structural Withdrawal                        m^3/s       3       0         qot_br1.csv                        outflow         input           
-Branch 1 Struct Withdrawal 4  Flow-QOT            Structural Withdrawal                        m^3/s       4       0         qot_br1.csv                        outflow         input           
-Branch 1 Struct Withdrawal 5  Flow-QOT            Structural Withdrawal                        m^3/s       5       0         qot_br1.csv                        outflow         input           
-Branch 1 Inflow               TDS-CIN             TDS                                          g/m^3       1       28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               Gen2-CIN            H2S-d                                        g/m^3       2       28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               Gen3-CIN            CH4-d                                        g/m^3       3       28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               Gen4-CIN            SO4                                          g/m^3       4       28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               Gen5-CIN            Tracer                                       g/m^3       5       28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               Gen11-CIN           Conductivity                                 uS/cm       6       28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               Gen12-CIN           Total Coliforms                              NMP/100ml   7       28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               Gen13-CIN           Escherichia coli                             NMP/100ml   8       28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               ISS2-CIN            ISS                                          g/m^3       9       28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               PO4-CIN             Phosphate                                    g/m^3       10      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               NH4-CIN             Ammonium                                     g/m^3       11      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               NO3-CIN             Nitrate-Nitrite                              g/m^3       12      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               LDOM-CIN            Labile DOM                                   g/m^3       13      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               RDOM-CIN            Refractory DOM                               g/m^3       14      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               LPOM-CIN            Labile POM                                   g/m^3       15      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               RPOM-CIN            Refractory POM                               g/m^3       16      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               ALG1-CIN            Algae                                        g/m^3       17      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               DO-CIN              Dissolved oxygen                             g/m^3       18      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               TIC-CIN             Inorganic carbon                             g/m^3       19      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               ALK-CIN             Alkalinity                                   g/m^3       20      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               LDOM-P-CIN          LDOM P                                       g/m^3       21      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               RDOM-P-CIN          RDOM P                                       g/m^3       22      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               LPOM-P-CIN          LPOM P                                       g/m^3       23      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               RPOM-P-CIN          RPOM P                                       g/m^3       24      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               LDOM-N-CIN          LDOM N                                       g/m^3       25      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               RDOM-N-CIN          RDOM N                                       g/m^3       26      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               LPOM-N-CIN          LPOM N                                       g/m^3       27      28        cin_br1.csv                        inflow          input           
-Branch 1 Inflow               RPOM-N-CIN          RPOM N                                       g/m^3       28      28        cin_br1.csv                        inflow          input           
-Branch 2 Inflow               TDS-CIN             TDS                                          g/m^3       1       28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               Gen2-CIN            H2S-d                                        g/m^3       2       28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               Gen3-CIN            CH4-d                                        g/m^3       3       28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               Gen4-CIN            SO4                                          g/m^3       4       28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               Gen5-CIN            Tracer                                       g/m^3       5       28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               Gen11-CIN           Conductivity                                 uS/cm       6       28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               Gen12-CIN           Total Coliforms                              NMP/100ml   7       28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               Gen13-CIN           Escherichia coli                             NMP/100ml   8       28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               ISS2-CIN            ISS                                          g/m^3       9       28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               PO4-CIN             Phosphate                                    g/m^3       10      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               NH4-CIN             Ammonium                                     g/m^3       11      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               NO3-CIN             Nitrate-Nitrite                              g/m^3       12      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               LDOM-CIN            Labile DOM                                   g/m^3       13      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               RDOM-CIN            Refractory DOM                               g/m^3       14      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               LPOM-CIN            Labile POM                                   g/m^3       15      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               RPOM-CIN            Refractory POM                               g/m^3       16      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               ALG1-CIN            Algae                                        g/m^3       17      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               DO-CIN              Dissolved oxygen                             g/m^3       18      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               TIC-CIN             Inorganic carbon                             g/m^3       19      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               ALK-CIN             Alkalinity                                   g/m^3       20      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               LDOM-P-CIN          LDOM P                                       g/m^3       21      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               RDOM-P-CIN          RDOM P                                       g/m^3       22      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               LPOM-P-CIN          LPOM P                                       g/m^3       23      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               RPOM-P-CIN          RPOM P                                       g/m^3       24      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               LDOM-N-CIN          LDOM N                                       g/m^3       25      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               RDOM-N-CIN          RDOM N                                       g/m^3       26      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               LPOM-N-CIN          LPOM N                                       g/m^3       27      28        cin_br2.csv                        inflow          input           
-Branch 2 Inflow               RPOM-N-CIN          RPOM N                                       g/m^3       28      28        cin_br2.csv                        inflow          input           
-Branch 3 Inflow               TDS-CIN             TDS                                          g/m^3       1       28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               Gen2-CIN            H2S-d                                        g/m^3       2       28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               Gen3-CIN            CH4-d                                        g/m^3       3       28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               Gen4-CIN            SO4                                          g/m^3       4       28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               Gen5-CIN            Tracer                                       g/m^3       5       28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               Gen11-CIN           Conductivity                                 uS/cm       6       28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               Gen12-CIN           Total Coliforms                              NMP/100ml   7       28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               Gen13-CIN           Escherichia coli                             NMP/100ml   8       28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               ISS2-CIN            ISS                                          g/m^3       9       28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               PO4-CIN             Phosphate                                    g/m^3       10      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               NH4-CIN             Ammonium                                     g/m^3       11      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               NO3-CIN             Nitrate-Nitrite                              g/m^3       12      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               LDOM-CIN            Labile DOM                                   g/m^3       13      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               RDOM-CIN            Refractory DOM                               g/m^3       14      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               LPOM-CIN            Labile POM                                   g/m^3       15      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               RPOM-CIN            Refractory POM                               g/m^3       16      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               ALG1-CIN            Algae                                        g/m^3       17      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               DO-CIN              Dissolved oxygen                             g/m^3       18      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               TIC-CIN             Inorganic carbon                             g/m^3       19      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               ALK-CIN             Alkalinity                                   g/m^3       20      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               LDOM-P-CIN          LDOM P                                       g/m^3       21      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               RDOM-P-CIN          RDOM P                                       g/m^3       22      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               LPOM-P-CIN          LPOM P                                       g/m^3       23      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               RPOM-P-CIN          RPOM P                                       g/m^3       24      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               LDOM-N-CIN          LDOM N                                       g/m^3       25      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               RDOM-N-CIN          RDOM N                                       g/m^3       26      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               LPOM-N-CIN          LPOM N                                       g/m^3       27      28        cin_br3.csv                        inflow          input           
-Branch 3 Inflow               RPOM-N-CIN          RPOM N                                       g/m^3       28      28        cin_br3.csv                        inflow          input           
-Branch 4 Inflow               TDS-CIN             TDS                                          g/m^3       1       28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               Gen2-CIN            H2S-d                                        g/m^3       2       28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               Gen3-CIN            CH4-d                                        g/m^3       3       28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               Gen4-CIN            SO4                                          g/m^3       4       28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               Gen5-CIN            Tracer                                       g/m^3       5       28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               Gen11-CIN           Conductivity                                 uS/cm       6       28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               Gen12-CIN           Total Coliforms                              NMP/100ml   7       28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               Gen13-CIN           Escherichia coli                             NMP/100ml   8       28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               ISS2-CIN            ISS                                          g/m^3       9       28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               PO4-CIN             Phosphate                                    g/m^3       10      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               NH4-CIN             Ammonium                                     g/m^3       11      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               NO3-CIN             Nitrate-Nitrite                              g/m^3       12      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               LDOM-CIN            Labile DOM                                   g/m^3       13      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               RDOM-CIN            Refractory DOM                               g/m^3       14      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               LPOM-CIN            Labile POM                                   g/m^3       15      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               RPOM-CIN            Refractory POM                               g/m^3       16      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               ALG1-CIN            Algae                                        g/m^3       17      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               DO-CIN              Dissolved oxygen                             g/m^3       18      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               TIC-CIN             Inorganic carbon                             g/m^3       19      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               ALK-CIN             Alkalinity                                   g/m^3       20      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               LDOM-P-CIN          LDOM P                                       g/m^3       21      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               RDOM-P-CIN          RDOM P                                       g/m^3       22      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               LPOM-P-CIN          LPOM P                                       g/m^3       23      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               RPOM-P-CIN          RPOM P                                       g/m^3       24      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               LDOM-N-CIN          LDOM N                                       g/m^3       25      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               RDOM-N-CIN          RDOM N                                       g/m^3       26      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               LPOM-N-CIN          LPOM N                                       g/m^3       27      28        cin_br4.csv                        inflow          input           
-Branch 4 Inflow               RPOM-N-CIN          RPOM N                                       g/m^3       28      28        cin_br4.csv                        inflow          input           
-Branch 6 Inflow               TDS-CIN             TDS                                          g/m^3       1       28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               Gen2-CIN            H2S-d                                        g/m^3       2       28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               Gen3-CIN            CH4-d                                        g/m^3       3       28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               Gen4-CIN            SO4                                          g/m^3       4       28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               Gen5-CIN            Tracer                                       g/m^3       5       28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               Gen11-CIN           Conductivity                                 uS/cm       6       28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               Gen12-CIN           Total Coliforms                              NMP/100ml   7       28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               Gen13-CIN           Escherichia coli                             NMP/100ml   8       28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               ISS2-CIN            ISS                                          g/m^3       9       28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               PO4-CIN             Phosphate                                    g/m^3       10      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               NH4-CIN             Ammonium                                     g/m^3       11      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               NO3-CIN             Nitrate-Nitrite                              g/m^3       12      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               LDOM-CIN            Labile DOM                                   g/m^3       13      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               RDOM-CIN            Refractory DOM                               g/m^3       14      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               LPOM-CIN            Labile POM                                   g/m^3       15      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               RPOM-CIN            Refractory POM                               g/m^3       16      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               ALG1-CIN            Algae                                        g/m^3       17      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               DO-CIN              Dissolved oxygen                             g/m^3       18      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               TIC-CIN             Inorganic carbon                             g/m^3       19      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               ALK-CIN             Alkalinity                                   g/m^3       20      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               LDOM-P-CIN          LDOM P                                       g/m^3       21      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               RDOM-P-CIN          RDOM P                                       g/m^3       22      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               LPOM-P-CIN          LPOM P                                       g/m^3       23      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               RPOM-P-CIN          RPOM P                                       g/m^3       24      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               LDOM-N-CIN          LDOM N                                       g/m^3       25      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               RDOM-N-CIN          RDOM N                                       g/m^3       26      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               LPOM-N-CIN          LPOM N                                       g/m^3       27      28        cin_br6.csv                        inflow          input           
-Branch 6 Inflow               RPOM-N-CIN          RPOM N                                       g/m^3       28      28        cin_br6.csv                        inflow          input           
-Branch 1 Distr Trib           TDS-CDT             TDS                                          g/m^3       1       28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           Gen2-CDT            H2S-d                                        g/m^3       2       28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           Gen3-CDT            CH4-d                                        g/m^3       3       28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           Gen4-CDT            SO4                                          g/m^3       4       28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           Gen5-CDT            Tracer                                       g/m^3       5       28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           Gen11-CDT           Conductivity                                 uS/cm       6       28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           Gen12-CDT           Total Coliforms                              NMP/100ml   7       28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           Gen13-CDT           Escherichia coli                             NMP/100ml   8       28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           ISS2-CDT            ISS                                          g/m^3       9       28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           PO4-CDT             Phosphate                                    g/m^3       10      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           NH4-CDT             Ammonium                                     g/m^3       11      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           NO3-CDT             Nitrate-Nitrite                              g/m^3       12      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           LDOM-CDT            Labile DOM                                   g/m^3       13      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           RDOM-CDT            Refractory DOM                               g/m^3       14      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           LPOM-CDT            Labile POM                                   g/m^3       15      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           RPOM-CDT            Refractory POM                               g/m^3       16      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           ALG1-CDT            Algae                                        g/m^3       17      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           DO-CDT              Dissolved oxygen                             g/m^3       18      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           TIC-CDT             Inorganic carbon                             g/m^3       19      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           ALK-CDT             Alkalinity                                   g/m^3       20      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           LDOM-P-CDT          LDOM P                                       g/m^3       21      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           RDOM-P-CDT          RDOM P                                       g/m^3       22      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           LPOM-P-CDT          LPOM P                                       g/m^3       23      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           RPOM-P-CDT          RPOM P                                       g/m^3       24      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           LDOM-N-CDT          LDOM N                                       g/m^3       25      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           RDOM-N-CDT          RDOM N                                       g/m^3       26      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           LPOM-N-CDT          LPOM N                                       g/m^3       27      28        cdt_br1.csv                        inflow          input           
-Branch 1 Distr Trib           RPOM-N-CDT          RPOM N                                       g/m^3       28      28        cdt_br1.csv                        inflow          input           
-Tributary 1                   TDS-CTR             TDS                                          g/m^3       1       28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   Gen2-CTR            H2S-d                                        g/m^3       2       28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   Gen3-CTR            CH4-d                                        g/m^3       3       28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   Gen4-CTR            SO4                                          g/m^3       4       28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   Gen5-CTR            Tracer                                       g/m^3       5       28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   Gen11-CTR           Conductivity                                 uS/cm       6       28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   Gen12-CTR           Total Coliforms                              NMP/100ml   7       28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   Gen13-CTR           Escherichia coli                             NMP/100ml   8       28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   ISS2-CTR            ISS                                          g/m^3       9       28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   PO4-CTR             Phosphate                                    g/m^3       10      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   NH4-CTR             Ammonium                                     g/m^3       11      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   NO3-CTR             Nitrate-Nitrite                              g/m^3       12      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   LDOM-CTR            Labile DOM                                   g/m^3       13      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   RDOM-CTR            Refractory DOM                               g/m^3       14      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   LPOM-CTR            Labile POM                                   g/m^3       15      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   RPOM-CTR            Refractory POM                               g/m^3       16      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   ALG1-CTR            Algae                                        g/m^3       17      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   DO-CTR              Dissolved oxygen                             g/m^3       18      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   TIC-CTR             Inorganic carbon                             g/m^3       19      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   ALK-CTR             Alkalinity                                   g/m^3       20      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   LDOM-P-CTR          LDOM P                                       g/m^3       21      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   RDOM-P-CTR          RDOM P                                       g/m^3       22      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   LPOM-P-CTR          LPOM P                                       g/m^3       23      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   RPOM-P-CTR          RPOM P                                       g/m^3       24      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   LDOM-N-CTR          LDOM N                                       g/m^3       25      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   RDOM-N-CTR          RDOM N                                       g/m^3       26      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   LPOM-N-CTR          LPOM N                                       g/m^3       27      28        ctr_tr1.csv                        inflow          input           
-Tributary 1                   RPOM-N-CTR          RPOM N                                       g/m^3       28      28        ctr_tr1.csv                        inflow          input           
+Location                    Short Name       Long Name                                 Units     Column  #Columns  Filename                      Inflow/Outflow Input/Output 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Branch 1 Inflow             Flow-QIN         Upstream Branch Inflow                    m^3/s     1       1         qin_br1.csv                   inflow         input        
+Branch 2 Inflow             Flow-QIN         Upstream Branch Inflow                    m^3/s     1       1         qin_br2.csv                   inflow         input        
+Branch 3 Inflow             Flow-QIN         Upstream Branch Inflow                    m^3/s     1       1         qin_br3.csv                   inflow         input        
+Branch 4 Inflow             Flow-QIN         Upstream Branch Inflow                    m^3/s     1       1         qin_br4.csv                   inflow         input        
+Branch 6 Inflow             Flow-QIN         Upstream Branch Inflow                    m^3/s     1       1         qin_br6.csv                   inflow         input        
+Branch 1 Inflow             Temp-TIN         Temperature                               C         1       1         tin_br1.csv                   inflow         input        
+Branch 2 Inflow             Temp-TIN         Temperature                               C         1       1         tin_br2.csv                   inflow         input        
+Branch 3 Inflow             Temp-TIN         Temperature                               C         1       1         tin_br3.csv                   inflow         input        
+Branch 4 Inflow             Temp-TIN         Temperature                               C         1       1         tin_br4.csv                   inflow         input        
+Branch 6 Inflow             Temp-TIN         Temperature                               C         1       1         tin_br6.csv                   inflow         input        
+Branch 1 Distr Trib         Flow-QDT         Distributed Tributary Inflow              m^3/s     1       1         qdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         Temp-TDT         Temperature                               C         1       1         tdt_br1.csv                   inflow         input        
+Tributary 1                 Flow-QTR         Tributary Inflow                          m^3/s     1       1         qtr_tr1.csv                   inflow         input        
+Tributary 1                 Temp-TTR         Temperature                               C         1       1         ttr_tr1.csv                   inflow         input        
+Segment 84 Lat Withdrawal 1 Flow-QWD         Lateral Withdrawal                        m^3/s     1       5         qwd.csv                       outflow        input        
+Segment 84 Lat Withdrawal 2 Flow-QWD         Lateral Withdrawal                        m^3/s     2       5         qwd.csv                       outflow        input        
+Segment 84 Lat Withdrawal 3 Flow-QWD         Lateral Withdrawal                        m^3/s     3       5         qwd.csv                       outflow        input        
+Segment 84 Lat Withdrawal 4 Flow-QWD         Lateral Withdrawal                        m^3/s     4       5         qwd.csv                       outflow        input        
+Segment 84 Lat Withdrawal 5 Flow-QWD         Lateral Withdrawal                        m^3/s     5       5         qwd.csv                       outflow        input        
+Branch 1 Struct Withdrawal 1Flow-QOT         Structural Withdrawal                     m^3/s     1       0         qot_br1.csv                   outflow        input        
+Branch 1 Struct Withdrawal 2Flow-QOT         Structural Withdrawal                     m^3/s     2       0         qot_br1.csv                   outflow        input        
+Branch 1 Struct Withdrawal 3Flow-QOT         Structural Withdrawal                     m^3/s     3       0         qot_br1.csv                   outflow        input        
+Branch 1 Struct Withdrawal 4Flow-QOT         Structural Withdrawal                     m^3/s     4       0         qot_br1.csv                   outflow        input        
+Branch 1 Struct Withdrawal 5Flow-QOT         Structural Withdrawal                     m^3/s     5       0         qot_br1.csv                   outflow        input        
+Branch 1 Inflow             TDS-CIN          TDS                                       g/m^3     1       28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             Gen2-CIN         H2S-d                                     g/m^3     2       28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             Gen3-CIN         CH4-d                                     g/m^3     3       28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             Gen4-CIN         SO4                                       g/m^3     4       28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             Gen5-CIN         Tracer                                    g/m^3     5       28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             Gen11-CIN        Conductivity                              uS/cm     6       28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             Gen12-CIN        Total Coliforms                           NMP/100ml 7       28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             Gen13-CIN        Escherichia coli                          NMP/100ml 8       28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             ISS2-CIN         ISS                                       g/m^3     9       28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             PO4-CIN          Phosphate                                 g/m^3     10      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             NH4-CIN          Ammonium                                  g/m^3     11      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             NO3-CIN          Nitrate-Nitrite                           g/m^3     12      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             LDOM-CIN         Labile DOM                                g/m^3     13      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             RDOM-CIN         Refractory DOM                            g/m^3     14      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             LPOM-CIN         Labile POM                                g/m^3     15      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             RPOM-CIN         Refractory POM                            g/m^3     16      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             ALG1-CIN         Algae                                     g/m^3     17      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             DO-CIN           Dissolved oxygen                          g/m^3     18      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             TIC-CIN          Inorganic carbon                          g/m^3     19      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             ALK-CIN          Alkalinity                                g/m^3     20      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             LDOM-P-CIN       LDOM P                                    g/m^3     21      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             RDOM-P-CIN       RDOM P                                    g/m^3     22      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             LPOM-P-CIN       LPOM P                                    g/m^3     23      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             RPOM-P-CIN       RPOM P                                    g/m^3     24      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             LDOM-N-CIN       LDOM N                                    g/m^3     25      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             RDOM-N-CIN       RDOM N                                    g/m^3     26      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             LPOM-N-CIN       LPOM N                                    g/m^3     27      28        cin_br1.csv                   inflow         input        
+Branch 1 Inflow             RPOM-N-CIN       RPOM N                                    g/m^3     28      28        cin_br1.csv                   inflow         input        
+Branch 2 Inflow             TDS-CIN          TDS                                       g/m^3     1       28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             Gen2-CIN         H2S-d                                     g/m^3     2       28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             Gen3-CIN         CH4-d                                     g/m^3     3       28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             Gen4-CIN         SO4                                       g/m^3     4       28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             Gen5-CIN         Tracer                                    g/m^3     5       28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             Gen11-CIN        Conductivity                              uS/cm     6       28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             Gen12-CIN        Total Coliforms                           NMP/100ml 7       28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             Gen13-CIN        Escherichia coli                          NMP/100ml 8       28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             ISS2-CIN         ISS                                       g/m^3     9       28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             PO4-CIN          Phosphate                                 g/m^3     10      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             NH4-CIN          Ammonium                                  g/m^3     11      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             NO3-CIN          Nitrate-Nitrite                           g/m^3     12      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             LDOM-CIN         Labile DOM                                g/m^3     13      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             RDOM-CIN         Refractory DOM                            g/m^3     14      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             LPOM-CIN         Labile POM                                g/m^3     15      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             RPOM-CIN         Refractory POM                            g/m^3     16      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             ALG1-CIN         Algae                                     g/m^3     17      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             DO-CIN           Dissolved oxygen                          g/m^3     18      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             TIC-CIN          Inorganic carbon                          g/m^3     19      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             ALK-CIN          Alkalinity                                g/m^3     20      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             LDOM-P-CIN       LDOM P                                    g/m^3     21      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             RDOM-P-CIN       RDOM P                                    g/m^3     22      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             LPOM-P-CIN       LPOM P                                    g/m^3     23      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             RPOM-P-CIN       RPOM P                                    g/m^3     24      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             LDOM-N-CIN       LDOM N                                    g/m^3     25      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             RDOM-N-CIN       RDOM N                                    g/m^3     26      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             LPOM-N-CIN       LPOM N                                    g/m^3     27      28        cin_br2.csv                   inflow         input        
+Branch 2 Inflow             RPOM-N-CIN       RPOM N                                    g/m^3     28      28        cin_br2.csv                   inflow         input        
+Branch 3 Inflow             TDS-CIN          TDS                                       g/m^3     1       28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             Gen2-CIN         H2S-d                                     g/m^3     2       28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             Gen3-CIN         CH4-d                                     g/m^3     3       28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             Gen4-CIN         SO4                                       g/m^3     4       28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             Gen5-CIN         Tracer                                    g/m^3     5       28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             Gen11-CIN        Conductivity                              uS/cm     6       28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             Gen12-CIN        Total Coliforms                           NMP/100ml 7       28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             Gen13-CIN        Escherichia coli                          NMP/100ml 8       28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             ISS2-CIN         ISS                                       g/m^3     9       28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             PO4-CIN          Phosphate                                 g/m^3     10      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             NH4-CIN          Ammonium                                  g/m^3     11      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             NO3-CIN          Nitrate-Nitrite                           g/m^3     12      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             LDOM-CIN         Labile DOM                                g/m^3     13      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             RDOM-CIN         Refractory DOM                            g/m^3     14      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             LPOM-CIN         Labile POM                                g/m^3     15      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             RPOM-CIN         Refractory POM                            g/m^3     16      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             ALG1-CIN         Algae                                     g/m^3     17      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             DO-CIN           Dissolved oxygen                          g/m^3     18      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             TIC-CIN          Inorganic carbon                          g/m^3     19      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             ALK-CIN          Alkalinity                                g/m^3     20      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             LDOM-P-CIN       LDOM P                                    g/m^3     21      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             RDOM-P-CIN       RDOM P                                    g/m^3     22      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             LPOM-P-CIN       LPOM P                                    g/m^3     23      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             RPOM-P-CIN       RPOM P                                    g/m^3     24      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             LDOM-N-CIN       LDOM N                                    g/m^3     25      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             RDOM-N-CIN       RDOM N                                    g/m^3     26      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             LPOM-N-CIN       LPOM N                                    g/m^3     27      28        cin_br3.csv                   inflow         input        
+Branch 3 Inflow             RPOM-N-CIN       RPOM N                                    g/m^3     28      28        cin_br3.csv                   inflow         input        
+Branch 4 Inflow             TDS-CIN          TDS                                       g/m^3     1       28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             Gen2-CIN         H2S-d                                     g/m^3     2       28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             Gen3-CIN         CH4-d                                     g/m^3     3       28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             Gen4-CIN         SO4                                       g/m^3     4       28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             Gen5-CIN         Tracer                                    g/m^3     5       28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             Gen11-CIN        Conductivity                              uS/cm     6       28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             Gen12-CIN        Total Coliforms                           NMP/100ml 7       28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             Gen13-CIN        Escherichia coli                          NMP/100ml 8       28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             ISS2-CIN         ISS                                       g/m^3     9       28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             PO4-CIN          Phosphate                                 g/m^3     10      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             NH4-CIN          Ammonium                                  g/m^3     11      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             NO3-CIN          Nitrate-Nitrite                           g/m^3     12      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             LDOM-CIN         Labile DOM                                g/m^3     13      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             RDOM-CIN         Refractory DOM                            g/m^3     14      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             LPOM-CIN         Labile POM                                g/m^3     15      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             RPOM-CIN         Refractory POM                            g/m^3     16      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             ALG1-CIN         Algae                                     g/m^3     17      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             DO-CIN           Dissolved oxygen                          g/m^3     18      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             TIC-CIN          Inorganic carbon                          g/m^3     19      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             ALK-CIN          Alkalinity                                g/m^3     20      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             LDOM-P-CIN       LDOM P                                    g/m^3     21      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             RDOM-P-CIN       RDOM P                                    g/m^3     22      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             LPOM-P-CIN       LPOM P                                    g/m^3     23      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             RPOM-P-CIN       RPOM P                                    g/m^3     24      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             LDOM-N-CIN       LDOM N                                    g/m^3     25      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             RDOM-N-CIN       RDOM N                                    g/m^3     26      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             LPOM-N-CIN       LPOM N                                    g/m^3     27      28        cin_br4.csv                   inflow         input        
+Branch 4 Inflow             RPOM-N-CIN       RPOM N                                    g/m^3     28      28        cin_br4.csv                   inflow         input        
+Branch 6 Inflow             TDS-CIN          TDS                                       g/m^3     1       28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             Gen2-CIN         H2S-d                                     g/m^3     2       28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             Gen3-CIN         CH4-d                                     g/m^3     3       28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             Gen4-CIN         SO4                                       g/m^3     4       28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             Gen5-CIN         Tracer                                    g/m^3     5       28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             Gen11-CIN        Conductivity                              uS/cm     6       28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             Gen12-CIN        Total Coliforms                           NMP/100ml 7       28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             Gen13-CIN        Escherichia coli                          NMP/100ml 8       28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             ISS2-CIN         ISS                                       g/m^3     9       28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             PO4-CIN          Phosphate                                 g/m^3     10      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             NH4-CIN          Ammonium                                  g/m^3     11      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             NO3-CIN          Nitrate-Nitrite                           g/m^3     12      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             LDOM-CIN         Labile DOM                                g/m^3     13      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             RDOM-CIN         Refractory DOM                            g/m^3     14      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             LPOM-CIN         Labile POM                                g/m^3     15      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             RPOM-CIN         Refractory POM                            g/m^3     16      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             ALG1-CIN         Algae                                     g/m^3     17      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             DO-CIN           Dissolved oxygen                          g/m^3     18      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             TIC-CIN          Inorganic carbon                          g/m^3     19      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             ALK-CIN          Alkalinity                                g/m^3     20      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             LDOM-P-CIN       LDOM P                                    g/m^3     21      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             RDOM-P-CIN       RDOM P                                    g/m^3     22      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             LPOM-P-CIN       LPOM P                                    g/m^3     23      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             RPOM-P-CIN       RPOM P                                    g/m^3     24      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             LDOM-N-CIN       LDOM N                                    g/m^3     25      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             RDOM-N-CIN       RDOM N                                    g/m^3     26      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             LPOM-N-CIN       LPOM N                                    g/m^3     27      28        cin_br6.csv                   inflow         input        
+Branch 6 Inflow             RPOM-N-CIN       RPOM N                                    g/m^3     28      28        cin_br6.csv                   inflow         input        
+Branch 1 Distr Trib         TDS-CDT          TDS                                       g/m^3     1       28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         Gen2-CDT         H2S-d                                     g/m^3     2       28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         Gen3-CDT         CH4-d                                     g/m^3     3       28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         Gen4-CDT         SO4                                       g/m^3     4       28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         Gen5-CDT         Tracer                                    g/m^3     5       28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         Gen11-CDT        Conductivity                              uS/cm     6       28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         Gen12-CDT        Total Coliforms                           NMP/100ml 7       28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         Gen13-CDT        Escherichia coli                          NMP/100ml 8       28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         ISS2-CDT         ISS                                       g/m^3     9       28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         PO4-CDT          Phosphate                                 g/m^3     10      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         NH4-CDT          Ammonium                                  g/m^3     11      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         NO3-CDT          Nitrate-Nitrite                           g/m^3     12      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         LDOM-CDT         Labile DOM                                g/m^3     13      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         RDOM-CDT         Refractory DOM                            g/m^3     14      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         LPOM-CDT         Labile POM                                g/m^3     15      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         RPOM-CDT         Refractory POM                            g/m^3     16      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         ALG1-CDT         Algae                                     g/m^3     17      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         DO-CDT           Dissolved oxygen                          g/m^3     18      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         TIC-CDT          Inorganic carbon                          g/m^3     19      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         ALK-CDT          Alkalinity                                g/m^3     20      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         LDOM-P-CDT       LDOM P                                    g/m^3     21      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         RDOM-P-CDT       RDOM P                                    g/m^3     22      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         LPOM-P-CDT       LPOM P                                    g/m^3     23      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         RPOM-P-CDT       RPOM P                                    g/m^3     24      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         LDOM-N-CDT       LDOM N                                    g/m^3     25      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         RDOM-N-CDT       RDOM N                                    g/m^3     26      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         LPOM-N-CDT       LPOM N                                    g/m^3     27      28        cdt_br1.csv                   inflow         input        
+Branch 1 Distr Trib         RPOM-N-CDT       RPOM N                                    g/m^3     28      28        cdt_br1.csv                   inflow         input        
+Tributary 1                 TDS-CTR          TDS                                       g/m^3     1       28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 Gen2-CTR         H2S-d                                     g/m^3     2       28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 Gen3-CTR         CH4-d                                     g/m^3     3       28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 Gen4-CTR         SO4                                       g/m^3     4       28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 Gen5-CTR         Tracer                                    g/m^3     5       28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 Gen11-CTR        Conductivity                              uS/cm     6       28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 Gen12-CTR        Total Coliforms                           NMP/100ml 7       28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 Gen13-CTR        Escherichia coli                          NMP/100ml 8       28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 ISS2-CTR         ISS                                       g/m^3     9       28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 PO4-CTR          Phosphate                                 g/m^3     10      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 NH4-CTR          Ammonium                                  g/m^3     11      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 NO3-CTR          Nitrate-Nitrite                           g/m^3     12      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 LDOM-CTR         Labile DOM                                g/m^3     13      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 RDOM-CTR         Refractory DOM                            g/m^3     14      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 LPOM-CTR         Labile POM                                g/m^3     15      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 RPOM-CTR         Refractory POM                            g/m^3     16      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 ALG1-CTR         Algae                                     g/m^3     17      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 DO-CTR           Dissolved oxygen                          g/m^3     18      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 TIC-CTR          Inorganic carbon                          g/m^3     19      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 ALK-CTR          Alkalinity                                g/m^3     20      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 LDOM-P-CTR       LDOM P                                    g/m^3     21      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 RDOM-P-CTR       RDOM P                                    g/m^3     22      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 LPOM-P-CTR       LPOM P                                    g/m^3     23      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 RPOM-P-CTR       RPOM P                                    g/m^3     24      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 LDOM-N-CTR       LDOM N                                    g/m^3     25      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 RDOM-N-CTR       RDOM N                                    g/m^3     26      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 LPOM-N-CTR       LPOM N                                    g/m^3     27      28        ctr_tr1.csv                   inflow         input        
+Tributary 1                 RPOM-N-CTR       RPOM N                                    g/m^3     28      28        ctr_tr1.csv                   inflow         input        
