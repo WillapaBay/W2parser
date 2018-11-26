@@ -221,17 +221,13 @@ public class Parser {
         int outputSegment;
         String outputFilename;
         for (int jwd = 0; jwd < NIWDO; jwd++) {
-            outputWaterbody = jwd + 1;
             outputSegment = IWDO.get(jwd);
 
             // Withdrawal flow, QWD (qwo)
             int icol = 1; // Every qwo file contains at least one data column for the combined outflow
             outputFilename = String.format("qwo_%d.opt", outputSegment);
             String locationName = String.format("Seg %d Withdrawal", outputSegment);
-            for (int jb = 0; jb < NBR; jb++) {
-                if (outputSegment >= US.get(jb) && outputSegment <= DS.get(jb)) break;
-                outputWaterbody++;
-            }
+            outputWaterbody = getOutputWaterbody(NBR, outputSegment);
 
             // Number of columns equals 1 for the combined flow plus one column for each structure
             int ncol = 1;
@@ -259,10 +255,6 @@ public class Parser {
             icol = 1; // Every qwo file contains at least one data column for the combined outflow
             outputFilename = String.format("two_%d.opt", outputSegment);
             locationName = String.format("Seg %d Withdrawal", outputSegment);
-            for (int jb = 0; jb < NBR; jb++) {
-                if (outputSegment >= US.get(jb) && outputSegment <= DS.get(jb)) break;
-                outputWaterbody++;
-            }
 
             // Number of columns equals 1 for the combined flow plus one column for each structure
             ncol = 1;
@@ -288,6 +280,24 @@ public class Parser {
         }
 
         return parameters;
+    }
+
+    /**
+     * Determine number of output waterbody based on DS and US parameters
+     * @param numBranches Number of branches
+     * @param outputSegment Output segment number
+     * @return Output waterbody (one-based)
+     */
+    private int getOutputWaterbody(int numBranches, int outputSegment) {
+        int outputWaterbody = 1;
+        for (int jb = 0; jb < numBranches; jb++) {
+            if (outputSegment >= US.get(jb) && outputSegment <= DS.get(jb)) {
+                return outputWaterbody;
+            } else {
+                outputWaterbody++;
+            }
+        }
+        return -99;
     }
 
     /**
@@ -1299,8 +1309,8 @@ public class Parser {
      */
     private List<String> createTable(List<Parameter> Parameters) {
         List<String> outputList = new ArrayList<>();
-        String headerFormat = "%-30s%-20s%-45s%-12s%-8s%-10s%-35s%-16s%-16s";
-        String dataFormat   = "%-30s%-20s%-45s%-12s%-8d%-10d%-35s%-16s%-16s";
+        String headerFormat = "%-28s%-17s%-42s%-10s%-8s%-10s%-30s%-15s%-13s";
+        String dataFormat   = "%-28s%-17s%-42s%-10s%-8d%-10d%-30s%-15s%-13s";
         String header = String.format(headerFormat, "Location", "Short Name",
                 "Long Name", "Units", "Column", "#Columns", "Filename", "Inflow/Outflow", "Input/Output");
         outputList.add(header);

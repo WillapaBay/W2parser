@@ -16,7 +16,8 @@ public class ActiveConstituentFluxesCard extends Card {
     private int numWaterbodies;
 
     public ActiveConstituentFluxesCard(W2ControlFile w2ControlFile, int numFluxes, int numWaterbodies) {
-        super(w2ControlFile, "CST FLUX", numFluxes);
+        super(w2ControlFile, "CST FLUX",
+                (int) Math.ceil(numFluxes/9.0) * numFluxes);
         this.numFluxes = numFluxes;
         this.numWaterbodies = numWaterbodies;
         parseTable();
@@ -40,32 +41,57 @@ public class ActiveConstituentFluxesCard extends Card {
         updateText();
     }
 
+//    @Override
+//    public void parseTable() {
+//        constituentNames = new ArrayList<>();
+//        values = new ArrayList<>();
+//        for (int jwb = 0; jwb < numWaterbodies; jwb++) {
+//            values.add(new ArrayList<>());
+//        }
+//
+//        for (int jc = 0; jc < numFluxes; jc++) {
+//            List<String> fields = parseLine(table.get(jc), 8, 1, 10);
+//            constituentNames.add(fields.get(0));
+//            for (int jwb = 0; jwb < numWaterbodies; jwb++) {
+//                int col = jwb + 1;
+//                values.get(jwb).add(fields.get(col));
+//            }
+//        }
+//    }
+
     @Override
     public void parseTable() {
         constituentNames = new ArrayList<>();
         values = new ArrayList<>();
-        for (int jwb = 0; jwb < numWaterbodies; jwb++) {
+        List<List<String>> records = new ArrayList<>();
+
+        for (int jc = 0; jc < numFluxes; jc++) {
+            List<String> Values = parseRecord(table, jc, numWaterbodies);
+            records.add(Values);
+        }
+
+        for (int i = 0; i < numWaterbodies; i++) {
             values.add(new ArrayList<>());
         }
 
-        for (int jc = 0; jc < numFluxes; jc++) {
-            List<String> fields = parseLine(table.get(jc), 8, 1, 10);
-            constituentNames.add(fields.get(0));
-            for (int jwb = 0; jwb < numWaterbodies; jwb++) {
-                int col = jwb + 1;
-                values.get(jwb).add(fields.get(col));
+        records.forEach(record -> {
+            constituentNames.add(record.get(0));
+            for (int i = 0; i < numWaterbodies; i++) {
+                int col = i + 1;
+                values.get(i).add(record.get(col));
             }
-        }
+        });
     }
 
     @Override
     public void updateText() {
-        for (int i = 0; i < numFluxes; i++) {
-            String str = String.format("%-8s", constituentNames.get(i));
-            for (int j = 0; j < numWaterbodies; j++) {
-                str += String.format("%8s", values.get(j).get(i));
-                table.set(i, str);
-            }
-        }
+        // TODO Update to handle multi-line fluxes
+//        for (int i = 0; i < numFluxes; i++) {
+//            String str = String.format("%-8s", constituentNames.get(i));
+//            for (int j = 0; j < numWaterbodies; j++) {
+//                str += String.format("%8s", values.get(j).get(i));
+//                table.set(i, str);
+//            }
+//        }
     }
 }

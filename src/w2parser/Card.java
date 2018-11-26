@@ -126,12 +126,12 @@ public abstract class Card {
     /**
      * Parse a multi-line record. A record consists of all fields for a waterbody,
      * branch, constituent, etc.
-     * @param recordLines List of record lines from control file
+     * @param table List of record lines from control file
      * @param recordIndex Index of record (zero-based)
      * @param numFields Number of fields
      * @return List of record values. The first item is the record identifier.
      */
-    public List<String> parseRecord(List<String> recordLines, int recordIndex, int numFields) {
+    public List<String> parseRecord(List<String> table, int recordIndex, int numFields) {
         int numLinesPerRecord = (int) Math.ceil(numFields/9.0);
         int start = numLinesPerRecord * recordIndex;
         int end = start + numLinesPerRecord;
@@ -140,7 +140,7 @@ public abstract class Card {
         int endField = 10;
         List<String> values = new ArrayList<>();
         for (int i = start; i < end; i++) {
-            List<String> fields = parseLine(recordLines.get(i), fieldWidth, startField, endField);
+            List<String> fields = parseLine(table.get(i), fieldWidth, startField, endField);
             values.addAll(fields);
             // After the first record line is read, skip the first field of subsequent lines
             startField = 2;

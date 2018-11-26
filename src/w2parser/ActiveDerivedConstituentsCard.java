@@ -67,12 +67,13 @@ public class ActiveDerivedConstituentsCard extends Card {
 
     @Override
     public void updateText() {
-        for (int i = 0; i < numConstituents; i++) {
-            String str = String.format("%-8s", constituentNames.get(i));
-            for (int j = 0; j < numWaterbodies; j++) {
-                str += String.format("%8s", values.get(j).get(i));
-                table.set(i, str);
-            }
-        }
+        // TODO Implement multi-line record method
+//        for (int i = 0; i < numConstituents; i++) {
+//            String str = String.format("%-8s", constituentNames.get(i));
+//            for (int j = 0; j < numWaterbodies; j++) {
+//                str += String.format("%8s", values.get(j).get(i));
+//                table.set(i, str);
+//            }
+//        }
     }
 }
