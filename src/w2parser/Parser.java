@@ -91,6 +91,7 @@ public class Parser {
     private List<Integer> IWDO;
 
     private boolean CONSTITUENTS = false;
+    private boolean DERIVED_CALC = false;
     private boolean TIME_SERIES = false;
     private boolean DOWNSTREAM_OUTFLOW = false;
     private static final int NUM_FLUXES = 73; // Currently, this must be hard-coded. Version 4.1 has 73 fluxes.
@@ -158,11 +159,19 @@ public class Parser {
         if (isOn(CCC)) CONSTITUENTS = true;
         constituentDimensionsCard = new ConstituentDimensionsCard(w2con);
 
+
         // Initialized derived constituent info
         graphFileDerivedConstituents = graphFile.getDerivedConstituents();
         numDerivedConstituents = graphFileDerivedConstituents.size();
         activeDerivedConstituentsCard = new ActiveDerivedConstituentsCard(w2con, numDerivedConstituents, NWB);
         activeConstituentFluxesCard = new ActiveConstituentFluxesCard(w2con, NUM_FLUXES, NWB);
+        List<List<String>> CDWBC = activeDerivedConstituentsCard.getValues();
+
+        List<Boolean> derivedIsOn = new ArrayList<>();
+        for (List<String> values: CDWBC) {
+            values.forEach(value -> derivedIsOn.add(isOn(value)));
+        }
+        if (any(derivedIsOn) && CONSTITUENTS) DERIVED_CALC = true;
 
         // TSR output
         tsrPlotCard = new TsrPlotCard(w2con);
@@ -227,7 +236,7 @@ public class Parser {
             int icol = 1; // Every qwo file contains at least one data column for the combined outflow
             outputFilename = String.format("qwo_%d.opt", outputSegment);
             String locationName = String.format("Seg %d Withdrawal", outputSegment);
-            outputWaterbody = getOutputWaterbody(NBR, outputSegment);
+            outputWaterbody = getOutputWaterbody(outputSegment, US, DS, NBR);
 
             // Number of columns equals 1 for the combined flow plus one column for each structure
             int ncol = 1;
@@ -255,6 +264,7 @@ public class Parser {
             icol = 1; // Every qwo file contains at least one data column for the combined outflow
             outputFilename = String.format("two_%d.opt", outputSegment);
             locationName = String.format("Seg %d Withdrawal", outputSegment);
+            outputWaterbody = getOutputWaterbody(outputSegment, US, DS, NBR);
 
             // Number of columns equals 1 for the combined flow plus one column for each structure
             ncol = 1;
@@ -277,6 +287,62 @@ public class Parser {
                 parameters.add(parameter);
                 icol++;
             }
+
+            // Constituents (iterate over all constituents, but only output active constituents
+            if (CONSTITUENTS) {
+                icol = 1; // Every qwo file contains at least one data column for the combined outflow
+                List<Parameter> constituentParameters = new ArrayList<>();
+                outputFilename = String.format("cwo_%d.opt", outputSegment);
+                locationName = String.format("Seg %d Withdrawal", outputSegment);
+                outputWaterbody = getOutputWaterbody(outputSegment, US, DS, NBR);
+                constituentNames = activeConstituentsCard.getConstituentNames();
+                List<String> constituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
+                for (int jc = 0; jc < numConstituents; jc++) {
+                    if (isOn(constituentSettings.get(jc))) {
+                        Constituent constituent = graphFileConstituents.get(jc);
+                        parameter = new Parameter(locationName, constituentNames.get(jc),
+                                constituent.getLongName(), constituent.getUnits(),
+                                icol, 0, outputFilename,
+                                "outflow", "output");
+                        parameter.setWaterBody(outputWaterbody);
+                        parameter.setSegment(outputSegment);
+                        constituentParameters.add(parameter);
+                        icol++;
+                    }
+                }
+
+                final int numConstituentColumns = constituentParameters.size();
+                constituentParameters.forEach(param -> param.setNumColumns(numConstituentColumns));
+                parameters.addAll(constituentParameters);
+            }
+
+            if (DERIVED_CALC) {
+                icol = 1; // Every qwo file contains at least one data column for the combined outflow
+                List<Parameter> derivedConstituentParameters = new ArrayList<>();
+                outputFilename = String.format("dwo_%d.opt", outputSegment);
+                locationName = String.format("Seg %d Withdrawal", outputSegment);
+//                outputWaterbody = getOutputWaterbody(outputSegment, US, DS, BS, BE, NWB);
+                derivedConstituentNames = activeDerivedConstituentsCard.getConstituentNames();
+                List<String> derivedConstituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
+                for (int jc = 0; jc < numDerivedConstituents; jc++) {
+                    if (isOn(derivedConstituentSettings.get(jc))) {
+                        Constituent constituent = graphFileDerivedConstituents.get(jc);
+                        parameter = new Parameter(locationName, derivedConstituentNames.get(jc),
+                                constituent.getLongName(), constituent.getUnits(),
+                                icol, 0, outputFilename,
+                                "outflow", "output");
+                        parameter.setWaterBody(outputWaterbody);
+                        parameter.setSegment(outputSegment);
+                        derivedConstituentParameters.add(parameter);
+                        icol++;
+                    }
+                }
+
+                final int numConstituentColumns = derivedConstituentParameters.size();
+                derivedConstituentParameters.forEach(param -> param.setNumColumns(numConstituentColumns));
+                parameters.addAll(derivedConstituentParameters);
+            }
+
         }
 
         return parameters;
@@ -288,10 +354,30 @@ public class Parser {
      * @param outputSegment Output segment number
      * @return Output waterbody (one-based)
      */
-    private int getOutputWaterbody(int numBranches, int outputSegment) {
+    private int getOutputWaterbody(int outputSegment, List<Integer> US,
+                                   List<Integer> DS, int numBranches) {
         int outputWaterbody = 1;
         for (int jb = 0; jb < numBranches; jb++) {
             if (outputSegment >= US.get(jb) && outputSegment <= DS.get(jb)) {
+                return outputWaterbody;
+            } else {
+                outputWaterbody++;
+            }
+        }
+        return -99;
+    }
+
+    /**
+     * Determine number of output waterbody based on DS, US, BS, and BE parameters
+     * @param numWaterbodies Number of waterbodies
+     * @param outputSegment Output segment number
+     * @return Output waterbody (one-based)
+     */
+    private int getOutputWaterbody(int outputSegment, List<Integer> US, List<Integer> DS,
+                                   List<Integer> BS, List<Integer> BE, int numWaterbodies) {
+        int outputWaterbody = 1;
+        for (int jwb = 0; jwb < numWaterbodies; jwb++) {
+            if (outputSegment >= US.get(BS.get(jwb)) && outputSegment <= DS.get(BE.get(jwb))) {
                 return outputWaterbody;
             } else {
                 outputWaterbody++;
@@ -588,7 +674,7 @@ public class Parser {
                 outputWaterbody++;
             }
 
-            // constituents (iterate over all constituents, but only output active constituents
+            // Constituents (iterate over all constituents, but only output active constituents
             constituentNames = activeConstituentsCard.getConstituentNames();
             List<String> constituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
             //numActiveConstituents = count(isOn(constituentSettings));
