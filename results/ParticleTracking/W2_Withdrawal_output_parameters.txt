@@ -12,57 +12,79 @@ Seg 64 Withdrawal           Temp-TWO_outlet_2Withdrawal Temperature - Outlet 2  
 Seg 64 Withdrawal           Temp-TWO_outlet_3Withdrawal Temperature - Outlet 3         C         4       6         two_64.opt                    outflow        output       
 Seg 64 Withdrawal           Temp-TWO_outlet_4Withdrawal Temperature - Outlet 4         C         5       6         two_64.opt                    outflow        output       
 Seg 64 Withdrawal           Temp-TWO_outlet_5Withdrawal Temperature - Outlet 5         C         6       6         two_64.opt                    outflow        output       
-Seg 64 Withdrawal           TDS              TDS                                       g/m^3     1       26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           Gen1             Age                                       days      2       26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           Gen2             H2S-d                                     g/m^3     3       26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           Gen3             CH4-d                                     g/m^3     4       26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           Gen4             SO4                                       g/m^3     5       26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           Gen5             Tracer                                    g/m^3     6       26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           ISS2             ISS                                       g/m^3     7       26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           PO4              Phosphate                                 g/m^3     8       26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           NH4              Ammonium                                  g/m^3     9       26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           NO3              Nitrate-Nitrite                           g/m^3     10      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           LDOM             Labile DOM                                g/m^3     11      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           RDOM             Refractory DOM                            g/m^3     12      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           LPOM             Labile POM                                g/m^3     13      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           RPOM             Refractory POM                            g/m^3     14      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           ALG1             Algae                                     g/m^3     15      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           DO               Dissolved oxygen                          g/m^3     16      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           TIC              Inorganic carbon                          g/m^3     17      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           ALK              Alkalinity                                g/m^3     18      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           LDOM-P           LDOM P                                    g/m^3     19      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           RDOM-P           RDOM P                                    g/m^3     20      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           LPOM-P           LPOM P                                    g/m^3     21      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           RPOM-P           RPOM P                                    g/m^3     22      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           LDOM-N           LDOM N                                    g/m^3     23      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           RDOM-N           RDOM N                                    g/m^3     24      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           LPOM-N           LPOM N                                    g/m^3     25      26        two_64.opt                    outflow        output       
-Seg 64 Withdrawal           RPOM-N           RPOM N                                    g/m^3     26      26        two_64.opt                    outflow        output       
+Seg 64 Withdrawal           TDS              TDS                                       g/m^3     1       26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           Gen1             Age                                       days      2       26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           Gen2             H2S-d                                     g/m^3     3       26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           Gen3             CH4-d                                     g/m^3     4       26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           Gen4             SO4                                       g/m^3     5       26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           Gen5             Tracer                                    g/m^3     6       26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           ISS2             ISS                                       g/m^3     7       26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           PO4              Phosphate                                 g/m^3     8       26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           NH4              Ammonium                                  g/m^3     9       26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           NO3              Nitrate-Nitrite                           g/m^3     10      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           LDOM             Labile DOM                                g/m^3     11      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           RDOM             Refractory DOM                            g/m^3     12      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           LPOM             Labile POM                                g/m^3     13      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           RPOM             Refractory POM                            g/m^3     14      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           ALG1             Algae                                     g/m^3     15      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           DO               Dissolved oxygen                          g/m^3     16      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           TIC              Inorganic carbon                          g/m^3     17      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           ALK              Alkalinity                                g/m^3     18      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           LDOM-P           LDOM P                                    g/m^3     19      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           RDOM-P           RDOM P                                    g/m^3     20      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           LPOM-P           LPOM P                                    g/m^3     21      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           RPOM-P           RPOM P                                    g/m^3     22      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           LDOM-N           LDOM N                                    g/m^3     23      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           RDOM-N           RDOM N                                    g/m^3     24      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           LPOM-N           LPOM N                                    g/m^3     25      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           RPOM-N           RPOM N                                    g/m^3     26      26        cwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           DOC              Dissolved Organic Carbon                  g/m^3     1       11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           POC              Particulate Organic Carbon                g/m^3     2       11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           TOC              Total Organic Carbon                      g/m^3     3       11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           DON              Dissolved Organic Nitrogen                g/m^3     4       11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           PON              Particulate Organic Nitrogen              g/m^3     5       11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           TON              Total Organic Nitrogen                    g/m^3     6       11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           %DO              Oxygen % Gas Saturation                             7       11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           TSS              Total Suspended Solids                    g/m^3     8       11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           TISS             Total Inorganic Suspended Solids          g/m^3     9       11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           CBOD             Carbonaceous Ultimate BOD                 g/m^3     10      11        dwo_64.opt                    outflow        output       
+Seg 64 Withdrawal           CO3              CO3                                                 11      11        dwo_64.opt                    outflow        output       
 Seg 84 Withdrawal           Flow-QWD         Withdrawal Flow                           m^3/s     1       1         qwo_84.opt                    outflow        output       
 Seg 84 Withdrawal           Temp-TWO         Withdrawal Temperature                    C         1       1         two_84.opt                    outflow        output       
-Seg 84 Withdrawal           TDS              TDS                                       g/m^3     1       26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           Gen1             Age                                       days      2       26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           Gen2             H2S-d                                     g/m^3     3       26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           Gen3             CH4-d                                     g/m^3     4       26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           Gen4             SO4                                       g/m^3     5       26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           Gen5             Tracer                                    g/m^3     6       26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           ISS2             ISS                                       g/m^3     7       26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           PO4              Phosphate                                 g/m^3     8       26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           NH4              Ammonium                                  g/m^3     9       26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           NO3              Nitrate-Nitrite                           g/m^3     10      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           LDOM             Labile DOM                                g/m^3     11      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           RDOM             Refractory DOM                            g/m^3     12      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           LPOM             Labile POM                                g/m^3     13      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           RPOM             Refractory POM                            g/m^3     14      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           ALG1             Algae                                     g/m^3     15      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           DO               Dissolved oxygen                          g/m^3     16      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           TIC              Inorganic carbon                          g/m^3     17      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           ALK              Alkalinity                                g/m^3     18      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           LDOM-P           LDOM P                                    g/m^3     19      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           RDOM-P           RDOM P                                    g/m^3     20      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           LPOM-P           LPOM P                                    g/m^3     21      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           RPOM-P           RPOM P                                    g/m^3     22      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           LDOM-N           LDOM N                                    g/m^3     23      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           RDOM-N           RDOM N                                    g/m^3     24      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           LPOM-N           LPOM N                                    g/m^3     25      26        two_84.opt                    outflow        output       
-Seg 84 Withdrawal           RPOM-N           RPOM N                                    g/m^3     26      26        two_84.opt                    outflow        output       
+Seg 84 Withdrawal           TDS              TDS                                       g/m^3     1       26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           Gen1             Age                                       days      2       26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           Gen2             H2S-d                                     g/m^3     3       26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           Gen3             CH4-d                                     g/m^3     4       26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           Gen4             SO4                                       g/m^3     5       26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           Gen5             Tracer                                    g/m^3     6       26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           ISS2             ISS                                       g/m^3     7       26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           PO4              Phosphate                                 g/m^3     8       26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           NH4              Ammonium                                  g/m^3     9       26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           NO3              Nitrate-Nitrite                           g/m^3     10      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           LDOM             Labile DOM                                g/m^3     11      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           RDOM             Refractory DOM                            g/m^3     12      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           LPOM             Labile POM                                g/m^3     13      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           RPOM             Refractory POM                            g/m^3     14      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           ALG1             Algae                                     g/m^3     15      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           DO               Dissolved oxygen                          g/m^3     16      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           TIC              Inorganic carbon                          g/m^3     17      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           ALK              Alkalinity                                g/m^3     18      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           LDOM-P           LDOM P                                    g/m^3     19      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           RDOM-P           RDOM P                                    g/m^3     20      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           LPOM-P           LPOM P                                    g/m^3     21      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           RPOM-P           RPOM P                                    g/m^3     22      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           LDOM-N           LDOM N                                    g/m^3     23      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           RDOM-N           RDOM N                                    g/m^3     24      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           LPOM-N           LPOM N                                    g/m^3     25      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           RPOM-N           RPOM N                                    g/m^3     26      26        cwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           DOC              Dissolved Organic Carbon                  g/m^3     1       11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           POC              Particulate Organic Carbon                g/m^3     2       11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           TOC              Total Organic Carbon                      g/m^3     3       11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           DON              Dissolved Organic Nitrogen                g/m^3     4       11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           PON              Particulate Organic Nitrogen              g/m^3     5       11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           TON              Total Organic Nitrogen                    g/m^3     6       11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           %DO              Oxygen % Gas Saturation                             7       11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           TSS              Total Suspended Solids                    g/m^3     8       11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           TISS             Total Inorganic Suspended Solids          g/m^3     9       11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           CBOD             Carbonaceous Ultimate BOD                 g/m^3     10      11        dwo_84.opt                    outflow        output       
+Seg 84 Withdrawal           CO3              CO3                                                 11      11        dwo_84.opt                    outflow        output       

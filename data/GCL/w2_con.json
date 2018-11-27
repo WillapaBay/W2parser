@@ -1,6 +1,13 @@
 {
-  "Version": "PSU W2 Model Version 4.1</version>",
-  "Title": "Version 4.1 Lake Roosevelt Model\nRiverine reaches of Columbia and Spokane Rivers broken into many WBs\nJday 1.0 is Jan 1, 2011\n\nAdapted from version 3.5 model developed by Mike McKillup, PSU for Spokane Tribe\nThis version developed by PSU for the US Bureau of Reclamation.",
+  "Version Info": {
+    "Version": "4.1",
+    "Organzation (PSU, ERDC)": "PSU"
+  },
+  "Title": {
+    "Location": "Lake Roosevelt",
+    "Text": "Riverine reaches of Columbia and Spokane Rivers broken into many WBs. Jday 1.0 is Jan 1, 2011",
+    "Author Info": "Adapted from version 3.5 model developed by Mike McKillup, PSU for Spokane Tribe.\nThis version developed by PSU for the US Bureau of Reclamation."
+  },
   "Grid": {
     "NWB": 25,
     "NBR": 25,
