@@ -3,13 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URI;
 import java.nio.charset.Charset;
 import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Container for the contents of a CE-QUAL-W2 control file
@@ -17,18 +13,21 @@ import java.util.Scanner;
 public class W2ControlFile {
     private String w2ControlFilename;
     private List<String> w2ControlList;
-    private File directoryPath;
+    private Path directoryPath;
+    private Path w2ControlInPath;
     private File graphFile;
 
     public W2ControlFile(String infile) throws FileNotFoundException {
+
         w2ControlFilename = infile;
-        directoryPath = new File(w2ControlFilename).getParentFile();
+        w2ControlInPath = Paths.get(infile).toAbsolutePath();
+        directoryPath = w2ControlInPath.getParent();
         graphFile = new File(directoryPath.toString(), "graph.npt");
         load(infile);
         handleCardNamesThatVary();
     }
 
-    public File getDirectoryPath() { return directoryPath; }
+    public Path getDirectoryPath() { return directoryPath; }
 
     public String getW2ControlFilename() {
         return w2ControlFilename;
@@ -50,8 +49,7 @@ public class W2ControlFile {
 
     public void load(String infile) throws FileNotFoundException {
         try {
-            Path inpath = Paths.get(infile).toAbsolutePath();
-            w2ControlList = Files.readAllLines(inpath);
+            w2ControlList = Files.readAllLines(w2ControlInPath);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -74,9 +72,9 @@ public class W2ControlFile {
     }
 
     public void save(String outfile) {
-        Path file = Paths.get(outfile);
+        Path w2ControlOutPath = Paths.get(outfile).toAbsolutePath();
         try {
-            Files.write(file, w2ControlList, Charset.forName("UTF-8"));
+            Files.write(w2ControlOutPath, w2ControlList, Charset.forName("UTF-8"));
         }
         catch (IOException e) {
             e.printStackTrace();
