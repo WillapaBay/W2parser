@@ -3,11 +3,11 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URI;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 public class W2ControlFile {
     private String w2ControlFilename;
-    private List<String> w2ControlList = new ArrayList<>();
+    private List<String> w2ControlList;
     private File directoryPath;
     private File graphFile;
 
@@ -49,10 +49,11 @@ public class W2ControlFile {
     }
 
     public void load(String infile) throws FileNotFoundException {
-        File file = new File(infile);
-        Scanner sc = new Scanner(file);
-        while (sc.hasNextLine()) {
-            w2ControlList.add(sc.nextLine());
+        try {
+            Path inpath = Paths.get(infile).toAbsolutePath();
+            w2ControlList = Files.readAllLines(inpath);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
