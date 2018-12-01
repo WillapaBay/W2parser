@@ -37,7 +37,7 @@ public class RepeatingDoubleCard extends Card {
 
     @Override
     public void parseTable() {
-        // numLines needs to be recomputed each time, as values changes size
+        // numCardDataLines needs to be recomputed each time, as values changes size
         int numLines = (int) Math.ceil(numFields/9.0);
         for (int i = 0; i < numLines; i++) {
             String line = table.get(i);
@@ -51,12 +51,14 @@ public class RepeatingDoubleCard extends Card {
 
     @Override
     public void updateText() {
+        table.clear();
         StringBuilder str = new StringBuilder(String.format("%8s", ""));
         int line = 0;
         for (int i = 0; i < values.size(); i++) {
             double data = values.get(i);
             if ((i > 0 && i % 9 == 0)) {
-                table.set(line, str.toString());
+//                table.set(line, str.toString());
+                table.add(str.toString());
                 str = new StringBuilder(String.format("%8s", ""));
                 line++;
             }
@@ -64,7 +66,8 @@ public class RepeatingDoubleCard extends Card {
             str.append(String.format(format, data));
 
             if (i == (values.size() - 1)) {
-                table.set(line, str.toString());
+//                table.set(line, str.toString());
+                table.add(str.toString());
             }
         }
     }

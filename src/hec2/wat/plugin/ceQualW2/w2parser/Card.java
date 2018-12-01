@@ -9,20 +9,22 @@ public abstract class Card {
     private String titleLine;
     // Number of record lines. For most cards, this equals one.
     // For file cards, this is the number of branches or water bodies.
-    int numLines;
+    int numCardDataLines; // The current number of lines in the Card
+    int numCardDataLinesInFile; // The number of lines in the card in the w2_con.npt file
     // Table from card (list of lines of text)
     List<String> table = new ArrayList<>();
 
-    public Card(W2ControlFile w2ControlFile, String cardName, int numLines) {
+    public Card(W2ControlFile w2ControlFile, String cardName, int numCardDataLines) {
         this.w2ControlFile = w2ControlFile;
         this.cardName = cardName;
-        this.numLines = numLines;
+        this.numCardDataLines = numCardDataLines;
+        this.numCardDataLinesInFile = numCardDataLines;
         fetchTable();
     }
 
-    public Card(W2ControlFile w2ControlFile, int numLines) {
+    public Card(W2ControlFile w2ControlFile, int numCardDataLines) {
         this.w2ControlFile = w2ControlFile;
-        this.numLines = numLines;
+        this.numCardDataLines = numCardDataLines;
         fetchTable();
         parseTable();
     }
@@ -52,7 +54,7 @@ public abstract class Card {
             line = w2ControlFile.getLine(i).toUpperCase();
             if (line.startsWith(cardNameShort)) {
                 this.titleLine = w2ControlFile.getLine(i);
-                for (int j = 0; j < numLines; j++) {
+                for (int j = 0; j < numCardDataLines; j++) {
                     line = w2ControlFile.getLine(i + j + 1);
                     table.add(line);
                 }
@@ -66,18 +68,31 @@ public abstract class Card {
      */
     public void updateTable() {
         updateText();
+
         String line;
         for (int i = 0; i < w2ControlFile.size(); i++) {
             line = w2ControlFile.getLine(i).toUpperCase();
             if (line.startsWith(cardName)) {
+                // Resize card in w2ControlFileList if necessary
+                int difference = numCardDataLines - numCardDataLinesInFile;
+                if (difference > 0) {
+                    w2ControlFile.expandCard(i, numCardDataLinesInFile, difference);
+                } else if (difference < 0) {
+                    w2ControlFile.shrinkCard(i, numCardDataLinesInFile, Math.abs(difference));
+                }
                 w2ControlFile.setLine(i, this.titleLine);
-                for (int j = 0; j < numLines; j++) {
+                for (int j = 0; j < numCardDataLines; j++) {
                     w2ControlFile.setLine(i + j + 1, table.get(j));
                 }
             }
         }
+        numCardDataLinesInFile = numCardDataLines;
     }
 
+    /**
+     * Return text of card
+     * @return Text of card
+     */
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder(titleLine + "\n");
@@ -146,6 +161,38 @@ public abstract class Card {
             startField = 2;
         }
         return values;
+    }
+
+    /**
+     * Return card name
+     * @return card name
+     */
+    public String getCardName() {
+        return cardName;
+    }
+
+    /**
+     * Return current number of data lines in Card
+     * @return Current number of data lines in Card
+     */
+    public int getNumCardDataLines() {
+        return numCardDataLines;
+    }
+
+    /**
+     * Return number of data lines in card in the W2ControlFile list
+     * @return Number of data lines in card in the W2ControlFile list
+     */
+    public int getNumCardDataLinesInFile() {
+        return numCardDataLinesInFile;
+    }
+
+    /**
+     * Return the card data table
+     * @return Card data table
+     */
+    public List<String> getTable() {
+        return table;
     }
 
 }

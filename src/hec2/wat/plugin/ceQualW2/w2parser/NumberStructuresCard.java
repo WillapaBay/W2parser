@@ -59,10 +59,11 @@ public class NumberStructuresCard extends Card {
 
     @Override
     public void updateText() {
+        table.clear();
         for (int i = 0; i < numBranches; i++) {
             String str = String.format("%-8s%8d%8s",
                     identifiers.get(i), NSTR.get(i), DYNELEV.get(i));
-            table.set(i, str);
+            table.add(str);
         }
     }
 }

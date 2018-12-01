@@ -86,7 +86,7 @@ public class LocationCard extends Card {
         JBDN = new ArrayList<>();
         identifiers = new ArrayList<>();
 
-        for (int i = 0; i < numLines; i++) {
+        for (int i = 0; i < numCardDataLines; i++) {
             List<String> fields = parseLine(table.get(i), 8, 1, 10);
             identifiers.add(fields.get(0));
             LAT.add(Double.parseDouble(fields.get(1)));
@@ -100,10 +100,11 @@ public class LocationCard extends Card {
 
     @Override
     public void updateText() {
-        for (int i = 0; i < numLines; i++) {
+        table.clear();
+        for (int i = 0; i < numCardDataLines; i++) {
             String str = String.format("%-8s%8.5f%8.5f%8.3f%8d%8d%8d",
                     identifiers.get(i), LAT.get(i), LONG.get(i), EBOT.get(i), BS.get(i), BE.get(i), JBDN.get(i));
-            table.set(i, str);
+            table.add(str);
         }
     }
 }

@@ -138,12 +138,13 @@ public class SedimentCard extends Card {
 
     @Override
     public void updateText() {
+        table.clear();
         for (int i = 0; i < numWaterbodies; i++) {
             String str = String.format("%-8s%8s%8s%8.5f%8.5f%8.5f%8.5f%8.5f%8.5f%8s",
                     identifiers.get(i), SEDC.get(i), SEDPRC.get(i), SEDCI.get(i),
                     SEDS.get(i), SEDK.get(i), FSOD.get(i), FSED.get(i), SEDBR.get(i),
                     DYNSEDK.get(i));
-            table.set(i, str);
+            table.add(str);
         }
     }
 }

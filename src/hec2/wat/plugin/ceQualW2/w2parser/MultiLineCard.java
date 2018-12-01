@@ -43,7 +43,7 @@ public class MultiLineCard extends Card {
     public void parseTable() {
         values = new ArrayList<>();
         List<String> fields;
-        for (int i = 0; i < numLines; i++) {
+        for (int i = 0; i < numCardDataLines; i++) {
             fields = parseLine(table.get(i), 8, 1, 10);
             values.add(fields);
         }
@@ -51,8 +51,9 @@ public class MultiLineCard extends Card {
 
     @Override
     public void updateText() {
+        table.clear();
         String line = "";
-        for (int i = 0; i < numLines; i++) {
+        for (int i = 0; i < numCardDataLines; i++) {
             for (int j = 0; i < values.size(); j++) {
                 if (j == 0) {
                     line = String.format("%-8s", values.get(j));
@@ -60,7 +61,7 @@ public class MultiLineCard extends Card {
                     line += String.format("%8s", values.get(j));
                 }
             }
-            table.set(i, line);
+            table.add(line);
         }
     }
 

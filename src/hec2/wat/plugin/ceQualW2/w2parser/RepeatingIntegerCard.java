@@ -49,12 +49,14 @@ public class RepeatingIntegerCard extends Card {
 
     @Override
     public void updateText() {
+        table.clear();
         StringBuilder str = new StringBuilder(String.format("%8s", ""));
         int line = 0;
         for (int i = 0; i < values.size(); i++) {
             int data = values.get(i);
             if ((i > 0 && i % 9 == 0)) {
-                table.set(line, str.toString());
+//                table.set(line, str.toString());
+                table.add(str.toString());
                 str = new StringBuilder(String.format("%8s", ""));
                 line++;
             }
@@ -62,7 +64,8 @@ public class RepeatingIntegerCard extends Card {
             str.append(String.format(format, data));
 
             if (i == (values.size() - 1)) {
-                table.set(line, str.toString());
+//                table.set(line, str.toString());
+                table.add(str.toString());
             }
         }
     }

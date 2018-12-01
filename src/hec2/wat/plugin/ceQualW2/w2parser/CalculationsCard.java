@@ -82,7 +82,7 @@ public class CalculationsCard extends Card {
         PRC = new ArrayList<>();
         identifiers = new ArrayList<>();
 
-        for (int i = 0; i < numLines; i++) {
+        for (int i = 0; i < numCardDataLines; i++) {
             List<String> Fields = parseLine(table.get(i), 8, 1, 10);
             identifiers.add(Fields.get(0));
             VBC.add(Fields.get(1));
@@ -96,10 +96,11 @@ public class CalculationsCard extends Card {
 
     @Override
     public void updateText() {
-        for (int i = 0; i < numLines; i++) {
+        table.clear();
+        for (int i = 0; i < numCardDataLines; i++) {
             String str = String.format("%-8s%8s%8s%8s%8s%8s%8s",
                     identifiers.get(i), VBC.get(i), EBC.get(i), MBC.get(i), PQC.get(i), EVC.get(i), PRC.get(i));
-            table.set(i, str);
+            table.add(str);
         }
     }
 }

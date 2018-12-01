@@ -117,7 +117,7 @@ public class BranchGeometryCard extends Card {
         slopeClist = new ArrayList<>();
         identifiers = new ArrayList<>();
 
-        for (int i = 0; i < numLines; i++) {
+        for (int i = 0; i < numCardDataLines; i++) {
             List<String> records = parseLine(table.get(i), 8, 1, 10);
             identifiers.add(records.get(0));
             US.add(Integer.parseInt(records.get(1)));
@@ -134,11 +134,12 @@ public class BranchGeometryCard extends Card {
 
     @Override
     public void updateText() {
-        for (int i = 0; i < numLines; i++) {
+        table.clear();
+        for (int i = 0; i < numCardDataLines; i++) {
             String str = String.format("%-8s%8d%8d%8d%8d%8d%8d%8d%8.5f%8.5f",
                     identifiers.get(i), US.get(i), DS.get(i), UHS.get(i), DHS.get(i), UQB.get(i),
                     DQB.get(i), NLMIN.get(i), slopeList.get(i), slopeClist.get(i));
-            table.set(i, str);
+            table.add(str);
         }
     }
 }

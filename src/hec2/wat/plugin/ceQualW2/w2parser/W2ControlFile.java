@@ -17,7 +17,7 @@ public class W2ControlFile {
     private Path w2ControlInPath;
     private File graphFile;
 
-    public W2ControlFile(String infile) throws FileNotFoundException {
+    public W2ControlFile(String infile) {
 
         w2ControlFilename = infile;
         w2ControlInPath = Paths.get(infile).toAbsolutePath();

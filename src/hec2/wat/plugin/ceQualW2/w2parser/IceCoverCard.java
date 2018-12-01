@@ -126,11 +126,12 @@ public class IceCoverCard extends Card {
 
     @Override
     public void updateText() {
+        table.clear();
         for (int i = 0; i < numWaterbodies; i++) {
             String str = String.format("%-8s%8s%8s%8.5f%8.5f%8.5f%8.5f%8.5f%8.5f",
                     identifiers.get(i), ICEC.get(i), SLICEC.get(i), ALBEDO.get(i),
                     HWICE.get(i), BICE.get(i), GICE.get(i), ICEMIN.get(i), ICET2.get(i));
-            table.set(i, str);
+            table.add(str);
         }
     }
 }

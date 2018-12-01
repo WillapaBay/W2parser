@@ -87,10 +87,11 @@ public class InitialConditionsCard extends Card {
 
     @Override
     public void updateText() {
+        table.clear();
         for (int i = 0; i < numWaterbodies; i++) {
             String str = String.format("%-8s%8.5f%8.5f%8s%8s",
                     identifiers.get(i), T2I.get(i), ICEI.get(i), WTYPEC.get(i), GRIDC.get(i));
-            table.set(i, str);
+            table.add(str);
         }
     }
 }

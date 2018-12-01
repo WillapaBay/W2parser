@@ -52,10 +52,11 @@ public class ActiveConstituentsCard extends Card {
 
     @Override
     public void updateText() {
+        table.clear();
         for (int i = 0; i < numConstituents; i++) {
             String str = String.format("%-8s%8s",
                     constituentNames.get(i), CAC.get(i));
-            table.set(i, str);
+            table.add(str);
         }
     }
 }
