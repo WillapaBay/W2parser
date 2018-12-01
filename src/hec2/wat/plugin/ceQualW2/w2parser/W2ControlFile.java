@@ -23,7 +23,7 @@ public class W2ControlFile {
         w2ControlInPath = Paths.get(infile).toAbsolutePath();
         directoryPath = w2ControlInPath.getParent();
         graphFile = new File(directoryPath.toString(), "graph.npt");
-        load(infile);
+        load();
         handleCardNamesThatVary();
     }
 
@@ -47,7 +47,7 @@ public class W2ControlFile {
         return w2ControlList.size();
     }
 
-    public void load(String infile) throws FileNotFoundException {
+    public void load() {
         try {
             w2ControlList = Files.readAllLines(w2ControlInPath);
         } catch (IOException e) {
@@ -68,16 +68,46 @@ public class W2ControlFile {
                 w2ControlList.set(i, newLine);
             }
         }
-
     }
 
-    public void save(String outfile) {
-        Path w2ControlOutPath = Paths.get(outfile).toAbsolutePath();
+    /**
+     * Save w2ControlList to w2_con.npt file. This may be a new file, or it may replace the existing file.
+     * @param outFilename w2_con.npt output filename
+     */
+    public void save(String outFilename) {
+        Path w2ControlOutPath = Paths.get(outFilename).toAbsolutePath();
         try {
             Files.write(w2ControlOutPath, w2ControlList, Charset.forName("UTF-8"));
         }
         catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Expand card in w2ControlList to accommodate a larger Card
+     * @param cardHeaderLineNumber Line number of card header in w2ControlList
+     * @param numDataLinesInCard Number of data lines of card in w2ControlList
+     * @param numLinesToAdd Number of lines to add
+     */
+    public void expandCard(int cardHeaderLineNumber, int numDataLinesInCard, int numLinesToAdd) {
+        int indexToAdd = cardHeaderLineNumber + numDataLinesInCard + 1;
+        for (int i = 0; i < numLinesToAdd; i++) {
+            w2ControlList.add(indexToAdd, "");
+        }
+    }
+
+    /**
+     * Shrink card in w2ControlList to adjust for a smaller Card
+     * @param cardHeaderLineNumber Line number of card header in w2ControlList
+     * @param numDataLinesInCard Number of data lines of card in w2ControlList
+     * @param numLinesToRemove Number of lines to remove
+     */
+    public void shrinkCard(int cardHeaderLineNumber, int numDataLinesInCard, int numLinesToRemove) {
+        int indexToRemove = cardHeaderLineNumber + numDataLinesInCard;
+        for (int i = 0; i < numLinesToRemove; i++) {
+            w2ControlList.remove(indexToRemove);
+            indexToRemove--;
         }
     }
 }
