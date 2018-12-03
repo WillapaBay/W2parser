@@ -5,21 +5,21 @@ import java.util.List;
 
 public abstract class Card2 {
     W2ControlFile w2ControlFile;
-    private String cardName;
-    private String titleLine;
-    private int identifierFieldWidth = 8;
-    private int valueFieldWidth;
+    String cardName;
+    String titleLine;
+    int identifierFieldWidth = 8;
+    int valueFieldWidth;
     // Number of record lines. For most cards, this equals one.
     // For file cards, this is the number of branches or water bodies.
-    private int numRecords;              // Number of records in the card
-    private int numCardDataLines;        // The current number of lines in the Card
-    private int numCardDataLinesInFile;  // The number of lines in the card in the w2_con.npt file
-    private List<Integer> numFieldsList; // Number of fields for each record
-    private List<Integer> numLinesList;     // Number of lines for each record
-    private List<String> table;              // Table from card (list of lines of text)
-    private List<List<String>> records;      // Identifier and values for each record
-    private List<String> recordIdentifiers;  // Identifiers for each record
-    private List<List<String>> recordValues; // List of card values, string type.
+    int numRecords;              // Number of records in the card
+    int numCardDataLines;        // The current number of lines in the Card
+    int numCardDataLinesInFile;  // The number of lines in the card in the w2_con.npt file
+    List<Integer> numFieldsList; // Number of fields for each record
+    List<Integer> numLinesList;     // Number of lines for each record
+    List<String> table;              // Table from card (list of lines of text)
+    List<List<String>> records;      // Identifier and values for each record
+    List<String> recordIdentifiers;  // Identifiers for each record
+    List<List<String>> recordValues; // List of card values, string type.
                                              // These are sorted by column (field) in the card and
                                              // can be parsed later, as needed, to numeric types.
 
@@ -154,10 +154,7 @@ public abstract class Card2 {
     /**
      * Parse a line containing fields in fixed-width format
      * As of CE-QUAL-W2 version 4.1, the field width has always been eight characters
-     * and have 10 fields. Most cards leave the first field blank.
-     *
-     * The most common usage is:
-     * Fields = parseLine(line, 8, 2, 10)
+     * and each line contains 10 fields. Most cards leave the first field blank.
      *
      * @param line Line of text from file
      * @param fieldWidths Field widths of all ten fields, in characters
@@ -188,6 +185,26 @@ public abstract class Card2 {
             start = Math.min(end, line.length());
         }
         return fields;
+    }
+
+    /**
+     * Parse a line containing fields in fixed-width format
+     * As of CE-QUAL-W2 version 4.1, the field width has always been eight characters
+     * and each line contains 10 fields. Most cards leave the first field blank.
+     *
+     * This version uses the default eight character field width for all fields
+     *
+     * @param line Line of text from file
+     * @param startField First field to read (one-based)
+     * @param endField Last field to read (one-based)
+     * @return List of fields
+     */
+    public List<String> parseLine(String line, int startField, int endField) {
+        List<Integer> fieldWidths = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            fieldWidths.add(8);
+        }
+        return parseLine(line, fieldWidths, startField, endField);
     }
 
     /**

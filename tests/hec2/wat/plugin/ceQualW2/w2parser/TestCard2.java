@@ -9,18 +9,6 @@ import java.util.List;
 
 public class TestCard2 {
 
-    class QinFileCard extends Card2 {
-
-        public QinFileCard(W2ControlFile w2ControlFile, String cardName,
-                           int numRecords, List<Integer> numFieldsList) {
-            super(w2ControlFile, cardName, numRecords, numFieldsList, 50);
-            parseTable();
-        }
-
-        @Override
-        public void updateText() {}
-    }
-
     @Test
     public void Test1() throws FileNotFoundException {
         String infile = "data/ColumbiaSlough/w2_con.npt";
@@ -31,7 +19,7 @@ public class TestCard2 {
         for (int i = 0; i < numBranches; i++) {
             numFields.add(1);
         }
-        QinFileCard qinCard = new QinFileCard(w2con, CardNames.BranchInflowFilenames,
+        FileCard2 qinCard = new FileCard2(w2con, CardNames.BranchInflowFilenames,
                 numBranches, numFields);
     }
 }
