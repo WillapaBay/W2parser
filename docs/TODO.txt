@@ -1,5 +1,8 @@
-1. Withdrawal constituents & derived
-2. Vertical profiles
-3. Longitudinal profiles
-4. Test multiple waterbodies
-5. Habitat volume
+- Vertical profiles
+- Longitudinal profiles
+- Test multiple waterbodies
+- Habitat volume
+- Change card constructor to have numbers of records and fields.
+    - Then read everything into a List<List<String>.
+    - The other cards can then just parse the strings in to numeric and string variables, etc.
+
