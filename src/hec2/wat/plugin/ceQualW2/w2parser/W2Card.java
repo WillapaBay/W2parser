@@ -3,18 +3,18 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Card {
+public abstract class W2Card {
     W2ControlFile w2ControlFile;
     private String cardName;
     private String titleLine;
     // Number of record lines. For most cards, this equals one.
     // For file cards, this is the number of branches or water bodies.
-    int numCardDataLines; // The current number of lines in the Card
+    int numCardDataLines; // The current number of lines in the W2Card
     int numCardDataLinesInFile; // The number of lines in the card in the w2_con.npt file
     // Table from card (list of lines of text)
     List<String> table = new ArrayList<>();
 
-    public Card(W2ControlFile w2ControlFile, String cardName, int numCardDataLines) {
+    public W2Card(W2ControlFile w2ControlFile, String cardName, int numCardDataLines) {
         this.w2ControlFile = w2ControlFile;
         this.cardName = cardName;
         this.numCardDataLines = numCardDataLines;
@@ -22,7 +22,7 @@ public abstract class Card {
         fetchTable();
     }
 
-    public Card(W2ControlFile w2ControlFile, int numCardDataLines) {
+    public W2Card(W2ControlFile w2ControlFile, int numCardDataLines) {
         this.w2ControlFile = w2ControlFile;
         this.numCardDataLines = numCardDataLines;
         fetchTable();
@@ -172,8 +172,8 @@ public abstract class Card {
     }
 
     /**
-     * Return current number of data lines in Card
-     * @return Current number of data lines in Card
+     * Return current number of data lines in W2Card
+     * @return Current number of data lines in W2Card
      */
     public int getNumCardDataLines() {
         return numCardDataLines;
@@ -189,7 +189,7 @@ public abstract class Card {
 
     /**
      * Return the card data table
-     * @return Card data table
+     * @return W2Card data table
      */
     public List<String> getTable() {
         return table;

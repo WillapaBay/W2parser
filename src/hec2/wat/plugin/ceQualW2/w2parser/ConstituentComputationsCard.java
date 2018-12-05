@@ -3,15 +3,15 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * Constituent Computations Card
+ * W2Constituent Computations W2Card
  */
-public class ConstituentComputationsCard extends Card {
+public class ConstituentComputationsCard extends W2Card {
     private String CCC;
     private String LIMC;
     private int CUF;
 
     public ConstituentComputationsCard(W2ControlFile w2ControlFile) {
-        super(w2ControlFile, CardNames.ConstituentComputations, 1);
+        super(w2ControlFile, W2CardNames.ConstituentComputations, 1);
         parseTable();
     }
 

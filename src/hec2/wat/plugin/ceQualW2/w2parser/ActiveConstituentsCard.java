@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Active constituents Card
+ * Active constituents W2Card
  *
  * This card contains the status of each constituent as active (ON) or inactive (OFF).
  * There is one line per constituent.
  */
-public class ActiveConstituentsCard extends Card {
-    private List<String> constituentNames; // Constituent names
+public class ActiveConstituentsCard extends W2Card {
+    private List<String> constituentNames; // W2Constituent names
     private List<String> CAC;     // State of each constituent (ON or OFF)
     private int numConstituents;
 

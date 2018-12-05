@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Number of Structures Card
+ * Number of Structures W2Card
  *
  * This card has one line per water body
  */
-public class NumberStructuresCard extends Card {
+public class NumberStructuresCard extends W2Card {
     private List<Integer> NSTR;     // Number of branch outlet structures
     private List<String> DYNELEV;   // Use the dynamic centerline elevation for the structure? (ON, OFF, blank (equals OFF))
     private List<String> identifiers;
-    private static final String DYNELEV_default = Globals.OFF;
+    private static final String DYNELEV_default = W2Globals.OFF;
     private int numBranches;
 
     public NumberStructuresCard(W2ControlFile w2ControlFile, int numBranches) {
-        super(w2ControlFile, CardNames.NumberStructures, numBranches);
+        super(w2ControlFile, W2CardNames.NumberStructures, numBranches);
         this.numBranches = numBranches;
         parseTable();
     }

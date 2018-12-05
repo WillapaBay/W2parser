@@ -1,12 +1,13 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
-import java.io.FileNotFoundException;
+
+import java.io.IOException;
 
 public class TestGridCard {
 
     @Test
-    public void testGridCard() throws FileNotFoundException {
+    public void testGridCard() throws IOException {
         String infile = "data/ColumbiaSlough/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
         GridCard gridCard = new GridCard(w2con);

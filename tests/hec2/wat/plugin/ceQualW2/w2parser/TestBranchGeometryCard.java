@@ -2,12 +2,13 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 public class TestBranchGeometryCard {
 
     @Test
-    public void testBranchGeometryCard() throws FileNotFoundException {
+    public void testBranchGeometryCard() throws IOException {
         String infile = "data/ParticleTracking/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
         GridCard gridCard = new GridCard(w2con);

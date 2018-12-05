@@ -3,7 +3,7 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 /**
  * Global variables
  */
-public class Globals {
+public class W2Globals {
     public enum FILE_TYPE {CSV, TXT}
     public enum Granularity {DAYS, HOURS, SECONDS}
 

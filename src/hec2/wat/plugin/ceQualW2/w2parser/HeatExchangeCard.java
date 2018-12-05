@@ -3,7 +3,7 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HeatExchangeCard extends Card {
+public class HeatExchangeCard extends W2Card {
     private int numWaterbodies;
     private List<String> SLHTC;
     private List<String> SROC;

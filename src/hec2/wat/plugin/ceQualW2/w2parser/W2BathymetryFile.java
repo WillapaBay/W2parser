@@ -10,32 +10,32 @@ import java.nio.file.Paths;
 import java.util.*;
 
 /**
- * BathymetryFile supports reading data from -- or writing data to -- a CE-QUAL-W2 file
+ * W2BathymetryFile supports reading data from -- or writing data to -- a CE-QUAL-W2 file
  */
-public class BathymetryFile {
+public class W2BathymetryFile {
 
     private String bathymetryFilename;
     private List<String> bathymetryData = new ArrayList<>();
-    private BathymetryRecord<Integer> segments =
-            new BathymetryRecord<>("segments");
-    private BathymetryRecord<Double> DLX = new BathymetryRecord<>("DLX");
-    private BathymetryRecord<Double> ELWS = new BathymetryRecord<>("ELWS");
-    private BathymetryRecord<Double> PHIO = new BathymetryRecord<>("PHIO");
-    private BathymetryRecord<Double> FRICT = new BathymetryRecord<>("FRICT");
-    private Globals.FILE_TYPE fileType;
+    private W2BathymetryRecord<Integer> segments =
+            new W2BathymetryRecord<>("segments");
+    private W2BathymetryRecord<Double> DLX = new W2BathymetryRecord<>("DLX");
+    private W2BathymetryRecord<Double> ELWS = new W2BathymetryRecord<>("ELWS");
+    private W2BathymetryRecord<Double> PHIO = new W2BathymetryRecord<>("PHIO");
+    private W2BathymetryRecord<Double> FRICT = new W2BathymetryRecord<>("FRICT");
+    private W2Globals.FILE_TYPE fileType;
     private int numSegments = 0;
     private int numLayers;
     private static final int fieldWidth = 8;
     private W2ControlFile w2con;
 
-    public BathymetryFile(W2ControlFile w2con, String infile, int numLayers) throws FileNotFoundException {
+    public W2BathymetryFile(W2ControlFile w2con, String infile, int numLayers) throws FileNotFoundException {
         this.w2con = w2con;
         bathymetryFilename = infile;
         this.numLayers = numLayers;
         load(infile);
     }
 
-    private <T> void updateRecordCsv(BathymetryRecord<T> record) {
+    private <T> void updateRecordCsv(W2BathymetryRecord<T> record) {
         StringBuilder sb = new StringBuilder(record.getIdentifier() + ",");
         int lineNum;
         for (lineNum = 0; lineNum < bathymetryData.size(); lineNum++) {
@@ -51,7 +51,7 @@ public class BathymetryFile {
         bathymetryData.set(lineNum, line);
     }
 
-    private <T> void updateRecordTxt(BathymetryRecord<T> record, int numRecords,
+    private <T> void updateRecordTxt(W2BathymetryRecord<T> record, int numRecords,
                                      String formatString) {
         int lineNum;
         for (lineNum = 0; lineNum < bathymetryData.size(); lineNum++) {
@@ -98,7 +98,7 @@ public class BathymetryFile {
      * @param record Bathymetry record
      * @return Formatted string
      */
-    private String createFormatString(BathymetryRecord<Double> record) {
+    private String createFormatString(W2BathymetryRecord<Double> record) {
         int characteristic = record.getCharacteristic();
         int padding = 1;
         if (characteristic > 5) {
@@ -112,7 +112,7 @@ public class BathymetryFile {
      * Get segment numbers
      * @return segments: list of segment numbers
      */
-    public BathymetryRecord<Integer> getSegments() {
+    public W2BathymetryRecord<Integer> getSegments() {
         return segments;
     }
 
@@ -120,8 +120,8 @@ public class BathymetryFile {
      * Set segment lengths
      * @param Segments: list of segment lengths
      */
-    public void setSegments(BathymetryRecord<Integer> Segments) {
-        if (fileType == Globals.FILE_TYPE.CSV) {
+    public void setSegments(W2BathymetryRecord<Integer> Segments) {
+        if (fileType == W2Globals.FILE_TYPE.CSV) {
             updateRecordCsv(Segments);
         }
         else {
@@ -135,7 +135,7 @@ public class BathymetryFile {
      * Get segment lengths
      * @return DLX: list of segment lengths
      */
-    public BathymetryRecord<Double> getDLX() {
+    public W2BathymetryRecord<Double> getDLX() {
         return DLX;
     }
 
@@ -143,8 +143,8 @@ public class BathymetryFile {
      * Set segment lengths
      * @param DLX: list of segment lengths
      */
-    public void setDLX(BathymetryRecord<Double> DLX) {
-        if (fileType == Globals.FILE_TYPE.CSV) {
+    public void setDLX(W2BathymetryRecord<Double> DLX) {
+        if (fileType == W2Globals.FILE_TYPE.CSV) {
             updateRecordCsv(DLX);
         }
         else {
@@ -158,16 +158,16 @@ public class BathymetryFile {
      * Get water surface elevations
      * @return ELWS: list of water surface elevations
      */
-    public BathymetryRecord<Double> getELWS() {
+    public W2BathymetryRecord<Double> getELWS() {
         return ELWS;
     }
 
     /**
      * Set water surface elevations
-     * @param ELWS : BathymetryRecord of water surface elevations
+     * @param ELWS : W2BathymetryRecord of water surface elevations
      */
-    public void setELWS(BathymetryRecord<Double> ELWS) {
-        if (fileType == Globals.FILE_TYPE.CSV) {
+    public void setELWS(W2BathymetryRecord<Double> ELWS) {
+        if (fileType == W2Globals.FILE_TYPE.CSV) {
             updateRecordCsv(ELWS);
         }
         else {
@@ -181,7 +181,7 @@ public class BathymetryFile {
      * Get orientation angles
      * @return PHIO: orientation angles
      */
-    public BathymetryRecord<Double> getPHIO() {
+    public W2BathymetryRecord<Double> getPHIO() {
         return PHIO;
     }
 
@@ -189,8 +189,8 @@ public class BathymetryFile {
      * Set orientation angles
      * @param PHIO: orientation angles
      */
-    public void setPHIO(BathymetryRecord<Double> PHIO) {
-        if (fileType == Globals.FILE_TYPE.CSV) {
+    public void setPHIO(W2BathymetryRecord<Double> PHIO) {
+        if (fileType == W2Globals.FILE_TYPE.CSV) {
             PHIO.setIdentifier("PHIO");
             updateRecordCsv(PHIO);
         }
@@ -206,7 +206,7 @@ public class BathymetryFile {
      * Get friction coefficients
      * @return FRICT: list of friction coefficients
      */
-    public BathymetryRecord<Double> getFRICT() {
+    public W2BathymetryRecord<Double> getFRICT() {
         return FRICT;
     }
 
@@ -214,8 +214,8 @@ public class BathymetryFile {
      * Set friction coefficients
      * @param FRICT: list of friction coefficients
      */
-    public void setFRICT(BathymetryRecord<Double> FRICT) {
-        if (fileType == Globals.FILE_TYPE.CSV) {
+    public void setFRICT(W2BathymetryRecord<Double> FRICT) {
+        if (fileType == W2Globals.FILE_TYPE.CSV) {
             FRICT.setIdentifier("FRICT");
             updateRecordCsv(FRICT);
         }
@@ -240,11 +240,11 @@ public class BathymetryFile {
             bathymetryData.add(sc.nextLine());
         }
         if (bathymetryData.get(0).startsWith("$") ) {
-            fileType = Globals.FILE_TYPE.CSV;
+            fileType = W2Globals.FILE_TYPE.CSV;
             // Number of segments will be computed later
             numSegments = 0;
         } else {
-            fileType = Globals.FILE_TYPE.TXT;
+            fileType = W2Globals.FILE_TYPE.TXT;
 
             // Determine number of segments
             for (String line : bathymetryData) {
@@ -263,7 +263,7 @@ public class BathymetryFile {
             }
             else if (line.toUpperCase().startsWith("DLX")) {
                 // Parse segment lengths
-                if (fileType == Globals.FILE_TYPE.CSV) {
+                if (fileType == W2Globals.FILE_TYPE.CSV) {
                     DLX = parseRecordCsvDouble(i);
                 } else {
                     DLX = parseRecordTxtDouble(i, numSegments);
@@ -271,7 +271,7 @@ public class BathymetryFile {
             }
             else if (line.toUpperCase().startsWith("ELWS")) {
                 // Parse water surface elevations
-                if (fileType == Globals.FILE_TYPE.CSV) {
+                if (fileType == W2Globals.FILE_TYPE.CSV) {
                     ELWS = parseRecordCsvDouble(i);
                 } else {
                     ELWS = parseRecordTxtDouble(i, numSegments);
@@ -280,7 +280,7 @@ public class BathymetryFile {
             else if (line.toUpperCase().startsWith("ANGLE") ||
             line.toUpperCase().startsWith("PHIO")) {
                 // Parse segment angles
-                if (fileType == Globals.FILE_TYPE.CSV) {
+                if (fileType == W2Globals.FILE_TYPE.CSV) {
                     PHIO = parseRecordCsvDouble(i);
                 } else {
                     PHIO = parseRecordTxtDouble(i, numSegments);
@@ -288,7 +288,7 @@ public class BathymetryFile {
             }
             else if (line.toUpperCase().startsWith("FRICT")) {
                 // Parse friction coefficients
-                if (fileType == Globals.FILE_TYPE.CSV) {
+                if (fileType == W2Globals.FILE_TYPE.CSV) {
                     FRICT = parseRecordCsvDouble(i);
                 } else {
                     FRICT = parseRecordTxtDouble(i, numSegments);
@@ -324,9 +324,9 @@ public class BathymetryFile {
     /**
      * Parse CSV record, double type
      */
-    private BathymetryRecord<Double> parseRecordCsvDouble(int index) {
+    private W2BathymetryRecord<Double> parseRecordCsvDouble(int index) {
         String[] values = bathymetryData.get(index).trim().split(",");
-        BathymetryRecord<Double> record = new BathymetryRecord<>("");
+        W2BathymetryRecord<Double> record = new W2BathymetryRecord<>("");
         record.setIdentifier(values[0]);
         for (int i = 1; i < values.length; i++) {
             record.add(Double.parseDouble(values[i]));
@@ -337,9 +337,9 @@ public class BathymetryFile {
     /**
      * Parse CSV record, integer type
      */
-    private BathymetryRecord<Integer> parseRecordCsvInteger(int index) {
+    private W2BathymetryRecord<Integer> parseRecordCsvInteger(int index) {
         String[] values = bathymetryData.get(index).trim().split(",");
-        BathymetryRecord<Integer> record = new BathymetryRecord<>("");
+        W2BathymetryRecord<Integer> record = new W2BathymetryRecord<>("");
         record.setIdentifier(values[0]);
         for (int i = 1; i < values.length; i++) {
             int value = Integer.parseInt(values[i].trim());
@@ -351,8 +351,8 @@ public class BathymetryFile {
     /**
      * Parse CSV record, double type
      */
-    private BathymetryRecord<Double> parseRecordTxtDouble(int index, int numRecords) {
-        BathymetryRecord<Double> record = new BathymetryRecord<>("");
+    private W2BathymetryRecord<Double> parseRecordTxtDouble(int index, int numRecords) {
+        W2BathymetryRecord<Double> record = new W2BathymetryRecord<>("");
         record.setIdentifier(bathymetryData.get(index).trim());
 
         // Compute number of lines to read

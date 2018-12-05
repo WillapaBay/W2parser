@@ -1,15 +1,15 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
 /**
- * Constituent information container
+ * W2Constituent information container
  */
-public class Constituent {
+public class W2Constituent {
     private String shortName;
     private String longName;
     private String units;
     private int columnNumber;
 
-    public Constituent(String shortName, String longName, String units, int columnNumber) {
+    public W2Constituent(String shortName, String longName, String units, int columnNumber) {
         this.shortName = shortName;
         this.longName = longName;
         this.units = units;

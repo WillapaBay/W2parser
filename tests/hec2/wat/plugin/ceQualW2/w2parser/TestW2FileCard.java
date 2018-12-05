@@ -2,11 +2,12 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
-public class TestFileCard {
+public class TestW2FileCard {
 
     @Test
-    public void testReadWriteInfiles() throws FileNotFoundException {
+    public void testReadWriteInfiles() throws IOException {
         String infile = "data/ColumbiaSlough/w2_con.npt";
         String outfile = "results/ColumbiaSlough/" +
                 "w2_con.npt.testReadInfiles";
@@ -14,10 +15,10 @@ public class TestFileCard {
         GridCard gridCard = new GridCard(w2con);
         int numBranches = gridCard.getNumBranches();
         int numWaterbodies = gridCard.getNumWaterBodies();
-        FileCard qinCard = new FileCard(w2con, CardNames.BranchInflowFilenames, numBranches);
-        FileCard tinCard = new FileCard(w2con, CardNames.BranchInflowTemperatureFilenames, numBranches);
-        FileCard cinCard = new FileCard(w2con, CardNames.BranchInflowConcentrationFilenames, numBranches);
-        FileCard bthCard = new FileCard(w2con, CardNames.BathymetryFilenames, numWaterbodies);
+        W2FileCard qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames, numBranches);
+        W2FileCard tinCard = new W2FileCard(w2con, W2CardNames.BranchInflowTemperatureFilenames, numBranches);
+        W2FileCard cinCard = new W2FileCard(w2con, W2CardNames.BranchInflowConcentrationFilenames, numBranches);
+        W2FileCard bthCard = new W2FileCard(w2con, W2CardNames.BathymetryFilenames, numWaterbodies);
         System.out.println(qinCard);
         System.out.println(tinCard);
         System.out.println(cinCard);

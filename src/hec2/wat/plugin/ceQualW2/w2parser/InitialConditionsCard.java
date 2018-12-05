@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Initial Conditions Card
+ * Initial Conditions W2Card
  *
  * This card has one line per water body
  */
-public class InitialConditionsCard extends Card {
+public class InitialConditionsCard extends W2Card {
     private List<Double> T2I;
     private List<Double> ICEI;
     private List<String> WTYPEC;

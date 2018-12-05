@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Active Constituent Fluxes Card
+ * Active W2Constituent Fluxes W2Card
  *
  * This card contains the status of each constituent as active (ON) or inactive (OFF).
  * There is one line per constituent, with a value for each waterbody.
  */
-public class ActiveConstituentFluxesCard extends Card {
-    private List<String> constituentNames; // Constituent names
+public class ActiveConstituentFluxesCard extends W2Card {
+    private List<String> constituentNames; // W2Constituent names
     private List<List<String>> values;     // State of each constituent (ON or OFF)
     private int numFluxes;
     private int numWaterbodies;

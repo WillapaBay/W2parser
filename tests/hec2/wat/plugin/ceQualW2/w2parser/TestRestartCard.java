@@ -2,23 +2,24 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class TestRestartCard {
 
     @Test
-    public void testRestart() throws FileNotFoundException {
+    public void testRestart() throws IOException {
         String infile = "data/ColumbiaSlough/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
         RestartCard restartCard = new RestartCard(w2con);
         int nrso = restartCard.getNRSO();
         RepeatingDoubleCard rsoDateCard = new RepeatingDoubleCard(w2con,
-                CardNames.RestartDate, nrso, "%8.2f");
+                W2CardNames.RestartDate, nrso, "%8.2f");
         RepeatingDoubleCard rsoFreqCard = new RepeatingDoubleCard(w2con,
-                CardNames.RestartFrequency, nrso, "%8.3f");
+                W2CardNames.RestartFrequency, nrso, "%8.3f");
 
         // Turn Restart output on
-        restartCard.setRSOC(Globals.ON);
-        restartCard.setRSIC(Globals.OFF);
+        restartCard.setRSOC(W2Globals.ON);
+        restartCard.setRSIC(W2Globals.OFF);
         restartCard.setNRSO(2);
 
         // Clear existing RSO dates
@@ -36,7 +37,7 @@ public class TestRestartCard {
         rsoFreqCard.addData(200.0);
 
         // Update Restart filename
-        FileCard rsiFileCard = new FileCard(w2con,
+        W2FileCard rsiFileCard = new W2FileCard(w2con,
                 "RSI FILE", 1);
         rsiFileCard.clearFileNames();
         rsiFileCard.addFilename("rso.opt", "");

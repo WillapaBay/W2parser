@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Parser {
+public class W2Parser {
     private W2ControlFile w2con;
     private int startYear; // Simulation start year
     private double jdayMin; // Simulation start time (Julian days)
@@ -20,7 +20,7 @@ public class Parser {
     private GridCard gridCard;
     private BranchGeometryCard branchGeometryCard;
     private InOutflowCard inOutflowCard;
-    private GraphFile graphFile;
+    private W2GraphFile w2GraphFile;
     private TsrPlotCard tsrPlotCard;
     private RepeatingIntegerCard wdSegmentCard; // "WD SEG"
     private RepeatingIntegerCard withdrawalOutputSegmentCard; // "WITH SEG"
@@ -30,7 +30,7 @@ public class Parser {
     private WithdrawalOutputCard withdrawalOutputCard;
     private RepeatingDoubleCard withdrawalFrequencyCard;
     private RepeatingIntegerCard tsrSegCard;
-    private FileCard tsrFilenameCard;
+    private W2FileCard tsrFilenameCard;
     private RepeatingDoubleCard tsrLayerCard;
     private IceCoverCard iceCoverCard;
     private InitialConditionsCard initCondCard;
@@ -38,22 +38,22 @@ public class Parser {
     private ConstituentDimensionsCard constituentDimensionsCard;
     private ConstituentComputationsCard constituentComputationsCard;
     private MultiRecordRepeatingStringCard branchConstituentsCard;
-    private FileCard qinCard;
-    private FileCard tinCard;
-    private FileCard cinCard;
+    private W2FileCard qinCard;
+    private W2FileCard tinCard;
+    private W2FileCard cinCard;
     private ValuesCard dstTribCard;
-    private FileCard qdtCard;
-    private FileCard tdtCard;
-    private FileCard qtrCard;
-    private FileCard ttrCard;
-    private FileCard qwdCard;
+    private W2FileCard qdtCard;
+    private W2FileCard tdtCard;
+    private W2FileCard qtrCard;
+    private W2FileCard ttrCard;
+    private W2FileCard qwdCard;
     private CalculationsCard calculationsCard;
     private LocationCard locationCard;
-    private FileCard qotCard;
+    private W2FileCard qotCard;
     private NumberStructuresCard numberStructuresCard;
     private MultiRecordRepeatingStringCard distributedTributaryConstituentsCard;
-    private FileCard cdtCard;
-    private FileCard ctrCard;
+    private W2FileCard cdtCard;
+    private W2FileCard ctrCard;
     private MultiRecordRepeatingStringCard precipConstituentsCard;
     private SedimentCard sedimentCard;
 
@@ -77,12 +77,12 @@ public class Parser {
     private List<Integer> BE;  // Ending branch of waterbody
     private List<String> DTRC; // Distributed Tributary Option (ON/OFF)
     private List<Integer> IWD;
-    private List<Constituent> graphFileConstituents;
-    private List<Constituent> graphFileDerivedConstituents;
-    private List<Parameter> inputParameters;
-    private List<Parameter> meteorologyParameters;
-    private List<Parameter> tsrOutputParameters;
-    private List<Parameter> withdrawalOutputParameters;
+    private List<W2Constituent> graphFileW2Constituents;
+    private List<W2Constituent> graphFileDerivedW2Constituents;
+    private List<W2Parameter> inputW2Parameters;
+    private List<W2Parameter> meteorologyW2Parameters;
+    private List<W2Parameter> tsrOutputW2Parameters;
+    private List<W2Parameter> withdrawalOutputW2Parameters;
     private List<List<Double>> initialWaterSurfaceElevations;
     private List<Double> initialTemperatures;
     private List<String> constituentNames;
@@ -101,13 +101,23 @@ public class Parser {
      * Handles reading and updating the CE-QUAL-W2 control file and associated bathymetry files
      * @param w2con CE-QUAL-W2 control file object
      */
-    public Parser(W2ControlFile w2con) {
+    public W2Parser(W2ControlFile w2con) {
         this.w2con = w2con;
     }
 
     /**
-     * Read the CE-QUAL-W2 control file
+     * Handles reading and updating the CE-QUAL-W2 control file and associated bathymetry files
+     * @param inPath Path to CE-QUAL-W2 control file
      */
+    public W2Parser(String inPath) throws IOException {
+        W2ControlFile w2con = new W2ControlFile(inPath);
+    }
+
+
+
+        /**
+         * Read the CE-QUAL-W2 control file
+         */
     public void readControlFile() {
         // Initialize time window
         timeControlCard = new TimeControlCard(w2con);
@@ -137,7 +147,7 @@ public class Parser {
         NGT = inOutflowCard.getNumGates();
 
         // Initialize withdrawal output info
-        wdSegmentCard = new RepeatingIntegerCard(w2con, CardNames.WithdrawalSegment, NWD, "%8d");
+        wdSegmentCard = new RepeatingIntegerCard(w2con, W2CardNames.WithdrawalSegment, NWD, "%8d");
         IWD = wdSegmentCard.getValues();
         withdrawalOutputCard = new WithdrawalOutputCard(w2con);
         NIWDO = withdrawalOutputCard.getNIWDO();
@@ -149,9 +159,9 @@ public class Parser {
 
         // Initialize constituent info, including total number of constituents and number of active constituents
         String graphFilename = w2con.getGraphFilename();
-        graphFile = new GraphFile(graphFilename);
-        graphFileConstituents = graphFile.getConstituents();
-        numConstituents = graphFileConstituents.size();
+        w2GraphFile = new W2GraphFile(graphFilename);
+        graphFileW2Constituents = w2GraphFile.getW2Constituents();
+        numConstituents = graphFileW2Constituents.size();
         //numConstituents = computeNumberOfConstituents();
         activeConstituentsCard = new ActiveConstituentsCard(w2con, numConstituents);
         constituentComputationsCard = new ConstituentComputationsCard(w2con);
@@ -161,8 +171,8 @@ public class Parser {
 
 
         // Initialized derived constituent info
-        graphFileDerivedConstituents = graphFile.getDerivedConstituents();
-        numDerivedConstituents = graphFileDerivedConstituents.size();
+        graphFileDerivedW2Constituents = w2GraphFile.getDerivedW2Constituents();
+        numDerivedConstituents = graphFileDerivedW2Constituents.size();
         activeDerivedConstituentsCard = new ActiveDerivedConstituentsCard(w2con, numDerivedConstituents, NWB);
         activeConstituentFluxesCard = new ActiveConstituentFluxesCard(w2con, NUM_FLUXES, NWB);
         List<List<String>> CDWBC = activeDerivedConstituentsCard.getValues();
@@ -187,27 +197,26 @@ public class Parser {
             else SEDIMENT_CALC.add(false);
         });
 
-
         /*
-         * Fetch model inputs and outputs. For each location, flow type, and parameter, a Parameter object
+         * Fetch model inputs and outputs. For each location, flow type, and parameter, a W2Parameter object
          * will be created containing the location, short name, long name, units, filename (input or output),
          * and indicators for inflow or outflow and model input or output. The location is a combination of
          * location and flow type, e.g., Branch 1 Distributed Tributary. The short name of a constituent is
          * specified in the control file. The long name and units are obtained from the graph.npt file.
          */
-        inputParameters = fetchInputParameters(); // Flow, temperature, and constituent model inputs (inflows & outflows)
-        constituentNames = fetchConstituentNames(); // Constituent names from graph.npt file
+        inputW2Parameters = fetchInputParameters(); // Flow, temperature, and constituent model inputs (inflows & outflows)
+        constituentNames = fetchConstituentNames(); // W2Constituent names from graph.npt file
         initialTemperatures = fetchInitialTemperatures(); // Initial temperatures by waterbody
         initialConcentrations = fetchInitialConcentrations(); // Initial concentrations for each constituent by waterbody
 
-        meteorologyParameters = fetchMeteorologyInputs(); // Meteorology parameters
+        meteorologyW2Parameters = fetchMeteorologyInputs(); // Meteorology parameters
         initialWaterSurfaceElevations = fetchInitialWaterSurfaceElevations(); // Initial water surface elevations by waterbody
 
         // Time series files
         if (TIME_SERIES)
-            tsrOutputParameters = fetchTsrOutputParameters();
+            tsrOutputW2Parameters = fetchTsrOutputParameters();
         if (DOWNSTREAM_OUTFLOW)
-            withdrawalOutputParameters = fetchWithdrawalOutflowParameters();
+            withdrawalOutputW2Parameters = fetchWithdrawalOutflowParameters();
 
         handleVerticalProfiles();  // TODO Add support for vertical profile files, using -1 in initialConcentrations
         handleLongitudinalProfiles();  // TODO Add support for longitudinal profile files, using -2 in initialConcentrations
@@ -222,10 +231,10 @@ public class Parser {
      *
      * @return List of withdrawal output parameters
      */
-    private List<Parameter> fetchWithdrawalOutflowParameters() {
-        List<Parameter> parameters = new ArrayList<>();
+    private List<W2Parameter> fetchWithdrawalOutflowParameters() {
+        List<W2Parameter> w2Parameters = new ArrayList<>();
         List<Integer> NSTR = numberStructuresCard.getNSTR();
-        Parameter parameter;
+        W2Parameter w2Parameter;
         int outputWaterbody;
         int outputSegment;
         String outputFilename;
@@ -244,19 +253,19 @@ public class Parser {
                 ncol++;
             }
 
-            parameter = new Parameter(locationName, "Flow-QWD", "Withdrawal Flow",
+            w2Parameter = new W2Parameter(locationName, "Flow-QWD", "Withdrawal Flow",
                     "m^3/s", icol, ncol, outputFilename, "outflow", "output");
-            parameter.setSegment(outputSegment);
-            parameters.add(parameter);
+            w2Parameter.setSegment(outputSegment);
+            w2Parameters.add(w2Parameter);
             icol++;
 
             for (int jstr = 0; jstr < NSTR.get(outputWaterbody - 1); jstr++) {
                 int outlet = jstr + 1;
-                parameter = new Parameter(locationName, String.format("Flow-QWD_outlet_%d", outlet),
+                w2Parameter = new W2Parameter(locationName, String.format("Flow-QWD_outlet_%d", outlet),
                         String.format("Withdrawal Flow - Outlet %d", outlet),
                         "m^3/s", icol, ncol, outputFilename, "outflow", "output");
-                parameter.setSegment(outputSegment);
-                parameters.add(parameter);
+                w2Parameter.setSegment(outputSegment);
+                w2Parameters.add(w2Parameter);
                 icol++;
             }
 
@@ -272,26 +281,26 @@ public class Parser {
                 ncol++;
             }
 
-            parameter = new Parameter(locationName, "Temp-TWO", "Withdrawal Temperature",
+            w2Parameter = new W2Parameter(locationName, "Temp-TWO", "Withdrawal Temperature",
                     "C", icol, ncol, outputFilename, "outflow", "output");
-            parameter.setSegment(outputSegment);
-            parameters.add(parameter);
+            w2Parameter.setSegment(outputSegment);
+            w2Parameters.add(w2Parameter);
             icol++;
 
             for (int jstr = 0; jstr < NSTR.get(outputWaterbody - 1); jstr++) {
                 int outlet = jstr + 1;
-                parameter = new Parameter(locationName, String.format("Temp-TWO_outlet_%d", outlet),
+                w2Parameter = new W2Parameter(locationName, String.format("Temp-TWO_outlet_%d", outlet),
                         String.format("Withdrawal Temperature - Outlet %d", outlet),
                         "C", icol, ncol, outputFilename, "outflow", "output");
-                parameter.setSegment(outputSegment);
-                parameters.add(parameter);
+                w2Parameter.setSegment(outputSegment);
+                w2Parameters.add(w2Parameter);
                 icol++;
             }
 
             // Constituents (iterate over all constituents, but only output active constituents
             if (CONSTITUENTS) {
                 icol = 1; // Every qwo file contains at least one data column for the combined outflow
-                List<Parameter> constituentParameters = new ArrayList<>();
+                List<W2Parameter> constituentW2Parameters = new ArrayList<>();
                 outputFilename = String.format("cwo_%d.opt", outputSegment);
                 locationName = String.format("Seg %d Withdrawal", outputSegment);
                 outputWaterbody = getOutputWaterbody(outputSegment, US, DS, NBR);
@@ -299,26 +308,26 @@ public class Parser {
                 List<String> constituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
                 for (int jc = 0; jc < numConstituents; jc++) {
                     if (isOn(constituentSettings.get(jc))) {
-                        Constituent constituent = graphFileConstituents.get(jc);
-                        parameter = new Parameter(locationName, constituentNames.get(jc),
-                                constituent.getLongName(), constituent.getUnits(),
+                        W2Constituent w2Constituent = graphFileW2Constituents.get(jc);
+                        w2Parameter = new W2Parameter(locationName, constituentNames.get(jc),
+                                w2Constituent.getLongName(), w2Constituent.getUnits(),
                                 icol, 0, outputFilename,
                                 "outflow", "output");
-                        parameter.setWaterBody(outputWaterbody);
-                        parameter.setSegment(outputSegment);
-                        constituentParameters.add(parameter);
+                        w2Parameter.setWaterBody(outputWaterbody);
+                        w2Parameter.setSegment(outputSegment);
+                        constituentW2Parameters.add(w2Parameter);
                         icol++;
                     }
                 }
 
-                final int numConstituentColumns = constituentParameters.size();
-                constituentParameters.forEach(param -> param.setNumColumns(numConstituentColumns));
-                parameters.addAll(constituentParameters);
+                final int numConstituentColumns = constituentW2Parameters.size();
+                constituentW2Parameters.forEach(param -> param.setNumColumns(numConstituentColumns));
+                w2Parameters.addAll(constituentW2Parameters);
             }
 
             if (DERIVED_CALC) {
                 icol = 1; // Every qwo file contains at least one data column for the combined outflow
-                List<Parameter> derivedConstituentParameters = new ArrayList<>();
+                List<W2Parameter> derivedConstituentW2Parameters = new ArrayList<>();
                 outputFilename = String.format("dwo_%d.opt", outputSegment);
                 locationName = String.format("Seg %d Withdrawal", outputSegment);
 //                outputWaterbody = getOutputWaterbody(outputSegment, US, DS, BS, BE, NWB);
@@ -326,26 +335,26 @@ public class Parser {
                 List<String> derivedConstituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
                 for (int jc = 0; jc < numDerivedConstituents; jc++) {
                     if (isOn(derivedConstituentSettings.get(jc))) {
-                        Constituent constituent = graphFileDerivedConstituents.get(jc);
-                        parameter = new Parameter(locationName, derivedConstituentNames.get(jc),
-                                constituent.getLongName(), constituent.getUnits(),
+                        W2Constituent w2Constituent = graphFileDerivedW2Constituents.get(jc);
+                        w2Parameter = new W2Parameter(locationName, derivedConstituentNames.get(jc),
+                                w2Constituent.getLongName(), w2Constituent.getUnits(),
                                 icol, 0, outputFilename,
                                 "outflow", "output");
-                        parameter.setWaterBody(outputWaterbody);
-                        parameter.setSegment(outputSegment);
-                        derivedConstituentParameters.add(parameter);
+                        w2Parameter.setWaterBody(outputWaterbody);
+                        w2Parameter.setSegment(outputSegment);
+                        derivedConstituentW2Parameters.add(w2Parameter);
                         icol++;
                     }
                 }
 
-                final int numConstituentColumns = derivedConstituentParameters.size();
-                derivedConstituentParameters.forEach(param -> param.setNumColumns(numConstituentColumns));
-                parameters.addAll(derivedConstituentParameters);
+                final int numConstituentColumns = derivedConstituentW2Parameters.size();
+                derivedConstituentW2Parameters.forEach(param -> param.setNumColumns(numConstituentColumns));
+                w2Parameters.addAll(derivedConstituentW2Parameters);
             }
 
         }
 
-        return parameters;
+        return w2Parameters;
     }
 
     /**
@@ -391,7 +400,7 @@ public class Parser {
      * @param interval Output time interval
      * @param granularity Output granularity (days, hours, or seconds)
      */
-    public void setOutputTimestep(double interval, Globals.Granularity granularity) {
+    public void setOutputTimestep(double interval, W2Globals.Granularity granularity) {
         int NWDO = withdrawalOutputCard.getNWDO(); // Get number of withdrawal output dates
         withdrawalFrequencyCard = new RepeatingDoubleCard(w2con, "WITH FRE",
                 NWDO, "%8.5f");
@@ -399,12 +408,12 @@ public class Parser {
         List<Double> WDOF = new ArrayList<>();
         WDOF.add(interval);
 
-        if (granularity == Globals.Granularity.DAYS) {
-            WDOC = Globals.ON;
-        } else if (granularity == Globals.Granularity.HOURS) {
-            WDOC = Globals.ONH;
-        } else if (granularity == Globals.Granularity.SECONDS) {
-            WDOC = Globals.ONS;
+        if (granularity == W2Globals.Granularity.DAYS) {
+            WDOC = W2Globals.ON;
+        } else if (granularity == W2Globals.Granularity.HOURS) {
+            WDOC = W2Globals.ONH;
+        } else if (granularity == W2Globals.Granularity.SECONDS) {
+            WDOC = W2Globals.ONS;
         }
         withdrawalOutputCard.setWDOC(WDOC);
         withdrawalOutputCard.updateTable();
@@ -444,26 +453,26 @@ public class Parser {
      *
      * @return List of TSR output parameters
      */
-    private List<Parameter> fetchTsrOutputParameters() {
-        List<Parameter> parameters = new ArrayList<>();
+    private List<W2Parameter> fetchTsrOutputParameters() {
+        List<W2Parameter> w2Parameters = new ArrayList<>();
 
         int NITSR = tsrPlotCard.getNITSR();
         tsrSegCard = new RepeatingIntegerCard(w2con, "TSR SEG", NITSR, "%8d");
         List<Integer> outputSegments = tsrSegCard.getValues();
 
         // Determine TSR filename prefix from the TSR filename card
-        tsrFilenameCard = new FileCard(w2con, "TSR FILE", 1);
+        tsrFilenameCard = new W2FileCard(w2con, "TSR FILE", 1);
         String tsrBaseFilename = tsrFilenameCard.getFileName(0);
         String tsrPrefix = tsrBaseFilename.substring(0, tsrBaseFilename.lastIndexOf('.'));
 
         tsrLayerCard = new RepeatingDoubleCard(w2con, "TSR LAYE", NITSR, "%8.5f");
         List<Double> ETSR = tsrLayerCard.getValues();
 
-        // Get ice cover parameters
+        // Get ice cover w2Parameters
         iceCoverCard = new IceCoverCard(w2con, NWB);
         List<String> ICEC = iceCoverCard.getICEC();
 
-        Parameter parameter;
+        W2Parameter w2Parameter;
 
         int paramIndex = 0;
         for (int i = 0; i < NITSR; i++) {
@@ -484,172 +493,172 @@ public class Parser {
             String tsrFilename = "tsr_" + filenum + "_seg" + segment + ".csv";
 
             // DLT: Current time step (s)
-            parameter = new Parameter(tsrLocation, "DLT", "Time Step",
+            w2Parameter = new W2Parameter(tsrLocation, "DLT", "Time Step",
                     "s", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // ELWS: Water surface elevation for the cell's segment location (m)
-            parameter = new Parameter(tsrLocation, "Elev", "Water Surface Elevation",
+            w2Parameter = new W2Parameter(tsrLocation, "Elev", "Water Surface Elevation",
                     "m", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // T2: Temperature (Celsius)
             // Note: this will be labeled Temp to ensure proper handling in DSS
-            parameter = new Parameter(tsrLocation, "Temp-Water", "Water Temperature",
+            w2Parameter = new W2Parameter(tsrLocation, "Temp-Water", "Water Temperature",
                     "C", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // U: Velocity (m/s) at the layer and segment specified
-            parameter = new Parameter(tsrLocation, "U", "Velocity",
+            w2Parameter = new W2Parameter(tsrLocation, "U", "Velocity",
                     "m/s", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // Q: Total (vertically integrated) flow rate through the entire segment (m3/s)
             // Note: this will be labeled Flow-Total to ensure proper handling in DSS
-            parameter = new Parameter(tsrLocation, "Flow-Total", "Total Vertically Integrated Flow",
+            w2Parameter = new W2Parameter(tsrLocation, "Flow-Total", "Total Vertically Integrated Flow",
                     "m^3/s", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // SRON: Net short wave solar radiation incident on the water surface (W/m^2, reflection is not included)
-            parameter = new Parameter(tsrLocation, "Rad-Shortwave", "Net Shortwave Solar Radiation",
+            w2Parameter = new W2Parameter(tsrLocation, "Rad-Shortwave", "Net Shortwave Solar Radiation",
                     "W/m^2", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // EXT: Light extinction coefficient (1/m)
-            parameter = new Parameter(tsrLocation, "Ext Coeff", "Light Extinction Coefficient",
+            w2Parameter = new W2Parameter(tsrLocation, "Ext Coeff", "Light Extinction Coefficient",
                     "1/m", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // DEPTH: Depth from water surface to channel bottom (m)
             // Note: this will be labeled Stage
-            parameter = new Parameter(tsrLocation, "Stage", "Depth",
+            w2Parameter = new W2Parameter(tsrLocation, "Stage", "Depth",
                     "m", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // WIDTH: Surface width (m)*
-            parameter = new Parameter(tsrLocation, "Surface Width", "Surface Width",
+            w2Parameter = new W2Parameter(tsrLocation, "Surface Width", "Surface Width",
                     "m", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // SHADE: Shade (shade factor multiplied by SRON)
             //   if SHADE = 1 then no shade
             //   if shade = 0 then no short wave solar reaches the water surface
-            parameter = new Parameter(tsrLocation, "Shade", "Shade",
+            w2Parameter = new W2Parameter(tsrLocation, "Shade", "Shade",
                     "", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // Ice thickness, optional
             if (any(isOn(ICEC))) {
-                parameter = new Parameter(tsrLocation, "Ice Thickness", "Ice Thickness",
+                w2Parameter = new W2Parameter(tsrLocation, "Ice Thickness", "Ice Thickness",
                         "m", outputColumn, 0, tsrFilename, "outflow", "output");
-                parameter.setVerticalLocation(verticalLocation);
-                parameter.setSegment(segment);
-                parameters.add(parameter);
+                w2Parameter.setVerticalLocation(verticalLocation);
+                w2Parameter.setSegment(segment);
+                w2Parameters.add(w2Parameter);
                 outputColumn++;
                 paramIndex++;
             }
 
             // Tvolavg: Vertically volume-weighted temperature at the specified model segment
             // TODO Check why parser.exe program has W/m^2 for the units
-            parameter = new Parameter(tsrLocation, "Temp-VolAvg", "Vertically Volume-Weighted Temperature",
+            w2Parameter = new W2Parameter(tsrLocation, "Temp-VolAvg", "Vertically Volume-Weighted Temperature",
                     "C", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // NetRad: Net radiation at surface of segment (W/m^2)
-            parameter = new Parameter(tsrLocation, "Rad-Net", "Net Radiation",
+            w2Parameter = new W2Parameter(tsrLocation, "Rad-Net", "Net Radiation",
                     "C", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // SWSolar: Net short wave solar radiation at surface (W/m^2)
-            parameter = new Parameter(tsrLocation, "Rad-Shortwave", "Net Shortwave Solar Radiation",
+            w2Parameter = new W2Parameter(tsrLocation, "Rad-Shortwave", "Net Shortwave Solar Radiation",
                     "W/m^2", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // LWRad: Net long wave radiation at surface (W/m2)
-            parameter = new Parameter(tsrLocation, "Rad-Longwave", "Net Longwave Radiation",
+            w2Parameter = new W2Parameter(tsrLocation, "Rad-Longwave", "Net Longwave Radiation",
                     "W/m^2", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // BackRad: Back radiation at surface (W/m2)
-            parameter = new Parameter(tsrLocation, "Rad-Back", "Back Radiation",
+            w2Parameter = new W2Parameter(tsrLocation, "Rad-Back", "Back Radiation",
                     "W/m^2", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // EvapF: Evaporative heat flux at surface (W/m2)
-            parameter = new Parameter(tsrLocation, "Rad-Evaporative", "Evaporative Heat Flux",
+            w2Parameter = new W2Parameter(tsrLocation, "Rad-Evaporative", "Evaporative Heat Flux",
                     "W/m^2", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
             // ConducF: Conductive heat flux at surface (W/m2)
-            parameter = new Parameter(tsrLocation, "Rad-Conductive", "Conductive Heat Flux",
+            w2Parameter = new W2Parameter(tsrLocation, "Rad-Conductive", "Conductive Heat Flux",
                     "W/m^2", outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
@@ -680,14 +689,14 @@ public class Parser {
             //numActiveConstituents = count(isOn(constituentSettings));
             for (int jc = 0; jc < numConstituents; jc++) {
                 if (isOn(constituentSettings.get(jc))) {
-                    Constituent constituent = graphFileConstituents.get(jc);
-                    parameter = new Parameter(tsrLocation, constituentNames.get(jc),
-                            constituent.getLongName(), constituent.getUnits(),
+                    W2Constituent w2Constituent = graphFileW2Constituents.get(jc);
+                    w2Parameter = new W2Parameter(tsrLocation, constituentNames.get(jc),
+                            w2Constituent.getLongName(), w2Constituent.getUnits(),
                             outputColumn, 0, tsrFilename, "outflow", "output");
-                    parameter.setWaterBody(outputWaterbody);
-                    parameter.setVerticalLocation(verticalLocation);
-                    parameter.setSegment(segment);
-                    parameters.add(parameter);
+                    w2Parameter.setWaterBody(outputWaterbody);
+                    w2Parameter.setVerticalLocation(verticalLocation);
+                    w2Parameter.setSegment(segment);
+                    w2Parameters.add(w2Parameter);
                     outputColumn++;
                     paramIndex++;
                 }
@@ -698,13 +707,13 @@ public class Parser {
             int epiphytonGroup = 1;
             for (int je = 0; je < numEpiphytonGroups; je++) {
                 int epiGroup = je + 1;
-                parameter = new Parameter(tsrLocation, "EPI" + epiGroup,
+                w2Parameter = new W2Parameter(tsrLocation, "EPI" + epiGroup,
                         "Epiphython " + epiGroup, "g/m^3",
                         outputColumn, 0, tsrFilename, "outflow", "output");
-                parameter.setWaterBody(outputWaterbody);
-                parameter.setVerticalLocation(verticalLocation);
-                parameter.setSegment(segment);
-                parameters.add(parameter);
+                w2Parameter.setWaterBody(outputWaterbody);
+                w2Parameter.setVerticalLocation(verticalLocation);
+                w2Parameter.setSegment(segment);
+                w2Parameters.add(w2Parameter);
                 outputColumn++;
                 paramIndex++;
             }
@@ -713,14 +722,14 @@ public class Parser {
             int numMacrophytes = constituentDimensionsCard.getNMC();
             for (int jm = 0; jm < numMacrophytes; jm++) {
                 int macroGroup = jm + 1;
-                parameter = new Parameter(tsrLocation, "MAC" + macroGroup,
+                w2Parameter = new W2Parameter(tsrLocation, "MAC" + macroGroup,
                         "Macrophytes" + macroGroup, "g/m^3",
                         outputColumn, 0, tsrFilename,
                         "outflow", "output");
-                parameter.setWaterBody(outputWaterbody);
-                parameter.setVerticalLocation(verticalLocation);
-                parameter.setSegment(segment);
-                parameters.add(parameter);
+                w2Parameter.setWaterBody(outputWaterbody);
+                w2Parameter.setVerticalLocation(verticalLocation);
+                w2Parameter.setSegment(segment);
+                w2Parameters.add(w2Parameter);
                 outputColumn++;
                 paramIndex++;
             }
@@ -728,42 +737,42 @@ public class Parser {
             // Sediment - if turned on
             if (SEDIMENT_CALC.get(outputWaterbody - 1)) {
                 // SED: Sediment?? (g/m^3)
-                parameter = new Parameter(tsrLocation, "SED", "Sediment",
+                w2Parameter = new W2Parameter(tsrLocation, "SED", "Sediment",
                         "g/m^3", outputColumn, 0, tsrFilename,
                         "outflow", "output");
-                parameter.setVerticalLocation(verticalLocation);
-                parameter.setSegment(segment);
-                parameters.add(parameter);
+                w2Parameter.setVerticalLocation(verticalLocation);
+                w2Parameter.setSegment(segment);
+                w2Parameters.add(w2Parameter);
                 outputColumn++;
                 paramIndex++;
 
                 // SEDP: Sediment Phosphorus (g/m^3)
-                parameter = new Parameter(tsrLocation, "SEDP", "Sediment Phosphorus",
+                w2Parameter = new W2Parameter(tsrLocation, "SEDP", "Sediment Phosphorus",
                         "g/m^3", outputColumn, 0, tsrFilename,
                         "outflow", "output");
-                parameter.setVerticalLocation(verticalLocation);
-                parameter.setSegment(segment);
-                parameters.add(parameter);
+                w2Parameter.setVerticalLocation(verticalLocation);
+                w2Parameter.setSegment(segment);
+                w2Parameters.add(w2Parameter);
                 outputColumn++;
                 paramIndex++;
 
                 // SEDN: Sediment Nitrogen (g/m^3)
-                parameter = new Parameter(tsrLocation, "SEDN", "Sediment Nitrogen",
+                w2Parameter = new W2Parameter(tsrLocation, "SEDN", "Sediment Nitrogen",
                         "g/m^3", outputColumn, 0, tsrFilename,
                         "outflow", "output");
-                parameter.setVerticalLocation(verticalLocation);
-                parameter.setSegment(segment);
-                parameters.add(parameter);
+                w2Parameter.setVerticalLocation(verticalLocation);
+                w2Parameter.setSegment(segment);
+                w2Parameters.add(w2Parameter);
                 outputColumn++;
                 paramIndex++;
 
                 // SEDC: Sediment Carbon (g/m^3)
-                parameter = new Parameter(tsrLocation, "SEDC", "Sediment Carbon",
+                w2Parameter = new W2Parameter(tsrLocation, "SEDC", "Sediment Carbon",
                         "g/m^3", outputColumn, 0, tsrFilename,
                         "outflow", "output");
-                parameter.setVerticalLocation(verticalLocation);
-                parameter.setSegment(segment);
-                parameters.add(parameter);
+                w2Parameter.setVerticalLocation(verticalLocation);
+                w2Parameter.setSegment(segment);
+                w2Parameters.add(w2Parameter);
                 outputColumn++;
                 paramIndex++;
             }
@@ -773,14 +782,14 @@ public class Parser {
             List<List<String>> derivedConstituentSettings = activeDerivedConstituentsCard.getValues();
             for (int jc = 0; jc < numDerivedConstituents; jc++) {
                 if (isOn(derivedConstituentSettings.get(outputWaterbody - 1).get(jc))) {
-                    Constituent constituent = graphFileDerivedConstituents.get(jc);
-                    parameter = new Parameter(tsrLocation, derivedConstituentNames.get(jc),
-                            constituent.getLongName(), constituent.getUnits(),
+                    W2Constituent w2Constituent = graphFileDerivedW2Constituents.get(jc);
+                    w2Parameter = new W2Parameter(tsrLocation, derivedConstituentNames.get(jc),
+                            w2Constituent.getLongName(), w2Constituent.getUnits(),
                             outputColumn, 0, tsrFilename, "outflow", "output");
-                    parameter.setWaterBody(outputWaterbody);
-                    parameter.setVerticalLocation(verticalLocation);
-                    parameter.setSegment(segment);
-                    parameters.add(parameter);
+                    w2Parameter.setWaterBody(outputWaterbody);
+                    w2Parameter.setVerticalLocation(verticalLocation);
+                    w2Parameter.setSegment(segment);
+                    w2Parameters.add(w2Parameter);
                     outputColumn++;
                     paramIndex++;
                 }
@@ -791,26 +800,26 @@ public class Parser {
             List<List<String>> fluxSettings = activeConstituentFluxesCard.getValues();
             for (int jc = 0; jc < NUM_FLUXES; jc++) {
                 if (isOn(fluxSettings.get(outputWaterbody - 1).get(jc))) {
-                    parameter = new Parameter(tsrLocation, fluxNames.get(jc),
+                    w2Parameter = new W2Parameter(tsrLocation, fluxNames.get(jc),
                             fluxNames.get(jc), "kg/d",
                             outputColumn, 0, tsrFilename,
                             "outflow", "output");
-                    parameter.setWaterBody(outputWaterbody);
-                    parameter.setVerticalLocation(verticalLocation);
-                    parameter.setSegment(segment);
-                    parameters.add(parameter);
+                    w2Parameter.setWaterBody(outputWaterbody);
+                    w2Parameter.setVerticalLocation(verticalLocation);
+                    w2Parameter.setSegment(segment);
+                    w2Parameters.add(w2Parameter);
                     outputColumn++;
                     paramIndex++;
                 }
             }
 
             // Add CO2GASX flux manually - I don't really understand this in the parser.exe source code
-            parameter = new Parameter(tsrLocation, "CO2GASX", "CO2GASX", "kg/d",
+            w2Parameter = new W2Parameter(tsrLocation, "CO2GASX", "CO2GASX", "kg/d",
                     outputColumn, 0, tsrFilename, "outflow", "output");
-            parameter.setWaterBody(outputWaterbody);
-            parameter.setVerticalLocation(verticalLocation);
-            parameter.setSegment(segment);
-            parameters.add(parameter);
+            w2Parameter.setWaterBody(outputWaterbody);
+            w2Parameter.setVerticalLocation(verticalLocation);
+            w2Parameter.setSegment(segment);
+            w2Parameters.add(w2Parameter);
             outputColumn++;
             paramIndex++;
 
@@ -820,10 +829,10 @@ public class Parser {
             int istart = paramIndex - numColumns;
             int iend = paramIndex;
             for (int ii = istart; ii < iend; ii++) {
-                parameters.get(ii).setNumColumns(numColumns);
+                w2Parameters.get(ii).setNumColumns(numColumns);
             }
         }
-        return parameters;
+        return w2Parameters;
     }
 
     private void handleVerticalProfiles() {
@@ -861,7 +870,7 @@ public class Parser {
      */
     private List<String> fetchConstituentNames() {
         List<String> ConstituentNames = new ArrayList<>();
-        for (Constituent c : graphFileConstituents) {
+        for (W2Constituent c : graphFileW2Constituents) {
             ConstituentNames.add(c.getLongName());
         }
         return ConstituentNames;
@@ -937,102 +946,102 @@ public class Parser {
     /**
      * Create list of input parameters
      */
-    private List<Parameter> fetchInputParameters() {
-        // Assemble lists of input and output parameters. Each parameter will contain:
+    private List<W2Parameter> fetchInputParameters() {
+        // Assemble lists of input and output w2Parameters. Each parameter will contain:
         // location, parameter name (short name), description (long name), units
         // column number, total columns in file, and filename
-        List<Parameter> parameters = new ArrayList<>();
+        List<W2Parameter> w2Parameters = new ArrayList<>();
 
         // ------------------------------------------------------------------------------------
-        // Assemble list of input parameters (inflows and outflows)
+        // Assemble list of input w2Parameters (inflows and outflows)
         // ------------------------------------------------------------------------------------
 
         // Branch Inflows, QIN
-        qinCard = new FileCard(w2con, CardNames.BranchInflowFilenames, NBR);
+        qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames, NBR);
         for (int jbr = 0; jbr < NBR; jbr++) {
             if (UHS.get(jbr) == 0) {
                 int branch = jbr + 1;
-                Parameter parameter = new Parameter("Branch " + branch + " Inflow",
+                W2Parameter w2Parameter = new W2Parameter("Branch " + branch + " Inflow",
                         "Flow-QIN", "Upstream Branch Inflow", "m^3/s",
                         1, 1, qinCard.getFileNames().get(jbr),
                         "inflow", "input");
-                parameters.add(parameter);
+                w2Parameters.add(w2Parameter);
             }
         }
 
         // Branch Inflow Temperature, TIN
-        tinCard = new FileCard(w2con, CardNames.BranchInflowTemperatureFilenames, NBR);
+        tinCard = new W2FileCard(w2con, W2CardNames.BranchInflowTemperatureFilenames, NBR);
         for (int jbr = 0; jbr < NBR; jbr++) {
             if (UHS.get(jbr) == 0) {
                 int branch = jbr + 1;
-                Parameter parameter = new Parameter(branchInflowLocationName(branch),
+                W2Parameter w2Parameter = new W2Parameter(branchInflowLocationName(branch),
                         "Temp-TIN", "Temperature", "C",
                         1, 1, tinCard.getFileNames().get(jbr),
                         "inflow", "input");
-                parameters.add(parameter);
+                w2Parameters.add(w2Parameter);
             }
         }
 
         // Distributed Tributary Inflows, QDT
-        dstTribCard = new ValuesCard(w2con, CardNames.DistributedTributaries, NBR);
+        dstTribCard = new ValuesCard(w2con, W2CardNames.DistributedTributaries, NBR);
         DTRC = dstTribCard.getValues();
-        qdtCard = new FileCard(w2con, CardNames.DistributedTributaryInflowFilenames, NBR);
+        qdtCard = new W2FileCard(w2con, W2CardNames.DistributedTributaryInflowFilenames, NBR);
         for (int jbr = 0; jbr < NBR; jbr++) {
             if (isOn(DTRC.get(jbr))) {
                 int branch = jbr + 1;
-                Parameter parameter = new Parameter(distTributaryLocationName(branch),
+                W2Parameter w2Parameter = new W2Parameter(distTributaryLocationName(branch),
                         "Flow-QDT", "Distributed Tributary Inflow", "m^3/s",
                         1, 1, qdtCard.getFileNames().get(jbr),
                         "inflow", "input");
-                parameters.add(parameter);
+                w2Parameters.add(w2Parameter);
             }
         }
 
         // Distributed Tributary Inflow Temperature, TDT
-        tdtCard = new FileCard(w2con, CardNames.DistributedTributaryInflowTemperatureFilenames, NBR);
+        tdtCard = new W2FileCard(w2con, W2CardNames.DistributedTributaryInflowTemperatureFilenames, NBR);
         for (int jbr = 0; jbr < NBR; jbr++) {
             if (isOn(DTRC.get(jbr))) {
                 int branch = jbr + 1;
-                Parameter parameter = new Parameter(distTributaryLocationName(branch),
+                W2Parameter w2Parameter = new W2Parameter(distTributaryLocationName(branch),
                         "Temp-TDT", "Temperature", "C",
                         1, 1, tdtCard.getFileNames().get(jbr),
                         "inflow", "input");
-                parameters.add(parameter);
+                w2Parameters.add(w2Parameter);
             }
         }
 
         // Tributary Inflows, QTR
-        qtrCard = new FileCard(w2con, CardNames.TributaryInflowFilenames, NTR);
+        qtrCard = new W2FileCard(w2con, W2CardNames.TributaryInflowFilenames, NTR);
         for (int jtr = 0; jtr < NTR; jtr++) {
             int tributary = jtr + 1;
-            Parameter parameter = new Parameter(tributaryLocationName(tributary),
+            W2Parameter w2Parameter = new W2Parameter(tributaryLocationName(tributary),
                     "Flow-QTR", "Tributary Inflow", "m^3/s",
                     1, 1, qtrCard.getFileNames().get(jtr),
                     "inflow", "input");
-            parameters.add(parameter);
+            w2Parameters.add(w2Parameter);
         }
 
         // Tributary Inflow Temperature, TTR
-        ttrCard = new FileCard(w2con, CardNames.TributaryInflowTemperatureFilenames, NTR);
+        ttrCard = new W2FileCard(w2con, W2CardNames.TributaryInflowTemperatureFilenames, NTR);
         for (int jtr = 0; jtr < NTR; jtr++) {
             int tributary = jtr + 1;
-            Parameter parameter = new Parameter(tributaryLocationName(tributary),
+            W2Parameter w2Parameter = new W2Parameter(tributaryLocationName(tributary),
                     "Temp-TTR", "Temperature", "C",
                     1, 1, ttrCard.getFileNames().get(jtr),
                     "inflow", "input");
-            parameters.add(parameter);
+            w2Parameters.add(w2Parameter);
         }
 
         // Lateral Withdrawals (outflows), QWD
-        qwdCard = new FileCard(w2con, CardNames.WithdrawalFilenames, 1);
+        qwdCard = new W2FileCard(w2con, W2CardNames.WithdrawalFilenames, 1);
         String qwdFileName = qwdCard.getFileNames().get(0);
         for (int jwd = 0; jwd < NWD; jwd++) {
             int segment = IWD.get(jwd);
             int withdrawal = jwd + 1;
-            Parameter parameter = new Parameter(latWithdrawalLocationName(segment, withdrawal),
+            W2Parameter w2Parameter = new W2Parameter(latWithdrawalLocationName(segment, withdrawal),
                     "Flow-QWD", "Lateral Withdrawal", "m^3/s",
                     withdrawal, NWD, qwdFileName, "outflow", "input");
-            parameters.add(parameter);
+            w2Parameters.add(w2Parameter);
         }
 
         // Precipitation (inflow)
@@ -1045,10 +1054,10 @@ public class Parser {
             if (isOn(PRC.get(jwb))) {
                 int waterbody = jwb + 1;
                 for (int branch = BS.get(jwb); branch <= BE.get(jwb); branch++) {
-                    Parameter parameter = new Parameter(precipLocationName(branch),
+                    W2Parameter w2Parameter = new W2Parameter(precipLocationName(branch),
                             "Precip", "Precipitation", "m/s",
                             branch, NWD, qwdFileName, "outflow", "input");
-                    parameters.add(parameter);
+                    w2Parameters.add(w2Parameter);
                 }
             }
         }
@@ -1059,26 +1068,26 @@ public class Parser {
             if (isOn(PRC.get(jwb))) {
                 int waterbody = jwb + 1;
                 for (int branch = BS.get(jwb); branch <= BE.get(jwb); branch++) {
-                    Parameter parameter = new Parameter(precipLocationName(branch),
+                    W2Parameter w2Parameter = new W2Parameter(precipLocationName(branch),
                             "Temp-TPR", "Precipitation Temperature", "C",
                             branch, NWD, qwdFileName, "outflow", "input");
-                    parameters.add(parameter);
+                    w2Parameters.add(w2Parameter);
                 }
             }
         }
 
         // Structural Withdrawals (outflows), QOT
-        qotCard = new FileCard(w2con, CardNames.StructuralWithdrawalFilenames, 1);
+        qotCard = new W2FileCard(w2con, W2CardNames.StructuralWithdrawalFilenames, 1);
         numberStructuresCard = new NumberStructuresCard(w2con, NBR);
         List<Integer> NSTR = numberStructuresCard.getNSTR();
         for (int jbr = 0; jbr < NBR; jbr++) {
             int branch = jbr + 1;
             for (int structure = 1; structure <= NSTR.get(jbr); structure++) {
                 String qotFileName = qotCard.getFileNames().get(jbr);
-                Parameter parameter = new Parameter(structWithdrawalLocationName(branch, structure),
+                W2Parameter w2Parameter = new W2Parameter(structWithdrawalLocationName(branch, structure),
                         "Flow-QOT", "Structural Withdrawal", "m^3/s",
                         structure, NSTR.get(branch), qotFileName, "outflow", "input");
-                parameters.add(parameter);
+                w2Parameters.add(w2Parameter);
             }
         }
 
@@ -1086,7 +1095,7 @@ public class Parser {
         // constituents
         //-----------------------------------------------------------------------------------------------------
 
-        cinCard = new FileCard(w2con, CardNames.BranchInflowConcentrationFilenames, NBR);
+        cinCard = new W2FileCard(w2con, W2CardNames.BranchInflowConcentrationFilenames, NBR);
 
         // Branch Inflow Concentrations
         branchConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CIN CON", numConstituents, NBR);
@@ -1105,13 +1114,13 @@ public class Parser {
                     for (int jc = 0; jc < numConstituents; jc++) {
                         if (isOn(CINBRC.get(jc).get(jbr))) {
                             icol++;
-                            Constituent graphFileConstituent = graphFileConstituents.get(jc);
-                            Parameter parameter = new Parameter(branchInflowLocationName(branch),
+                            W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
+                            W2Parameter w2Parameter = new W2Parameter(branchInflowLocationName(branch),
                                     branchInflowConstituentNames.get(jc) + "-CIN",
-                                    graphFileConstituent.getLongName(),
-                                    graphFileConstituent.getUnits(), icol, numColumns, cinCard.getFileNames().get(jbr),
+                                    graphFileW2Constituent.getLongName(),
+                                    graphFileW2Constituent.getUnits(), icol, numColumns, cinCard.getFileNames().get(jbr),
                                     "inflow", "input");
-                            parameters.add(parameter);
+                            w2Parameters.add(w2Parameter);
                         }
                     }
                 }
@@ -1122,7 +1131,7 @@ public class Parser {
         distributedTributaryConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CDT CON", numConstituents, NBR);
         List<String> distributedTributaryConstituentNames = distributedTributaryConstituentsCard.getNames();
         List<List<String>> CDTBRC = distributedTributaryConstituentsCard.getValues();
-        cdtCard = new FileCard(w2con, CardNames.DistributedTributaryInflowConcentrationFilenames, NBR);
+        cdtCard = new W2FileCard(w2con, W2CardNames.DistributedTributaryInflowConcentrationFilenames, NBR);
         if (CONSTITUENTS) {
             // Iterate over branches
             for (int jbr = 0; jbr < NBR; jbr++) {
@@ -1134,12 +1143,12 @@ public class Parser {
                     for (int jc = 0; jc < numConstituents; jc++) {
                         if (isOn(CDTBRC.get(jc).get(jbr))) {
                             icol++;
-                            Constituent graphFileConstituent = graphFileConstituents.get(jc);
-                            Parameter parameter = new Parameter(distTributaryLocationName(branch),
-                                    distributedTributaryConstituentNames.get(jc) + "-CDT", graphFileConstituent.getLongName(),
-                                    graphFileConstituent.getUnits(), icol, numColumns, cdtCard.getFileNames().get(jbr),
+                            W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
+                            W2Parameter w2Parameter = new W2Parameter(distTributaryLocationName(branch),
+                                    distributedTributaryConstituentNames.get(jc) + "-CDT", graphFileW2Constituent.getLongName(),
+                                    graphFileW2Constituent.getUnits(), icol, numColumns, cdtCard.getFileNames().get(jbr),
                                     "inflow", "input");
-                            parameters.add(parameter);
+                            w2Parameters.add(w2Parameter);
                         }
                     }
                 }
@@ -1151,7 +1160,7 @@ public class Parser {
                 "CDT CON", numConstituents, NTR);
         List<String> tributaryConstituentNames = tributaryConstituentsCard.getNames();
         List<List<String>> CTRBRC = tributaryConstituentsCard.getValues();
-        ctrCard = new FileCard(w2con, CardNames.TributaryInflowConcentrationFilenames, NTR);
+        ctrCard = new W2FileCard(w2con, W2CardNames.TributaryInflowConcentrationFilenames, NTR);
         if (CONSTITUENTS) {
             // Iterate over tributaries
             for (int jtr = 0; jtr < NTR; jtr++) {
@@ -1163,12 +1172,12 @@ public class Parser {
                     for (int jc = 0; jc < numConstituents; jc++) {
                         if (isOn(CTRBRC.get(jc).get(jtr))) {
                             icol++;
-                            Constituent graphFileConstituent = graphFileConstituents.get(jc);
-                            Parameter parameter = new Parameter(tributaryLocationName(tributary),
-                                    tributaryConstituentNames.get(jc) + "-CTR", graphFileConstituent.getLongName(),
-                                    graphFileConstituent.getUnits(), icol, numColumns, ctrCard.getFileNames().get(jtr),
+                            W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
+                            W2Parameter w2Parameter = new W2Parameter(tributaryLocationName(tributary),
+                                    tributaryConstituentNames.get(jc) + "-CTR", graphFileW2Constituent.getLongName(),
+                                    graphFileW2Constituent.getUnits(), icol, numColumns, ctrCard.getFileNames().get(jtr),
                                     "inflow", "input");
-                            parameters.add(parameter);
+                            w2Parameters.add(w2Parameter);
                         }
                     }
                 }
@@ -1179,7 +1188,7 @@ public class Parser {
         precipConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CPR CON", numConstituents, NBR);
         List<String> precipConstituentNames = precipConstituentsCard.getNames();
         List<List<String>> CPRBRC = tributaryConstituentsCard.getValues();
-        FileCard cprCard = new FileCard(w2con, "CPR FILE", NBR);
+        W2FileCard cprCard = new W2FileCard(w2con, "CPR FILE", NBR);
         if (CONSTITUENTS) {
             for (int jwb = 0; jwb < NWB; jwb++) {
                 if (isOn(PRC.get(jwb))) {
@@ -1191,31 +1200,31 @@ public class Parser {
                         for (int jc = 0; jc < numConstituents; jc++) {
                             if (isOn(CTRBRC.get(jc).get(jwb))) {
                                 icol++;
-                                Constituent graphFileConstituent = graphFileConstituents.get(jc);
-                                Parameter parameter = new Parameter(precipLocationName(branch),
+                                W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
+                                W2Parameter w2Parameter = new W2Parameter(precipLocationName(branch),
                                         precipConstituentNames.get(jc) + "-CPR",
-                                        graphFileConstituent.getLongName(), graphFileConstituent.getUnits(),
+                                        graphFileW2Constituent.getLongName(), graphFileW2Constituent.getUnits(),
                                         icol, numColumns, cprCard.getFileNames().get(branch - 1),
                                         "inflow", "input");
-                                parameters.add(parameter);
+                                w2Parameters.add(w2Parameter);
                             }
                         }
                     }
                 }
             }
         }
-        return parameters;
+        return w2Parameters;
     }
 
     /**
      * Retrieve meteorology input parameters
      */
-    private List<Parameter> fetchMeteorologyInputs() {
-        List<Parameter> parameters = new ArrayList<>();
+    private List<W2Parameter> fetchMeteorologyInputs() {
+        List<W2Parameter> w2Parameters = new ArrayList<>();
         HeatExchangeCard heatExchangeCard = new HeatExchangeCard(w2con, NWB);
         List<String> SROC = heatExchangeCard.getSROC();
 
-        FileCard metCard = new FileCard(w2con, "MET FILE", NWB);
+        W2FileCard metCard = new W2FileCard(w2con, "MET FILE", NWB);
         for (int jw = 0; jw < NWB; jw++) {
             int waterbody = jw + 1;
             String sroc = SROC.get(jw);
@@ -1225,40 +1234,40 @@ public class Parser {
             } else {
                 nColumns = 5;
             }
-            Parameter parameter = new Parameter(metLocationName(waterbody),
+            W2Parameter w2Parameter = new W2Parameter(metLocationName(waterbody),
                     "TAIR", "Air Temperature", "C",
                     1, nColumns, metCard.getFileNames().get(jw),
                     "inflow", "input");
-            parameters.add(parameter);
-            parameter = new Parameter(metLocationName(waterbody),
+            w2Parameters.add(w2Parameter);
+            w2Parameter = new W2Parameter(metLocationName(waterbody),
                     "TDEW", "Dew Point Temperature", "C",
                     2, nColumns, metCard.getFileNames().get(jw),
                     "inflow", "input");
-            parameters.add(parameter);
-            parameter = new Parameter(metLocationName(waterbody),
+            w2Parameters.add(w2Parameter);
+            w2Parameter = new W2Parameter(metLocationName(waterbody),
                     "WS", "Wind Speed", "m/s",
                     3, nColumns, metCard.getFileNames().get(jw),
                     "inflow", "input");
-            parameters.add(parameter);
-            parameter = new Parameter(metLocationName(waterbody),
+            w2Parameters.add(w2Parameter);
+            w2Parameter = new W2Parameter(metLocationName(waterbody),
                     "PHI", "Wind Direction", "radians",
                     4, nColumns, metCard.getFileNames().get(jw),
                     "inflow", "input");
-            parameters.add(parameter);
-            parameter = new Parameter(metLocationName(waterbody),
+            w2Parameters.add(w2Parameter);
+            w2Parameter = new W2Parameter(metLocationName(waterbody),
                     "Cloud", "Cloud Cover", "0-10",
                     5, nColumns, metCard.getFileNames().get(jw),
                     "inflow", "input");
-            parameters.add(parameter);
+            w2Parameters.add(w2Parameter);
             if (isOn(sroc)) {
-                parameter = new Parameter(metLocationName(waterbody),
+                w2Parameter = new W2Parameter(metLocationName(waterbody),
                         "SRO", "Shortwave Solar Radiation", "W/m^2",
                         6, nColumns, metCard.getFileNames().get(jw),
                         "inflow", "input");
-                parameters.add(parameter);
+                w2Parameters.add(w2Parameter);
             }
         }
-        return parameters;
+        return w2Parameters;
     }
 
 //    /**
@@ -1366,7 +1375,7 @@ public class Parser {
 //        int NCT = NRPOMN; // ****** This is the key value we need: the number of constituents
 //        // v3.5 end
 //
-//        // Constituent, tributary, and withdrawal totals
+//        // W2Constituent, tributary, and withdrawal totals
 //        int NTRT = NTR + NGT + NSP + NPI + NPU;
 //        int NWDT = NWD + NGT + NSP + NPI + NPU;
 //        int NEPT = Math.max(NEP, 1);
@@ -1389,11 +1398,11 @@ public class Parser {
     }
 
     /**
-     * Create a formatted table of Parameters for writing to file or console
-     * @param Parameters List of Parameters
+     * Create a formatted table of w2Parameters for writing to file or console
+     * @param w2Parameters List of w2Parameters
      * @return List of formatted output lines
      */
-    private List<String> createTable(List<Parameter> Parameters) {
+    private List<String> createTable(List<W2Parameter> w2Parameters) {
         List<String> outputList = new ArrayList<>();
         String headerFormat = "%-28s%-17s%-42s%-10s%-8s%-10s%-30s%-15s%-13s";
         String dataFormat   = "%-28s%-17s%-42s%-10s%-8d%-10d%-30s%-15s%-13s";
@@ -1404,7 +1413,7 @@ public class Parser {
         for (int i = 0; i < header.length(); i++) { horizontalBar.append("-"); }
         outputList.add(horizontalBar.toString());
 
-        for (Parameter p : Parameters) {
+        for (W2Parameter p : w2Parameters) {
             String line = String.format(dataFormat, p.getLocation(), p.getShortName(),
                     p.getLongName(), p.getUnits(), p.getColumnNumber(), p.getNumColumns(),
                     p.getFileName(), p.getInflowOutflow(), p.getInputOutput());
@@ -1414,22 +1423,22 @@ public class Parser {
     }
 
     /**
-     * Print a table of Parameters to the console
-     * @param Parameters List of Parameters
+     * Print a table of w2Parameters to the console
+     * @param w2Parameters List of w2Parameters
      */
-    public void printTable(List<Parameter> Parameters) {
-        for (String line : createTable(Parameters)) {
+    public void printTable(List<W2Parameter> w2Parameters) {
+        for (String line : createTable(w2Parameters)) {
             System.out.println(line);
         }
     }
 
     /**
-     * Write a table of Parameters
-     * @param Parameters List of Parameters
+     * Write a table of w2Parameters
+     * @param w2Parameters List of w2Parameters
      * @param outfileName Output filename
      */
-    public void writeTable(List<Parameter> Parameters, String outfileName) {
-        List<String> lines = createTable(Parameters);
+    public void writeTable(List<W2Parameter> w2Parameters, String outfileName) {
+        List<String> lines = createTable(w2Parameters);
         Path file = Paths.get(outfileName);
         try {
             Files.write(file, lines, Charset.forName("UTF-8"));
@@ -1462,12 +1471,12 @@ public class Parser {
      * TODO Add support for multiple water bodies
       */
     private List<List<Double>> fetchInitialWaterSurfaceElevations() {
-        FileCard bathyFileCard = new FileCard(w2con, "BTH FILE", NWB);
+        W2FileCard bathyFileCard = new W2FileCard(w2con, "BTH FILE", NWB);
         List<List<Double>> waterSurfaceElevations = new ArrayList<>();
         for (int jwb = 0; jwb < NWB; jwb++) {
             String bathyFilename = bathyFileCard.getFileName(jwb);
             try {
-                BathymetryFile bathyFile = new BathymetryFile(w2con, bathyFilename, KMX);
+                W2BathymetryFile bathyFile = new W2BathymetryFile(w2con, bathyFilename, KMX);
                 List<Double> ELWS = bathyFile.getELWS().getValues();
                 waterSurfaceElevations.add(ELWS);
             } catch (Exception e) {
@@ -1481,32 +1490,32 @@ public class Parser {
      * Return a list of model input parameters
      * @return List of model input parameters
      */
-    public List<Parameter> getInputParameters() {
-        return this.inputParameters;
+    public List<W2Parameter> getInputW2Parameters() {
+        return this.inputW2Parameters;
     }
 
     /**
      * Return a list of meteorology parameters
      * @return List of meteorology parameters
      */
-    public List<Parameter> getMeteorologyParameters() {
-        return this.meteorologyParameters;
+    public List<W2Parameter> getMeteorologyW2Parameters() {
+        return this.meteorologyW2Parameters;
     }
 
     /**
      * Return a list of TSR (time series) output parameters
      * @return List of TSR output parameters
      */
-    public List<Parameter> getTsrOutputParameters() {
-        return tsrOutputParameters;
+    public List<W2Parameter> getTsrOutputW2Parameters() {
+        return tsrOutputW2Parameters;
     }
 
     /**
      * Return a list of withdrawal output parameters
      * @return List of withdrawal output parameters
      */
-    public List<Parameter> getWithdrawalOutputParameters() {
-        return withdrawalOutputParameters;
+    public List<W2Parameter> getWithdrawalOutputW2Parameters() {
+        return withdrawalOutputW2Parameters;
     }
 
     /**
@@ -1673,7 +1682,7 @@ public class Parser {
      * @return True if value is "ON"
      */
     private boolean isOn(String value) {
-        return value.equalsIgnoreCase(Globals.ON);
+        return value.equalsIgnoreCase(W2Globals.ON);
     }
 
     /**
@@ -1693,7 +1702,7 @@ public class Parser {
      * @return True if value is "OFF"
      */
     private boolean isOff(String value) {
-        return value.equalsIgnoreCase(Globals.OFF);
+        return value.equalsIgnoreCase(W2Globals.OFF);
     }
 
     /**

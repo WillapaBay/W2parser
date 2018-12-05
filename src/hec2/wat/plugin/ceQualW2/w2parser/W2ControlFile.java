@@ -5,19 +5,20 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Container for the contents of a CE-QUAL-W2 control file
  */
-public class W2ControlFile {
-    private String w2ControlFilename;
-    private List<String> w2ControlList;
-    private Path directoryPath;
-    private Path w2ControlInPath;
-    private File graphFile;
+public final class W2ControlFile {
+    private final String w2ControlFilename;
+    private final List<String> w2ControlList = new ArrayList<>();
+    private final Path directoryPath;
+    private final Path w2ControlInPath;
+    private final File graphFile;
 
-    public W2ControlFile(String infile) {
+    public W2ControlFile(String infile) throws IOException {
 
         w2ControlFilename = infile;
         w2ControlInPath = Paths.get(infile).toAbsolutePath();
@@ -27,19 +28,15 @@ public class W2ControlFile {
         handleCardNamesThatVary();
     }
 
-    public Path getDirectoryPath() { return directoryPath; }
+    Path getDirectoryPath() { return directoryPath; }
 
-    public String getW2ControlFilename() {
-        return w2ControlFilename;
-    }
+    String getGraphFilename() { return graphFile.toString(); }
 
-    public String getGraphFilename() { return graphFile.toString(); }
-
-    public String getLine(int i) {
+    String getLine(int i) {
         return w2ControlList.get(i);
     }
 
-    public void setLine(int i, String line) {
+    void setLine(int i, String line) {
         w2ControlList.set(i, line);
     }
 
@@ -47,12 +44,9 @@ public class W2ControlFile {
         return w2ControlList.size();
     }
 
-    public void load() {
-        try {
-            w2ControlList = Files.readAllLines(w2ControlInPath);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void load() throws IOException {
+        w2ControlList.clear();
+        w2ControlList.addAll(Files.readAllLines(w2ControlInPath));
     }
 
     /**
@@ -85,7 +79,7 @@ public class W2ControlFile {
     }
 
     /**
-     * Expand card in w2ControlList to accommodate a larger Card
+     * Expand card in w2ControlList to accommodate a larger W2Card
      * @param cardHeaderLineNumber Line number of card header in w2ControlList
      * @param numDataLinesInCard Number of data lines of card in w2ControlList
      * @param numLinesToAdd Number of lines to add
@@ -98,7 +92,7 @@ public class W2ControlFile {
     }
 
     /**
-     * Shrink card in w2ControlList to adjust for a smaller Card
+     * Shrink card in w2ControlList to adjust for a smaller W2Card
      * @param cardHeaderLineNumber Line number of card header in w2ControlList
      * @param numDataLinesInCard Number of data lines of card in w2ControlList
      * @param numLinesToRemove Number of lines to remove

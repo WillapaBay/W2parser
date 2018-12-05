@@ -4,38 +4,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Generic File Card
+ * Generic File W2Card
  */
-public class FileCard extends Card {
+public class W2FileCard extends W2Card {
     private List<String> identifiers; // Water body or branch names
     private List<String> fileNames;
     private MultiLineCard mCard;
 
-    public FileCard(W2ControlFile w2ControlFile, String cardName, int numRecordLines) {
+    W2FileCard(W2ControlFile w2ControlFile, String cardName, int numRecordLines) {
         super(w2ControlFile, cardName, numRecordLines);
         parseTable();
     }
 
 
-    public List<String> getFileNames() {
+    List<String> getFileNames() {
         return fileNames;
     }
 
-    public void clearFileNames() {
+    void clearFileNames() {
         identifiers.clear();
         fileNames.clear();
     }
 
-    public void addFilename(String fileName, String identifier) {
+    void addFilename(String fileName, String identifier) {
         identifiers.add(identifier);
         fileNames.add(fileName);
     }
 
-    public String getFileName(int i) {
+    String getFileName(int i) {
         return fileNames.get(i);
     }
 
-    public void setFileName(int i, String file) {
+    void setFileName(int i, String file) {
         fileNames.set(i, file);
         updateText();
     }

@@ -6,3 +6,11 @@
     - Then read everything into a List<List<String>.
     - The other cards can then just parse the strings in to numeric and string variables, etc.
 
+
+Parser To do:
+- Add constructor to take in string or path
+- Implement Builder pattern for W2Parameter
+- Look at ProcessBuilder
+- Look at adding getters for Cards or setters for fields
+- Add save method once I add w2con as a field to the Parser
+- Update methods?

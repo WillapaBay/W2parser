@@ -705,7 +705,7 @@ endif
 ! creating table of water quality paramters
       call table_water_quality
       
-! creating table of meteorological parameters
+! creating table of meteorological w2Parameters
       call table_meteorology
       
 !   creating table of output files    
@@ -2700,14 +2700,14 @@ icnt=1  ! debug
    SELECTC=adjustr(SELECTC); HABTATC=adjustr(HABTATC); ENVIRPC=adjustr(ENVIRPC); AERATEC=adjustr(AERATEC); INITUWL=adjustr(INITUWL)
    SYSTDG=adjustr(SYSTDG); N2BND=adjustr(N2BND); DOBND=adjustr(DOBND)
    if(tcard == 'TIME CON')READ (cha,*,end=25)blank,  TMSTRT,   TMEND,    YEAR   
- ! restart parameters
+ ! restart w2Parameters
    if(tcard == 'RESTART ')READ (cha,*,end=25)blank,         RSOC,    NRSO,    RSIC   
    RSOC=adjustr(RSOC); RSIC=adjustr(RSIC)
    if(tcard == 'RSO DATE')READ (cha,*,end=25)blank,        (RSOD(J), J=1,NRSO)   
    if(tcard == 'RSO FREQ')READ (cha,*,end=25)blank,        (RSOF(J), J=1,NRSO)
    if(tcard == 'RSI FILE')READ (cha,*,end=25)blank,           RSIFN
    rsifn=adjustl(rsifn)
- ! w2_selective.npt parameters
+ ! w2_selective.npt w2Parameters
      if(tcard == 'OUT FREQ')read(cha,*,end=25)blank, tfrqtmp          
       w2select=.true.
       nxtstr=tmstrt      
@@ -2787,7 +2787,7 @@ icnt=1  ! debug
         end do
       !  write(*,*)'THRESH2 ' !debug
       end if
-   ! w2_habitat parameters
+   ! w2_habitat w2Parameters
    if(tcard == '#FISH CR')then                  
      w2hab=.true.
      deallocate (fishname,fishtempl,fishtemph,fishdo,habvol,phabvol)                  
@@ -3293,7 +3293,7 @@ do i=1,ifish
   read(2500,*)fishname(i),fishtempl(i),fishtemph(i),fishdo(i)
 enddo
 read(2500,'(a)')habline4
-read(2500,*)nseg,conavg     ! volume weighted averages of critical WQ parameters
+read(2500,*)nseg,conavg     ! volume weighted averages of critical WQ w2Parameters
 read(2500,'(a)')habline5
 allocate(isegvol(nseg),cdo(nseg),cpo4(nseg),cno3(nseg),cnh4(nseg),cchla(nseg),ctotp(nseg),cdos(nseg),cpo4s(nseg),cno3s(nseg),cnh4s(nseg),cchlas(nseg),ctotps(nseg),cgamma(nseg))
 allocate(ssedd(imx))
@@ -3326,7 +3326,7 @@ do i=1,ifish
 2211 format('"',a,'"',3(",",f8.3),",")
 enddo
 write(2500,'(a)')habline4
-write(2500,2210)nseg,conavg     ! volume weighted averages of critical WQ parameters
+write(2500,2210)nseg,conavg     ! volume weighted averages of critical WQ w2Parameters
 write(2500,'(a)')habline5
 write(2500,2212)(isegvol(i),i=1,nseg)
 2212 format(<nseg>(i8,","))
@@ -3549,7 +3549,7 @@ USE GLOBAL;     USE NAMESC; USE GEOMC;  USE LOGICC; USE PREC;  USE SURFHE;  USE 
    end if
  end do
  
-  ! Constituents
+  ! w2Constituents
 if(constituents)then
 ! branch inflows  
   do jb=1,nbr
@@ -4056,7 +4056,7 @@ USE GLOBAL;     USE NAMESC; USE GEOMC;  USE LOGICC; USE PREC;  USE SURFHE;  USE 
       valuei(icnt)=t2i(jw)
     end if
       
-     !Constituents
+     !w2Constituents
     if(constituents)then                
        do jc=1,nct                  
           icnt=icnt+1          
@@ -4803,11 +4803,11 @@ subroutine table_output_files
         end do
         
         
-        ! constituent output        
+        ! w2Constituent output
         IF (CONSTITUENTS) THEN  
           icol=0
           outfn='cwo_'//SEGNUM(1:L)//'.opt'
-          sioname='Segment '//SEGNUM(1:L)//' Withdrawal constituent'          
+          sioname='Segment '//SEGNUM(1:L)//' Withdrawal w2Constituent'
           ncol=0
            
           do jc=1,nac
@@ -4843,7 +4843,7 @@ subroutine table_output_files
           end do
         END IF  
         
-        ! derived constituent output
+        ! derived w2Constituent output
         IF (DERIVED_CALC) THEN            
           icol=0
           outfn='dwo_'//SEGNUM(1:L)//'.opt'

@@ -5,16 +5,16 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-public class BathymetryRecord<T> implements Collection<T> {
+public class W2BathymetryRecord<T> implements Collection<T> {
     private List<T> values;
     private String identifier;
 
-    public BathymetryRecord(String identifier) {
+    public W2BathymetryRecord(String identifier) {
         values = new ArrayList<>();
         this.identifier = identifier;
     }
 
-    BathymetryRecord(List<T> values, String identifier) {
+    W2BathymetryRecord(List<T> values, String identifier) {
         this.values = values;
         this.identifier = identifier;
     }

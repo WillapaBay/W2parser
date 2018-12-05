@@ -2,12 +2,13 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class TestParserCards {
+public class TestW2ParserCards {
 
     @Test
-    public void testCreateOutputFlows() throws FileNotFoundException {
+    public void testCreateOutputFlows() throws IOException {
         String infile = "data/ColumbiaSlough/w2_con.npt";
         String outfile = "results/ColumbiaSlough/" +
                 "w2_con.npt.testReadInfiles";

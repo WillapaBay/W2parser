@@ -2,16 +2,17 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 public class TestRepeatingIntegerCard {
 
     @Test
-    public void testRepeatingIntegerCard() throws FileNotFoundException {
+    public void testRepeatingIntegerCard() throws IOException {
         String infile = "data/ParticleTracking/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
         RepeatingIntegerCard rdc = new RepeatingIntegerCard(w2con,
-                CardNames.WithdrawalSegment, 5, "%8d");
+                W2CardNames.WithdrawalSegment, 5, "%8d");
         List<Integer> IWDO = rdc.getValues();
         IWDO.forEach(System.out::println);
         for (int i = 0; i < IWDO.size(); i++) {
@@ -24,7 +25,7 @@ public class TestRepeatingIntegerCard {
     }
 
     @Test
-    public void testReadNITSR() throws FileNotFoundException {
+    public void testReadNITSR() throws IOException {
         String infile = "data/ParticleTracking/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
         TsrPlotCard tsrPlotCard = new TsrPlotCard(w2con);
@@ -33,14 +34,14 @@ public class TestRepeatingIntegerCard {
     }
 
     @Test
-    public void testReadITSR() throws FileNotFoundException {
+    public void testReadITSR() throws IOException {
         String infile = "data/ParticleTracking/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
 
         TsrPlotCard tsrPlotCard = new TsrPlotCard(w2con);
         int nitsr = tsrPlotCard.getNITSR();
 
-        RepeatingIntegerCard rdc = new RepeatingIntegerCard(w2con, CardNames.TimeSeriesSegment, nitsr, "%8d");
+        RepeatingIntegerCard rdc = new RepeatingIntegerCard(w2con, W2CardNames.TimeSeriesSegment, nitsr, "%8d");
         List<Integer> tsrSegments = rdc.getValues();
         tsrSegments.forEach(System.out::println);
 

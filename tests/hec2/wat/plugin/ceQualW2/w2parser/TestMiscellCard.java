@@ -3,11 +3,12 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import org.junit.Test;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class TestMiscellCard {
 
     @Test
-    public void testMiscellCard() throws FileNotFoundException {
+    public void testMiscellCard() throws IOException {
         String infile = "data/ColumbiaSlough/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
         MiscellCard miscellCard = new MiscellCard(w2con);
@@ -16,7 +17,7 @@ public class TestMiscellCard {
         // Turn habitat volume on
         String state = miscellCard.getHABTATC();
         System.out.println("Habitat volume state: " + state);
-        miscellCard.setHABTATC(Globals.ON);
+        miscellCard.setHABTATC(W2Globals.ON);
         miscellCard.updateTable();
 
         // Write updated W2 control file

@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Active Derived constituents Card
+ * Active Derived constituents W2Card
  *
  * This card contains the status of each constituent as active (ON) or inactive (OFF).
  * There is one line per constituent, with a value for each waterbody.
  */
-public class ActiveDerivedConstituentsCard extends Card {
-    private List<String> constituentNames; // Constituent names
+public class ActiveDerivedConstituentsCard extends W2Card {
+    private List<String> constituentNames; // W2Constituent names
     private List<List<String>> values;     // State of each constituent (ON or OFF)
     private int numConstituents;
     private int numWaterbodies;

@@ -3,21 +3,21 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Card2 {
+public abstract class W2Card2 {
     W2ControlFile w2ControlFile;
-    String cardName;
-    String titleLine;
-    int identifierFieldWidth = 8;
-    int valueFieldWidth;
+    private String cardName;
+    private String titleLine;
+    private int identifierFieldWidth = 8;
+    private int valueFieldWidth;
     // Number of record lines. For most cards, this equals one.
     // For file cards, this is the number of branches or water bodies.
-    int numRecords;              // Number of records in the card
-    int numCardDataLines;        // The current number of lines in the Card
-    int numCardDataLinesInFile;  // The number of lines in the card in the w2_con.npt file
-    List<Integer> numFieldsList; // Number of fields for each record
-    List<Integer> numLinesList;     // Number of lines for each record
-    List<String> table;              // Table from card (list of lines of text)
-    List<List<String>> records;      // Identifier and values for each record
+    private int numRecords;              // Number of records in the card
+    private int numCardDataLines;        // The current number of lines in the W2Card
+    private int numCardDataLinesInFile;  // The number of lines in the card in the w2_con.npt file
+    private List<Integer> numFieldsList; // Number of fields for each record
+    private List<Integer> numLinesList;     // Number of lines for each record
+    private List<String> table;              // Table from card (list of lines of text)
+    private List<List<String>> records;      // Identifier and values for each record
     List<String> recordIdentifiers;  // Identifiers for each record
     List<List<String>> recordValues; // List of card values, string type.
                                              // These are sorted by column (field) in the card and
@@ -30,8 +30,8 @@ public abstract class Card2 {
      * @param numRecords Number of records in card
      * @param numFieldsList List of the number of fields in each record
      */
-    public Card2(W2ControlFile w2ControlFile, String cardName, int numRecords,
-                 List<Integer> numFieldsList, int valueFieldWidth) {
+    public W2Card2(W2ControlFile w2ControlFile, String cardName, int numRecords,
+                   List<Integer> numFieldsList, int valueFieldWidth) {
         this.w2ControlFile = w2ControlFile;
         this.cardName = cardName;
         this.numRecords = numRecords;
@@ -115,22 +115,12 @@ public abstract class Card2 {
     }
 
     /**
-     * Return text of card
-     * @return Text of card
-     */
-    @Override
-    public String toString() {
-        StringBuilder str = new StringBuilder(titleLine + "\n");
-        for (String line : table) {
-            str.append(line).append("\n");
-        }
-       return str.toString();
-    }
-
-    /**
-     * Parse the W2 control file text
+     * Parse the table (data) of a W2 control file card into a
+     * jagged list of strings. These may then be converted to numeric types,
+     * as needed, by the cards that inherit this class.
      */
     public void parseTable() {
+        // TODO I'm pretty sure this needs major updating to handle lists of jagged Lists of Strings
 
         for (int jc = 0; jc < numRecords; jc++) {
             int numFields = numFieldsList.get(jc);
@@ -147,9 +137,29 @@ public abstract class Card2 {
     }
 
     /**
-     * Update the W2 control file text from the current variables
+     * Parse a multi-line record. A record consists of all fields for a water body,
+     * branch, constituent, etc.
+     * @param table List of record lines from control file
+     * @param recordIndex Index of record (zero-based)
+     * @param numFields Number of fields
+     * @return List of record values. The first item is the record identifier.
      */
-    public abstract void updateText();
+    public List<String> parseRecord(List<String> table, int recordIndex, int numFields,
+                                    List<Integer> fieldWidths) {
+        int numLinesPerRecord = (int) Math.ceil(numFields/9.0);
+        int start = numLinesPerRecord * recordIndex;
+        int end = start + numLinesPerRecord;
+        int startField = 1;
+        int endField = 10;
+        List<String> values = new ArrayList<>();
+        for (int i = start; i < end; i++) {
+            List<String> fields = parseLine(table.get(i), fieldWidths, startField, endField);
+            values.addAll(fields);
+            // After the first record line is read, skip the first field of subsequent lines
+            startField = 2;
+        }
+        return values;
+    }
 
     /**
      * Parse a line containing fields in fixed-width format
@@ -208,28 +218,24 @@ public abstract class Card2 {
     }
 
     /**
-     * Parse a multi-line record. A record consists of all fields for a waterbody,
-     * branch, constituent, etc.
-     * @param table List of record lines from control file
-     * @param recordIndex Index of record (zero-based)
-     * @param numFields Number of fields
-     * @return List of record values. The first item is the record identifier.
+     * Update the W2 control file text from the current variables
      */
-    public List<String> parseRecord(List<String> table, int recordIndex, int numFields,
-                                    List<Integer> fieldWidths) {
-        int numLinesPerRecord = (int) Math.ceil(numFields/9.0);
-        int start = numLinesPerRecord * recordIndex;
-        int end = start + numLinesPerRecord;
-        int startField = 1;
-        int endField = 10;
-        List<String> values = new ArrayList<>();
-        for (int i = start; i < end; i++) {
-            List<String> fields = parseLine(table.get(i), fieldWidths, startField, endField);
-            values.addAll(fields);
-            // After the first record line is read, skip the first field of subsequent lines
-            startField = 2;
+    public void updateText() {
+        // TODO: this needs major work
+        table = new ArrayList<>();
+        for (List<String> record : records) {
+            int i = 0;
+            String line = "";
+            for (String field : record) {
+                line += field;
+                i++;
+                if (i > 10) {
+                    table.add(line);
+                    i = 0;
+                    line = "";
+                }
+            }
         }
-        return values;
     }
 
     /**
@@ -241,8 +247,8 @@ public abstract class Card2 {
     }
 
     /**
-     * Return current number of data lines in Card
-     * @return Current number of data lines in Card
+     * Return current number of data lines in W2Card
+     * @return Current number of data lines in W2Card
      */
     public int getNumCardDataLines() {
         return numCardDataLines;
@@ -258,10 +264,24 @@ public abstract class Card2 {
 
     /**
      * Return the card data table
-     * @return Card data table
+     * @return W2Card data table
      */
     public List<String> getTable() {
         return table;
     }
+
+    /**
+     * Return text of card
+     * @return Text of card
+     */
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder(titleLine + "\n");
+        for (String line : table) {
+            str.append(line).append("\n");
+        }
+        return str.toString();
+    }
+
 
 }

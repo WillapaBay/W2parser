@@ -1,10 +1,10 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
-public class Parameter {
+public class W2Parameter {
     private String location;            // Location (waterbody, branch, segment, depth, flow type, etc.)
     private String shortName;           // Short name of parameter - to display in model linking editor
     private String longName;            // Long name of parameter - to display in plots and tool tip of model linking editor
-    private String units;               // Parameter units
+    private String units;               // W2Parameter units
     private int columnNumber;           // Column number in output file (zero indexed, with Julian day at column 0)
     private int numColumns;             // Total number of data columns (parametersprivate )
     private String fileName;            // Input or output filename
@@ -15,9 +15,9 @@ public class Parameter {
     private int segment;                // Segment number (optional)
     private String verticalLocation;    // String containing vertical location (either depth or layer number, optional)
 
-    public Parameter(String location, String shortName, String longName, String units,
-                     int columnNumber, int numColumns, String fileName,
-                     String inflowOutflow, String inputOutput) {
+    public W2Parameter(String location, String shortName, String longName, String units,
+                       int columnNumber, int numColumns, String fileName,
+                       String inflowOutflow, String inputOutput) {
         this.location = location;
         this.shortName = shortName;
         this.longName = longName;

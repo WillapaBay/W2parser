@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Handles multiple line cards
  */
-public class MultiLineCard extends Card {
+public class MultiLineCard extends W2Card {
     private List<List<String>> values;
 
     public MultiLineCard(W2ControlFile w2ControlFile, String cardName, int numRecordLines) {

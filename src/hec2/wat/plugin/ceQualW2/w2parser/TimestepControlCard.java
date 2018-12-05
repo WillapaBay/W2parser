@@ -3,15 +3,15 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * Timestep Control Card
+ * Timestep Control W2Card
  */
-public class TimestepControlCard extends Card {
+public class TimestepControlCard extends W2Card {
     private int ndt;
     private double dltMin;
     private String dltIntr;
 
     public TimestepControlCard(W2ControlFile w2ControlFile) {
-        super(w2ControlFile, CardNames.TimestepControl, 1);
+        super(w2ControlFile, W2CardNames.TimestepControl, 1);
         parseTable();
     }
 

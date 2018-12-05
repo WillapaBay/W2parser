@@ -7,7 +7,7 @@ TITLE C ...............................TITLE....................................
 	        -
 	        -
 		    - DT = ON
-		    - Parameters passed from Best Paramters from PEST run - 12/12/17.
+		    - w2Parameters passed from Best Paramters from PEST run - 12/12/17.
 		    - (SEE PEST/Executables/DWR_2014_PEST)
 		    -
 		    - VPR set as initial conditions and PEST re-run

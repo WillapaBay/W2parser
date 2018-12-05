@@ -3,12 +3,12 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
-class FileCard2 extends Card2 {
+class W2FileCard2 extends W2Card2 {
     private List<String> branches;
     private List<String> files;
 
-    public FileCard2(W2ControlFile w2ControlFile, String cardName,
-                     int numRecords, List<Integer> numFieldsList) {
+    public W2FileCard2(W2ControlFile w2ControlFile, String cardName,
+                       int numRecords, List<Integer> numFieldsList) {
         super(w2ControlFile, cardName, numRecords, numFieldsList, 50);
         parseTable();
         branches = this.recordIdentifiers;

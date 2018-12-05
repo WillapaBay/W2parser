@@ -2,17 +2,18 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 public class TestRepeatingDoubleCard {
 
     @Test
-    public void testRepeatingDoubleCard() throws FileNotFoundException {
+    public void testRepeatingDoubleCard() throws IOException {
         String infile = "data/ParticleTracking/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
         int numDates = 1;
         RepeatingDoubleCard rdc = new RepeatingDoubleCard(w2con,
-                CardNames.WithdrawalOutputDate, numDates, "%8.5f");
+                W2CardNames.WithdrawalOutputDate, numDates, "%8.5f");
         List<Double> data = rdc.getValues();
         data.forEach(System.out::println);
         for (int i = 0; i < data.size(); i++) {
@@ -27,7 +28,7 @@ public class TestRepeatingDoubleCard {
 
 
     @Test
-    public void testReadETSR() throws FileNotFoundException {
+    public void testReadETSR() throws IOException {
         String infile = "data/ParticleTracking/w2_con.npt";
         W2ControlFile w2con = new W2ControlFile(infile);
 
@@ -35,7 +36,7 @@ public class TestRepeatingDoubleCard {
         int nitsr = tsrPlotCard.getNITSR();
 
         RepeatingDoubleCard rdc = new RepeatingDoubleCard(w2con,
-                CardNames.TimeSeriesLayer, nitsr, "%8.3f");
+                W2CardNames.TimeSeriesLayer, nitsr, "%8.3f");
         List<Double> ETSR = rdc.getValues();
         ETSR.forEach(System.out::println);
 

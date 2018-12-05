@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Multiple Record Repeating Double Card
+ * Multiple Record Repeating Double W2Card
  *
  * This card is used to read cards containing one or more records that span multiple lines each.
  */
-public class MultiRecordRepeatingDoubleCard extends Card {
-    private List<String> names; // Constituent names
+public class MultiRecordRepeatingDoubleCard extends W2Card {
+    private List<String> names; // W2Constituent names
     private List<List<Double>> values; // Specifies which constituents are on or off (values: ON or OFF)
     private int numFields; // Total number of fields -- spread over multiple lines, e.g., number of branches
     private int numRecords; // e.g. number of constituents

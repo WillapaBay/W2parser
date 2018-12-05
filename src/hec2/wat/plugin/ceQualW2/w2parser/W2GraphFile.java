@@ -9,11 +9,11 @@ import java.util.Scanner;
 /**
  * Graph File, to handle graph.npt
  */
-public class GraphFile {
-    private List<Constituent> constituents = new ArrayList<>();
-    private List<Constituent> derivedConstituents = new ArrayList<>();
+public class W2GraphFile {
+    private List<W2Constituent> w2Constituents = new ArrayList<>();
+    private List<W2Constituent> derivedW2Constituents = new ArrayList<>();
 
-    public GraphFile(String infile) {
+    public W2GraphFile(String infile) {
         File file = new File(infile);
         ArrayList<String> lines = new ArrayList<>();
         Scanner sc = null;
@@ -45,12 +45,12 @@ public class GraphFile {
                 String shortName = longName;
                 String units = "";
                 if (records.length > 1) units = records[1].trim();
-                Constituent c = new Constituent(shortName, longName, units, columnNumber);
+                W2Constituent c = new W2Constituent(shortName, longName, units, columnNumber);
                 if (readCname) {
-                    constituents.add(c);
+                    w2Constituents.add(c);
                 }
                 else if (readCDname) {
-                    derivedConstituents.add(c);
+                    derivedW2Constituents.add(c);
                 }
                 columnNumber++;
             }
@@ -62,12 +62,12 @@ public class GraphFile {
 
     }
 
-    public List<Constituent> getConstituents() {
-        return constituents;
+    public List<W2Constituent> getW2Constituents() {
+        return w2Constituents;
     }
 
-    public List<Constituent> getDerivedConstituents() {
-        return derivedConstituents;
+    public List<W2Constituent> getDerivedW2Constituents() {
+        return derivedW2Constituents;
     }
 
 }
