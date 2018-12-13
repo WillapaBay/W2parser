@@ -17,7 +17,7 @@ public class ActiveConstituentFluxesCard extends W2Card {
 
     public ActiveConstituentFluxesCard(W2ControlFile w2ControlFile, int numFluxes, int numWaterbodies) {
         super(w2ControlFile, "CST FLUX",
-                (int) Math.ceil(numFluxes/9.0) * numFluxes);
+                (int) Math.ceil(numWaterbodies/9.0) * numFluxes);
         this.numFluxes = numFluxes;
         this.numWaterbodies = numWaterbodies;
         parseTable();

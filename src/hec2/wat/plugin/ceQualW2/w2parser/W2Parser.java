@@ -1157,28 +1157,25 @@ public class W2Parser {
 
         // Tributary Inflow Concentrations
         MultiRecordRepeatingStringCard tributaryConstituentsCard = new MultiRecordRepeatingStringCard(w2con,
-                "CDT CON", numConstituents, NTR);
+                "CTR CON", numConstituents, NTR);
         List<String> tributaryConstituentNames = tributaryConstituentsCard.getNames();
         List<List<String>> CTRBRC = tributaryConstituentsCard.getValues();
         ctrCard = new W2FileCard(w2con, W2CardNames.TributaryInflowConcentrationFilenames, NTR);
         if (CONSTITUENTS) {
             // Iterate over tributaries
             for (int jtr = 0; jtr < NTR; jtr++) {
-                if (UHS.get(jtr) == 0) {
-                    int numColumns = computeNumberConstituentColumns(CTRBRC, jtr, numConstituents);
-                    int tributary = jtr + 1;
-
-                    int icol = 0;
-                    for (int jc = 0; jc < numConstituents; jc++) {
-                        if (isOn(CTRBRC.get(jc).get(jtr))) {
-                            icol++;
-                            W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
-                            W2Parameter w2Parameter = new W2Parameter(tributaryLocationName(tributary),
-                                    tributaryConstituentNames.get(jc) + "-CTR", graphFileW2Constituent.getLongName(),
-                                    graphFileW2Constituent.getUnits(), icol, numColumns, ctrCard.getFileNames().get(jtr),
-                                    "inflow", "input");
-                            w2Parameters.add(w2Parameter);
-                        }
+                int numColumns = computeNumberConstituentColumns(CTRBRC, jtr, numConstituents);
+                int tributary = jtr + 1;
+                int icol = 0;
+                for (int jc = 0; jc < numConstituents; jc++) {
+                    if (isOn(CTRBRC.get(jc).get(jtr))) {
+                        icol++;
+                        W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
+                        W2Parameter w2Parameter = new W2Parameter(tributaryLocationName(tributary),
+                                tributaryConstituentNames.get(jc) + "-CTR", graphFileW2Constituent.getLongName(),
+                                graphFileW2Constituent.getUnits(), icol, numColumns, ctrCard.getFileNames().get(jtr),
+                                "inflow", "input");
+                        w2Parameters.add(w2Parameter);
                     }
                 }
             }

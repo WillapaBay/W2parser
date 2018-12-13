@@ -1,31 +1,31 @@
-  W2 Model Version 4.0
+  W2 Model Version 8.0 TRANSITION MODEL 2011-2015 (Dec 2018)
 
 TITLE C ...............................TITLE....................................
-        Bonneville Pool, Columbia River, 1/1/2014 - 12/31/2014
+        Bonneville Pool, Columbia River, 1/1/2011 - 12/31/2015
         developed by WEST Consultants, Inc., Bellevue, WA for NWP, USACE
          
         updated to W2v4 by DGade - USACE
-		updated by Tammy Threadgill - USACE-ERDC
+		updated to W2v8 by Tammy Threadgill - USACE-ERDC
         
         NAVD88 -> NGVD29+3.3
         DT = ON
-        
+        W2v4.2_systdg.exe (Dec 04, 2018)
         
 ........................................................................................
 GRID         NWB     NBR     IMX     KMX   NPROC  CLOSEC
                1       1      77      56       1      ON
 
 IN/OUTFL     NTR     NST     NIW     NWD     NGT     NSP     NPI     NPU
-               3       0       0       0      20       0       0       0
+               0       0       0       0      20       0       0       0
 
 CONSTITU     NGC     NSS     NAL     NEP    NBOD     NMC     NZP
                1       0       0       0       0       0       0
 
-MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL
-             100     OFF     OFF     OFF     OFF     OFF
+MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL  SYSTDG   N2BND   DOBND   TDGTA
+             100     OFF     OFF     OFF     OFF     OFF      ON     OFF     OFF     OFF
 
 TIME CON  TMSTRT   TMEND    YEAR
-               1     365    2014
+           40544   42369    1900
 
 DLT CON      NDT  DLTMIN DLTINTR
                1     1.0     OFF
@@ -49,7 +49,7 @@ LOCATION     LAT    LONG    EBOT      BS      BE    JBDN
 WB 1      45.644 121.941   1.006       1       1       1
 
 INIT CND     T2I  ICETHI  WTYPEC   GRIDC
-WB 1        4.44     0.0   FRESH    RECT
+WB 1        4.50     0.0   FRESH    RECT
 
 CALCULAT     VBC     EBC     MBC     PQC     EVC     PRC
 WB 1         OFF      ON     OFF     OFF     OFF     OFF
@@ -205,26 +205,26 @@ SB17       DISTR                       2      55
 SB18       DISTR                       2      55
 OTHER      DISTR                       2      55
 
-GATE GAS  GASGTC    EQGT  AGASGT  BGASGT  CGASGT
-POWR1        OFF       2   135.0   -35.0 -0.1000
-SB1           ON       2   135.0   -35.0 -0.1000
-SB2           ON       2   135.0   -35.0 -0.1000
-SB3           ON       2   135.0   -35.0 -0.1000
-SB4           ON       2   135.0   -35.0 -0.1000
-SB5           ON       2   135.0   -35.0 -0.1000
-SB6           ON       2   135.0   -35.0 -0.1000
-SB7           ON       2   135.0   -35.0 -0.1000
-SB8           ON       2   135.0   -35.0 -0.1000
-SB9           ON       2   135.0   -35.0 -0.1000
-SB10          ON       2   135.0   -35.0 -0.1000
-SB11          ON       2   135.0   -35.0 -0.1000
-SB12          ON       2   135.0   -35.0 -0.1000
-SB13          ON       2   135.0   -35.0 -0.1000
-SB14          ON       2   135.0   -35.0 -0.1000
-SB15          ON       2   135.0   -35.0 -0.1000
-SB16          ON       2   135.0   -35.0 -0.1000
-SB17          ON       2   135.0   -35.0 -0.1000
-SB18          ON       2   135.0   -35.0 -0.1000
+GATE GAS  GASGTC    EQGT  AGASGT  BGASGT  CGASGT  GTTYPE    SPBC
+POWR1        OFF       2   135.0   -35.0 -0.1000     POW        
+SB1           ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB2           ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB3           ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB4           ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB5           ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB6           ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB7           ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB8           ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB9           ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB10          ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB11          ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB12          ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB13          ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB14          ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB15          ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB16          ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB17          ON       2   135.0   -35.0 -0.1000     SPB    2.04
+SB18          ON       2   135.0   -35.0 -0.1000     SPB    2.04
 OTHER        OFF       2   135.0   -35.0 -0.1000
 
 PUMPS 1     IUPU    IDPU     EPU  STRTPU   ENDPU   EONPU  EOFFPU     QPU   WTHLC
@@ -326,7 +326,7 @@ PRF SEG     IPRF    IPRF    IPRF    IPRF    IPRF    IPRF    IPRF    IPRF    IPRF
 WB 1
 
 SPR PLOT    SPRC    NSPR   NISPR
-WB 1          ON       1      75
+WB 1         ONV       1      75
 
 SPR DATE    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD
 WB 1         0.5
@@ -373,19 +373,19 @@ FLX FREQ    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF
 WB 1
 
 TSR PLOT    TSRC    NTSR   NITSR
-              ON       1       1
+              ON       1       6
 
 TSR DATE    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD
                1
 
 TSR FREQ    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF
-        0.0416660.0416660.0416660.0416660.0416660.0416660.0416660.0416660.041666
+         0.04167
 
 TSR SEG     ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR
-              76      76      76      76      76      76      76      76      76
+              76      76      76      76      76      76
 
 TSR LAYE    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR
-             0.5     1.5     3.0     5.0    10.0    15.0    20.0    25.0    30.0
+             0.5     3.0     5.0    10.0    15.0    20.0
 
 WITH OUT    WDOC    NWDO   NIWDO
               ON       1       1
@@ -409,7 +409,7 @@ RSO FREQ    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF
 
 
 CST COMP     CCC    LIMC     CUF
-             OFF     OFF       1
+              ON     OFF       1
 
 CST ACTIVE   CAC
 TDS          OFF
@@ -538,7 +538,7 @@ SODDK        OFF
 
 CST ICON   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB
 TDS      0.00000
-N2       20.2024
+N2        19.803
 PO4      0.00000
 NH4      0.00000
 NO3      0.00000
@@ -549,7 +549,7 @@ LDOM     0.00000
 RDOM     0.00000
 LPOM     0.00000
 RPOM     0.00000
-DO       12.5343
+DO        12.053
 TIC      0.00000
 ALK      0.00000
 LDOM-P   0.00000
@@ -613,7 +613,7 @@ RPOM-N       OFF
 
 CTR CON   CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC
 TDS          OFF     OFF     OFF
-N2            ON      ON      ON
+N2           OFF     OFF     OFF
 PO4          OFF     OFF     OFF
 NH4          OFF     OFF     OFF
 NO3          OFF     OFF     OFF
@@ -624,7 +624,7 @@ LDOM         OFF     OFF     OFF
 RDOM         OFF     OFF     OFF
 LPOM         OFF     OFF     OFF
 RPOM         OFF     OFF     OFF
-DO            ON      ON      ON
+DO           OFF     OFF     OFF
 TIC          OFF     OFF     OFF
 ALK          OFF     OFF     OFF
 LDOM-P       OFF     OFF     OFF
@@ -854,7 +854,7 @@ S DEMAND     SOD     SOD     SOD     SOD     SOD     SOD     SOD     SOD     SOD
          0.30000 0.30000 0.30000 0.30000 0.30000
 
 REAERATION  TYPE    EQN#   COEF1   COEF2   COEF3   COEF4
-WB 1        LAKE      14 0.50000 0.05000 2.00000 0.00000
+WB 1        LAKE      14 0.04693 0.01853 1.18000 0.00000
 
 RSI FILE..................................RSIFN.................................
         rsi.npt - not used
@@ -863,19 +863,19 @@ QWD FILE..................................QWDFN.................................
         qwd.npt - not used
 
 QGT FILE..................................QGTFN.................................
-        BON_2014_QGT.csv
+        QGT_BON_2011_2015_daily_DSS-scaled.csv
 
 WSC FILE..................................WSCFN.................................
         BON_WSC.npt
 
 SHD FILE..................................SHDFN.................................
-        BON_SHD.npt
+        BON_SHD_1.npt
 
 BTH FILE..................................BTHFN.................................
-WB 1    BON_NAVD88_BTH_2014.csv
+WB 1    BON_NAVD88_BTH_2011.csv
 
 MET FILE..................................METFN.................................
-WB 1    HOXO_DLS_MET_2014.csv
+WB 1    HOXO_DLS_BON_2011_2015_MET_withBP.csv
 
 EXT FILE..................................EXTFN.................................
 WB 1    ext_1.npt - not used
@@ -887,40 +887,34 @@ LPR FILE..................................LPRFN.................................
 WB 1    lpr.npt - not used
 
 QIN FILE..................................QINFN.................................
-BR 1    qwo_41.opt_2014_daily.csv
+BR 1    THE DALLES_OUTFLOW.csv
 
 TIN FILE..................................TINFN.................................
-BR 1    two_41.opt_2014
+BR 1    two_41_TDA.opt
 
 CIN FILE..................................CINFN.................................
-BR 1    cin_br1.npt - not used
+BR 1    cwo_41_TDA.opt
 
 QOT FILE..................................QOTFN.................................
 BR 1    qot_br1.npt - not used
 
 QTR FILE..................................QTRFN.................................
-TR 1    QTR_WhiteSalmonR_2014.prn
-TR 2    QTR_HoodR_2014.prn
-TR 3    QTR_KlickitatR_2014.prn
+TR 1    qtr_tr1.npt - not used
 
 TTR FILE..................................TTRFN.................................
-TR 1    TTR_tr1_BON_2014.prn
-TR 2    TTR_tr2_BON_2014.prn
-TR 3    TTR_tr3_BON_2014.prn
+TR 1    ttr_tr1.npt - not used
 
 CTR FILE..................................CTRFN.................................
 TR 1    ctr_tr1.npt - not used
-TR 2    ctr_tr2.npt - not used
-TR 3    ctr_tr3.npt - not used
 
 QDT FILE..................................QDTFN.................................
-BR 1    BON_SystemModel_2014_NAVD88_qwb.opt_qdt
+BR 1    BonnevilleDam_DistributedTributaryInflow.npt
 
 TDT FILE..................................TDTFN.................................
-BR 1    two_41.opt_2014_tdt
+BR 1    two_41_TDA.opt
 
 CDT FILE..................................CDTFN.................................
-BR 1    cdt_br1.npt - not used
+BR 1    cwo_41_TDA.opt
 
 PRE FILE..................................PREFN.................................
 BR 1    pre_br1.npt - not used
@@ -950,25 +944,25 @@ CDH FILE..................................CDHFN.................................
 BR 1    cdh_br1.npt - not used
 
 SNP FILE..................................SNPFN.................................
-WB 1    BON_SystemModel_2014_NAVD88_DT_snp.opt
+WB 1    BON_snp.opt
 
 PRF FILE..................................PRFFN.................................
-WB 1    BON_SystemModel_2014_NAVD88_DT_prf.opt
+WB 1    BON_prf.opt
 
 VPL FILE..................................VPLFN.................................
-WB 1    BON_SystemModel_2014_NAVD88_DT_vpl.w2l
+WB 1    BON_vpl.w2l
 
 CPL FILE..................................CPLFN.................................
-WB 1    BON_SystemModel_2014_NAVD88_DT_cpl.opt
+WB 1    BON_cpl.opt
 
 SPR FILE..................................SPRFN.................................
-WB 1    BON_SystemModel_2014_NAVD88_DT_spr.opt
+WB 1    BON_spr.opt
 
 FLX FILE..................................FLXFN.................................
-WB 1    BON_SystemModel_2014_NAVD88_DT_flx.opt - not used
+WB 1    BON_flx.opt - not used
 
 TSR FILE..................................TSRFN.................................
-        BON_SystemModel_2014_NAVD88_DT_tsr.opt
+        BON_tsr.opt
 
 WDO FILE..................................WDOFN.................................
-        BON_SystemModel_2014_NAVD88_DT_wdo.opt
+        BON_wdo.opt

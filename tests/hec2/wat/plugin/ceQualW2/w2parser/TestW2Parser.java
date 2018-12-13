@@ -7,9 +7,13 @@ import java.util.List;
 
 public class TestW2Parser {
 
-    @Test
-    public void testParserParticleTracking() throws IOException {
-        String infile = "data/ParticleTracking/w2_con.npt";
+    /**
+     * Test code
+     * @param Input and output folder name
+     * @return W2Parser object
+     */
+    public W2Parser unitTest(String folder) throws IOException {
+        String infile = String.format("data/%s/w2_con.npt", folder);
         W2ControlFile w2con = new W2ControlFile(infile);
         W2Parser w2Parser = new W2Parser(w2con);
         w2Parser.readControlFile();
@@ -34,20 +38,81 @@ public class TestW2Parser {
         System.out.println("\nTable of TSR Outputs:\n");
         w2Parser.printTable(tsrOutputW2Parameters);
         System.out.println("\nTable of Withdrawal Outputs:\n");
-        w2Parser.printTable(withdrawalOutputW2Parameters);
+//        w2Parser.printTable(withdrawalOutputW2Parameters);
 
         // Write tables to output files
         w2Parser.writeTable(inputW2Parameters,
-                "results/ParticleTracking/W2_input_parameters.txt");
+                String.format("results/%s/W2_input_parameters.txt", folder));
         w2Parser.writeTable(metW2Parameters,
-                "results/ParticleTracking/W2_met_parameters.txt");
+                String.format("results/%s/W2_met_parameters.txt", folder));
         w2Parser.writeTable(tsrOutputW2Parameters,
-                "results/ParticleTracking/W2_TSR_output_parameters.txt");
-        w2Parser.writeTable(withdrawalOutputW2Parameters,
-                "results/ParticleTracking/W2_Withdrawal_output_parameters.txt");
+                String.format("results/%s/W2_TSR_output_parameters.txt", folder));
+//        w2Parser.writeTable(withdrawalOutputW2Parameters,
+//                String.format("results/%s/W2_Withdrawal_output_parameters.txt", folder));
         w2Parser.writeInitialWaterSurfaceElevations(
-                "results/ParticleTracking/W2_WSEL.txt");
+                String.format("results/%s/W2_WSEL.txt", folder));
 
+        return w2Parser;
+    }
+
+    @Test
+    public void testParserBonneville() throws IOException {
+        W2Parser w2Parser = unitTest("BON");
+    }
+
+    @Test
+    public void testParserChiefJoseph() throws IOException {
+        W2Parser w2Parser = unitTest("CHJ");
+    }
+
+    @Test
+    public void testParserColumbiaSlough() throws IOException {
+        W2Parser w2Parser = unitTest("ColumbiaSlough");
+    }
+
+    @Test
+    public void testParserDworshak() throws IOException {
+        W2Parser w2Parser = unitTest("DWR");
+    }
+
+    @Test
+    public void testParserGrandCoulee() throws IOException {
+        W2Parser w2Parser = unitTest("GCL");
+    }
+
+    @Test
+    public void testParserIceHarbor() throws IOException {
+        W2Parser w2Parser = unitTest("IHR");
+    }
+
+    @Test
+    public void testParserJohnDay() throws IOException {
+        W2Parser w2Parser = unitTest("JDA");
+    }
+
+    @Test
+    public void testParserLittleGoose() throws IOException {
+        W2Parser w2Parser = unitTest("LGS");
+    }
+
+    @Test
+    public void testParserLowerMonumental() throws IOException {
+        W2Parser w2Parser = unitTest("LMN");
+    }
+
+    @Test
+    public void testParserLowerGranite() throws IOException {
+        W2Parser w2Parser = unitTest("LWG");
+    }
+
+    @Test
+    public void testParserMcNary() throws IOException {
+        W2Parser w2Parser = unitTest("MCN");
+    }
+
+    @Test
+    public void testParserParticleTracking() throws IOException {
+        W2Parser w2Parser = unitTest("ParticleTracking");
         // Update time window
         w2Parser.setJdayMin(1.5);
         w2Parser.setJdayMax(52.0);
@@ -62,46 +127,13 @@ public class TestW2Parser {
     }
 
     @Test
-    public void testParserGrandCoulee() throws IOException {
-        String infile = "data/GCL/w2_con.npt";
-        W2ControlFile w2con = new W2ControlFile(infile);
-        W2Parser w2Parser = new W2Parser(w2con);
-        w2Parser.readControlFile();
-
-        // Get flow, temperature, and constituent input parameters
-        List<W2Parameter> inputW2Parameters = w2Parser.getInputW2Parameters();
-
-        // Get meteorology input parameters
-        List<W2Parameter> metW2Parameters = w2Parser.getMeteorologyW2Parameters();
-
-        // Get TSR output parameters for flow, temperature, and constituents
-        List<W2Parameter> tsrOutputW2Parameters = w2Parser.getTsrOutputW2Parameters();
-
-        // Get withdrawal output parameters for flow, temperature, and constituents
-        List<W2Parameter> withdrawalOutputW2Parameters = w2Parser.getWithdrawalOutputW2Parameters();
-
-        // Display tables
-        System.out.println("\nTable of Flow, Temperature, and W2Constituent Inputs:\n");
-        w2Parser.printTable(inputW2Parameters);
-        System.out.println("\nTable of Meteorology Inputs:\n");
-        w2Parser.printTable(metW2Parameters);
-        System.out.println("\nTable of TSR Outputs:\n");
-        w2Parser.printTable(tsrOutputW2Parameters);
-        System.out.println("\nTable of Withdrawal Outputs:\n");
-        w2Parser.printTable(withdrawalOutputW2Parameters);
-
-        // Write tables to output files
-        w2Parser.writeTable(inputW2Parameters,
-                "results/GCL/W2_input_parameters.txt");
-        w2Parser.writeTable(metW2Parameters,
-                "results/GCL/W2_met_parameters.txt");
-        w2Parser.writeTable(tsrOutputW2Parameters,
-                "results/ParticleTracking/W2_TSR_output_parameters.txt");
-        w2Parser.writeTable(withdrawalOutputW2Parameters,
-                "results/ParticleTracking/W2_Withdrawal_output_parameters.txt");
-        w2Parser.writeInitialWaterSurfaceElevations(
-                "results/GCL/W2_WSEL.txt");
-
-        w2Parser.saveControlFile("results/GCL/w2_con.npt");
+    public void testParserSpokane() throws IOException {
+        W2Parser w2Parser = unitTest("Spokane");
     }
+
+    @Test
+    public void testParserTheDalles() throws IOException {
+        W2Parser w2Parser = unitTest("TDA");
+    }
+
 }
