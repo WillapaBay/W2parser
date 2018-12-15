@@ -48,8 +48,18 @@ public class W2FileCard extends W2Card {
         fileNames = new ArrayList<>();
         for (int i = 0; i < numCardDataLines; i++) {
             line = table.get(i);
-            records[0] = line.substring(0, 7);
-            records[1] = line.substring(8);
+            if (line.length() > 8) {
+                records[0] = line.substring(0, 7);
+            } else {
+                records[0] = line.trim();
+            }
+
+            if (line.length() > 9) {
+                records[1] = line.substring(8);
+            } else {
+                records[1] = "";
+            }
+
             identifiers.add(records[0].trim());
             fileNames.add(records[1].trim());
         }

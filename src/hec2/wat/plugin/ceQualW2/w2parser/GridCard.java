@@ -1,5 +1,6 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -81,8 +82,13 @@ public class GridCard extends W2Card {
         NBR = Integer.parseInt(fields.get(2));
         IMX = Integer.parseInt(fields.get(3));
         KMX = Integer.parseInt(fields.get(4));
-        NPROC = Integer.parseInt(fields.get(5));
-        CLOSEC = fields.get(6);
+        if (fields.size() > 5) {
+            NPROC = Integer.parseInt(fields.get(5));
+            CLOSEC = fields.get(6);
+        } else {
+            NPROC = 1;
+            CLOSEC = "ON";
+        }
     }
 
     @Override

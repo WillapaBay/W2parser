@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86ca3ba8-c345-4a52-b43d-1ddf44984b0b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data/BON/BON_NAVD88_BTH_2011.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ColumbiaSlough/graph.npt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/MCN/graph.npt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/TDA/graph.npt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/BON_NAVD88_BTH_2014.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/graph.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/BON/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/w2_con.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/GCL/w2_con.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" afterDir="false" />
@@ -82,10 +82,12 @@
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ActiveConstituentFluxesCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ActiveConstituentFluxesCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Spokane/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/w2_con.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2FileCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2FileCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,11 +99,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestW2Parser.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java">
+      <file leaf-file-name="ConvertExcelDateNumToJday.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="570">
+              <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,25 +111,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FrameworkMethod.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <file leaf-file-name="TestConvertExcelDateNumToJday.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="W2Parser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="287" selection-start-line="287" selection-end-line="287" />
+            <state relative-caret-position="323">
+              <caret line="17" column="95" selection-start-line="17" selection-start-column="95" selection-end-line="17" selection-end-column="95" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,12 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConstituentComputationsCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/FileCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/HeatExchangeCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/IceCoverCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/InitialConditionsCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/LocationCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiLineCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/NumberStructuresCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/RepeatingDoubleCard.java" />
@@ -150,7 +147,6 @@
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/Card2.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/Parameter.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parameter.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" />
         <option value="$PROJECT_DIR$/docs/TODO.txt" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestCalculationsCard.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestGridCard.java" />
@@ -180,20 +176,27 @@
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2ParserCards.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Card2.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2GraphFile.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2FileCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ActiveConstituentFluxesCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2FileCard.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" />
+        <option value="$PROJECT_DIR$/data/Spokane/w2_con.npt" />
+        <option value="$PROJECT_DIR$/W2Parser.iml" />
+        <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestExcelToJday.java" />
+        <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="623" />
-    <option name="y" value="37" />
+    <option name="x" value="621" />
+    <option name="y" value="35" />
     <option name="width" value="1550" />
-    <option name="height" value="1253" />
+    <option name="height" value="1255" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -201,6 +204,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,18 +215,29 @@
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="w2parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="w2parser" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -230,28 +245,28 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../W2Parser_backup" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.36393443" />
     <property name="settings.editor.selected.configurable" value="pyconsole" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\q0hectes\Documents\IdeaProjects\W2Parser\data\MCN" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="hec2.wat.plugin.ceQualW2.w2parser" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="hec2.wat.plugin.ceQualW2.w2parser" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\q0hectes\Documents\IdeaProjects\W2Parser\data\Spokane" />
       <recent name="C:\Users\q0hectes\Documents\IdeaProjects\W2Parser\data\BON" />
       <recent name="C:\Users\q0hectes\Documents\IdeaProjects\W2Parser\data\ColumbiaSlough" />
       <recent name="C:\Users\q0hectes\Documents\IdeaProjects\W2Parser\data\TDA" />
       <recent name="C:\Users\q0hectes\Documents\IdeaProjects\W2Parser\data\MCN" />
-      <recent name="C:\Users\q0hectes\Documents\IdeaProjects\W2Parser\data\GCL" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="hec2.wat.plugin.ceQualW2.w2parser" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\q0hectes\Documents\IdeaProjects\W2Parser\data\MCN" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -266,9 +281,55 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestW2Parser">
+  <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="TestConvertExcelDateNumToJday.testExcelToJday_Bonneville" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="W2Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
+      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestConvertExcelDateNumToJday" />
+      <option name="METHOD_NAME" value="testExcelToJday_Bonneville" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestConvertExcelDateNumToJday.testParserBonneville" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="W2Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
+      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestConvertExcelDateNumToJday" />
+      <option name="METHOD_NAME" value="testParserBonneville" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration name="TestW2Parser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="W2Parser" />
@@ -293,75 +354,6 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestW2Parser.testParserBonneville" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="W2Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
-      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestW2Parser" />
-      <option name="METHOD_NAME" value="testParserBonneville" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TestW2Parser.testParserChiefJoseph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="W2Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
-      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestW2Parser" />
-      <option name="METHOD_NAME" value="testParserChiefJoseph" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TestW2Parser.testParserColumbiaSlough" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="W2Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
-      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestW2Parser" />
-      <option name="METHOD_NAME" value="testParserColumbiaSlough" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
     <configuration name="TestW2Parser.testParserMcNary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="W2Parser" />
       <extension name="coverage">
@@ -375,6 +367,29 @@
       <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
       <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestW2Parser" />
       <option name="METHOD_NAME" value="testParserMcNary" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestW2Parser.testParserSpokane" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="W2Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
+      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestW2Parser" />
+      <option name="METHOD_NAME" value="testParserSpokane" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -424,19 +439,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestW2Parser.testParserBonneville" />
-      <item itemvalue="JUnit.TestW2Parser.testParserChiefJoseph" />
+      <item itemvalue="JUnit.TestW2Parser.testParserSpokane" />
       <item itemvalue="JUnit.TestW2Parser" />
       <item itemvalue="JUnit.TestW2Parser.testParserMcNary" />
-      <item itemvalue="JUnit.TestW2Parser.testParserColumbiaSlough" />
+      <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testParserBonneville" />
+      <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testExcelToJday_Bonneville" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testExcelToJday_Bonneville" />
+        <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testParserBonneville" />
+        <item itemvalue="JUnit.TestW2Parser.testParserSpokane" />
         <item itemvalue="JUnit.TestW2Parser" />
-        <item itemvalue="JUnit.TestW2Parser.testParserBonneville" />
-        <item itemvalue="JUnit.TestW2Parser.testParserColumbiaSlough" />
         <item itemvalue="JUnit.TestW2Parser.testParserMcNary" />
-        <item itemvalue="JUnit.TestW2Parser.testParserChiefJoseph" />
       </list>
     </recent_temporary>
   </component>
@@ -500,44 +515,57 @@
       <option name="project" value="LOCAL" />
       <updated>1543975736766</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Bug fixes, new Bonneville 5 yr transition model, new folders.">
+      <created>1544725570881</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1544725570881</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added Spokane control file">
+      <created>1544725629761</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1544725629761</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestW2Parser_testParserColumbiaSlough - 2018.12.12 at 18h 07m 00s.xml">
-      <configuration name="TestW2Parser.testParserColumbiaSlough" configurationId="JUnit" />
+    <history-entry file="TestExcelToJday_testParserBonneville - 2018.12.14 at 15h 38m 46s.xml">
+      <configuration name="TestExcelToJday.testParserBonneville" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestW2Parser_testParserColumbiaSlough - 2018.12.12 at 18h 07m 23s.xml">
-      <configuration name="TestW2Parser.testParserColumbiaSlough" configurationId="JUnit" />
+    <history-entry file="TestExcelToJday_testParserBonneville - 2018.12.14 at 15h 38m 51s.xml">
+      <configuration name="TestExcelToJday.testParserBonneville" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestW2Parser_testParserColumbiaSlough - 2018.12.12 at 18h 07m 36s.xml">
-      <configuration name="TestW2Parser.testParserColumbiaSlough" configurationId="JUnit" />
+    <history-entry file="TestExcelToJday_testExcelToJday_Bonneville - 2018.12.14 at 15h 39m 30s.xml">
+      <configuration name="TestExcelToJday.testExcelToJday_Bonneville" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestW2Parser_testParserColumbiaSlough - 2018.12.12 at 18h 07m 45s.xml">
-      <configuration name="TestW2Parser.testParserColumbiaSlough" configurationId="JUnit" />
+    <history-entry file="TestExcelToJday_testExcelToJday_Bonneville - 2018.12.14 at 15h 39m 51s.xml">
+      <configuration name="TestExcelToJday.testExcelToJday_Bonneville" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestW2Parser_testParserColumbiaSlough - 2018.12.12 at 18h 08m 13s.xml">
-      <configuration name="TestW2Parser.testParserColumbiaSlough" configurationId="JUnit" />
+    <history-entry file="TestExcelToJday_testExcelToJday_Bonneville - 2018.12.14 at 15h 42m 53s.xml">
+      <configuration name="TestExcelToJday.testExcelToJday_Bonneville" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestW2Parser - 2018.12.12 at 18h 08m 32s.xml">
-      <configuration name="TestW2Parser" configurationId="JUnit" />
+    <history-entry file="TestExcelToJday_testExcelToJday_Bonneville - 2018.12.14 at 16h 37m 58s.xml">
+      <configuration name="TestExcelToJday.testExcelToJday_Bonneville" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestW2Parser_testParserBonneville - 2018.12.13 at 10h 18m 38s.xml">
-      <configuration name="TestW2Parser.testParserBonneville" configurationId="JUnit" />
+    <history-entry file="TestExcelToJday_testExcelToJday_Bonneville - 2018.12.14 at 16h 39m 05s.xml">
+      <configuration name="TestExcelToJday.testExcelToJday_Bonneville" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestW2Parser_testParserBonneville - 2018.12.13 at 10h 20m 39s.xml">
-      <configuration name="TestW2Parser.testParserBonneville" configurationId="JUnit" />
+    <history-entry file="TestExcelToJday_testExcelToJday_Bonneville - 2018.12.14 at 16h 40m 06s.xml">
+      <configuration name="TestExcelToJday.testExcelToJday_Bonneville" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestW2Parser_testParserBonneville - 2018.12.13 at 10h 21m 37s.xml">
-      <configuration name="TestW2Parser.testParserBonneville" configurationId="JUnit" />
+    <history-entry file="TestExcelToJday_testExcelToJday_Bonneville - 2018.12.14 at 17h 42m 07s.xml">
+      <configuration name="TestExcelToJday.testExcelToJday_Bonneville" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestW2Parser_testParserBonneville - 2018.12.13 at 10h 21m 48s.xml">
-      <configuration name="TestW2Parser.testParserBonneville" configurationId="JUnit" />
+    <history-entry file="TestConvertExcelDateNumToJday_testExcelToJday_Bonneville - 2018.12.14 at 18h 02m 39s.xml">
+      <configuration name="TestConvertExcelDateNumToJday.testExcelToJday_Bonneville" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -550,17 +578,18 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4213592" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32524273" />
+      <window_info anchor="bottom" id="Messages" weight="0.3291262" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22621359" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.45533982" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3291262" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Run with VisualVM" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1988012" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14985014" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3291262" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="7" />
@@ -569,7 +598,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32815534" />
+      <window_info anchor="right" id="Data View" order="3" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -583,7 +612,9 @@
     <MESSAGE value="Added support for expanding and shrinking the cards in W2ControlList to accommodate changes in the sizes of Cards. The updateTable method in all cards with more than one data line have been updated to first clear the table (data lines) and then add rather than set each line of data to the table." />
     <MESSAGE value="Added test for expanding and shrinking cards." />
     <MESSAGE value="Added constructor to Parser that creates the W2 control file object. Renamed all of the non-Card classes to W2____.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added constructor to Parser that creates the W2 control file object. Renamed all of the non-Card classes to W2____.java" />
+    <MESSAGE value="Bug fixes, new Bonneville 5 yr transition model, new folders." />
+    <MESSAGE value="Added Spokane control file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Spokane control file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -614,82 +645,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java</url>
-          <line>39</line>
+          <line>18</line>
           <properties />
-          <option name="timeStamp" value="43" />
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java</url>
-          <line>59</line>
+          <url>file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java</url>
+          <line>50</line>
           <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="49" />
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="50" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="67" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/TODO.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestCalculationsCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestGridCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestActiveDerivedConstituentsCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBranchGeometryCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestHeatExchangeCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestIceCoverCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestInitialConditionsCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -830,13 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2FileCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Globals.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -856,15 +822,8 @@
         <state relative-caret-position="19">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="463" selection-start-line="463" selection-end-line="463" />
         </state>
       </provider>
     </entry>
@@ -882,30 +841,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#392#393#0" />
+            <element signature="e#422#423#0" />
           </folding>
         </state>
       </provider>
@@ -924,22 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="148" column="67" selection-start-line="148" selection-start-column="67" selection-end-line="148" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/MCN/graph.npt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/TDA/graph.npt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ColumbiaSlough/graph.npt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/ColumbiaSlough/w2_con.npt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -954,27 +880,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/BON/BON_NAVD88_BTH_2011.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiRecordRepeatingStringCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="287" selection-start-line="287" selection-end-line="287" />
         </state>
       </provider>
     </entry>
@@ -985,10 +894,125 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+          <folding>
+            <element signature="imports" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1078">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="imports" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Spokane/w2_con.npt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Programs/Java/jdk18x64/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8602">
+          <caret line="428" selection-start-line="428" selection-end-line="428" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/W2Parser.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="964" column="8" selection-start-line="964" selection-start-column="8" selection-end-line="964" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/BON_NAVD88_BTH_2014.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/graph.npt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/TODO.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/BON/W2_input_parameters.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/BON/W2_met_parameters.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="157" selection-start-line="2" selection-start-column="157" selection-end-line="2" selection-end-column="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2FileCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="-1026">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="95" selection-start-line="17" selection-start-column="95" selection-end-line="17" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

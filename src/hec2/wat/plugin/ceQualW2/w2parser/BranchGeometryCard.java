@@ -129,6 +129,7 @@ public class BranchGeometryCard extends W2Card {
             NLMIN.add(Integer.parseInt(records.get(7)));
             slopeList.add(Double.parseDouble(records.get(8)));
             if (records.size() > 9) {
+                if (!records.get(9).trim().equals(""))
                 slopeClist.add(Double.parseDouble(records.get(9)));
             }
         }

@@ -163,11 +163,11 @@ BR12           2
 
 STR INT    STRIC   STRIC   STRIC   STRIC   STRIC   STRIC   STRIC   STRIC   STRIC
 Br 1                 
-Br 2	        
+Br 2
 Br 3           
 Br 4
 Br 5         OFF     OFF
-Br 6	        
+Br 6
 Br 7         OFF     OFF
 Br 8
 Br 9                 
@@ -177,11 +177,11 @@ Br 12        OFF     OFF
 
 STR TOP    KTSTR   KTSTR   KTSTR   KTSTR   KTSTR   KTSTR   KTSTR   KTSTR   KTSTR
 Br 1                 
-Br 2	        
+Br 2
 Br 3           
 Br 4
 Br 5           2       2
-Br 6	        
+Br 6
 Br 7           2       2
 Br 8
 Br 9                 
@@ -191,11 +191,11 @@ Br 12          2       2
 
 STR BOT    KBSTR   KBSTR   KBSTR   KBSTR   KBSTR   KBSTR   KBSTR   KBSTR   KBSTR
 Br 1                 
-Br 2	        
+Br 2
 Br 3           
 Br 4
 Br 5          41      41
-Br 6	        
+Br 6
 Br 7          38      38
 Br 8
 Br 9                 
@@ -205,11 +205,11 @@ Br 12         46      46
 
 STR SINK   SINKC   SINKC   SINKC   SINKC   SINKC   SINKC   SINKC   SINKC   SINKC
 Br 1                 
-Br 2	        
+Br 2
 Br 3           
 Br 4
 Br 5       POINT    LINE
-Br 6	        
+Br 6
 Br 7       POINT   POINT
 Br 8
 Br 9                 
@@ -219,11 +219,11 @@ Br 12      POINT    LINE
 
 STR ELEV    ESTR    ESTR    ESTR    ESTR    ESTR    ESTR    ESTR    ESTR    ESTR
 Br 1                 
-Br 2	        
+Br 2
 Br 3           
 Br 4
 Br 5      579.50   577.1
-Br 6	        
+Br 6
 Br 7      565.15  567.25
 Br 8
 Br 9                 
@@ -233,11 +233,11 @@ Br 12      456.9  459.64
 
 STR WIDTH   WSTR    WSTR    WSTR    WSTR    WSTR    WSTR    WSTR    WSTR    WSTR
 Br 1                 
-Br 2	        
+Br 2
 Br 3           
 Br 4
 Br 5                70.0   
-Br 6	        
+Br 6
 Br 7                50.0         
 Br 8
 Br 9                 
@@ -1428,10 +1428,10 @@ Zoo1        0.00    0.00    0.00
 
 ZOOP TEMP    ZT1     ZT2     ZT3     ZT4     ZK1     ZK2     ZK3     ZK4
              0.0    15.0    20.0    36.0     0.1     0.9    0.98   0.100
-			 
+
 ZOOP STOI     ZP      ZN      ZC
          0.01500 0.08000 0.45000
-		 
+
 MACROPHYT MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC
 Mac1         OFF     OFF     OFF     OFF     OFF     OFF
 
@@ -1439,7 +1439,7 @@ MAC PRINT MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC
 Mac1         OFF     OFF     OFF     OFF     OFF     OFF
 
 MAC INI  MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI
-Mac1     0.00000     0.1     0.5     0.0     0.0     0.0	  
+Mac1     0.00000     0.1     0.5     0.0     0.0     0.0
 
 MAC RATE      MG      MR      MM    MSAT    MHSP    MHSN    MHSC    MPOM  LRPMAC
 Mac 1       0.30    0.05    0.05    30.0     0.0     0.0     0.0     0.9     0.2
@@ -1754,7 +1754,7 @@ Br 2    qot2.npt
 Br 3    qot3.npt
 Br 4    qot4.npt
 Br 5    qur_01.npt
-Br 6	qot6.npt        
+Br 6    qot6.npt
 br 7    quf_01.npt
 br 8    qot8.npt
 Br 9    qot9.npt             
@@ -1837,7 +1837,7 @@ Br 2
 Br 3
 Br 4
 Br 5                 
-Br 6	        
+Br 6
 br 7           
 br 8
 Br 9                 
@@ -1851,7 +1851,7 @@ Br 2
 Br 3
 Br 4
 Br 5                 
-Br 6	        
+Br 6
 br 7           
 br 8
 Br 9                 
@@ -1865,7 +1865,7 @@ Br 2
 Br 3
 Br 4
 Br 5                 
-Br 6	        
+Br 6
 br 7           
 br 8
 Br 9                 
@@ -1879,7 +1879,7 @@ Br 2
 Br 3
 Br 4
 Br 5                 
-Br 6	        
+Br 6
 br 7           
 br 8
 Br 9                 
@@ -1893,7 +1893,7 @@ Br 2
 Br 3
 Br 4
 Br 5                 
-Br 6	        
+Br 6
 br 7           
 br 8
 Br 9                 
@@ -1907,7 +1907,7 @@ Br 2
 Br 3
 Br 4
 Br 5                 
-Br 6	        
+Br 6
 br 7           
 br 8
 Br 9                 
@@ -1921,7 +1921,7 @@ Br 2
 Br 3
 Br 4
 Br 5                 
-Br 6	        
+Br 6
 br 7           
 br 8
 Br 9                 
@@ -1935,7 +1935,7 @@ Br 2
 Br 3
 Br 4
 Br 5                 
-Br 6	        
+Br 6
 br 7           
 br 8
 Br 9                 
@@ -1949,7 +1949,7 @@ Br 2
 Br 3
 Br 4
 Br 5                 
-Br 6	        
+Br 6
 br 7           
 br 8
 Br 9                 

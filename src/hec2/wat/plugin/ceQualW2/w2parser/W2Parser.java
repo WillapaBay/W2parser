@@ -1077,7 +1077,7 @@ public class W2Parser {
         }
 
         // Structural Withdrawals (outflows), QOT
-        qotCard = new W2FileCard(w2con, W2CardNames.StructuralWithdrawalFilenames, 1);
+        qotCard = new W2FileCard(w2con, W2CardNames.StructuralWithdrawalFilenames, NBR);
         numberStructuresCard = new NumberStructuresCard(w2con, NBR);
         List<Integer> NSTR = numberStructuresCard.getNSTR();
         for (int jbr = 0; jbr < NBR; jbr++) {

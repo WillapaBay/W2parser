@@ -47,6 +47,16 @@ public final class W2ControlFile {
     private void load() throws IOException {
         w2ControlList.clear();
         w2ControlList.addAll(Files.readAllLines(w2ControlInPath));
+        // If the file contains any tabs, throw an exception
+        w2ControlList.forEach(item ->
+        {
+            try {
+                if (item.contains("\t"))
+                    throw new IOException("Error: the control file contains tabs, which are not supported. Replace these with spaces.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     /**

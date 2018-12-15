@@ -5,7 +5,7 @@ TITLE C ...............................TITLE....................................
         developed by WEST Consultants, Inc., Bellevue, WA for NWP, USACE
          
         updated to W2v4 by DGade - USACE
-		updated to W2v8 by Tammy Threadgill - USACE-ERDC
+        updated to W2v8 by Tammy Threadgill - USACE-ERDC
         
         NAVD88 -> NGVD29+3.3
         DT = ON
@@ -908,7 +908,7 @@ CTR FILE..................................CTRFN.................................
 TR 1    ctr_tr1.npt - not used
 
 QDT FILE..................................QDTFN.................................
-BR 1    BonnevilleDam_DistributedTributaryInflow.npt
+BR 1    BonnevilleDam_DistributedTributaryInflow.csv
 
 TDT FILE..................................TDTFN.................................
 BR 1    two_41_TDA.opt
