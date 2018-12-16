@@ -13,11 +13,16 @@ class W2FileCard2 extends W2Card2 {
         parseTable();
         branches = this.recordIdentifiers;
         files = new ArrayList<>();
-        this.recordValues.forEach(value -> files.add(value.get(0)));
+        this.recordValuesList.forEach(value -> files.add(value.get(0)));
     }
 
     @Override
     public void updateText() {}
+
+    @Override
+    public void updateRecordValues() {
+
+    }
 
     public List<String> getBranches() {
         return branches;

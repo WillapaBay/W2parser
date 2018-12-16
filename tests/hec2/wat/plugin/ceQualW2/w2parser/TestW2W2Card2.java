@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TestW2W2Card2 {
@@ -29,34 +30,15 @@ public class TestW2W2Card2 {
         W2ControlFile w2con = new W2ControlFile(infile);
         GridCard gridCard = new GridCard(w2con);
         int numWaterBodies = gridCard.getNumWaterBodies();
-        List<Integer> numFieldsList = new ArrayList<>();
-        numFieldsList.add(18);
-        numFieldsList.add(10);
-        numFieldsList.add(10);
-        numFieldsList.add(10);
-        numFieldsList.add(10);
-        numFieldsList.add(3);
-        numFieldsList.add(3);
-        numFieldsList.add(3);
-        numFieldsList.add(3);
-        numFieldsList.add(3);
-        numFieldsList.add(3);
-        numFieldsList.add(13);
-        numFieldsList.add(27);
-        numFieldsList.add(11);
-        numFieldsList.add(15);
-        numFieldsList.add(2);
-        numFieldsList.add(2);
-        numFieldsList.add(2);
-        numFieldsList.add(2);
-        numFieldsList.add(2);
-        numFieldsList.add(2);
-        numFieldsList.add(2);
-        numFieldsList.add(14);
-        numFieldsList.add(2);
-        numFieldsList.add(9);
+
+        Integer[] numSegments = {18, 10, 10, 10, 10, 3, 3, 3, 3, 3, 3,
+        13, 27, 11, 15, 2, 2, 2, 2, 2, 2, 2, 14, 2, 9};
+        List<Integer> numSegmentsList = Arrays.asList(numSegments);
 
         SnapshotSegmentCard2 snpCard = new SnapshotSegmentCard2(w2con,
-                numWaterBodies, numFieldsList, 8);
+                numWaterBodies, numSegmentsList, 8);
+
+        List<List<Integer>> segmentsList = snpCard.getSegmentsList();
+        List<String> identifiers = snpCard.getIdentifiers();
     }
 }
