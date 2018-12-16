@@ -809,7 +809,7 @@ STOICH 4    O2ZR
 ZOO1     1.10000
 
 STOICH 5    O2MR    O2MG
-MAC1         1.1     1.4		 
+MAC1         1.1     1.4
 
 O2 LIMIT   O2LIM
          0.10000

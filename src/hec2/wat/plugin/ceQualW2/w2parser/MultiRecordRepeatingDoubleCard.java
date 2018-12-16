@@ -52,7 +52,8 @@ public class MultiRecordRepeatingDoubleCard extends W2Card {
         for (int jr = 0; jr < numRecords; jr++) {
             List<Double> recordData = new ArrayList<>();
             for (int jf = 0; jf < numLinesPerRecord; jf++) {
-                List<String> fields = parseLine(table.get(lineNum), 8, 1, 10);
+                List<String> fields = parseLine(table.get(lineNum),
+                        8, 1, 10);
                 for (int j = 1; j < fields.size(); j++) {
                     recordData.add(Double.parseDouble(fields.get(j)));
                 }

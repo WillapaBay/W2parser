@@ -4,13 +4,13 @@ TITLE C ...............................TITLE....................................
         Dworshak Pool  - Jan 1, 2014 to Dec 31, 2014
             - Originally Developed by Mike Schneider USACE
             - Updated to W2 v4.0 by Tammy Threadgill - USACE-ERDC-EL
-	        -
-	        -
-		    - DT = ON
-		    - w2Parameters passed from Best Paramters from PEST run - 12/12/17.
-		    - (SEE PEST/Executables/DWR_2014_PEST)
-		    -
-		    - VPR set as initial conditions and PEST re-run
+            -
+            -
+            - DT = ON
+            - w2Parameters passed from Best Paramters from PEST run - 12/12/17.
+            - (SEE PEST/Executables/DWR_2014_PEST)
+            -
+            - VPR set as initial conditions and PEST re-run
 ........................................................................................
 GRID         NWB     NBR     IMX     KMX   NPROC  CLOSEC
                1       3      64     145       1      ON

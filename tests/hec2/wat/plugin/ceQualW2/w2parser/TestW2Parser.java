@@ -9,7 +9,7 @@ public class TestW2Parser {
 
     /**
      * Test code
-     * @param Input and output folder name
+     * @param folder Input and output folder name
      * @return W2Parser object
      */
     public W2Parser unitTest(String folder) throws IOException {

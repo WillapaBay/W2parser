@@ -1082,11 +1082,13 @@ public class W2Parser {
         List<Integer> NSTR = numberStructuresCard.getNSTR();
         for (int jbr = 0; jbr < NBR; jbr++) {
             int branch = jbr + 1;
+            String qotFileName = qotCard.getFileNames().get(jbr);
             for (int structure = 1; structure <= NSTR.get(jbr); structure++) {
-                String qotFileName = qotCard.getFileNames().get(jbr);
-                W2Parameter w2Parameter = new W2Parameter(structWithdrawalLocationName(branch, structure),
-                        "Flow-QOT", "Structural Withdrawal", "m^3/s",
-                        structure, NSTR.get(branch), qotFileName, "outflow", "input");
+                W2Parameter w2Parameter =
+                        new W2Parameter(structWithdrawalLocationName(branch, structure),
+                                "Flow-QOT", "Structural Withdrawal",
+                                "m^3/s", structure, NSTR.get(jbr), qotFileName,
+                                "outflow", "input");
                 w2Parameters.add(w2Parameter);
             }
         }

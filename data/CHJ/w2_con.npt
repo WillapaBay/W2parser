@@ -4,13 +4,13 @@ TITLE C ...............................TITLE....................................
         Chief Joseph Dam
             - Originally Developed by Seattle District USACE
             - Updated by Tammy Threadgill - USACE-ERDC-EL
-	        - January 1, 2014 - December 31, 2014
-	        -         
-		    - NAVD88 (NGVD29+4')
-		    - GCL mean daily inflow from PSU
-		    - Updated MET file from Dan Turner (CJDW and EATW)
-		    - Y2013 spill patterns used to split observed spill
-		    - DT added
+            - January 1, 2014 - December 31, 2014
+            -
+            - NAVD88 (NGVD29+4')
+            - GCL mean daily inflow from PSU
+            - Updated MET file from Dan Turner (CJDW and EATW)
+            - Y2013 spill patterns used to split observed spill
+            - DT added
 ........................................................................................  
 GRID         NWB     NBR     IMX     KMX   NPROC  CLOSEC
                1       1      43      79       1      ON

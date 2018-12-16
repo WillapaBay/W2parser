@@ -22,4 +22,41 @@ public class TestW2W2Card2 {
         W2FileCard2 qinCard = new W2FileCard2(w2con, W2CardNames.BranchInflowFilenames,
                 numBranches, numFields);
     }
+
+    @Test
+    public void Test2() throws IOException {
+        String infile = "data/GCL/w2_con.npt";
+        W2ControlFile w2con = new W2ControlFile(infile);
+        GridCard gridCard = new GridCard(w2con);
+        int numWaterBodies = gridCard.getNumWaterBodies();
+        List<Integer> numFieldsList = new ArrayList<>();
+        numFieldsList.add(18);
+        numFieldsList.add(10);
+        numFieldsList.add(10);
+        numFieldsList.add(10);
+        numFieldsList.add(10);
+        numFieldsList.add(3);
+        numFieldsList.add(3);
+        numFieldsList.add(3);
+        numFieldsList.add(3);
+        numFieldsList.add(3);
+        numFieldsList.add(3);
+        numFieldsList.add(13);
+        numFieldsList.add(27);
+        numFieldsList.add(11);
+        numFieldsList.add(15);
+        numFieldsList.add(2);
+        numFieldsList.add(2);
+        numFieldsList.add(2);
+        numFieldsList.add(2);
+        numFieldsList.add(2);
+        numFieldsList.add(2);
+        numFieldsList.add(2);
+        numFieldsList.add(14);
+        numFieldsList.add(2);
+        numFieldsList.add(9);
+
+        SnapshotSegmentCard2 snpCard = new SnapshotSegmentCard2(w2con,
+                numWaterBodies, numFieldsList, 8);
+    }
 }

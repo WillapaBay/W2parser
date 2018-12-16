@@ -9,11 +9,11 @@ import java.util.List;
  * This card has one line per water body
  */
 public class InitialConditionsCard extends W2Card {
+    private List<String> identifiers;
     private List<Double> T2I;
     private List<Double> ICEI;
     private List<String> WTYPEC;
     private List<String> GRIDC;
-    private List<String> identifiers;
     private int numWaterbodies;
 
     public InitialConditionsCard(W2ControlFile w2ControlFile, int numWaterbodies) {
@@ -81,7 +81,13 @@ public class InitialConditionsCard extends W2Card {
             T2I.add(Double.parseDouble(fields.get(1)));
             ICEI.add(Double.parseDouble(fields.get(2)));
             WTYPEC.add(fields.get(3));
-            GRIDC.add(fields.get(4));
+            // Legacy model control files do not have GRIDC specified
+            // Set this to the default: "RECT"
+            if (fields.size() > 4) {
+                GRIDC.add(fields.get(4));
+            } else {
+                GRIDC.add("RECT");
+            }
         }
     }
 

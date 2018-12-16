@@ -48,15 +48,12 @@ public final class W2ControlFile {
         w2ControlList.clear();
         w2ControlList.addAll(Files.readAllLines(w2ControlInPath));
         // If the file contains any tabs, throw an exception
-        w2ControlList.forEach(item ->
-        {
-            try {
-                if (item.contains("\t"))
-                    throw new IOException("Error: the control file contains tabs, which are not supported. Replace these with spaces.");
-            } catch (IOException e) {
-                e.printStackTrace();
+        for (int i = 0; i < w2ControlList.size(); i++) {
+            if (w2ControlList.get(i).contains("\t")) {
+                throw new IOException("Error: line " + (i + 1) + " in w2_con.npt contains tabs, " +
+                        "which are not supported. Replace all tabs with spaces.");
             }
-        });
+        }
     }
 
     /**

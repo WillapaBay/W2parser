@@ -5,7 +5,7 @@ TITLE C ...............................TITLE....................................
         WEST Consultants, Inc., Bellevue, WA for NWD, USACE
         Y2011-Daily model - 1m - 2011 sim as base  
         updated to W2v4 by DGade - USACE
-		updated by Tammy Threadgill - USACE-ERDC
+        updated by Tammy Threadgill - USACE-ERDC
         
         NAVD88 -> NGVD29+3.3
         Removed Walla Walla River in anticipation for future runs.
@@ -79,7 +79,7 @@ WB 1         TKE     IMP     1.0       3   9.535   0.431    24.0    10.0     IMP
 
 N STRUC     NSTR
 BR 1           0
-BR 2	       0
+BR 2           0
 
 STR INT    STRIC   STRIC   STRIC   STRIC   STRIC   STRIC   STRIC   STRIC  
 BR 1     
@@ -103,7 +103,7 @@ BR 2
 
 STR WIDTH   WSTR    WSTR    WSTR    WSTR    WSTR    WSTR    WSTR    WSTR  
 BR 1    
-BR 2	 
+BR 2
 
 PIPES       IUPI    IDPI    EUPI    EDPI     WPI   DLXPI   FPI  FMINPI   WTHLC
 
@@ -118,10 +118,10 @@ SPILLWAYS   IUSP    IDSP     ESP    A1SP    B1SP    A2SP    B2SP   LATSPC
 
 
 SPILL UP   PUSPC   ETUSP   EBUSP   KTUSP   KBUSP
-	             
+
 
 SPILL DOWN PDSPC   ETUSP   EBUSP   KTDSP   KBDSP
-		            
+
 
 SPILL GAS GASSPC    EQSP  AGASSP  BGASSP  CGASSP
 
@@ -767,18 +767,18 @@ Zoo1        0.00    0.00    0.00
 
 ZOOP TEMP    ZT1     ZT2     ZT3     ZT4     ZK1     ZK2     ZK3     ZK4
              0.0    15.0    20.0    36.0     0.1     0.9    0.98   0.100
-			 
+
 ZOOP STOI     ZP      ZN      ZC
          0.01500 0.08000 0.45000
-		 
+
 MACROPHYT MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC
-Mac1         OFF     OFF     OFF		 
+Mac1         OFF     OFF     OFF
 
 MAC PRINT MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC
 Mac1         OFF     OFF     OFF
 
 MAC INI  MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI
-Mac1     0.00000	 0.1     0.5	  
+Mac1     0.00000     0.1     0.5
 
 MAC RATE      MG      MR      MM    MSAT    MHSP    MHSN    MHSC    MPOM  LRPMAC
 Mac 1       0.30    0.05    0.05    30.0     0.0     0.0     0.0     0.9     0.2
@@ -853,7 +853,7 @@ STOICH 4    O2ZR
 ZOO1     1.10000
 
 STOICH 5    O2MR    O2MG
-MAC1         1.1     1.4		 
+MAC1         1.1     1.4
 
 O2 LIMIT   O2LIM
          0.10000
@@ -925,7 +925,7 @@ BR 2    cin_br2.npt - not used
 
 QOT FILE..................................QOTFN.................................
 BR 1    qot_br1.npt - not used
-BR 2	qot_br2.npt - not used
+BR 2    qot_br2.npt - not used
 
 QTR FILE..................................QTRFN.................................
 TR 1    qtr_tr1.npt - not used
@@ -938,7 +938,7 @@ TR 1    ctr_tr1.npt - not used
 
 QDT FILE..................................QDTFN.................................
 BR 1    qdt_br1.npt - not used
-BR 2	qdt_br2.npt - not used	
+BR 2    qdt_br2.npt - not used
 
 TDT FILE..................................TDTFN.................................
 BR 1    tdt_br1.npt - not used
@@ -946,7 +946,7 @@ BR 2    tdt_br2.npt - not used
 
 CDT FILE..................................CDTFN.................................
 BR 1    cdt_br1.npt - not used
-BR 2	cdt_br2.npt - not used
+BR 2    cdt_br2.npt - not used
 
 PRE FILE..................................PREFN.................................
 BR 1    pre_br1.npt - not used
@@ -954,27 +954,27 @@ BR 2    pre_br2.npt - not used
 
 TPR FILE..................................TPRFN.................................
 BR 1    tpr_br1.npt - not used
-BR 2	tpr_br2.npt - not used
+BR 2    tpr_br2.npt - not used
 
 CPR FILE..................................CPRFN.................................
 BR 1    cpr_br1.npt - not used
-BR 2 	cpr_br2.npt - not used
+BR 2    cpr_br2.npt - not used
 
 EUH FILE..................................EUHFN.................................
 BR 1    euh_br1.npt - not used
-BR 2	euh_br2.npt - not used
+BR 2    euh_br2.npt - not used
 
 TUH FILE..................................TUHFN.................................
 BR 1    tuh_br1.npt - not used
-BR 2 	tuh_br2.npt - not used
+BR 2    tuh_br2.npt - not used
 
 CUH FILE..................................CUHFN.................................
 BR 1    cuh_br1.npt - not used
-BR 2 	cuh_br2.npt - not used
+BR 2    cuh_br2.npt - not used
 
 EDH FILE..................................EDHFN.................................
 BR 1    edh_br1.npt - not used
-BR 2	edh_br2.npt - not used
+BR 2    edh_br2.npt - not used
 
 TDH FILE..................................TDHFN.................................
 BR 1    tdh_br1.npt - not used

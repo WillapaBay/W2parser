@@ -5,7 +5,7 @@ TITLE C ...............................TITLE....................................
         WEST Consultants, Inc., Bellevue, WA for NWD, USACE
         
         updated to W2v4 by DGade - USACE
-		updated by Tammy Threadgill - USACE-ERDC
+        updated by Tammy Threadgill - USACE-ERDC
         
         NAVD88 -> NGVD29+3.3
         **used original bathymetry with corrected angles and shifted EBOT to -9.0
@@ -20,7 +20,7 @@ IN/OUTFL     NTR     NST     NIW     NWD     NGT     NSP     NPI     NPU
 
 CONSTITU     NGC     NSS     NAL     NEP    NBOD     NMC     NZP
                1       0       0       0       0       0       0
-			   
+
 MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL
              100     OFF     OFF     OFF     OFF     OFF
 
@@ -109,10 +109,10 @@ SPILLWAYS   IUSP    IDSP     ESP    A1SP    B1SP    A2SP    B2SP   LATSPC
 
 
 SPILL UP   PUSPC   ETUSP   EBUSP   KTUSP   KBUSP
-	             
+
 
 SPILL DOWN PDSPC   ETUSP   EBUSP   KTDSP   KBDSP
-		            
+
 
 SPILL GAS GASSPC    EQSP  AGASSP  BGASSP  CGASSP
 
@@ -762,18 +762,18 @@ Zoo1        0.00    0.00    0.00
 
 ZOOP TEMP    ZT1     ZT2     ZT3     ZT4     ZK1     ZK2     ZK3     ZK4
              0.0    15.0    20.0    36.0     0.1     0.9    0.98   0.100
-			 
+
 ZOOP STOI     ZP      ZN      ZC
          0.01500 0.08000 0.45000
-		 
+
 MACROPHYT MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC
-Mac1         OFF     OFF     OFF		 
+Mac1         OFF     OFF     OFF
 
 MAC PRINT MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC
 Mac1          ON     OFF     OFF
 
 MAC INI  MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI
-Mac1     0.00000	 0.1     0.5	  
+Mac1     0.00000     0.1     0.5
 
 MAC RATE      MG      MR      MM    MSAT    MHSP    MHSN    MHSC    MPOM  LRPMAC
 Mac 1       0.30    0.05    0.05    30.0     0.0     0.0     0.0     0.9     0.2
@@ -848,7 +848,7 @@ STOICH 4    O2ZR
 ZOO1     1.10000
 
 STOICH 5    O2MR    O2MG
-MAC1         1.1     1.4		 
+MAC1         1.1     1.4
 
 O2 LIMIT   O2LIM
          0.10000

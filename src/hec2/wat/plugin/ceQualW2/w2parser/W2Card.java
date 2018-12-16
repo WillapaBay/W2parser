@@ -112,6 +112,13 @@ public abstract class W2Card {
      */
     public abstract void updateText();
 
+    public String trimEnd(String str) {
+        while (str.endsWith(" ")) {
+            str = str.substring(0, str.length() - 1);
+        }
+        return str;
+    }
+
     /**
      * Parse a line containing fields in fixed-width format
      * As of CE-QUAL-W2 version 4.1, the field width has always been eight characters
@@ -128,6 +135,7 @@ public abstract class W2Card {
      */
     public List<String> parseLine(String line, int fieldWidth, int startField, int endField) {
         List<String> fields = new ArrayList<>();
+        line = trimEnd(line);
         for (int j = (startField - 1); j < endField; j++) {
             int start = Math.min(j * fieldWidth, line.length());
             int end = Math.min(j * fieldWidth + fieldWidth, line.length());

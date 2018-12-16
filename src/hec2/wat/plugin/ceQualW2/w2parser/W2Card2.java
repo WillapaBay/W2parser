@@ -122,17 +122,23 @@ public abstract class W2Card2 {
     public void parseTable() {
         // TODO I'm pretty sure this needs major updating to handle lists of jagged Lists of Strings
 
+        int lineIndex = 0;
         for (int jc = 0; jc < numRecords; jc++) {
             int numFields = numFieldsList.get(jc);
+            int numLinesPerRecord = (int) Math.ceil(numFields/9.0);
             List<Integer> fieldWidths = new ArrayList<>();
             fieldWidths.add(identifierFieldWidth);
             for (int i = 0; i < 9; i++) {
                 fieldWidths.add(valueFieldWidth);
             }
-            List<String> values = parseRecord(table, jc, numFields, fieldWidths);
+
+            List<String> values = parseRecord(table, lineIndex, numLinesPerRecord, fieldWidths);
+
             records.add(values);
             recordIdentifiers.add(values.get(0));
             recordValues.add(values.subList(1, values.size()));
+
+            lineIndex += numLinesPerRecord;
         }
     }
 
@@ -140,14 +146,13 @@ public abstract class W2Card2 {
      * Parse a multi-line record. A record consists of all fields for a water body,
      * branch, constituent, etc.
      * @param table List of record lines from control file
-     * @param recordIndex Index of record (zero-based)
-     * @param numFields Number of fields
+     * @param start Index of line in table where record starts (zero-based)
+     * @param numLinesPerRecord Number of lines in the current record
      * @return List of record values. The first item is the record identifier.
      */
-    public List<String> parseRecord(List<String> table, int recordIndex, int numFields,
+    private List<String> parseRecord(List<String> table, int start,
+                                    int numLinesPerRecord,
                                     List<Integer> fieldWidths) {
-        int numLinesPerRecord = (int) Math.ceil(numFields/9.0);
-        int start = numLinesPerRecord * recordIndex;
         int end = start + numLinesPerRecord;
         int startField = 1;
         int endField = 10;
