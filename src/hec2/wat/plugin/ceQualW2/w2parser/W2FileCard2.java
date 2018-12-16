@@ -1,6 +1,7 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 class W2FileCard2 extends W2Card2 {
@@ -14,14 +15,6 @@ class W2FileCard2 extends W2Card2 {
         branches = this.recordIdentifiers;
         files = new ArrayList<>();
         this.recordValuesList.forEach(value -> files.add(value.get(0)));
-    }
-
-    @Override
-    public void updateText() {}
-
-    @Override
-    public void updateRecordValues() {
-
     }
 
     public List<String> getBranches() {
@@ -40,4 +33,12 @@ class W2FileCard2 extends W2Card2 {
         this.files = files;
     }
 
+    @Override
+    public void updateRecordValuesList() {
+        recordValuesList = new ArrayList<>();
+        for (String file : files) {
+           List<String> record = new ArrayList<>(Arrays.asList(file));
+           recordValuesList.add(record);
+        }
+    }
 }

@@ -54,7 +54,7 @@ public abstract class W2Card2 {
         fieldWidths = new ArrayList<>();
         fieldWidths.add(identifierFieldWidth);
         for (int i = 0; i < 9; i++) {
-            fieldWidths.add(valueFieldWidth);
+            fieldWidths.add(this.valueFieldWidth);
         }
 
         fetchTable();
@@ -98,7 +98,7 @@ public abstract class W2Card2 {
      * Update card text in the W2ControlFile list
      */
     public void updateW2ControlFileList() {
-        updateText();
+        updateTable();
 
         String line;
         for (int i = 0; i < w2ControlFile.size(); i++) {
@@ -206,29 +206,28 @@ public abstract class W2Card2 {
 
     /**
      * Compose a multi-line record. A record consists of all fields for a water body,
-     * branch, constituent, etc.
-     * @param identifier Record identifier label
+     * branch, constituent, etc., including the identifier.
      * @param fields List of all fields of a multi-line record
      * @return List of record values. The first item is the record identifier.
      */
-    private List<String> composeRecordText(String identifier, List<String> fields) {
+    private List<String> composeRecordText(List<String> fields) {
         int startField = 1;
         final int endField = 10;
         List<String> recordText = new ArrayList<>();
 
-        String identifierFormat = "-%" + fieldWidths.get(0) + "s";
-        StringBuilder line = new StringBuilder(String.format(identifierFormat, identifier));
-        int i = 1; // Starting with first field after the label
+        String identifierFormat = "%-" + fieldWidths.get(0) + "s";
+        StringBuilder line = new StringBuilder(String.format(identifierFormat, fields.get(0)));
 
-        for (String field : fields) {
-            String fieldFormat = "%" + fieldWidths.get(i);
-            line.append(String.format(fieldFormat, field));
+        int fieldColumn = 1; // Start with first field after identifier
+        for (int i = 1; i < fields.size(); i++) {
+            String fieldFormat = "%" + fieldWidths.get(fieldColumn) + "s";
+            line.append(String.format(fieldFormat, fields.get(i)));
+            fieldColumn++;
 
-            i++;
-            if (i > 9) {
+            if (fieldColumn > 9 || i == fields.size() - 1) {
                 // Append to record and prepare next line
                 recordText.add(line.toString());
-                i = 1;
+                fieldColumn = 1;
                 line = new StringBuilder(String.format(identifierFormat, ""));
             }
         }
@@ -258,7 +257,7 @@ public abstract class W2Card2 {
         for (int i = 0; i < 10; i++) {
             String format;
             if (i == 0) {
-                format = "-%" + fieldWidths.get(i) + "s";
+                format = "%-" + fieldWidths.get(i) + "s";
             } else {
                 format = "%" + fieldWidths.get(i) + "s";
             }
@@ -270,14 +269,29 @@ public abstract class W2Card2 {
     }
 
     /**
+     * Update the list of records, joining the identifiers with the data
+     */
+    private void updateRecords() {
+        records = new ArrayList<>();
+        numFieldsList = new ArrayList<>();
+        for (int i = 0; i < recordIdentifiers.size(); i++) {
+            List<String> record = new ArrayList<>();
+            record.add(recordIdentifiers.get(i));
+            record.addAll(recordValuesList.get(i));
+            records.add(record);
+            numFieldsList.add(recordValuesList.get(i).size());
+        }
+    }
+
+    /**
      * Update the W2 control file text from the current variables
      */
-    public void updateText() {
+    public void updateTable() {
+        updateRecords();
         table = new ArrayList<>();
         for (int i = 0; i < records.size(); i++) {
             List<String> record = records.get(i);
-            String identifier = recordIdentifiers.get(i);
-            List<String> recordText = composeRecordText(identifier, record);
+            List<String> recordText = composeRecordText(record);
             table.addAll(recordText);
         }
     }
@@ -315,6 +329,22 @@ public abstract class W2Card2 {
     }
 
     /**
+     * Return list of record identifiers
+     * @return List of record identifiers
+     */
+    public List<String> getRecordIdentifiers() {
+        return recordIdentifiers;
+    }
+
+    /**
+     * Set list of record identifiers
+     * @param recordIdentifiers List of record identifiers
+     */
+    public void setRecordIdentifiers(List<String> recordIdentifiers) {
+        this.recordIdentifiers = recordIdentifiers;
+    }
+
+    /**
      * Return text of card
      * @return Text of card
      */
@@ -327,7 +357,11 @@ public abstract class W2Card2 {
         return str.toString();
     }
 
-    public abstract void updateRecordValues();
-
+    /**
+     * Update list of record values. Numeric types will
+     * be converted to unformatted strings and stored
+     * in recordValuesList.
+     */
+    public abstract void updateRecordValuesList();
 
 }

@@ -39,6 +39,15 @@ public class TestW2W2Card2 {
                 numWaterBodies, numSegmentsList, 8);
 
         List<List<Integer>> segmentsList = snpCard.getSegmentsList();
-        List<String> identifiers = snpCard.getIdentifiers();
+        List<String> identifiers = snpCard.getRecordIdentifiers();
+
+        // Add some data
+        identifiers.add("WB 99");
+        List<Integer> segments = new ArrayList<Integer>(
+                Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12));
+        segmentsList.add(segments);
+        snpCard.setRecordIdentifiers(identifiers);
+        snpCard.setSegmentsList(segmentsList);
+        snpCard.updateTable();
     }
 }

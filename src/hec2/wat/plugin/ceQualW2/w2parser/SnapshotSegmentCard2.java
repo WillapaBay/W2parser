@@ -20,7 +20,6 @@ public class SnapshotSegmentCard2 extends W2Card2 {
         super(w2ControlFile, "SNP SEG", numRecords, numFieldsList, valueFieldWidth);
         parseTable();
 
-        identifiers = this.recordIdentifiers;
         segmentsList = new ArrayList<>();
 
         for (List<String> recordValues : recordValuesList) {
@@ -32,24 +31,26 @@ public class SnapshotSegmentCard2 extends W2Card2 {
         }
     }
 
-    public List<String> getIdentifiers() {
-        return identifiers;
-    }
-
-    public void setIdentifiers(List<String> identifiers) {
-        this.identifiers = identifiers;
-    }
-
     public List<List<Integer>> getSegmentsList() {
         return segmentsList;
     }
 
     public void setSegmentsList(List<List<Integer>> segmentsList) {
         this.segmentsList = segmentsList;
+        updateRecordValuesList();
     }
 
     @Override
-    public void updateRecordValues() {
-
+    public void updateRecordValuesList() {
+        // Convert all integers to unformatted strings
+        // and store in a new copy of recordValuesList
+        recordValuesList = new ArrayList<>();
+        for (List<Integer> segments : segmentsList) {
+            List<String> recordValues = new ArrayList<>();
+            for (Integer segment : segments) {
+                recordValues.add(String.valueOf(segment));
+            }
+            recordValuesList.add(recordValues);
+        }
     }
 }
