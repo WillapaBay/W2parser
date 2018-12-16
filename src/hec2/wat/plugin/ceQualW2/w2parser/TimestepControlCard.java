@@ -3,9 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * Timestep Control W2Card
+ * Timestep Control W2Card_OLD
  */
-public class TimestepControlCard extends W2Card {
+public class TimestepControlCard extends W2Card_OLD {
     private int ndt;
     private double dltMin;
     private String dltIntr;

@@ -5,9 +5,9 @@ import java.util.List;
 
 /**
  * This class handles cards containing a column of identifiers and a column of values
- * This is a more generalized version of the W2FileCard class and should replace it.
+ * This is a more generalized version of the W2FileCard_OLD class and should replace it.
  */
-public class ValuesCard extends W2Card {
+public class ValuesCard extends W2Card_OLD {
     private List<String> identifiers; // Water body or branch names
     private List<String> values;
 

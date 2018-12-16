@@ -86,7 +86,7 @@ public final class W2ControlFile {
     }
 
     /**
-     * Expand card in w2ControlList to accommodate a larger W2Card
+     * Expand card in w2ControlList to accommodate a larger W2Card_OLD
      * @param cardHeaderLineNumber Line number of card header in w2ControlList
      * @param numDataLinesInCard Number of data lines of card in w2ControlList
      * @param numLinesToAdd Number of lines to add
@@ -99,7 +99,7 @@ public final class W2ControlFile {
     }
 
     /**
-     * Shrink card in w2ControlList to adjust for a smaller W2Card
+     * Shrink card in w2ControlList to adjust for a smaller W2Card_OLD
      * @param cardHeaderLineNumber Line number of card header in w2ControlList
      * @param numDataLinesInCard Number of data lines of card in w2ControlList
      * @param numLinesToRemove Number of lines to remove

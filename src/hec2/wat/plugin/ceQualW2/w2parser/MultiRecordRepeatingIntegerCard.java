@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Multiple Record Repeating Integer W2Card
+ * Multiple Record Repeating Integer W2Card_OLD
  *
  * This card is used to read cards containing one or more records that span multiple lines each.
  */
-public class MultiRecordRepeatingIntegerCard extends W2Card {
+public class MultiRecordRepeatingIntegerCard extends W2Card_OLD {
     private List<String> names; // W2Constituent names
     private List<List<Integer>> values; // Specifies which constituents are on or off (values: ON or OFF)
     private int numFields; // Total number of fields -- spread over multiple lines, e.g., number of branches

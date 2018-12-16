@@ -19,11 +19,11 @@ Segment 84 Lat Withdrawal 2 Flow-QWD         Lateral Withdrawal                 
 Segment 84 Lat Withdrawal 3 Flow-QWD         Lateral Withdrawal                        m^3/s     3       5         qwd.csv                       outflow        input        
 Segment 84 Lat Withdrawal 4 Flow-QWD         Lateral Withdrawal                        m^3/s     4       5         qwd.csv                       outflow        input        
 Segment 84 Lat Withdrawal 5 Flow-QWD         Lateral Withdrawal                        m^3/s     5       5         qwd.csv                       outflow        input        
-Branch 1 Struct Withdrawal 1Flow-QOT         Structural Withdrawal                     m^3/s     1       0         qot_br1.csv                   outflow        input        
-Branch 1 Struct Withdrawal 2Flow-QOT         Structural Withdrawal                     m^3/s     2       0         qot_br1.csv                   outflow        input        
-Branch 1 Struct Withdrawal 3Flow-QOT         Structural Withdrawal                     m^3/s     3       0         qot_br1.csv                   outflow        input        
-Branch 1 Struct Withdrawal 4Flow-QOT         Structural Withdrawal                     m^3/s     4       0         qot_br1.csv                   outflow        input        
-Branch 1 Struct Withdrawal 5Flow-QOT         Structural Withdrawal                     m^3/s     5       0         qot_br1.csv                   outflow        input        
+Branch 1 Struct Withdrawal 1Flow-QOT         Structural Withdrawal                     m^3/s     1       5         qot_br1.csv                   outflow        input        
+Branch 1 Struct Withdrawal 2Flow-QOT         Structural Withdrawal                     m^3/s     2       5         qot_br1.csv                   outflow        input        
+Branch 1 Struct Withdrawal 3Flow-QOT         Structural Withdrawal                     m^3/s     3       5         qot_br1.csv                   outflow        input        
+Branch 1 Struct Withdrawal 4Flow-QOT         Structural Withdrawal                     m^3/s     4       5         qot_br1.csv                   outflow        input        
+Branch 1 Struct Withdrawal 5Flow-QOT         Structural Withdrawal                     m^3/s     5       5         qot_br1.csv                   outflow        input        
 Branch 1 Inflow             TDS-CIN          TDS                                       g/m^3     1       28        cin_br1.csv                   inflow         input        
 Branch 1 Inflow             Gen2-CIN         H2S-d                                     g/m^3     2       28        cin_br1.csv                   inflow         input        
 Branch 1 Inflow             Gen3-CIN         CH4-d                                     g/m^3     3       28        cin_br1.csv                   inflow         input        

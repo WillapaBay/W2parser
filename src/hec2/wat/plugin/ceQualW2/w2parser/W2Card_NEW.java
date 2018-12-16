@@ -3,7 +3,7 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class W2Card2 {
+public abstract class W2Card_NEW {
     W2ControlFile w2ControlFile;
     private String cardName;
     private String titleLine;
@@ -12,7 +12,7 @@ public abstract class W2Card2 {
     // Number of record lines. For most cards, this equals one.
     // For file cards, this is the number of branches or water bodies.
     private int numRecords;             // Number of records in the card
-    private int numCardDataLines;       // The current number of lines in the W2Card
+    private int numCardDataLines;       // The current number of lines in the W2Card_OLD
     private int numCardDataLinesInFile; // The number of lines in the card in the w2_con.npt file
     private List<Integer> numFieldsList;// Number of fields for each record
     private List<Integer> numLinesList; // Number of lines for each record
@@ -24,6 +24,8 @@ public abstract class W2Card2 {
                                         // These are sorted by column (field) in the card, and
                                         // numeric fields can be parsed to numeric types.
     List<Integer> fieldWidths;          // Widths of all fields in a line, including the identifier
+    boolean dataLeftAligned;            // If true, data fields are left-aligned. Otherwise, they
+                                        // are right-aligned.
 
     /**
      * Primary constructor
@@ -32,8 +34,9 @@ public abstract class W2Card2 {
      * @param numRecords Number of records in card
      * @param numFieldsList List of the number of fields in each record
      */
-    public W2Card2(W2ControlFile w2ControlFile, String cardName, int numRecords,
-                   List<Integer> numFieldsList, int valueFieldWidth) {
+    public W2Card_NEW(W2ControlFile w2ControlFile, String cardName, int numRecords,
+                      List<Integer> numFieldsList, int valueFieldWidth,
+                      boolean dataLeftAligned) {
         this.w2ControlFile = w2ControlFile;
         this.cardName = cardName;
         this.numRecords = numRecords;
@@ -41,6 +44,7 @@ public abstract class W2Card2 {
         this.numLinesList = new ArrayList<>();
         this.numCardDataLines = 0;
         this.valueFieldWidth = valueFieldWidth;
+        this.dataLeftAligned = dataLeftAligned;
         for (int numFields : numFieldsList) {
             int numDataLines = (int) Math.ceil(numFields/9.0);
             numLinesList.add(numDataLines);
@@ -224,7 +228,12 @@ public abstract class W2Card2 {
 
         int fieldColumn = 1; // Start with first field after identifier
         for (int i = 1; i < fields.size(); i++) {
-            String fieldFormat = "%" + fieldWidths.get(fieldColumn) + "s";
+            String fieldFormat;
+            if (dataLeftAligned) {
+                fieldFormat = "%-" + fieldWidths.get(fieldColumn) + "s";
+            } else {
+                fieldFormat = "%" + fieldWidths.get(fieldColumn) + "s";
+            }
             line.append(String.format(fieldFormat, fields.get(i)));
             fieldColumn++;
 
@@ -310,8 +319,8 @@ public abstract class W2Card2 {
     }
 
     /**
-     * Return current number of data lines in W2Card
-     * @return Current number of data lines in W2Card
+     * Return current number of data lines in W2Card_OLD
+     * @return Current number of data lines in W2Card_OLD
      */
     public int getNumCardDataLines() {
         return dataTable.size();
@@ -327,7 +336,7 @@ public abstract class W2Card2 {
 
     /**
      * Return the card data table
-     * @return W2Card data table
+     * @return W2Card_OLD data table
      */
     public List<String> getDataTable() {
         return dataTable;

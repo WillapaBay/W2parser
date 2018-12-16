@@ -3,9 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * Miscellaneous W2Card
+ * Miscellaneous W2Card_OLD
  */
-public class MiscellCard extends W2Card {
+public class MiscellCard extends W2Card_OLD {
     private int nday;
     private String SELECTC;
     private String HABTATC;

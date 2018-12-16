@@ -3,9 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * Inflow/Outflow W2Card
+ * Inflow/Outflow W2Card_OLD
  */
-public class InOutflowCard extends W2Card {
+public class InOutflowCard extends W2Card_OLD {
     private int NTR; // Number of tributaries
     private int NST; // Number of structures
     private int NIW; // Number of internal weirs

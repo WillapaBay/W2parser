@@ -2,7 +2,7 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 
 import java.util.List;
 
-public class RestartCard extends W2Card {
+public class RestartCard extends W2Card_OLD {
     private String RSOC;
     private int NRSO;
     private String RSIC;

@@ -55,7 +55,7 @@ public class TestBathymetry {
         GridCard gridCard = new GridCard(w2con);
         int numWaterBodies = gridCard.getNumWaterBodies();
         int numLayers = gridCard.setNumLayers();
-        W2FileCard bathymetryFileCard = new W2FileCard(w2con,
+        W2FileCard_OLD bathymetryFileCard = new W2FileCard_OLD(w2con,
                 "BTH FILE", numWaterBodies);
         List<String> fileNames = bathymetryFileCard.getFileNames();
         fileNames.forEach(filename ->

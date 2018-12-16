@@ -1,12 +1,11 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Grid W2Card
+ * Grid W2Card_OLD
  */
-public class GridCard extends W2Card {
+public class GridCard extends W2Card_OLD {
     private int NWB;
     private int NBR;
     private int IMX;

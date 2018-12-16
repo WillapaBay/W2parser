@@ -3,9 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * W2Constituent Dimensions W2Card
+ * W2Constituent Dimensions W2Card_OLD
  */
-public class ConstituentDimensionsCard extends W2Card {
+public class ConstituentDimensionsCard extends W2Card_OLD {
     private int NGC;  // Number of generic constituents
     private int NSS;  // Number of inorganic suspended solids
     private int NAL;  // Number of algal groups

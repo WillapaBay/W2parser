@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class TestDltControlW2Card {
+public class TestDltControlCard {
 
     @Test
     public void testDltControlCard() throws IOException {

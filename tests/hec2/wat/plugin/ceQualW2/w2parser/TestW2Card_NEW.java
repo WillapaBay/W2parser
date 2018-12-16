@@ -2,13 +2,12 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TestW2W2Card2 {
+public class TestW2Card_NEW {
 
     @Test
     public void Test1() throws IOException {
@@ -16,12 +15,21 @@ public class TestW2W2Card2 {
         W2ControlFile w2con = new W2ControlFile(infile);
         GridCard gridCard = new GridCard(w2con);
         int numBranches = gridCard.getNumBranches();
-        List<Integer> numFields = new ArrayList<>();
+        List<Integer> numFieldsList = new ArrayList<>();
         for (int i = 0; i < numBranches; i++) {
-            numFields.add(1);
+            numFieldsList.add(1);
         }
-        W2FileCard2 qinCard = new W2FileCard2(w2con, W2CardNames.BranchInflowFilenames,
-                numBranches, numFields);
+        W2FileCard qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames,
+                numBranches, numFieldsList);
+        List<String> files = qinCard.getFileNames();
+        List<String> branches = qinCard.getBranches();
+        branches.add("BR 99");
+        files.add("newfile99.txt");
+        qinCard.setBranches(branches);
+        qinCard.setFileNames(files);
+        qinCard.updateDataTable();
+        qinCard.updateW2ControlFileList();
+        w2con.save("results/GCL/w2_con.npt");
     }
 
     @Test
@@ -35,7 +43,7 @@ public class TestW2W2Card2 {
         13, 27, 11, 15, 2, 2, 2, 2, 2, 2, 2, 14, 2, 9};
         List<Integer> numSegmentsList = Arrays.asList(numSegments);
 
-        SnapshotSegmentCard2 snpCard = new SnapshotSegmentCard2(w2con,
+        SnapshotSegmentCard snpCard = new SnapshotSegmentCard(w2con,
                 numWaterBodies, numSegmentsList, 8);
 
         List<List<Integer>> segmentsList = snpCard.getSegmentsList();

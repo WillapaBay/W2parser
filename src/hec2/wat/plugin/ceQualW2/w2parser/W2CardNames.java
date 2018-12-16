@@ -1,7 +1,7 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
 /**
- * Global W2Card Names
+ * Global W2Card_OLD Names
  */
 public class W2CardNames {
     static final String Calculations                                         = "CALCULAT";

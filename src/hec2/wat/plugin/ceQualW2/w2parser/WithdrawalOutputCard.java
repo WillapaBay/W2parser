@@ -3,9 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * Withdrawal Output W2Card
+ * Withdrawal Output W2Card_OLD
  */
-public class WithdrawalOutputCard extends W2Card {
+public class WithdrawalOutputCard extends W2Card_OLD {
     private String WDOC;
     private int NWDO;
     private int NIWDO;

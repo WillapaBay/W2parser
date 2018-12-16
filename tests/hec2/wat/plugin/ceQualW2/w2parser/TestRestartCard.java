@@ -1,7 +1,7 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
 
 public class TestRestartCard {
@@ -37,7 +37,7 @@ public class TestRestartCard {
         rsoFreqCard.addData(200.0);
 
         // Update Restart filename
-        W2FileCard rsiFileCard = new W2FileCard(w2con,
+        W2FileCard_OLD rsiFileCard = new W2FileCard_OLD(w2con,
                 "RSI FILE", 1);
         rsiFileCard.clearFileNames();
         rsiFileCard.addFilename("rso.opt", "");

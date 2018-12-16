@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Branch Geometry W2Card
+ * Branch Geometry W2Card_OLD
  */
-public class BranchGeometryCard extends W2Card {
+public class BranchGeometryCard extends W2Card_OLD {
     private List<Integer> US;         // Branch upstream segment
     private List<Integer> DS;         // Branch downstream segment
     private List<Integer> UHS;        // Upstream boundary condition

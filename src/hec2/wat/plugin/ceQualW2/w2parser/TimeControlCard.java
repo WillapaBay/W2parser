@@ -3,9 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * Time Control W2Card
+ * Time Control W2Card_OLD
  */
-public class TimeControlCard extends W2Card {
+public class TimeControlCard extends W2Card_OLD {
     private double jdayMin;
     private double jdayMax;
     private int startYear;

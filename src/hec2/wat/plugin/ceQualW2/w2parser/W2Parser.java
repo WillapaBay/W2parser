@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import static hec2.wat.plugin.ceQualW2.w2parser.W2Globals.ones;
 
 public class W2Parser {
     private W2ControlFile w2con;
@@ -30,7 +31,6 @@ public class W2Parser {
     private WithdrawalOutputCard withdrawalOutputCard;
     private RepeatingDoubleCard withdrawalFrequencyCard;
     private RepeatingIntegerCard tsrSegCard;
-    private W2FileCard tsrFilenameCard;
     private RepeatingDoubleCard tsrLayerCard;
     private IceCoverCard iceCoverCard;
     private InitialConditionsCard initCondCard;
@@ -38,24 +38,29 @@ public class W2Parser {
     private ConstituentDimensionsCard constituentDimensionsCard;
     private ConstituentComputationsCard constituentComputationsCard;
     private MultiRecordRepeatingStringCard branchConstituentsCard;
+    private ValuesCard dstTribCard;
+    private CalculationsCard calculationsCard;
+    private LocationCard locationCard;
+    private NumberStructuresCard numberStructuresCard;
+    private MultiRecordRepeatingStringCard distributedTributaryConstituentsCard;
+    private MultiRecordRepeatingStringCard precipConstituentsCard;
+    private SedimentCard sedimentCard;
+
+    private W2FileCard tsrFilenameCard;
     private W2FileCard qinCard;
     private W2FileCard tinCard;
     private W2FileCard cinCard;
-    private ValuesCard dstTribCard;
     private W2FileCard qdtCard;
     private W2FileCard tdtCard;
     private W2FileCard qtrCard;
     private W2FileCard ttrCard;
     private W2FileCard qwdCard;
-    private CalculationsCard calculationsCard;
-    private LocationCard locationCard;
     private W2FileCard qotCard;
-    private NumberStructuresCard numberStructuresCard;
-    private MultiRecordRepeatingStringCard distributedTributaryConstituentsCard;
     private W2FileCard cdtCard;
     private W2FileCard ctrCard;
-    private MultiRecordRepeatingStringCard precipConstituentsCard;
-    private SedimentCard sedimentCard;
+    private W2FileCard cprCard;
+    private W2FileCard metCard;
+    private W2FileCard bathyFileCard;
 
     private int NBR; // Number of branches
     private int NWB; // Number of water bodies
@@ -94,11 +99,13 @@ public class W2Parser {
     private boolean DERIVED_CALC = false;
     private boolean TIME_SERIES = false;
     private boolean DOWNSTREAM_OUTFLOW = false;
-    private static final int NUM_FLUXES = 73; // Currently, this must be hard-coded. Version 4.1 has 73 fluxes.
+    private static final int NUM_FLUXES = 73;   // Currently, this must be hard-coded.
+                                                // Version 4.1 has 73 fluxes.
     private List<Boolean> SEDIMENT_CALC;
 
     /**
-     * Handles reading and updating the CE-QUAL-W2 control file and associated bathymetry files
+     * Handles reading and updating the CE-QUAL-W2 control file and
+     * associated bathymetry files
      * @param w2con CE-QUAL-W2 control file object
      */
     public W2Parser(W2ControlFile w2con) {
@@ -106,18 +113,17 @@ public class W2Parser {
     }
 
     /**
-     * Handles reading and updating the CE-QUAL-W2 control file and associated bathymetry files
+     * Handles reading and updating the CE-QUAL-W2 control file and
+     * associated bathymetry files
      * @param inPath Path to CE-QUAL-W2 control file
      */
     public W2Parser(String inPath) throws IOException {
         W2ControlFile w2con = new W2ControlFile(inPath);
     }
 
-
-
-        /**
-         * Read the CE-QUAL-W2 control file
-         */
+    /**
+    * Read the CE-QUAL-W2 control file
+    */
     public void readControlFile() {
         // Initialize time window
         timeControlCard = new TimeControlCard(w2con);
@@ -147,17 +153,20 @@ public class W2Parser {
         NGT = inOutflowCard.getNumGates();
 
         // Initialize withdrawal output info
-        wdSegmentCard = new RepeatingIntegerCard(w2con, W2CardNames.WithdrawalSegment, NWD, "%8d");
+        wdSegmentCard = new RepeatingIntegerCard(w2con,
+                W2CardNames.WithdrawalSegment, NWD, "%8d");
         IWD = wdSegmentCard.getValues();
         withdrawalOutputCard = new WithdrawalOutputCard(w2con);
         NIWDO = withdrawalOutputCard.getNIWDO();
         String WDOC = withdrawalOutputCard.getWDOC();
-        RepeatingIntegerCard withdrawalOutputSegmentCard = new RepeatingIntegerCard(w2con, "WITH SEG", NIWDO, "%8d");
+        RepeatingIntegerCard withdrawalOutputSegmentCard = new RepeatingIntegerCard(w2con,
+                "WITH SEG", NIWDO, "%8d");
         IWDO = withdrawalOutputSegmentCard.getValues();
         // Note: the following is different from the wdSegmentCard ("WD SEG") above
         if (isOn(WDOC)) DOWNSTREAM_OUTFLOW = true;
 
-        // Initialize constituent info, including total number of constituents and number of active constituents
+        // Initialize constituent info, including total number of constituents
+        // and number of active constituents
         String graphFilename = w2con.getGraphFilename();
         w2GraphFile = new W2GraphFile(graphFilename);
         graphFileW2Constituents = w2GraphFile.getW2Constituents();
@@ -173,7 +182,8 @@ public class W2Parser {
         // Initialized derived constituent info
         graphFileDerivedW2Constituents = w2GraphFile.getDerivedW2Constituents();
         numDerivedConstituents = graphFileDerivedW2Constituents.size();
-        activeDerivedConstituentsCard = new ActiveDerivedConstituentsCard(w2con, numDerivedConstituents, NWB);
+        activeDerivedConstituentsCard = new ActiveDerivedConstituentsCard(w2con,
+                numDerivedConstituents, NWB);
         activeConstituentFluxesCard = new ActiveConstituentFluxesCard(w2con, NUM_FLUXES, NWB);
         List<List<String>> CDWBC = activeDerivedConstituentsCard.getValues();
 
@@ -198,19 +208,26 @@ public class W2Parser {
         });
 
         /*
-         * Fetch model inputs and outputs. For each location, flow type, and parameter, a W2Parameter object
-         * will be created containing the location, short name, long name, units, filename (input or output),
-         * and indicators for inflow or outflow and model input or output. The location is a combination of
-         * location and flow type, e.g., Branch 1 Distributed Tributary. The short name of a constituent is
-         * specified in the control file. The long name and units are obtained from the graph.npt file.
+         * Fetch model inputs and outputs. For each location, flow type, and
+         * parameter, a W2Parameter object will be created containing the location,
+         * short name, long name, units, filename (input or output), and
+         * indicators for inflow or outflow and model input or output. The location
+         * is a combination of location and flow type, e.g., Branch 1 Distributed
+         * Tributary. The short name of a constituent is specified in the control
+         * file. The long name and units are obtained from the graph.npt file.
          */
-        inputW2Parameters = fetchInputParameters(); // Flow, temperature, and constituent model inputs (inflows & outflows)
-        constituentNames = fetchConstituentNames(); // W2Constituent names from graph.npt file
-        initialTemperatures = fetchInitialTemperatures(); // Initial temperatures by waterbody
-        initialConcentrations = fetchInitialConcentrations(); // Initial concentrations for each constituent by waterbody
-
-        meteorologyW2Parameters = fetchMeteorologyInputs(); // Meteorology parameters
-        initialWaterSurfaceElevations = fetchInitialWaterSurfaceElevations(); // Initial water surface elevations by waterbody
+        // Flow, temperature, and constituent model inputs (inflows & outflows)
+        inputW2Parameters = fetchInputParameters();
+        // W2Constituent names from graph.npt file
+        constituentNames = fetchConstituentNames();
+        // Initial temperatures by waterbody
+        initialTemperatures = fetchInitialTemperatures();
+        // Initial concentrations for each constituent by waterbody
+        initialConcentrations = fetchInitialConcentrations();
+        // Meteorology parameters
+        meteorologyW2Parameters = fetchMeteorologyInputs();
+        // Initial water surface elevations by waterbody
+        initialWaterSurfaceElevations = fetchInitialWaterSurfaceElevations();
 
         // Time series files
         if (TIME_SERIES)
@@ -461,8 +478,9 @@ public class W2Parser {
         List<Integer> outputSegments = tsrSegCard.getValues();
 
         // Determine TSR filename prefix from the TSR filename card
-        tsrFilenameCard = new W2FileCard(w2con, "TSR FILE", 1);
-        String tsrBaseFilename = tsrFilenameCard.getFileName(0);
+        tsrFilenameCard = new W2FileCard(w2con, "TSR FILE", 1,
+                ones(1));
+        String tsrBaseFilename = tsrFilenameCard.getFileNames(0);
         String tsrPrefix = tsrBaseFilename.substring(0, tsrBaseFilename.lastIndexOf('.'));
 
         tsrLayerCard = new RepeatingDoubleCard(w2con, "TSR LAYE", NITSR, "%8.5f");
@@ -957,7 +975,8 @@ public class W2Parser {
         // ------------------------------------------------------------------------------------
 
         // Branch Inflows, QIN
-        qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames, NBR);
+        qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames, NBR,
+                ones(NBR));
         for (int jbr = 0; jbr < NBR; jbr++) {
             if (UHS.get(jbr) == 0) {
                 int branch = jbr + 1;
@@ -970,7 +989,8 @@ public class W2Parser {
         }
 
         // Branch Inflow Temperature, TIN
-        tinCard = new W2FileCard(w2con, W2CardNames.BranchInflowTemperatureFilenames, NBR);
+        tinCard = new W2FileCard(w2con, W2CardNames.BranchInflowTemperatureFilenames, NBR,
+                ones(NBR));
         for (int jbr = 0; jbr < NBR; jbr++) {
             if (UHS.get(jbr) == 0) {
                 int branch = jbr + 1;
@@ -985,7 +1005,8 @@ public class W2Parser {
         // Distributed Tributary Inflows, QDT
         dstTribCard = new ValuesCard(w2con, W2CardNames.DistributedTributaries, NBR);
         DTRC = dstTribCard.getValues();
-        qdtCard = new W2FileCard(w2con, W2CardNames.DistributedTributaryInflowFilenames, NBR);
+        qdtCard = new W2FileCard(w2con, W2CardNames.DistributedTributaryInflowFilenames, NBR,
+                ones(NBR));
         for (int jbr = 0; jbr < NBR; jbr++) {
             if (isOn(DTRC.get(jbr))) {
                 int branch = jbr + 1;
@@ -998,7 +1019,9 @@ public class W2Parser {
         }
 
         // Distributed Tributary Inflow Temperature, TDT
-        tdtCard = new W2FileCard(w2con, W2CardNames.DistributedTributaryInflowTemperatureFilenames, NBR);
+        tdtCard = new W2FileCard(w2con,
+                W2CardNames.DistributedTributaryInflowTemperatureFilenames,
+                NBR, ones(NBR));
         for (int jbr = 0; jbr < NBR; jbr++) {
             if (isOn(DTRC.get(jbr))) {
                 int branch = jbr + 1;
@@ -1011,7 +1034,8 @@ public class W2Parser {
         }
 
         // Tributary Inflows, QTR
-        qtrCard = new W2FileCard(w2con, W2CardNames.TributaryInflowFilenames, NTR);
+        qtrCard = new W2FileCard(w2con, W2CardNames.TributaryInflowFilenames, NTR,
+                ones(NTR));
         for (int jtr = 0; jtr < NTR; jtr++) {
             int tributary = jtr + 1;
             W2Parameter w2Parameter = new W2Parameter(tributaryLocationName(tributary),
@@ -1022,7 +1046,8 @@ public class W2Parser {
         }
 
         // Tributary Inflow Temperature, TTR
-        ttrCard = new W2FileCard(w2con, W2CardNames.TributaryInflowTemperatureFilenames, NTR);
+        ttrCard = new W2FileCard(w2con, W2CardNames.TributaryInflowTemperatureFilenames,
+                NTR, ones(NTR));
         for (int jtr = 0; jtr < NTR; jtr++) {
             int tributary = jtr + 1;
             W2Parameter w2Parameter = new W2Parameter(tributaryLocationName(tributary),
@@ -1033,7 +1058,8 @@ public class W2Parser {
         }
 
         // Lateral Withdrawals (outflows), QWD
-        qwdCard = new W2FileCard(w2con, W2CardNames.WithdrawalFilenames, 1);
+        qwdCard = new W2FileCard(w2con, W2CardNames.WithdrawalFilenames, 1,
+                ones(1));
         String qwdFileName = qwdCard.getFileNames().get(0);
         for (int jwd = 0; jwd < NWD; jwd++) {
             int segment = IWD.get(jwd);
@@ -1077,7 +1103,8 @@ public class W2Parser {
         }
 
         // Structural Withdrawals (outflows), QOT
-        qotCard = new W2FileCard(w2con, W2CardNames.StructuralWithdrawalFilenames, NBR);
+        qotCard = new W2FileCard(w2con, W2CardNames.StructuralWithdrawalFilenames, NBR,
+                ones(NBR));
         numberStructuresCard = new NumberStructuresCard(w2con, NBR);
         List<Integer> NSTR = numberStructuresCard.getNSTR();
         for (int jbr = 0; jbr < NBR; jbr++) {
@@ -1097,7 +1124,8 @@ public class W2Parser {
         // constituents
         //-----------------------------------------------------------------------------------------------------
 
-        cinCard = new W2FileCard(w2con, W2CardNames.BranchInflowConcentrationFilenames, NBR);
+        cinCard = new W2FileCard(w2con, W2CardNames.BranchInflowConcentrationFilenames, NBR,
+                ones(NBR));
 
         // Branch Inflow Concentrations
         branchConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CIN CON", numConstituents, NBR);
@@ -1131,24 +1159,32 @@ public class W2Parser {
 
         // Distributed Tributary Inflow Concentrations
         distributedTributaryConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CDT CON", numConstituents, NBR);
-        List<String> distributedTributaryConstituentNames = distributedTributaryConstituentsCard.getNames();
+        List<String> distributedTributaryConstituentNames =
+                distributedTributaryConstituentsCard.getNames();
         List<List<String>> CDTBRC = distributedTributaryConstituentsCard.getValues();
-        cdtCard = new W2FileCard(w2con, W2CardNames.DistributedTributaryInflowConcentrationFilenames, NBR);
+        cdtCard = new W2FileCard(w2con,
+                W2CardNames.DistributedTributaryInflowConcentrationFilenames,
+                NBR, ones(NBR));
         if (CONSTITUENTS) {
             // Iterate over branches
             for (int jbr = 0; jbr < NBR; jbr++) {
                 if (isOn(DTRC.get(jbr))) {
-                    int numColumns = computeNumberConstituentColumns(CDTBRC, jbr, numConstituents);
+                    int numColumns = computeNumberConstituentColumns(CDTBRC, jbr,
+                            numConstituents);
                     int branch = jbr + 1;
 
                     int icol = 0;
                     for (int jc = 0; jc < numConstituents; jc++) {
                         if (isOn(CDTBRC.get(jc).get(jbr))) {
                             icol++;
-                            W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
-                            W2Parameter w2Parameter = new W2Parameter(distTributaryLocationName(branch),
-                                    distributedTributaryConstituentNames.get(jc) + "-CDT", graphFileW2Constituent.getLongName(),
-                                    graphFileW2Constituent.getUnits(), icol, numColumns, cdtCard.getFileNames().get(jbr),
+                            W2Constituent graphFileW2Constituent =
+                                    graphFileW2Constituents.get(jc);
+                            W2Parameter w2Parameter =
+                                    new W2Parameter(distTributaryLocationName(branch),
+                                    distributedTributaryConstituentNames.get(jc) +
+                                            "-CDT", graphFileW2Constituent.getLongName(),
+                                    graphFileW2Constituent.getUnits(), icol, numColumns,
+                                            cdtCard.getFileNames().get(jbr),
                                     "inflow", "input");
                             w2Parameters.add(w2Parameter);
                         }
@@ -1158,11 +1194,13 @@ public class W2Parser {
         }
 
         // Tributary Inflow Concentrations
-        MultiRecordRepeatingStringCard tributaryConstituentsCard = new MultiRecordRepeatingStringCard(w2con,
+        MultiRecordRepeatingStringCard tributaryConstituentsCard =
+                new MultiRecordRepeatingStringCard(w2con,
                 "CTR CON", numConstituents, NTR);
         List<String> tributaryConstituentNames = tributaryConstituentsCard.getNames();
         List<List<String>> CTRBRC = tributaryConstituentsCard.getValues();
-        ctrCard = new W2FileCard(w2con, W2CardNames.TributaryInflowConcentrationFilenames, NTR);
+        ctrCard = new W2FileCard(w2con,
+                W2CardNames.TributaryInflowConcentrationFilenames, NTR, ones(NTR));
         if (CONSTITUENTS) {
             // Iterate over tributaries
             for (int jtr = 0; jtr < NTR; jtr++) {
@@ -1173,9 +1211,12 @@ public class W2Parser {
                     if (isOn(CTRBRC.get(jc).get(jtr))) {
                         icol++;
                         W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
-                        W2Parameter w2Parameter = new W2Parameter(tributaryLocationName(tributary),
-                                tributaryConstituentNames.get(jc) + "-CTR", graphFileW2Constituent.getLongName(),
-                                graphFileW2Constituent.getUnits(), icol, numColumns, ctrCard.getFileNames().get(jtr),
+                        W2Parameter w2Parameter =
+                                new W2Parameter(tributaryLocationName(tributary),
+                                tributaryConstituentNames.get(jc) +
+                                        "-CTR", graphFileW2Constituent.getLongName(),
+                                graphFileW2Constituent.getUnits(), icol, numColumns,
+                                        ctrCard.getFileNames().get(jtr),
                                 "inflow", "input");
                         w2Parameters.add(w2Parameter);
                     }
@@ -1184,25 +1225,30 @@ public class W2Parser {
         }
 
         // Precipitation Inflow Concentration
-        precipConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CPR CON", numConstituents, NBR);
+        precipConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CPR CON",
+                numConstituents, NBR);
         List<String> precipConstituentNames = precipConstituentsCard.getNames();
         List<List<String>> CPRBRC = tributaryConstituentsCard.getValues();
-        W2FileCard cprCard = new W2FileCard(w2con, "CPR FILE", NBR);
+        cprCard = new W2FileCard(w2con,"CPR FILE", NBR, ones(NBR));
         if (CONSTITUENTS) {
             for (int jwb = 0; jwb < NWB; jwb++) {
                 if (isOn(PRC.get(jwb))) {
                     int waterbody = jwb + 1;
                     for (int branch = BS.get(jwb); branch <= BE.get(jwb); branch++) {
-                        int numColumns = computeNumberConstituentColumns(CPRBRC, jwb, numConstituents);
+                        int numColumns = computeNumberConstituentColumns(CPRBRC, jwb,
+                                numConstituents);
 
                         int icol = 0;
                         for (int jc = 0; jc < numConstituents; jc++) {
                             if (isOn(CTRBRC.get(jc).get(jwb))) {
                                 icol++;
-                                W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
-                                W2Parameter w2Parameter = new W2Parameter(precipLocationName(branch),
+                                W2Constituent graphFileW2Constituent =
+                                        graphFileW2Constituents.get(jc);
+                                W2Parameter w2Parameter =
+                                        new W2Parameter(precipLocationName(branch),
                                         precipConstituentNames.get(jc) + "-CPR",
-                                        graphFileW2Constituent.getLongName(), graphFileW2Constituent.getUnits(),
+                                        graphFileW2Constituent.getLongName(),
+                                                graphFileW2Constituent.getUnits(),
                                         icol, numColumns, cprCard.getFileNames().get(branch - 1),
                                         "inflow", "input");
                                 w2Parameters.add(w2Parameter);
@@ -1223,7 +1269,7 @@ public class W2Parser {
         HeatExchangeCard heatExchangeCard = new HeatExchangeCard(w2con, NWB);
         List<String> SROC = heatExchangeCard.getSROC();
 
-        W2FileCard metCard = new W2FileCard(w2con, "MET FILE", NWB);
+        metCard = new W2FileCard(w2con, "MET FILE", NWB, ones(NWB));
         for (int jw = 0; jw < NWB; jw++) {
             int waterbody = jw + 1;
             String sroc = SROC.get(jw);
@@ -1406,7 +1452,8 @@ public class W2Parser {
         String headerFormat = "%-28s%-17s%-42s%-10s%-8s%-10s%-30s%-15s%-13s";
         String dataFormat   = "%-28s%-17s%-42s%-10s%-8d%-10d%-30s%-15s%-13s";
         String header = String.format(headerFormat, "Location", "Short Name",
-                "Long Name", "Units", "Column", "#Columns", "Filename", "Inflow/Outflow", "Input/Output");
+                "Long Name", "Units", "Column", "#Columns", "Filename", "Inflow/Outflow",
+                "Input/Output");
         outputList.add(header);
         StringBuilder horizontalBar = new StringBuilder();
         for (int i = 0; i < header.length(); i++) { horizontalBar.append("-"); }
@@ -1454,7 +1501,8 @@ public class W2Parser {
      * @param numConstituents Number of constituents in the model
      * @return Number of columns in the constituent file for the given column (e.g., branch)
      */
-    private int computeNumberConstituentColumns(List<List<String>> constituentSettings, int column, int numConstituents) {
+    private int computeNumberConstituentColumns(List<List<String>> constituentSettings,
+                                                int column, int numConstituents) {
         // Iterate over constituents then over the branches, tributaries, etc.
         int numColumns = 0;
         for (int i = 0; i < numConstituents; i++) {
@@ -1470,10 +1518,10 @@ public class W2Parser {
      * TODO Add support for multiple water bodies
       */
     private List<List<Double>> fetchInitialWaterSurfaceElevations() {
-        W2FileCard bathyFileCard = new W2FileCard(w2con, "BTH FILE", NWB);
+        bathyFileCard = new W2FileCard(w2con, "BTH FILE", NWB, ones(NWB));
         List<List<Double>> waterSurfaceElevations = new ArrayList<>();
         for (int jwb = 0; jwb < NWB; jwb++) {
-            String bathyFilename = bathyFileCard.getFileName(jwb);
+            String bathyFilename = bathyFileCard.getFileNames(jwb);
             try {
                 W2BathymetryFile bathyFile = new W2BathymetryFile(w2con, bathyFilename, KMX);
                 List<Double> ELWS = bathyFile.getELWS().getValues();
@@ -1542,7 +1590,8 @@ public class W2Parser {
     }
 
     /** Return a list of initial water surface elevations
-     * @return List of water surface elevations. The list contains a list of water surface elevations
+     * @return List of water surface elevations. The list
+     * contains a list of water surface elevations
      * for each waterbody.
      */
     public List<List<Double>> getInitialWaterSurfaceElevations() {

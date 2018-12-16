@@ -809,7 +809,7 @@ STOICH 4    O2ZR
 ZOO1     1.10000
 
 STOICH 5    O2MR    O2MG
-MAC1         1.1     1.4		 
+MAC1         1.1     1.4
 
 O2 LIMIT   O2LIM
          0.10000
@@ -847,7 +847,7 @@ SHD FILE..................................SHDFN.................................
         shade.npt
 
 BTH FILE..................................BTHFN.................................
-WB 1    BthFile1
+WB 1    bth.npt
 
 MET FILE..................................METFN.................................
 WB 1    met.npt
@@ -862,16 +862,16 @@ LPR FILE..................................LPRFN.................................
 WB 1    lpr.npt - not used
 
 QIN FILE..................................QINFN.................................
-BR1     QinFile1
-BR2     QinFile2
+BR1     qin_br1.npt
+BR2     qin_br2.npt
 
 TIN FILE..................................TINFN.................................
-BR1     TinFile1
-BR2     TinFile2
+BR1     tin_br1.npt
+BR2     tin_br2.npt
 
 CIN FILE..................................CINFN.................................
-BR1     CinFile1
-BR2     CinFile2
+BR1     cin_br1.npt
+BR2     cin_br2.npt
 
 QOT FILE..................................QOTFN.................................
 BR1     qot_br1.npt - not used

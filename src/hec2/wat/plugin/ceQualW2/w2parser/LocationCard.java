@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Location W2Card
+ * Location W2Card_OLD
  *
  * This card has one line per water body
  */
-public class LocationCard extends W2Card {
+public class LocationCard extends W2Card_OLD {
     private List<Double> LAT;   // Latitude, degrees
     private List<Double> LONG;  // Longitude, degrees
     private List<Double> EBOT;  // Bottom elevation of waterbody, m

@@ -3,9 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * W2Constituent Computations W2Card
+ * W2Constituent Computations W2Card_OLD
  */
-public class ConstituentComputationsCard extends W2Card {
+public class ConstituentComputationsCard extends W2Card_OLD {
     private String CCC;
     private String LIMC;
     private int CUF;

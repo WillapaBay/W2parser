@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Ice Cover W2Card
+ * Ice Cover W2Card_OLD
  *
  * This card has one line per water body
  */
-public class IceCoverCard extends W2Card {
+public class IceCoverCard extends W2Card_OLD {
     private List<String> ICEC;
     private List<String> SLICEC;
     private List<Double> ALBEDO;

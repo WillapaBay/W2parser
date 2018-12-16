@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Sediment W2Card
+ * Sediment W2Card_OLD
  *
  * This card has one line per water body
  */
-public class SedimentCard extends W2Card {
+public class SedimentCard extends W2Card_OLD {
     private List<String> SEDC;
     private List<String> SEDPRC;
     private List<Double> SEDCI;

@@ -3,7 +3,7 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SnapshotSegmentCard2 extends W2Card2 {
+public class SnapshotSegmentCard extends W2Card_NEW {
 
     private List<String> identifiers;
     private List<List<Integer>> segmentsList;
@@ -16,8 +16,9 @@ public class SnapshotSegmentCard2 extends W2Card2 {
      * @param numFieldsList   List of the number of fields in each record
      * @param valueFieldWidth
      */
-    public SnapshotSegmentCard2(W2ControlFile w2ControlFile, int numRecords, List<Integer> numFieldsList, int valueFieldWidth) {
-        super(w2ControlFile, "SNP SEG", numRecords, numFieldsList, valueFieldWidth);
+    public SnapshotSegmentCard(W2ControlFile w2ControlFile, int numRecords, List<Integer> numFieldsList, int valueFieldWidth) {
+        super(w2ControlFile, "SNP SEG", numRecords, numFieldsList,
+                valueFieldWidth, false);
         parseTable();
 
         segmentsList = new ArrayList<>();

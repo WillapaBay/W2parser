@@ -3,9 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * Time Series Record (TSR) Plot W2Card
+ * Time Series Record (TSR) Plot W2Card_OLD
  */
-public class TsrPlotCard extends W2Card {
+public class TsrPlotCard extends W2Card_OLD {
     private String TSRC;
     private int NTSR;
     private int NITSR;
