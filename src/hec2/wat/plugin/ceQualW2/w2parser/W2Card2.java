@@ -16,7 +16,8 @@ public abstract class W2Card2 {
     private int numCardDataLinesInFile; // The number of lines in the card in the w2_con.npt file
     private List<Integer> numFieldsList;// Number of fields for each record
     private List<Integer> numLinesList; // Number of lines for each record
-    private List<String> table;         // Table from card (list of lines of text)
+    private List<String> dataTable;     // Table from card (list of lines of text, not including
+                                        // the header line.)
     private List<List<String>> records; // Identifier and values for each record
     List<String> recordIdentifiers;     // Identifiers for each record
     List<List<String>> recordValuesList;// List of card values, as unformatted strings.
@@ -50,7 +51,7 @@ public abstract class W2Card2 {
         records = new ArrayList<>();
         recordIdentifiers = new ArrayList<>();
         recordValuesList = new ArrayList<>();
-        table = new ArrayList<>();
+        dataTable = new ArrayList<>();
         fieldWidths = new ArrayList<>();
         fieldWidths.add(identifierFieldWidth);
         for (int i = 0; i < 9; i++) {
@@ -58,6 +59,8 @@ public abstract class W2Card2 {
         }
 
         fetchTable();
+        this.numCardDataLinesInFile = dataTable.size();
+
     }
 
     public void setTitleLine(String titleLine) {
@@ -87,7 +90,7 @@ public abstract class W2Card2 {
                 this.titleLine = w2ControlFile.getLine(i);
                 for (int j = 0; j < numCardDataLines; j++) {
                     line = w2ControlFile.getLine(i + j + 1);
-                    table.add(line);
+                    dataTable.add(line);
                 }
                 break;
             }
@@ -98,14 +101,14 @@ public abstract class W2Card2 {
      * Update card text in the W2ControlFile list
      */
     public void updateW2ControlFileList() {
-        updateTable();
+        updateDataTable();
 
         String line;
         for (int i = 0; i < w2ControlFile.size(); i++) {
             line = w2ControlFile.getLine(i).toUpperCase();
             if (line.startsWith(cardName)) {
                 // Resize card in w2ControlFileList if necessary
-                int difference = numCardDataLines - numCardDataLinesInFile;
+                int difference = dataTable.size() - numCardDataLinesInFile;
                 if (difference > 0) {
                     w2ControlFile.expandCard(i, numCardDataLinesInFile, difference);
                 } else if (difference < 0) {
@@ -113,11 +116,11 @@ public abstract class W2Card2 {
                 }
                 w2ControlFile.setLine(i, this.titleLine);
                 for (int j = 0; j < numCardDataLines; j++) {
-                    w2ControlFile.setLine(i + j + 1, table.get(j));
+                    w2ControlFile.setLine(i + j + 1, dataTable.get(j));
                 }
             }
         }
-        numCardDataLinesInFile = numCardDataLines;
+        numCardDataLinesInFile = dataTable.size();
     }
 
     /**
@@ -130,7 +133,7 @@ public abstract class W2Card2 {
     }
 
     /**
-     * Parse the table (data) of a W2 control file card into a
+     * Parse the dataTable (data) of a W2 control file card into a
      * jagged list of strings. These may then be converted to numeric types,
      * as needed, by the cards that inherit this class.
      */
@@ -139,7 +142,8 @@ public abstract class W2Card2 {
         for (int jc = 0; jc < numRecords; jc++) {
             int numFields = numFieldsList.get(jc);
 
-            List<String> values = parseRecordText(table, lineIndex, numLinesPerRecord(numFields));
+            List<String> values = parseRecordText(dataTable, lineIndex,
+                    numLinesPerRecord(numFields));
 
             records.add(values);
             recordIdentifiers.add(values.get(0));
@@ -183,12 +187,12 @@ public abstract class W2Card2 {
     /**
      * Parse a multi-line record. A record consists of all fields for a water body,
      * branch, constituent, etc.
-     * @param table List of record lines from control file
-     * @param startLine Index of line in table where record starts (zero-based)
+     * @param dataTable List of record lines from control file
+     * @param startLine Index of line in dataTable where record starts (zero-based)
      * @param numLinesPerRecord Number of lines in the current record
      * @return List of record values. The first item is the record identifier.
      */
-    private List<String> parseRecordText(List<String> table, int startLine,
+    private List<String> parseRecordText(List<String> dataTable, int startLine,
                                     int numLinesPerRecord) {
         int startField = 1;
         final int endField = 10;
@@ -196,7 +200,7 @@ public abstract class W2Card2 {
         List<String> values = new ArrayList<>();
 
         for (int i = startLine; i < endLine; i++) {
-            List<String> fields = parseLine(table.get(i), startField, endField);
+            List<String> fields = parseLine(dataTable.get(i), startField, endField);
             values.addAll(fields);
             // After the first record line is read, skip the first field of subsequent lines
             startField = 2;
@@ -286,14 +290,15 @@ public abstract class W2Card2 {
     /**
      * Update the W2 control file text from the current variables
      */
-    public void updateTable() {
+    public void updateDataTable() {
         updateRecords();
-        table = new ArrayList<>();
+        dataTable = new ArrayList<>();
         for (int i = 0; i < records.size(); i++) {
             List<String> record = records.get(i);
             List<String> recordText = composeRecordText(record);
-            table.addAll(recordText);
+            dataTable.addAll(recordText);
         }
+        numCardDataLines = dataTable.size();
     }
 
     /**
@@ -309,7 +314,7 @@ public abstract class W2Card2 {
      * @return Current number of data lines in W2Card
      */
     public int getNumCardDataLines() {
-        return numCardDataLines;
+        return dataTable.size();
     }
 
     /**
@@ -324,8 +329,8 @@ public abstract class W2Card2 {
      * Return the card data table
      * @return W2Card data table
      */
-    public List<String> getTable() {
-        return table;
+    public List<String> getDataTable() {
+        return dataTable;
     }
 
     /**
@@ -351,7 +356,7 @@ public abstract class W2Card2 {
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder(titleLine + "\n");
-        for (String line : table) {
+        for (String line : dataTable) {
             str.append(line).append("\n");
         }
         return str.toString();

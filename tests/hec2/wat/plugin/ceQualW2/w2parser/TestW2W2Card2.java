@@ -43,11 +43,13 @@ public class TestW2W2Card2 {
 
         // Add some data
         identifiers.add("WB 99");
-        List<Integer> segments = new ArrayList<Integer>(
+        List<Integer> segments = new ArrayList<>(
                 Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12));
         segmentsList.add(segments);
         snpCard.setRecordIdentifiers(identifiers);
         snpCard.setSegmentsList(segmentsList);
-        snpCard.updateTable();
+        snpCard.updateDataTable();
+        snpCard.updateW2ControlFileList();
+        w2con.save("results/GCL/w2_con.npt");
     }
 }
