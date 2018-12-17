@@ -4,22 +4,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Location W2Card_OLD
+ * Location Card
  *
  * This card has one line per water body
  */
-public class LocationCard extends W2Card_OLD {
+public class LocationCard extends W2Card_NEW {
     private List<Double> LAT;   // Latitude, degrees
     private List<Double> LONG;  // Longitude, degrees
     private List<Double> EBOT;  // Bottom elevation of waterbody, m
     private List<Integer> BS;    // Starting branch of waterbody
     private List<Integer> BE;    // Ending branch of waterbody
     private List<Integer> JBDN;  // Downstream branch of waterbody
-    private List<String> identifiers;
+    private int numWaterBodies;
+    private final String format = "%8.5f";
 
-    public LocationCard(W2ControlFile w2ControlFile, int numRecordLines) {
-        super(w2ControlFile, W2CardNames.Location, numRecordLines);
+    public LocationCard(W2ControlFile w2ControlFile, int numWaterBodies) {
+        super(w2ControlFile, W2CardNames.Location, numWaterBodies,
+                W2Globals.constants(numWaterBodies, 6), 8,
+                false);
+        this.numWaterBodies = numWaterBodies;
         parseTable();
+        init();
+    }
+
+    public void init() {
+        LAT = new ArrayList<>();
+        LONG = new ArrayList<>();
+        EBOT = new ArrayList<>();
+        BS = new ArrayList<>();
+        BE = new ArrayList<>();
+        JBDN = new ArrayList<>();
+        for (int i = 0; i < numWaterBodies; i++) {
+            List<String> record = recordValuesList.get(i);
+            LAT.add(Double.valueOf(record.get(0)));
+            LONG.add(Double.valueOf(record.get(1)));
+            EBOT.add(Double.valueOf(record.get(2)));
+            BS.add(Integer.valueOf(record.get(3)));
+            BE.add(Integer.valueOf(record.get(4)));
+            JBDN.add(Integer.valueOf(record.get(5)));
+        }
     }
 
     public List<Double> getLAT() {
@@ -28,7 +51,7 @@ public class LocationCard extends W2Card_OLD {
 
     public void setLAT(List<Double> LAT) {
         this.LAT = LAT;
-        updateText();
+        updateRecordValuesList();
     }
 
     public List<Double> getLONG() {
@@ -37,7 +60,7 @@ public class LocationCard extends W2Card_OLD {
 
     public void setLONG(List<Double> LONG) {
         this.LONG = LONG;
-        updateText();
+        updateRecordValuesList();
     }
 
     public List<Double> getEBOT() {
@@ -46,7 +69,7 @@ public class LocationCard extends W2Card_OLD {
 
     public void setEBOT(List<Double> EBOT) {
         this.EBOT = EBOT;
-        updateText();
+        updateRecordValuesList();
     }
 
     public List<Integer> getBS() {
@@ -55,7 +78,7 @@ public class LocationCard extends W2Card_OLD {
 
     public void setBS(List<Integer> BS) {
         this.BS = BS;
-        updateText();
+        updateRecordValuesList();
     }
 
     public List<Integer> getBE() {
@@ -64,7 +87,7 @@ public class LocationCard extends W2Card_OLD {
 
     public void setBE(List<Integer> BE) {
         this.BE = BE;
-        updateText();
+        updateRecordValuesList();
     }
 
     public List<Integer> getJBDN() {
@@ -73,38 +96,21 @@ public class LocationCard extends W2Card_OLD {
 
     public void setJBDN(List<Integer> JBDN) {
         this.JBDN = JBDN;
-        updateText();
+        updateRecordValuesList();
     }
 
     @Override
-    public void parseTable() {
-        LAT = new ArrayList<>();
-        LONG = new ArrayList<>();
-        EBOT = new ArrayList<>();
-        BS = new ArrayList<>();
-        BE = new ArrayList<>();
-        JBDN = new ArrayList<>();
-        identifiers = new ArrayList<>();
-
-        for (int i = 0; i < numCardDataLines; i++) {
-            List<String> fields = parseLine(table.get(i), 8, 1, 10);
-            identifiers.add(fields.get(0));
-            LAT.add(Double.parseDouble(fields.get(1)));
-            LONG.add(Double.parseDouble(fields.get(2)));
-            EBOT.add(Double.parseDouble(fields.get(3)));
-            BS.add(Integer.parseInt(fields.get(4)));
-            BE.add(Integer.parseInt(fields.get(5)));
-            JBDN.add(Integer.parseInt(fields.get(6)));
-        }
-    }
-
-    @Override
-    public void updateText() {
-        table.clear();
-        for (int i = 0; i < numCardDataLines; i++) {
-            String str = String.format("%-8s%8.5f%8.5f%8.3f%8d%8d%8d",
-                    identifiers.get(i), LAT.get(i), LONG.get(i), EBOT.get(i), BS.get(i), BE.get(i), JBDN.get(i));
-            table.add(str);
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        for (int i = 0; i < numWaterBodies; i++) {
+            List<String> record = new ArrayList<>();
+            record.add(String.format(format, LAT.get(i)));
+            record.add(String.format(format, LONG.get(i)));
+            record.add(String.format(format, EBOT.get(i)));
+            record.add(String.valueOf(BS));
+            record.add(String.valueOf(BE));
+            record.add(String.valueOf(JBDN));
+            recordValuesList.add(record);
         }
     }
 }
