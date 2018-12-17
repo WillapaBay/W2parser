@@ -3,9 +3,11 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Snapshot Segment Card
+ */
 public class SnapshotSegmentCard extends W2Card_NEW {
 
-    private List<String> identifiers;
     private List<List<Integer>> segmentsList;
 
     /**
@@ -20,13 +22,16 @@ public class SnapshotSegmentCard extends W2Card_NEW {
         super(w2ControlFile, "SNP SEG", numRecords, numFieldsList,
                 valueFieldWidth, false);
         parseTable();
+        init();
+    }
 
+    public void init() {
         segmentsList = new ArrayList<>();
 
         for (List<String> recordValues : recordValuesList) {
             List<Integer> segments = new ArrayList<>();
             for (String value : recordValues) {
-               segments.add(Integer.parseInt(value));
+                segments.add(Integer.parseInt(value));
             }
             segmentsList.add(segments);
         }
