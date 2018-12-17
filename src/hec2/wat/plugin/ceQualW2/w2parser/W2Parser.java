@@ -22,29 +22,30 @@ public class W2Parser {
     private InflowOutflowCard inOutflowCard;
     private W2GraphFile w2GraphFile;
     private TsrPlotCard tsrPlotCard;
-    private RepeatingIntegerCard wdSegmentCard; // "WD SEG"
-    private RepeatingIntegerCard withdrawalOutputSegmentCard; // "WITH SEG"
     private ActiveConstituentsCard activeConstituentsCard;
     private ActiveDerivedConstituentsCard activeDerivedConstituentsCard;
     private ActiveConstituentFluxesCard activeConstituentFluxesCard;
     private WithdrawalOutputCard withdrawalOutputCard;
-    private RepeatingDoubleCard withdrawalFrequencyCard;
-    private RepeatingIntegerCard tsrSegCard;
-    private RepeatingDoubleCard tsrLayerCard;
     private IceCoverCard iceCoverCard;
     private InitialConditionsCard initCondCard;
-    private MultiRecordRepeatingDoubleCard constituentICcard;
     private ConstituentDimensionsCard constituentDimensionsCard;
     private ConstituentComputationsCard constituentComputationsCard;
-    private MultiRecordRepeatingStringCard branchConstituentsCard;
     private DistributedTributariesCard dstTribCard;
     private CalculationsCard calculationsCard;
     private LocationCard locationCard;
     private NumberStructuresCard numberStructuresCard;
-    private MultiRecordRepeatingStringCard distributedTributaryConstituentsCard;
-    private MultiRecordRepeatingStringCard precipConstituentsCard;
     private SedimentCard sedimentCard;
     private HeatExchangeCard heatExchangeCard;
+
+    private RepeatingIntegerCard tsrSegCard;
+    private RepeatingIntegerCard wdSegmentCard; // "WD SEG"
+    private RepeatingIntegerCard withdrawalOutputSegmentCard; // "WITH SEG"
+    private RepeatingDoubleCard withdrawalFrequencyCard;
+    private RepeatingDoubleCard tsrLayerCard;
+    private MultiRecordRepeatingDoubleCard constituentICcard;
+    private MultiRecordRepeatingStringCard branchConstituentsCard;
+    private MultiRecordRepeatingStringCard distributedTributaryConstituentsCard;
+    private MultiRecordRepeatingStringCard precipConstituentsCard;
 
     private W2FileCard tsrFilenameCard;
     private W2FileCard qinCard;
@@ -1113,7 +1114,7 @@ public class W2Parser {
         }
 
         //-----------------------------------------------------------------------------------------------------
-        // constituents
+        // Constituents
         //-----------------------------------------------------------------------------------------------------
 
         cinCard = new W2FileCard(w2con, W2CardNames.BranchInflowConcentrationFilenames, NBR);
@@ -1122,7 +1123,6 @@ public class W2Parser {
         branchConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CIN CON", numConstituents, NBR);
         List<String> branchInflowConstituentNames = branchConstituentsCard.getNames();
         List<List<String>> CINBRC = branchConstituentsCard.getValues();
-
 
         if (CONSTITUENTS) {
             // Iterate over branches

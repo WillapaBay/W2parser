@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Multiple Record Repeating Double W2Card_OLD
+ * Multiple Record Repeating Double Card
  *
  * This card is used to read cards containing one or more records that span multiple lines each.
  */

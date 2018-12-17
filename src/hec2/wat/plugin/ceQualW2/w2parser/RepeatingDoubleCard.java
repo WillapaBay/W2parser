@@ -3,6 +3,9 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Repeating Double Values Card
+ */
 public class RepeatingDoubleCard extends W2Card_OLD {
     private List<Double> values;
     private int numFields;
