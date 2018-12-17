@@ -22,4 +22,12 @@ public class W2Globals {
         }
         return values;
     }
+
+    public static List<Integer> constants(int length, int constant) {
+        List<Integer> values = new ArrayList<>();
+        for (int i = 0; i < length; i++) {
+            values.add(constant);
+        }
+        return values;
+    }
 }
