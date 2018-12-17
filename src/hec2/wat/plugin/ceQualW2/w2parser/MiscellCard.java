@@ -1,12 +1,13 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Miscellaneous W2Card_OLD
+ * Miscellaneous Card
  */
-public class MiscellCard extends W2Card_OLD {
-    private int nday;
+public class MiscellCard extends W2Card_NEW {
+    private int NDAY;
     private String SELECTC;
     private String HABTATC;
     private String ENVIRPC;
@@ -14,17 +15,39 @@ public class MiscellCard extends W2Card_OLD {
     private String INITUWL;
 
     public MiscellCard(W2ControlFile w2ControlFile) {
-        super(w2ControlFile, "MISCELL", 1);
+        super(w2ControlFile, "MISCELL", 1,
+                W2Globals.constants(1, 6), 8,
+                false);
         parseTable();
+        init();
+    }
+
+    public void init() {
+        List<String> values = recordValuesList.get(0);
+        NDAY    = Integer.valueOf(values.get(0));
+        // Handle legacy W2 control files
+        if (values.size() > 1) {
+            SELECTC = values.get(1);
+            HABTATC = values.get(2);
+            ENVIRPC = values.get(3);
+            AERATEC = values.get(4);
+            INITUWL = values.get(5);
+        } else {
+            SELECTC = "OFF";
+            HABTATC = "OFF";
+            ENVIRPC = "OFF";
+            AERATEC = "OFF";
+            INITUWL = "OFF";
+        }
     }
 
     public int getNday() {
-        return nday;
+        return NDAY;
     }
 
-    public void setNday(int nday) {
-        this.nday = nday;
-        updateText();
+    public void setNday(int NDAY) {
+        this.NDAY = NDAY;
+        updateRecordValuesList();
     }
 
     public String getSELECTC() {
@@ -33,7 +56,7 @@ public class MiscellCard extends W2Card_OLD {
 
     public void setSELECTC(String SELECTC) {
         this.SELECTC = SELECTC.toUpperCase();
-        updateText();
+        updateRecordValuesList();
     }
 
     public String getENVIRPC() {
@@ -42,7 +65,7 @@ public class MiscellCard extends W2Card_OLD {
 
     public void setENVIRPC(String ENVIRPC) {
         this.ENVIRPC = ENVIRPC.toUpperCase();
-        updateText();
+        updateRecordValuesList();
     }
 
     public String getAERATEC() {
@@ -51,7 +74,7 @@ public class MiscellCard extends W2Card_OLD {
 
     public void setAERATEC(String AERATEC) {
         this.AERATEC = AERATEC.toUpperCase();
-        updateText();
+        updateRecordValuesList();
     }
 
     public String getINITUWL() {
@@ -60,7 +83,7 @@ public class MiscellCard extends W2Card_OLD {
 
     public void setINITUWL(String INITUWL) {
         this.INITUWL = INITUWL.toUpperCase();
-        updateText();
+        updateRecordValuesList();
     }
 
     public String getHABTATC() {
@@ -69,25 +92,19 @@ public class MiscellCard extends W2Card_OLD {
 
     public void setHABTATC(String HABTATC) {
         this.HABTATC = HABTATC.toUpperCase();
-        updateText();
+        updateRecordValuesList();
     }
 
     @Override
-    public void parseTable() {
-        List<String> fields = parseLine(table.get(0), 8, 2, 10);
-        nday = Integer.parseInt(fields.get(0));
-        SELECTC = fields.get(1);
-        HABTATC = fields.get(2);
-        ENVIRPC = fields.get(3);
-        AERATEC = fields.get(4);
-        INITUWL = fields.get(5);
-    }
-
-    @Override
-    public void updateText() {
-        String str = String.format("%8s%8d%8s%8s%8s%8s%8s", "",
-                nday, SELECTC, HABTATC, ENVIRPC, AERATEC, INITUWL);
-        table.set(0, str);
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        List<String> values = new ArrayList<>();
+        values.add(String.valueOf(NDAY));
+        values.add(SELECTC);
+        values.add(HABTATC);
+        values.add(ENVIRPC);
+        values.add(AERATEC);
+        values.add(INITUWL);
+        recordValuesList.add(values);
     }
 }
-

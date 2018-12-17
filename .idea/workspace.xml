@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86ca3ba8-c345-4a52-b43d-1ddf44984b0b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/LocationCard_NEW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/GCL/w2_con.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/CouleeT01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/CouleeT01.npt" afterDir="false" />
@@ -75,7 +75,8 @@
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestLocationCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestLocationCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MiscellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MiscellCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestMiscellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestMiscellCard.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,29 +88,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LocationCard_NEW.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/LocationCard_NEW.java">
+      <file leaf-file-name="MiscellCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MiscellCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="115" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="-57">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#938#939#0" expanded="true" />
+                <element signature="e#965#966#0" expanded="true" />
+                <element signature="e#1102#1103#0" expanded="true" />
+                <element signature="e#1132#1133#0" expanded="true" />
+                <element signature="e#1298#1299#0" expanded="true" />
+                <element signature="e#1328#1329#0" expanded="true" />
+                <element signature="e#1494#1495#0" expanded="true" />
+                <element signature="e#1524#1525#0" expanded="true" />
+                <element signature="e#1690#1691#0" expanded="true" />
+                <element signature="e#1720#1721#0" expanded="true" />
+                <element signature="e#1886#1887#0" expanded="true" />
+                <element signature="e#1916#1917#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestLocationCard.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestLocationCard.java">
+      <file leaf-file-name="W2Parser.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
+            <state>
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestInitialConditionsCard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestInitialConditionsCard.java">
+      <file leaf-file-name="w2_con.npt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/Spokane/w2_con.npt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="342">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -117,17 +134,38 @@
       <file leaf-file-name="w2_con.npt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/GCL/w2_con.npt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1444">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            <state relative-caret-position="456">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InitialConditionsCard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/InitialConditionsCard.java">
+      <file leaf-file-name="TestLocationCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestLocationCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="114">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestMiscellCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestMiscellCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1748">
+              <caret line="92" selection-start-line="92" selection-end-line="92" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GridCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="95" selection-start-line="95" selection-end-line="95" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,8 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2GraphFile.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" />
@@ -198,9 +234,11 @@
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/InOutflowCard_NEW.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestInflowOutflowCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/LocationCard_NEW.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestLocationCard.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" />
+        <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestMiscellCard.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MiscellCard_NEW.java" />
       </list>
     </option>
   </component>
@@ -221,11 +259,6 @@
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
@@ -303,7 +336,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestW2Parser">
+  <component name="RunManager" selected="JUnit.TestMiscellCard">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -347,29 +380,6 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestInitialConditionsCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="W2Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
-      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestInitialConditionsCard" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
     <configuration name="TestLocationCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="W2Parser" />
       <extension name="coverage">
@@ -382,6 +392,29 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
       <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestLocationCard" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestMiscellCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="W2Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
+      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestMiscellCard" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -456,18 +489,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.TestW2Parser" />
-      <item itemvalue="JUnit.TestInitialConditionsCard" />
       <item itemvalue="JUnit.All in W2Parser" />
       <item itemvalue="JUnit.TestInflowOutflowCard" />
       <item itemvalue="JUnit.TestLocationCard" />
+      <item itemvalue="JUnit.TestMiscellCard" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestMiscellCard" />
         <item itemvalue="JUnit.TestW2Parser" />
         <item itemvalue="JUnit.TestLocationCard" />
         <item itemvalue="JUnit.TestInflowOutflowCard" />
         <item itemvalue="JUnit.All in W2Parser" />
-        <item itemvalue="JUnit.TestInitialConditionsCard" />
       </list>
     </recent_temporary>
   </component>
@@ -608,22 +641,17 @@
       <option name="project" value="LOCAL" />
       <updated>1545077588857</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Updated LocationCard and tests">
+      <created>1545078234124</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1545078234124</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestIceCoverCard - 2018.12.17 at 11h 43m 19s.xml">
-      <configuration name="TestIceCoverCard" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestW2Parser - 2018.12.17 at 11h 43m 52s.xml">
-      <configuration name="TestW2Parser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestW2Parser - 2018.12.17 at 11h 43m 58s.xml">
-      <configuration name="TestW2Parser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestInitialConditionsCard - 2018.12.17 at 11h 53m 49s.xml">
-      <configuration name="TestInitialConditionsCard" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestW2Parser - 2018.12.17 at 11h 54m 23s.xml">
       <configuration name="TestW2Parser" configurationId="JUnit" />
     </history-entry>
@@ -642,10 +670,21 @@
     <history-entry file="TestW2Parser - 2018.12.17 at 12h 11m 54s.xml">
       <configuration name="TestW2Parser" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestLocationCard - 2018.12.17 at 12h 22m 33s.xml">
+      <configuration name="TestLocationCard" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestW2Parser - 2018.12.17 at 12h 23m 01s.xml">
+      <configuration name="TestW2Parser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMiscellCard - 2018.12.17 at 12h 30m 58s.xml">
+      <configuration name="TestMiscellCard" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMiscellCard - 2018.12.17 at 12h 32m 53s.xml">
+      <configuration name="TestMiscellCard" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" weight="0.32884097" />
@@ -706,7 +745,8 @@
     <MESSAGE value="Updated IceCoverCard and tests." />
     <MESSAGE value="Updated InitialConditionsCard and tests" />
     <MESSAGE value="Renamed InOutflowCard to InflowOutflowCard and updated to use new W2Card class. Updated tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed InOutflowCard to InflowOutflowCard and updated to use new W2Card class. Updated tests." />
+    <MESSAGE value="Updated LocationCard and tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated LocationCard and tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -767,13 +807,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestActiveConstituentFluxesCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -848,9 +881,6 @@
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestMiscellCard.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestMultiLineCard.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1038,27 +1068,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/Spokane/w2_con.npt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/DWR/w2_con.npt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1079,12 +1092,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/LocationCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="608">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
         </state>
       </provider>
     </entry>
@@ -1092,13 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/GCL/w2_con.npt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1444">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1112,13 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/LocationCard_NEW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestInitialConditionsCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1126,10 +1123,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestLocationCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
+        <state relative-caret-position="114">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestMiscellCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Spokane/w2_con.npt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/GCL/w2_con.npt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MiscellCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1298#1299#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
+            <element signature="e#1494#1495#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1690#1691#0" expanded="true" />
+            <element signature="e#1720#1721#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1916#1917#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
