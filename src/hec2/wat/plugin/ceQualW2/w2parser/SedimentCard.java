@@ -8,7 +8,7 @@ import java.util.List;
  *
  * This card has one line per water body
  */
-public class SedimentCard extends W2Card_OLD {
+public class SedimentCard extends W2Card_NEW {
     private List<String> SEDC;
     private List<String> SEDPRC;
     private List<Double> SEDCI;
@@ -18,98 +18,19 @@ public class SedimentCard extends W2Card_OLD {
     private List<Double> FSED;
     private List<Double> SEDBR;
     private List<String> DYNSEDK;
-    private List<String> identifiers;
-    private int numWaterbodies;
+    private int numWaterBodies;
+    private final String format = "%8.5f";
 
-    public SedimentCard(W2ControlFile w2ControlFile, int numWaterbodies) {
-        super(w2ControlFile, "SEDIMENT", numWaterbodies);
-        this.numWaterbodies = numWaterbodies;
+    public SedimentCard(W2ControlFile w2ControlFile, int numWaterBodies) {
+        super(w2ControlFile, "SEDIMENT", numWaterBodies,
+                W2Globals.constants(numWaterBodies, 9), 8,
+                false);
+        this.numWaterBodies = numWaterBodies;
         parseTable();
+        init();
     }
 
-    public List<String> getSEDC() {
-        return SEDC;
-    }
-
-    public void setSEDC(List<String> SEDC) {
-        this.SEDC = SEDC;
-        updateText();
-    }
-
-    public List<String> getSEDPRC() {
-        return SEDPRC;
-    }
-
-    public void setSEDPRC(List<String> SEDPRC) {
-        this.SEDPRC = SEDPRC;
-        updateText();
-    }
-
-    public List<Double> getSEDCI() {
-        return SEDCI;
-    }
-
-    public void setSEDCI(List<Double> SEDCI) {
-        this.SEDCI = SEDCI;
-        updateText();
-    }
-
-    public List<Double> getSEDS() {
-        return SEDS;
-    }
-
-    public void setSEDS(List<Double> SEDS) {
-        this.SEDS = SEDS;
-        updateText();
-    }
-
-    public List<Double> getSEDK() {
-        return SEDK;
-    }
-
-    public void setSEDK(List<Double> SEDK) {
-        this.SEDK = SEDK;
-        updateText();
-    }
-
-    public List<Double> getFSOD() {
-        return FSOD;
-    }
-
-    public void setFSOD(List<Double> FSOD) {
-        this.FSOD = FSOD;
-        updateText();
-    }
-
-    public List<Double> getFSED() {
-        return FSED;
-    }
-
-    public void setFSED(List<Double> FSED) {
-        this.FSED = FSED;
-        updateText();
-    }
-
-    public List<Double> getSEDBR() {
-        return SEDBR;
-    }
-
-    public void setSEDBR(List<Double> SEDBR) {
-        this.SEDBR = SEDBR;
-        updateText();
-    }
-
-    public List<String> getDYNSEDK() {
-        return DYNSEDK;
-    }
-
-    public void setDYNSEDK(List<String> DYNSEDK) {
-        this.DYNSEDK = DYNSEDK;
-        updateText();
-    }
-
-    @Override
-    public void parseTable() {
+    public void init() {
         SEDC = new ArrayList<>();
         SEDPRC = new ArrayList<>();
         SEDCI = new ArrayList<>();
@@ -119,32 +40,116 @@ public class SedimentCard extends W2Card_OLD {
         FSED = new ArrayList<>();
         SEDBR = new ArrayList<>();
         DYNSEDK = new ArrayList<>();
-        identifiers = new ArrayList<>();
-
-        for (int i = 0; i < numWaterbodies; i++) {
-            List<String> fields = parseLine(table.get(i), 8, 1, 10);
-            identifiers.add(fields.get(0));
-            SEDC.add(fields.get(1));
-            SEDPRC.add(fields.get(2));
-            SEDCI.add(Double.parseDouble(fields.get(3)));
-            SEDS.add(Double.parseDouble(fields.get(4)));
-            SEDK.add(Double.parseDouble(fields.get(5)));
-            FSOD.add(Double.parseDouble(fields.get(6)));
-            FSED.add(Double.parseDouble(fields.get(7)));
-            SEDBR.add(Double.parseDouble(fields.get(8)));
-            DYNSEDK.add(fields.get(9));
+        for (int i = 0; i < numWaterBodies; i++) {
+            List<String> record = recordValuesList.get(i);
+            SEDC.add(record.get(0));
+            SEDPRC.add(record.get(1));
+            SEDCI.add(Double.valueOf(record.get(2)));
+            SEDS.add(Double.valueOf(record.get(3)));
+            SEDK.add(Double.valueOf(record.get(4)));
+            FSOD.add(Double.valueOf(record.get(5)));
+            FSED.add(Double.valueOf(record.get(6)));
+            SEDBR.add(Double.valueOf(record.get(7)));
+            DYNSEDK.add(record.get(8));
         }
     }
 
+    public List<String> getSEDC() {
+        return SEDC;
+    }
+
+    public void setSEDC(List<String> SEDC) {
+        this.SEDC = SEDC;
+        updateRecordValuesList();
+    }
+
+    public List<String> getSEDPRC() {
+        return SEDPRC;
+    }
+
+    public void setSEDPRC(List<String> SEDPRC) {
+        this.SEDPRC = SEDPRC;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getSEDCI() {
+        return SEDCI;
+    }
+
+    public void setSEDCI(List<Double> SEDCI) {
+        this.SEDCI = SEDCI;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getSEDS() {
+        return SEDS;
+    }
+
+    public void setSEDS(List<Double> SEDS) {
+        this.SEDS = SEDS;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getSEDK() {
+        return SEDK;
+    }
+
+    public void setSEDK(List<Double> SEDK) {
+        this.SEDK = SEDK;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getFSOD() {
+        return FSOD;
+    }
+
+    public void setFSOD(List<Double> FSOD) {
+        this.FSOD = FSOD;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getFSED() {
+        return FSED;
+    }
+
+    public void setFSED(List<Double> FSED) {
+        this.FSED = FSED;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getSEDBR() {
+        return SEDBR;
+    }
+
+    public void setSEDBR(List<Double> SEDBR) {
+        this.SEDBR = SEDBR;
+        updateRecordValuesList();
+    }
+
+    public List<String> getDYNSEDK() {
+        return DYNSEDK;
+    }
+
+    public void setDYNSEDK(List<String> DYNSEDK) {
+        this.DYNSEDK = DYNSEDK;
+        updateRecordValuesList();
+    }
+
     @Override
-    public void updateText() {
-        table.clear();
-        for (int i = 0; i < numWaterbodies; i++) {
-            String str = String.format("%-8s%8s%8s%8.5f%8.5f%8.5f%8.5f%8.5f%8.5f%8s",
-                    identifiers.get(i), SEDC.get(i), SEDPRC.get(i), SEDCI.get(i),
-                    SEDS.get(i), SEDK.get(i), FSOD.get(i), FSED.get(i), SEDBR.get(i),
-                    DYNSEDK.get(i));
-            table.add(str);
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        for (int i = 0; i < numWaterBodies; i++) {
+            List<String> record = new ArrayList<>();
+            record.add(SEDC.get(i));
+            record.add(SEDPRC.get(i));
+            record.add(String.format(format, SEDCI.get(i)));
+            record.add(String.format(format, SEDS.get(i)));
+            record.add(String.format(format, SEDK.get(i)));
+            record.add(String.format(format, FSOD.get(i)));
+            record.add(String.format(format, FSED.get(i)));
+            record.add(String.format(format, SEDBR.get(i)));
+            record.add(DYNSEDK.get(i));
+            recordValuesList.add(record);
         }
     }
 }

@@ -3,6 +3,10 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Restart Card
+ */
 public class RestartCard extends W2Card_NEW {
     private String RSOC;
     private int NRSO;
