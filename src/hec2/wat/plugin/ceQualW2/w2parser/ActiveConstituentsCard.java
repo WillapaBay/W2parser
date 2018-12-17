@@ -6,15 +6,15 @@ import java.util.List;
 import static hec2.wat.plugin.ceQualW2.w2parser.W2Globals.ones;
 
 /**
- * Active constituents
+ * Active Constituents Card
  *
  * This card contains the status of each constituent as active (ON) or inactive (OFF).
  * There is one line per constituent.
  */
-public class ActiveConstituentsCard_NEW extends W2Card_NEW {
+public class ActiveConstituentsCard extends W2Card_NEW {
     private List<String> states; // State of each constituent (ON or OFF); Variable: CAC
 
-    public ActiveConstituentsCard_NEW(W2ControlFile w2ControlFile, int numConstituents) {
+    public ActiveConstituentsCard(W2ControlFile w2ControlFile, int numConstituents) {
         super(w2ControlFile, "CST ACTIVE", numConstituents, ones(numConstituents),
                8, false);
         parseTable();

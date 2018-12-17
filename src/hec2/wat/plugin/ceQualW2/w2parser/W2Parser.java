@@ -8,8 +8,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import static hec2.wat.plugin.ceQualW2.w2parser.W2Globals.ones;
-
 public class W2Parser {
     private W2ControlFile w2con;
     private int startYear; // Simulation start year
@@ -26,7 +24,7 @@ public class W2Parser {
     private TsrPlotCard tsrPlotCard;
     private RepeatingIntegerCard wdSegmentCard; // "WD SEG"
     private RepeatingIntegerCard withdrawalOutputSegmentCard; // "WITH SEG"
-    private ActiveConstituentsCard_NEW activeConstituentsCard;
+    private ActiveConstituentsCard activeConstituentsCard;
     private ActiveDerivedConstituentsCard activeDerivedConstituentsCard;
     private ActiveConstituentFluxesCard activeConstituentFluxesCard;
     private WithdrawalOutputCard withdrawalOutputCard;
@@ -173,7 +171,7 @@ public class W2Parser {
         graphFileW2Constituents = w2GraphFile.getW2Constituents();
         numConstituents = graphFileW2Constituents.size();
         //numConstituents = computeNumberOfConstituents();
-        activeConstituentsCard = new ActiveConstituentsCard_NEW(w2con, numConstituents);
+        activeConstituentsCard = new ActiveConstituentsCard(w2con, numConstituents);
         constituentComputationsCard = new ConstituentComputationsCard(w2con);
         String CCC = constituentComputationsCard.getCCC();
         if (isOn(CCC)) CONSTITUENTS = true;
@@ -185,8 +183,9 @@ public class W2Parser {
         numDerivedConstituents = graphFileDerivedW2Constituents.size();
         activeDerivedConstituentsCard = new ActiveDerivedConstituentsCard(w2con,
                 numDerivedConstituents, NWB);
-        activeConstituentFluxesCard = new ActiveConstituentFluxesCard(w2con, NUM_FLUXES, NWB);
-        List<List<String>> CDWBC = activeDerivedConstituentsCard.getValues();
+        activeConstituentFluxesCard =
+                new ActiveConstituentFluxesCard(w2con, NUM_FLUXES, NWB);
+        List<List<String>> CDWBC = activeDerivedConstituentsCard.getStates();
 
         List<Boolean> derivedIsOn = new ArrayList<>();
         for (List<String> values: CDWBC) {
@@ -797,9 +796,9 @@ public class W2Parser {
 
             // Derived constituents (iterate over all derived constituents, but only output active constituents
             derivedConstituentNames = activeDerivedConstituentsCard.getConstituentNames();
-            List<List<String>> derivedConstituentSettings = activeDerivedConstituentsCard.getValues();
+            List<List<String>> derivedConstituentSettings = activeDerivedConstituentsCard.getStates();
             for (int jc = 0; jc < numDerivedConstituents; jc++) {
-                if (isOn(derivedConstituentSettings.get(outputWaterbody - 1).get(jc))) {
+                if (isOn(derivedConstituentSettings.get(jc).get(outputWaterbody - 1))) {
                     W2Constituent w2Constituent = graphFileDerivedW2Constituents.get(jc);
                     w2Parameter = new W2Parameter(tsrLocation, derivedConstituentNames.get(jc),
                             w2Constituent.getLongName(), w2Constituent.getUnits(),
@@ -815,9 +814,10 @@ public class W2Parser {
 
             // Fluxes (iterate over all fluxes, but only output active fluxes
             List<String> fluxNames = activeConstituentFluxesCard.getConstituentNames();
-            List<List<String>> fluxSettings = activeConstituentFluxesCard.getValues();
+//            List<List<String>> fluxSettings = activeConstituentFluxesCard.getValues();
+            List<List<String>> fluxSettings = activeConstituentFluxesCard.getStates();
             for (int jc = 0; jc < NUM_FLUXES; jc++) {
-                if (isOn(fluxSettings.get(outputWaterbody - 1).get(jc))) {
+                if (isOn(fluxSettings.get(jc).get(outputWaterbody - 1))) {
                     w2Parameter = new W2Parameter(tsrLocation, fluxNames.get(jc),
                             fluxNames.get(jc), "kg/d",
                             outputColumn, 0, tsrFilename,

@@ -37,10 +37,8 @@ public class TestRestartCard {
         rsoFreqCard.addData(200.0);
 
         // Update Restart filename
-        W2FileCard_OLD rsiFileCard = new W2FileCard_OLD(w2con,
-                "RSI FILE", 1);
+        W2FileCard rsiFileCard = new W2FileCard(w2con,"RSI FILE", 1);
         rsiFileCard.clearFileNames();
-        rsiFileCard.addFilename("rso.opt", "");
 
         // Turn on restart file....
 
@@ -48,7 +46,7 @@ public class TestRestartCard {
         restartCard.updateTable();
         rsoDateCard.updateTable();
         rsoFreqCard.updateTable();
-        rsiFileCard.updateTable();
+        rsiFileCard.updateDataTable();
 
         // Write updated W2 control file
         String outfile = "results/ColumbiaSlough/w2_con.npt.testRestart";

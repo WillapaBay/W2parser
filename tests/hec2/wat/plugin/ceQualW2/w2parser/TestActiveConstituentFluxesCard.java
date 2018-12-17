@@ -12,8 +12,8 @@ public class TestActiveConstituentFluxesCard {
         GridCard gridCard = new GridCard(w2con);
         int NWB = gridCard.getNumWaterBodies();
         // Currently number of fluxes is hard-coded in W2 as 73
-        ActiveConstituentFluxesCard_NEW card =
-                new ActiveConstituentFluxesCard_NEW(w2con, 73, NWB);
+        ActiveConstituentFluxesCard card =
+                new ActiveConstituentFluxesCard(w2con, 73, NWB);
     }
 
     @Test

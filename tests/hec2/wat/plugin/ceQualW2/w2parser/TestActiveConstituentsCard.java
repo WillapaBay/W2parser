@@ -16,7 +16,7 @@ public class TestActiveConstituentsCard {
         int numConstituents = graphFileW2Constituents.size();
         GridCard gridCard = new GridCard(w2con);
         int NWB = gridCard.getNumWaterBodies();
-        ActiveConstituentsCard_NEW card = new ActiveConstituentsCard_NEW(w2con, numConstituents);
+        ActiveConstituentsCard card = new ActiveConstituentsCard(w2con, numConstituents);
         card.getCAC();
         card.getConstituentNames();
     }

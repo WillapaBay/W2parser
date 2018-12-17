@@ -15,7 +15,8 @@ public class TestActiveDerivedConstituentsCard {
         int NDT = graphFileW2Constituents.size();
         GridCard gridCard = new GridCard(w2con);
         int NWB = gridCard.getNumWaterBodies();
-        ActiveDerivedConstituentsCard card = new ActiveDerivedConstituentsCard(w2con, NDT, NWB);
+        ActiveDerivedConstituentsCard card =
+                new ActiveDerivedConstituentsCard(w2con, NDT, NWB);
     }
 
     @Test
