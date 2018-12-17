@@ -40,12 +40,16 @@ public class W2Parser {
     private RepeatingIntegerCard tsrSegCard;
     private RepeatingIntegerCard wdSegmentCard; // "WD SEG"
     private RepeatingIntegerCard withdrawalOutputSegmentCard; // "WITH SEG"
+
     private RepeatingDoubleCard withdrawalFrequencyCard;
     private RepeatingDoubleCard tsrLayerCard;
+
     private MultiRecordRepeatingDoubleCard constituentICcard;
-    private MultiRecordRepeatingStringCard branchConstituentsCard;
-    private MultiRecordRepeatingStringCard distributedTributaryConstituentsCard;
-    private MultiRecordRepeatingStringCard precipConstituentsCard;
+
+    private BranchConstituentsCard branchConstituentsCard;
+    private DistributedTributaryConstituentsCard distributedTributaryConstituentsCard;
+    private PrecipConstituentsCard precipConstituentsCard;
+    private TributaryConstituentsCard tributaryConstituentsCard;
 
     private W2FileCard tsrFilenameCard;
     private W2FileCard qinCard;
@@ -1121,9 +1125,9 @@ public class W2Parser {
         cinCard = new W2FileCard(w2con, W2CardNames.BranchInflowConcentrationFilenames, NBR);
 
         // Branch Inflow Concentrations
-        branchConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CIN CON", numConstituents, NBR);
-        List<String> branchInflowConstituentNames = branchConstituentsCard.getNames();
-        List<List<String>> CINBRC = branchConstituentsCard.getValues();
+        branchConstituentsCard = new BranchConstituentsCard(w2con, numConstituents, NBR);
+        List<String> branchInflowConstituentNames = branchConstituentsCard.getConstituentNames();
+        List<List<String>> CINBRC = branchConstituentsCard.getStates();
 
         if (CONSTITUENTS) {
             // Iterate over branches
@@ -1150,10 +1154,9 @@ public class W2Parser {
         }
 
         // Distributed Tributary Inflow Concentrations
-        distributedTributaryConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CDT CON", numConstituents, NBR);
-        List<String> distributedTributaryConstituentNames =
-                distributedTributaryConstituentsCard.getNames();
-        List<List<String>> CDTBRC = distributedTributaryConstituentsCard.getValues();
+        distributedTributaryConstituentsCard = new DistributedTributaryConstituentsCard(w2con, numConstituents, NBR);
+        List<String> distributedTributaryConstituentNames = distributedTributaryConstituentsCard.getConstituentNames();
+        List<List<String>> CDTBRC = distributedTributaryConstituentsCard.getStates();
         cdtCard = new W2FileCard(w2con,
                 W2CardNames.DistributedTributaryInflowConcentrationFilenames, NBR);
         if (CONSTITUENTS) {
@@ -1185,14 +1188,12 @@ public class W2Parser {
         }
 
         // Tributary Inflow Concentrations
-        MultiRecordRepeatingStringCard tributaryConstituentsCard =
-                new MultiRecordRepeatingStringCard(w2con,
-                "CTR CON", numConstituents, NTR);
-        List<String> tributaryConstituentNames = tributaryConstituentsCard.getNames();
-        List<List<String>> CTRBRC = tributaryConstituentsCard.getValues();
-        ctrCard = new W2FileCard(w2con,
-                W2CardNames.TributaryInflowConcentrationFilenames, NTR);
-        if (CONSTITUENTS) {
+        if (CONSTITUENTS && NTR > 0) {
+            tributaryConstituentsCard = new TributaryConstituentsCard(w2con, numConstituents, NTR);
+            List<String> tributaryConstituentNames = tributaryConstituentsCard.getConstituentNames();
+            List<List<String>> CTRBRC = tributaryConstituentsCard.getStates();
+            ctrCard = new W2FileCard(w2con,
+                    W2CardNames.TributaryInflowConcentrationFilenames, NTR);
             // Iterate over tributaries
             for (int jtr = 0; jtr < NTR; jtr++) {
                 int numColumns = computeNumberConstituentColumns(CTRBRC, jtr, numConstituents);
@@ -1216,10 +1217,9 @@ public class W2Parser {
         }
 
         // Precipitation Inflow Concentration
-        precipConstituentsCard = new MultiRecordRepeatingStringCard(w2con, "CPR CON",
-                numConstituents, NBR);
-        List<String> precipConstituentNames = precipConstituentsCard.getNames();
-        List<List<String>> CPRBRC = tributaryConstituentsCard.getValues();
+        precipConstituentsCard = new PrecipConstituentsCard(w2con, numConstituents, NBR);
+        List<String> precipConstituentNames = precipConstituentsCard.getConstituentNames();
+        List<List<String>> CPRBRC = precipConstituentsCard.getStates();
         cprCard = new W2FileCard(w2con,"CPR FILE", NBR);
         if (CONSTITUENTS) {
             for (int jwb = 0; jwb < NWB; jwb++) {
@@ -1231,7 +1231,7 @@ public class W2Parser {
 
                         int icol = 0;
                         for (int jc = 0; jc < numConstituents; jc++) {
-                            if (isOn(CTRBRC.get(jc).get(jwb))) {
+                            if (isOn(CPRBRC.get(jc).get(jwb))) {
                                 icol++;
                                 W2Constituent graphFileW2Constituent =
                                         graphFileW2Constituents.get(jc);

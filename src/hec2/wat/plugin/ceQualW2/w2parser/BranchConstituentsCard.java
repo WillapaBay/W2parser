@@ -3,15 +3,16 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.List;
 
 /**
- * Active Constituent Fluxes Card
+ * Branch Constituents Card
  *
  * This card contains the status of each constituent as active (ON) or inactive (OFF).
  * There is one line per constituent, with a value for each waterbody.
  */
-public class ActiveConstituentFluxesCard extends W2Card {
+public class BranchConstituentsCard extends W2Card {
 
-    public ActiveConstituentFluxesCard(W2ControlFile w2ControlFile, int numFluxes, int numWaterBodies) {
-        super(w2ControlFile,"CST FLUX", numFluxes, W2Globals.constants(numFluxes, numWaterBodies),
+    public BranchConstituentsCard(W2ControlFile w2ControlFile, int numConstituents, int numBranches) {
+        super(w2ControlFile,"CIN CON", numConstituents,
+                W2Globals.constants(numConstituents, numBranches),
                 8, false);
         parseTable();
     }
@@ -33,8 +34,8 @@ public class ActiveConstituentFluxesCard extends W2Card {
     }
 
     /**
-     * Return list of constituent fluxes states
-     * @return List of constituent fluxes states
+     * Return list of constituent states
+     * @return List of constituent states
      */
     public List<List<String>> getStates() {
         return this.recordValuesList;
@@ -51,8 +52,8 @@ public class ActiveConstituentFluxesCard extends W2Card {
     }
 
     /**
-     * Set constituent fluxes states
-     * @param states Constituent fluxes states
+     * Set constituent states
+     * @param states Constituent states
      */
     public void setStates(List<List<String>> states) {
         this.recordValuesList = states;
