@@ -18,7 +18,10 @@ public class GridCard extends W2Card_NEW {
         super(w2ControlFile, "GRID", 1, W2Globals.constants(1, 6),
                 8, false);
         parseTable();
+        init();
+    }
 
+    public void init() {
         List<String> values = recordValuesList.get(0);
         NWB    = Integer.valueOf(values.get(0));
         NBR    = Integer.valueOf(values.get(1));

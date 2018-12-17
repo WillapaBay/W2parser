@@ -1,11 +1,12 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Inflow/Outflow W2Card_OLD
+ * Inflow/Outflow Card
  */
-public class InOutflowCard extends W2Card_OLD {
+public class InflowOutflowCard extends W2Card_NEW {
     private int NTR; // Number of tributaries
     private int NST; // Number of structures
     private int NIW; // Number of internal weirs
@@ -15,9 +16,23 @@ public class InOutflowCard extends W2Card_OLD {
     private int NPI; // Number of pipes
     private int NPU; // Number of pumps
 
-    public InOutflowCard(W2ControlFile w2ControlFile) {
-        super(w2ControlFile, "IN/OUTFL", 1);
+    public InflowOutflowCard(W2ControlFile w2ControlFile) {
+        super(w2ControlFile, "IN/OUTFL", 1,
+                W2Globals.constants(1, 8), 8, false);
         parseTable();
+        init();
+    }
+
+    public void init() {
+        List<String> values = recordValuesList.get(0);
+        NTR    = Integer.valueOf(values.get(0));
+        NST    = Integer.valueOf(values.get(1));
+        NIW    = Integer.valueOf(values.get(2));
+        NWD    = Integer.valueOf(values.get(3));
+        NGT    = Integer.valueOf(values.get(4));
+        NSP    = Integer.valueOf(values.get(5));
+        NPI    = Integer.valueOf(values.get(6));
+        NPU    = Integer.valueOf(values.get(7));
     }
 
     public int getNumTributaries() {
@@ -26,7 +41,7 @@ public class InOutflowCard extends W2Card_OLD {
 
     public void setNumTributaries(int ntr) {
         this.NTR = ntr;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNumStructures() {
@@ -35,7 +50,7 @@ public class InOutflowCard extends W2Card_OLD {
 
     public void setNumStructures(int nst) {
         this.NST = nst;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNumInternalWeirs() {
@@ -44,7 +59,7 @@ public class InOutflowCard extends W2Card_OLD {
 
     public void setNumInternalWeirs(int niw) {
         this.NIW = niw;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNumWithdrawals() {
@@ -53,7 +68,7 @@ public class InOutflowCard extends W2Card_OLD {
 
     public void setNumWithdrawals(int nwd) {
         this.NWD = nwd;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNumGates() {
@@ -62,7 +77,7 @@ public class InOutflowCard extends W2Card_OLD {
 
     public void setNumGates(int ngt) {
         this.NGT = ngt;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNumSpillways() {
@@ -71,7 +86,7 @@ public class InOutflowCard extends W2Card_OLD {
 
     public void setNumSpillways(int nsp) {
         this.NSP = nsp;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNumPipes() {
@@ -80,7 +95,7 @@ public class InOutflowCard extends W2Card_OLD {
 
     public void setNumPipes(int npi) {
         this.NPI = npi;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNumPumps() {
@@ -89,27 +104,24 @@ public class InOutflowCard extends W2Card_OLD {
 
     public void setNumPumps(int npu) {
         this.NPU = npu;
-        updateText();
+        updateRecordValuesList();
     }
 
     @Override
-    public void parseTable() {
-//        String[] records = table.get(0).trim().split("\\s+");
-        List<String> Fields = parseLine(table.get(0), 8, 2, 10);
-        NTR = Integer.parseInt(Fields.get(0));
-        NST = Integer.parseInt(Fields.get(1));
-        NIW = Integer.parseInt(Fields.get(2));
-        NWD = Integer.parseInt(Fields.get(3));
-        NGT = Integer.parseInt(Fields.get(4));
-        NSP = Integer.parseInt(Fields.get(5));
-        NPI = Integer.parseInt(Fields.get(6));
-        NPU = Integer.parseInt(Fields.get(7));
-    }
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        List<String> values = new ArrayList<>();
+        values.add(String.valueOf(NTR));
+        values.add(String.valueOf(NST));
+        values.add(String.valueOf(NIW));
+        values.add(String.valueOf(NWD));
+        values.add(String.valueOf(NGT));
+        values.add(String.valueOf(NSP));
+        values.add(String.valueOf(NPI));
+        values.add(String.valueOf(NPU));
 
-    @Override
-    public void updateText() {
-        String str = String.format("%8s%8d%8d%8d%8d%8d%8d%8d%8d",
-                "", NTR, NST, NIW, NWD, NGT, NSP, NPI, NPU);
-        table.set(0, str);
+
+        recordValuesList.add(values);
+
     }
 }

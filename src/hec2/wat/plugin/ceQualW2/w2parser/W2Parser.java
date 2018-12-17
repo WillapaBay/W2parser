@@ -19,7 +19,7 @@ public class W2Parser {
     private TimeControlCard timeControlCard;
     private GridCard gridCard;
     private BranchGeometryCard branchGeometryCard;
-    private InOutflowCard inOutflowCard;
+    private InflowOutflowCard inOutflowCard;
     private W2GraphFile w2GraphFile;
     private TsrPlotCard tsrPlotCard;
     private RepeatingIntegerCard wdSegmentCard; // "WD SEG"
@@ -146,7 +146,7 @@ public class W2Parser {
         DS = branchGeometryCard.getDS();
 
         // Initialize Inflow/Outflow info
-        inOutflowCard = new InOutflowCard(w2con);
+        inOutflowCard = new InflowOutflowCard(w2con);
         NTR = inOutflowCard.getNumTributaries();
         NST = inOutflowCard.getNumStructures();
         NWD = inOutflowCard.getNumWithdrawals();
@@ -1313,7 +1313,7 @@ public class W2Parser {
 //     * uses the number of constituents in the graph.npt file.
 //     */
 //    private int computeNumberOfConstituents() {
-//        InOutflowCard inOutflowCard = new InOutflowCard(w2con);
+//        InflowOutflowCard inOutflowCard = new InflowOutflowCard(w2con);
 //        ConstituentDimensionsCard cdCard = new ConstituentDimensionsCard(w2con);
 //        int NSP = inOutflowCard.getNumSpillways();
 //        int NPI = inOutflowCard.getNumPipes();
