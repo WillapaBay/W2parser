@@ -18,7 +18,10 @@ public class DistributedTributariesCard extends W2Card_NEW {
         super(w2ControlFile, W2CardNames.DistributedTributaries, numBranches,
                 ones(numBranches), 8, false);
         parseTable();
+        init();
+    }
 
+    public void init() {
         states = new ArrayList<>();
         for (List<String> values : recordValuesList) {
             states.add(values.get(0));

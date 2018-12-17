@@ -15,7 +15,10 @@ public class ConstituentComputationsCard extends W2Card_NEW {
         super(w2ControlFile, W2CardNames.ConstituentComputations, 1,
                 W2Globals.constants(1, 3), 8, false);
         parseTable();
+        init();
+    }
 
+    private void init() {
         CCC = recordValuesList.get(0).get(0);
         LIMC = recordValuesList.get(0).get(1);
         CUF = Integer.valueOf(recordValuesList.get(0).get(2));

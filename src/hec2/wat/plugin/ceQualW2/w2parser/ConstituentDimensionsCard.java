@@ -20,7 +20,10 @@ public class ConstituentDimensionsCard extends W2Card_NEW {
                 W2Globals.constants(1, 7),
                 8, false);
         parseTable();
+        init();
+    }
 
+    public void init() {
         List<String> values = recordValuesList.get(0);
         NGC  = Integer.valueOf(values.get(0));
         NSS  = Integer.valueOf(values.get(1));

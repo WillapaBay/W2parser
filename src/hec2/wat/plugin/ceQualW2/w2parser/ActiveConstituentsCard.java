@@ -18,7 +18,10 @@ public class ActiveConstituentsCard extends W2Card_NEW {
         super(w2ControlFile, "CST ACTIVE", numConstituents, ones(numConstituents),
                8, false);
         parseTable();
+        init();
+    }
 
+    private void init() {
         states = new ArrayList<>();
         for (List<String> values : recordValuesList) {
             states.add(values.get(0));
