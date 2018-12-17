@@ -14,7 +14,6 @@ public class HeatExchangeCard extends W2Card_NEW {
     private List<Double> CFW;
     private List<Double> WINDH;
     private int numWaterBodies;
-
     private final String format = "%8.5f";
 
     public HeatExchangeCard(W2ControlFile w2ControlFile, int numWaterBodies) {
@@ -140,10 +139,6 @@ public class HeatExchangeCard extends W2Card_NEW {
 
     @Override
     public void updateRecordValuesList() {
-        /**
-         * TODO: This is wrong! Each record consists of one value for each variable. These need to be parsed
-         * one value at a time
-          */
         recordValuesList.clear();
         for (int i = 0; i < numWaterBodies; i++) {
             List<String> record = new ArrayList<>();
