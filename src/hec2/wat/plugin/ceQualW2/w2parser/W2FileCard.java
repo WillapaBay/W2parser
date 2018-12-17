@@ -28,6 +28,10 @@ class W2FileCard extends W2Card_NEW {
         return new ArrayList<Integer>();
     }
 
+    public void clearFileNames() {
+        this.fileNames = new ArrayList<>();
+    }
+
     public List<String> getBranches() {
         return branches;
     }
