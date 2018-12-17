@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Sediment W2Card_OLD
+ * Sediment Card
  *
  * This card has one line per water body
  */

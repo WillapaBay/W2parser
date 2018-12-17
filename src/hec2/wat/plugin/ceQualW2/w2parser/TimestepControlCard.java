@@ -17,7 +17,10 @@ public class TimestepControlCard extends W2Card_NEW {
                 W2Globals.constants(1, 3),
                 8, false);
         parseTable();
+        init();
+    }
 
+    public void init() {
         List<String> values = recordValuesList.get(0);
         NDT     = Integer.valueOf(values.get(0));
         DLTMIN  = Double.valueOf(values.get(1));
@@ -64,4 +67,3 @@ public class TimestepControlCard extends W2Card_NEW {
         recordValuesList.add(values);
     }
 }
-
