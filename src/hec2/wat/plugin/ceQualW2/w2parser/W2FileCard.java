@@ -9,8 +9,8 @@ class W2FileCard extends W2Card_NEW {
     private List<String> fileNames;
 
     public W2FileCard(W2ControlFile w2ControlFile, String cardName,
-                      int numRecords, List<Integer> numFieldsList) {
-        super(w2ControlFile, cardName, numRecords, numFieldsList,
+                      int numRecords) {
+        super(w2ControlFile, cardName, numRecords, W2Globals.ones(numRecords),
                 50, true);
         parseTable();
         branches = this.recordIdentifiers;

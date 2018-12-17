@@ -19,8 +19,7 @@ public class TestW2Card_NEW {
         for (int i = 0; i < numBranches; i++) {
             numFieldsList.add(1);
         }
-        W2FileCard qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames,
-                numBranches, numFieldsList);
+        W2FileCard qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames, numBranches);
         List<String> files = qinCard.getFileNames();
         List<String> branches = qinCard.getBranches();
         branches.add("BR 99");

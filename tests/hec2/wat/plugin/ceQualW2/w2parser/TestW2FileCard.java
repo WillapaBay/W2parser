@@ -12,14 +12,10 @@ public class TestW2FileCard {
         GridCard gridCard = new GridCard(w2con);
         int numBranches = gridCard.getNumBranches();
         int numWaterbodies = gridCard.getNumWaterBodies();
-        W2FileCard qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames,
-                numBranches, W2Globals.ones(numBranches));
-        W2FileCard tinCard = new W2FileCard(w2con, W2CardNames.BranchInflowTemperatureFilenames,
-                numBranches, W2Globals.ones(numBranches));
-        W2FileCard cinCard = new W2FileCard(w2con, W2CardNames.BranchInflowConcentrationFilenames,
-                numBranches, W2Globals.ones(numBranches));
-        W2FileCard bthCard = new W2FileCard(w2con, W2CardNames.BathymetryFilenames,
-                numWaterbodies, W2Globals.ones(numWaterbodies));
+        W2FileCard qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames, numBranches);
+        W2FileCard tinCard = new W2FileCard(w2con, W2CardNames.BranchInflowTemperatureFilenames, numBranches);
+        W2FileCard cinCard = new W2FileCard(w2con, W2CardNames.BranchInflowConcentrationFilenames, numBranches);
+        W2FileCard bthCard = new W2FileCard(w2con, W2CardNames.BathymetryFilenames, numWaterbodies);
         System.out.println(qinCard);
         System.out.println(tinCard);
         System.out.println(cinCard);
