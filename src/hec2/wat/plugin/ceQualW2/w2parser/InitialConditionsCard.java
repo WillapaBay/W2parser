@@ -4,22 +4,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Initial Conditions W2Card_OLD
+ * Initial Conditions Card
  *
  * This card has one line per water body
  */
-public class InitialConditionsCard extends W2Card_OLD {
-    private List<String> identifiers;
+public class InitialConditionsCard extends W2Card_NEW {
     private List<Double> T2I;
     private List<Double> ICEI;
     private List<String> WTYPEC;
     private List<String> GRIDC;
-    private int numWaterbodies;
+    private int numWaterBodies;
+    private final String format = "%8.5f";
 
-    public InitialConditionsCard(W2ControlFile w2ControlFile, int numWaterbodies) {
-        super(w2ControlFile, "INIT CND", numWaterbodies);
-        this.numWaterbodies = numWaterbodies;
+    public InitialConditionsCard(W2ControlFile w2ControlFile, int numWaterBodies) {
+        super(w2ControlFile, "INIT CND", numWaterBodies,
+                W2Globals.constants(numWaterBodies, 4),
+                8, false);
+        this.numWaterBodies = numWaterBodies;
         parseTable();
+        init();
+    }
+
+    public void init() {
+        T2I = new ArrayList<>();
+        ICEI = new ArrayList<>();
+        WTYPEC = new ArrayList<>();
+        GRIDC = new ArrayList<>();
+        for (int i = 0; i < numWaterBodies; i++) {
+            List<String> record = recordValuesList.get(i);
+            T2I.add(Double.valueOf(record.get(0)));
+            ICEI.add(Double.valueOf(record.get(1)));
+            WTYPEC.add(record.get(2));
+            if (record.size() > 3)
+                GRIDC.add(record.get(3));
+            else
+                GRIDC.add("RECT");
+        }
     }
 
     public List<Double> getT2I() {
@@ -28,7 +48,7 @@ public class InitialConditionsCard extends W2Card_OLD {
 
     public void setT2I(List<Double> t2I) {
         T2I = t2I;
-        updateText();
+        updateRecordValuesList();
     }
 
     public List<Double> getICEI() {
@@ -37,7 +57,7 @@ public class InitialConditionsCard extends W2Card_OLD {
 
     public void setICEI(List<Double> ICEI) {
         this.ICEI = ICEI;
-        updateText();
+        updateRecordValuesList();
     }
 
     public List<String> getWTYPEC() {
@@ -46,7 +66,7 @@ public class InitialConditionsCard extends W2Card_OLD {
 
     public void setWTYPEC(List<String> WTYPEC) {
         this.WTYPEC = WTYPEC;
-        updateText();
+        updateRecordValuesList();
     }
 
     public List<String> getGRIDC() {
@@ -55,49 +75,19 @@ public class InitialConditionsCard extends W2Card_OLD {
 
     public void setGRIDC(List<String> GRIDC) {
         this.GRIDC = GRIDC;
-        updateText();
-    }
-
-    public int getNumWaterbodies() {
-        return numWaterbodies;
-    }
-
-    public void setNumWaterbodies(int numWaterbodies) {
-        this.numWaterbodies = numWaterbodies;
-        updateText();
+        updateRecordValuesList();
     }
 
     @Override
-    public void parseTable() {
-        T2I = new ArrayList<>();
-        ICEI = new ArrayList<>();
-        WTYPEC = new ArrayList<>();
-        GRIDC = new ArrayList<>();
-        identifiers = new ArrayList<>();
-
-        for (int i = 0; i < numWaterbodies; i++) {
-            List<String> fields = parseLine(table.get(i), 8, 1, 10);
-            identifiers.add(fields.get(0));
-            T2I.add(Double.parseDouble(fields.get(1)));
-            ICEI.add(Double.parseDouble(fields.get(2)));
-            WTYPEC.add(fields.get(3));
-            // Legacy model control files do not have GRIDC specified
-            // Set this to the default: "RECT"
-            if (fields.size() > 4) {
-                GRIDC.add(fields.get(4));
-            } else {
-                GRIDC.add("RECT");
-            }
-        }
-    }
-
-    @Override
-    public void updateText() {
-        table.clear();
-        for (int i = 0; i < numWaterbodies; i++) {
-            String str = String.format("%-8s%8.5f%8.5f%8s%8s",
-                    identifiers.get(i), T2I.get(i), ICEI.get(i), WTYPEC.get(i), GRIDC.get(i));
-            table.add(str);
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        for (int i = 0; i < numWaterBodies; i++) {
+            List<String> record = new ArrayList<>();
+            record.add(String.format(format, T2I.get(i)));
+            record.add(String.format(format, ICEI.get(i)));
+            record.add(WTYPEC.get(i));
+            record.add(GRIDC.get(i));
+            recordValuesList.add(record);
         }
     }
 }
