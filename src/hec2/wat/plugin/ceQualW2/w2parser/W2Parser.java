@@ -1603,7 +1603,8 @@ public class W2Parser {
     public void setJdayMin(double jdayMin) {
         this.jdayMin = jdayMin;
         timeControlCard.setJdayMin(jdayMin);
-        timeControlCard.updateTable();
+        timeControlCard.updateDataTable();
+        timeControlCard.updateW2ControlFileList();
     }
 
     /**
@@ -1621,7 +1622,8 @@ public class W2Parser {
     public void setJdayMax(double jdayMax) {
         this.jdayMax = jdayMax;
         timeControlCard.setJdayMax(jdayMax);
-        timeControlCard.updateTable();
+        timeControlCard.updateDataTable();
+        timeControlCard.updateW2ControlFileList();
     }
 
     /**
@@ -1639,7 +1641,8 @@ public class W2Parser {
     public void setStartYear(int startYear) {
         this.startYear = startYear;
         timeControlCard.setStartYear(startYear);
-        timeControlCard.updateTable();
+        timeControlCard.updateDataTable();
+        timeControlCard.updateW2ControlFileList();
     }
 
     /**

@@ -1,18 +1,30 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Time Control W2Card_OLD
+ * Time Control Card
  */
-public class TimeControlCard extends W2Card_OLD {
+public class TimeControlCard extends W2Card_NEW {
     private double jdayMin;
     private double jdayMax;
     private int startYear;
+    private final String format = "%8.5f";
 
     public TimeControlCard(W2ControlFile w2ControlFile) {
-        super(w2ControlFile, "TIME CON", 1);
+        super(w2ControlFile, "TIME CON", 1,
+                W2Globals.constants(1, 3), 8,
+                false);
         parseTable();
+        init();
+    }
+
+    public void init() {
+        List<String> values = recordValuesList.get(0);
+        jdayMin = Double.valueOf(values.get(0));
+        jdayMax = Double.valueOf(values.get(1));
+        startYear = Integer.valueOf(values.get(2));
     }
 
     public double getJdayMin() {
@@ -21,7 +33,7 @@ public class TimeControlCard extends W2Card_OLD {
 
     public void setJdayMin(double jdayMin) {
         this.jdayMin = jdayMin;
-        updateText();
+        updateRecordValuesList();
     }
 
     public double getJdayMax() {
@@ -30,7 +42,7 @@ public class TimeControlCard extends W2Card_OLD {
 
     public void setJdayMax(double jdayMax) {
         this.jdayMax = jdayMax;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getStartYear() {
@@ -39,22 +51,17 @@ public class TimeControlCard extends W2Card_OLD {
 
     public void setStartYear(int startYear) {
         this.startYear = startYear;
-        updateText();
+        updateRecordValuesList();
     }
 
     @Override
-    public void parseTable() {
-        List<String> fields = parseLine(table.get(0), 8, 2, 10);
-        jdayMin = Double.parseDouble(fields.get(0));
-        jdayMax = Double.parseDouble(fields.get(1));
-        startYear = Integer.parseInt(fields.get(2));
-    }
-
-    @Override
-    public void updateText() {
-        String str = String.format("%8s%8.3f%8.3f%8d", "",
-                jdayMin, jdayMax, startYear);
-        table.set(0, str);
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        List<String> values = new ArrayList<>();
+        values.add(String.format(format, jdayMin));
+        values.add(String.format(format, jdayMax));
+        values.add(String.valueOf(startYear));
+        recordValuesList.add(values);
     }
 }
 
