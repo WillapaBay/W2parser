@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86ca3ba8-c345-4a52-b43d-1ddf44984b0b" name="Default" comment="Added ActiveConstitentFluxes">
-      <change afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchConstituentsCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/DistributedTributaryConstituentsCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/PrecipConstituentsCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TributaryConstituentsCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBranchConstituentsCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestDistributedTributaryConstituentsCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestPrecipConstituentsCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTributaryConstituentsCard.java" afterDir="false" />
+    <list default="true" id="86ca3ba8-c345-4a52-b43d-1ddf44984b0b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/GCL/w2_con.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" afterDir="false" />
@@ -83,8 +75,7 @@
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ActiveConstituentFluxesCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ActiveConstituentFluxesCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimestepControlCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimestepControlCard.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,8 +90,8 @@
       <file leaf-file-name="W2Parser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="1193" column="8" selection-start-line="1193" selection-start-column="8" selection-end-line="1193" selection-end-column="8" />
+            <state relative-caret-position="513">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,11 +99,47 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TestTimestepControlCard.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimestepControlCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="W2Card.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Card.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="195" selection-start-line="195" selection-end-line="195" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestTimeControlCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimeControlCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MultiRecordRepeatingDoubleCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiRecordRepeatingDoubleCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TributaryConstituentsCard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TributaryConstituentsCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="304">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
               <folding>
                 <element signature="e#816#817#0" expanded="true" />
                 <element signature="e#861#862#0" expanded="true" />
@@ -130,13 +157,13 @@
       <file leaf-file-name="TestTributaryConstituentsCard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTributaryConstituentsCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="209">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="w2_con.npt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="w2_con.npt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/JDA/w2_con.npt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="646">
@@ -216,7 +243,6 @@
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestRepeatingDoubleCard.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestRepeatingIntegerCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/WithdrawalOutputCard_NEW.java" />
-        <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimestepControlCard.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestWithdrawalOutputCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiRecordRepeatingStringCard_NEW.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ActiveConstituentFluxesCard.java" />
@@ -225,10 +251,11 @@
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestDistributedTributaryConstituentsCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/DistributedTributaryConstituentsCard.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestPrecipConstituentsCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/PrecipConstituentsCard.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTributaryConstituentsCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TributaryConstituentsCard.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" />
+        <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimestepControlCard.java" />
       </list>
     </option>
   </component>
@@ -258,18 +285,6 @@
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="JDA" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="Spokane" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -293,13 +308,6 @@
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="w2parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="w2parser" type="462c0819:PsiDirectoryNode" />
-              <item name="TestTributaryConstituentsCard" type="1a9f42e2:ClassTreeNode" />
             </path>
           </expand>
           <select />
@@ -350,11 +358,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestTributaryConstituentsCard">
+  <component name="RunManager" selected="JUnit.TestTimestepControlCard">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="TestPrecipConstituentsCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in W2Parser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="W2Parser" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestTimestepControlCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="W2Parser" />
       <extension name="coverage">
         <pattern>
@@ -365,7 +390,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
-      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestPrecipConstituentsCard" />
+      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestTimestepControlCard" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -391,29 +416,6 @@
       <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestTributaryConstituentsCard" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TestTributaryConstituentsCard.testParserGrandCoulee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="W2Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
-      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestTributaryConstituentsCard" />
-      <option name="METHOD_NAME" value="testParserGrandCoulee" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -509,18 +511,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.TestW2Parser" />
-      <item itemvalue="JUnit.TestPrecipConstituentsCard" />
       <item itemvalue="JUnit.TestTributaryConstituentsCard" />
-      <item itemvalue="JUnit.TestTributaryConstituentsCard.testParserGrandCoulee" />
       <item itemvalue="JUnit.TestTributaryConstituentsCard.testParserJohnDay" />
+      <item itemvalue="JUnit.All in W2Parser" />
+      <item itemvalue="JUnit.TestTimestepControlCard" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestTimestepControlCard" />
+        <item itemvalue="JUnit.All in W2Parser" />
         <item itemvalue="JUnit.TestTributaryConstituentsCard" />
         <item itemvalue="JUnit.TestW2Parser" />
         <item itemvalue="JUnit.TestTributaryConstituentsCard.testParserJohnDay" />
-        <item itemvalue="JUnit.TestTributaryConstituentsCard.testParserGrandCoulee" />
-        <item itemvalue="JUnit.TestPrecipConstituentsCard" />
       </list>
     </recent_temporary>
   </component>
@@ -724,44 +726,50 @@
       <option name="project" value="LOCAL" />
       <updated>1545085346979</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Replaced MultiRecordRepeatingStringCard with separate cards, added tests, and implemented in W2Parser.">
+      <created>1545089984140</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1545089984140</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestW2Parser - 2018.12.17 at 15h 16m 40s.xml">
+    <history-entry file="TestTributaryConstituentsCard_testParserJohnDay - 2018.12.17 at 15h 37m 45s.xml">
+      <configuration name="TestTributaryConstituentsCard.testParserJohnDay" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestW2Parser - 2018.12.17 at 15h 37m 59s.xml">
       <configuration name="TestW2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTributaryConstituentsCard - 2018.12.17 at 15h 17m 11s.xml">
+    <history-entry file="TestTributaryConstituentsCard - 2018.12.17 at 15h 38m 08s.xml">
       <configuration name="TestTributaryConstituentsCard" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTributaryConstituentsCard_testParserGrandCoulee - 2018.12.17 at 15h 19m 52s.xml">
-      <configuration name="TestTributaryConstituentsCard.testParserGrandCoulee" configurationId="JUnit" />
+    <history-entry file="All_in_W2Parser - 2018.12.17 at 15h 40m 46s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTributaryConstituentsCard_testParserGrandCoulee - 2018.12.17 at 15h 22m 59s.xml">
-      <configuration name="TestTributaryConstituentsCard.testParserGrandCoulee" configurationId="JUnit" />
+    <history-entry file="All_in_W2Parser - 2018.12.17 at 15h 41m 28s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTributaryConstituentsCard_testParserGrandCoulee - 2018.12.17 at 15h 24m 11s.xml">
-      <configuration name="TestTributaryConstituentsCard.testParserGrandCoulee" configurationId="JUnit" />
+    <history-entry file="All_in_W2Parser - 2018.12.17 at 15h 42m 48s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTributaryConstituentsCard_testParserGrandCoulee - 2018.12.17 at 15h 24m 16s.xml">
-      <configuration name="TestTributaryConstituentsCard.testParserGrandCoulee" configurationId="JUnit" />
+    <history-entry file="TestTimestepControlCard - 2018.12.17 at 15h 43m 18s.xml">
+      <configuration name="TestTimestepControlCard" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTributaryConstituentsCard_testParserGrandCoulee - 2018.12.17 at 15h 25m 16s.xml">
-      <configuration name="TestTributaryConstituentsCard.testParserGrandCoulee" configurationId="JUnit" />
+    <history-entry file="TestTimestepControlCard - 2018.12.17 at 15h 44m 29s.xml">
+      <configuration name="TestTimestepControlCard" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTributaryConstituentsCard - 2018.12.17 at 15h 27m 23s.xml">
-      <configuration name="TestTributaryConstituentsCard" configurationId="JUnit" />
+    <history-entry file="TestTimestepControlCard - 2018.12.17 at 15h 45m 16s.xml">
+      <configuration name="TestTimestepControlCard" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTributaryConstituentsCard_testParserJohnDay - 2018.12.17 at 15h 30m 36s.xml">
-      <configuration name="TestTributaryConstituentsCard.testParserJohnDay" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestTributaryConstituentsCard_testParserJohnDay - 2018.12.17 at 15h 30m 52s.xml">
-      <configuration name="TestTributaryConstituentsCard.testParserJohnDay" configurationId="JUnit" />
+    <history-entry file="TestTimestepControlCard - 2018.12.17 at 15h 46m 12s.xml">
+      <configuration name="TestTimestepControlCard" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" weight="0.32884097" />
@@ -780,12 +788,12 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.32815534" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32815534" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32815534" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Run with VisualVM" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26523477" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32815534" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26523477" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32815534" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="7" />
@@ -802,7 +810,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added support for expanding and shrinking the cards in W2ControlList to accommodate changes in the sizes of Cards. The updateTable method in all cards with more than one data line have been updated to first clear the table (data lines) and then add rather than set each line of data to the table." />
     <MESSAGE value="Added test for expanding and shrinking cards." />
     <MESSAGE value="Added constructor to Parser that creates the W2 control file object. Renamed all of the non-Card classes to W2____.java" />
     <MESSAGE value="Bug fixes, new Bonneville 5 yr transition model, new folders." />
@@ -827,7 +834,8 @@
     <MESSAGE value="Updated TimeControlCard and tests." />
     <MESSAGE value="Updated TsrPlotCard, tests, and W2Parser" />
     <MESSAGE value="Upudated WithdrawalOutputCard, tests, and W2Parser. Renamed W2Card_NEW to W2Card. Note: still need to update the multi-record and mult-line cards to use the new W2Card class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Upudated WithdrawalOutputCard, tests, and W2Parser. Renamed W2Card_NEW to W2Card. Note: still need to update the multi-record and mult-line cards to use the new W2Card class." />
+    <MESSAGE value="Replaced MultiRecordRepeatingStringCard with separate cards, added tests, and implemented in W2Parser." />
+    <option name="LAST_COMMIT_MESSAGE" value="Replaced MultiRecordRepeatingStringCard with separate cards, added tests, and implemented in W2Parser." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -887,16 +895,16 @@
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Card.java</url>
-          <line>195</line>
+          <url>file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimestepControlCard.java</url>
+          <line>19</line>
           <properties />
-          <option name="timeStamp" value="83" />
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="86" />
+      <option name="time" value="88" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1114,13 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimestepControlCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -1131,13 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimeControlCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestWithdrawalOutputCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -1145,13 +1139,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiRecordRepeatingDoubleCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1241,34 +1228,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Card.java">
+    <entry file="file://$PROJECT_DIR$/data/JDA/w2_con.npt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="195" selection-start-line="195" selection-end-line="195" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTributaryConstituentsCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="1193" column="8" selection-start-line="1193" selection-start-column="8" selection-end-line="1193" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="646">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TributaryConstituentsCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="304">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           <folding>
             <element signature="e#816#817#0" expanded="true" />
             <element signature="e#861#862#0" expanded="true" />
@@ -1282,10 +1252,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/JDA/w2_con.npt">
+    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTributaryConstituentsCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="209">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiRecordRepeatingDoubleCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimeControlCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimestepControlCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>

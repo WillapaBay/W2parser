@@ -17,8 +17,7 @@ public class TestTimestepControlCard {
         card.updateRecordValuesList();
 
         // Write updated W2 control file
-        String outfile = String.format("TestTimestepControlCard_w2_con.npt", folder);
-        w2con.save(outfile);
+        w2con.save(String.format("results/%s/TestTimestepControlCard_w2_con.npt", folder));
     }
 
     @Test
