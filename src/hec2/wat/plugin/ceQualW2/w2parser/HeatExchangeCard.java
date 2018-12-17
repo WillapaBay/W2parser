@@ -3,8 +3,7 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HeatExchangeCard extends W2Card_OLD {
-    private int numWaterbodies;
+public class HeatExchangeCard extends W2Card_NEW {
     private List<String> SLHTC;
     private List<String> SROC;
     private List<String> RHEVAP;
@@ -14,105 +13,19 @@ public class HeatExchangeCard extends W2Card_OLD {
     private List<Double> BFW;
     private List<Double> CFW;
     private List<Double> WINDH;
-    private List<String> identifiers;
+    private int numWaterBodies;
 
-    public HeatExchangeCard(W2ControlFile w2ControlFile, int numWaterbodies) {
-        super(w2ControlFile, "HEAT EXCH", numWaterbodies);
-        this.numWaterbodies = numWaterbodies;
+    private final String format = "%8.5f";
+
+    public HeatExchangeCard(W2ControlFile w2ControlFile, int numWaterBodies) {
+        super(w2ControlFile, "HEAT EXCH", numWaterBodies,
+                W2Globals.constants(numWaterBodies, 9), 8, false);
+        this.numWaterBodies = numWaterBodies;
         parseTable();
+        init();
     }
 
-    public List<String> getIdentifiers() {
-        return identifiers;
-    }
-
-    public void setIdentifiers(List<String> identifiers) {
-        this.identifiers = identifiers;
-    }
-
-    public List<String> getSLHTC() {
-        return SLHTC;
-    }
-
-    public void setSLHTC(List<String> SLHTC) {
-        this.SLHTC = SLHTC;
-        updateText();
-    }
-
-    public List<String> getSROC() {
-        return SROC;
-    }
-
-    public void setSROC(List<String> SROC) {
-        this.SROC = SROC;
-        updateText();
-    }
-
-    public List<String> getRHEVAP() {
-        return RHEVAP;
-    }
-
-    public void setRHEVAP(List<String> RHEVAP) {
-        this.RHEVAP = RHEVAP;
-        updateText();
-    }
-
-    public List<String> getMETIC() {
-        return METIC;
-    }
-
-    public void setMETIC(List<String> METIC) {
-        this.METIC = METIC;
-        updateText();
-    }
-
-    public List<String> getFETCHC() {
-        return FETCHC;
-    }
-
-    public void setFETCHC(List<String> FETCHC) {
-        this.FETCHC = FETCHC;
-        updateText();
-    }
-
-    public List<Double> getAFW() {
-        return AFW;
-    }
-
-    public void setAFW(List<Double> AFW) {
-        this.AFW = AFW;
-        updateText();
-    }
-
-    public List<Double> getBFW() {
-        return BFW;
-    }
-
-    public void setBFW(List<Double> BFW) {
-        this.BFW = BFW;
-        updateText();
-    }
-
-    public List<Double> getCFW() {
-        return CFW;
-    }
-
-    public void setCFW(List<Double> CFW) {
-        this.CFW = CFW;
-        updateText();
-    }
-
-    public List<Double> getWINDH() {
-        return WINDH;
-    }
-
-    public void setWINDH(List<Double> WINDH) {
-        this.WINDH = WINDH;
-        updateText();
-    }
-
-    @Override
-    public void parseTable() {
+    public void init() {
         SLHTC = new ArrayList<>();
         SROC = new ArrayList<>();
         RHEVAP = new ArrayList<>();
@@ -122,31 +35,128 @@ public class HeatExchangeCard extends W2Card_OLD {
         BFW = new ArrayList<>();
         CFW = new ArrayList<>();
         WINDH = new ArrayList<>();
-        identifiers = new ArrayList<>();
-
-        for (int i = 0; i < numCardDataLines; i++) {
-            List<String> Fields = parseLine(table.get(i), 8, 1, 10);
-            identifiers.add(Fields.get(0));
-            SLHTC.add(Fields.get(1));
-            SROC.add(Fields.get(2));
-            RHEVAP.add(Fields.get(3));
-            METIC.add(Fields.get(4));
-            FETCHC.add(Fields.get(5));
-            AFW.add(Double.parseDouble(Fields.get(6)));
-            BFW.add(Double.parseDouble(Fields.get(7)));
-            CFW.add(Double.parseDouble(Fields.get(8)));
-            WINDH.add(Double.parseDouble(Fields.get(9)));
+        for (int i = 0; i < numWaterBodies; i++) {
+            List<String> record = recordValuesList.get(i);
+            SLHTC.add(record.get(0));
+            SROC.add(record.get(1));
+            RHEVAP.add(record.get(2));
+            METIC.add(record.get(3));
+            FETCHC.add(record.get(4));
+            AFW.add(Double.valueOf(record.get(5)));
+            BFW.add(Double.valueOf(record.get(6)));
+            CFW.add(Double.valueOf(record.get(7)));
+            WINDH.add(Double.valueOf(record.get(8)));
         }
     }
 
+    public List<String> getIdentifiers() {
+        return recordIdentifiers;
+    }
+
+    public void setIdentifiers(List<String> identifiers) {
+        this.recordIdentifiers = identifiers;
+    }
+
+    public List<String> getSLHTC() {
+        return SLHTC;
+    }
+
+    public void setSLHTC(List<String> SLHTC) {
+        this.SLHTC = SLHTC;
+        updateRecordValuesList();
+    }
+
+    public List<String> getSROC() {
+        return SROC;
+    }
+
+    public void setSROC(List<String> SROC) {
+        this.SROC = SROC;
+        updateRecordValuesList();
+    }
+
+    public List<String> getRHEVAP() {
+        return RHEVAP;
+    }
+
+    public void setRHEVAP(List<String> RHEVAP) {
+        this.RHEVAP = RHEVAP;
+        updateRecordValuesList();
+    }
+
+    public List<String> getMETIC() {
+        return METIC;
+    }
+
+    public void setMETIC(List<String> METIC) {
+        this.METIC = METIC;
+        updateRecordValuesList();
+    }
+
+    public List<String> getFETCHC() {
+        return FETCHC;
+    }
+
+    public void setFETCHC(List<String> FETCHC) {
+        this.FETCHC = FETCHC;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getAFW() {
+        return AFW;
+    }
+
+    public void setAFW(List<Double> AFW) {
+        this.AFW = AFW;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getBFW() {
+        return BFW;
+    }
+
+    public void setBFW(List<Double> BFW) {
+        this.BFW = BFW;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getCFW() {
+        return CFW;
+    }
+
+    public void setCFW(List<Double> CFW) {
+        this.CFW = CFW;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getWINDH() {
+        return WINDH;
+    }
+
+    public void setWINDH(List<Double> WINDH) {
+        this.WINDH = WINDH;
+        updateRecordValuesList();
+    }
+
     @Override
-    public void updateText() {
-        table.clear();
-        for (int i = 0; i < numCardDataLines; i++) {
-            String str = String.format("%-8s%8s%8s%8s%8s%8s%8.5f%8.5f%8.5f%8.5f",
-                    identifiers.get(i), SLHTC.get(i), SROC.get(i), RHEVAP.get(i), METIC.get(i),
-                    FETCHC.get(i), AFW.get(i), BFW.get(i), CFW.get(i), WINDH.get(i));
-            table.add(str);
+    public void updateRecordValuesList() {
+        /**
+         * TODO: This is wrong! Each record consists of one value for each variable. These need to be parsed
+         * one value at a time
+          */
+        recordValuesList.clear();
+        for (int i = 0; i < numWaterBodies; i++) {
+            List<String> record = new ArrayList<>();
+            record.add(SLHTC.get(i));
+            record.add(SROC.get(i));
+            record.add(RHEVAP.get(i));
+            record.add(METIC.get(i));
+            record.add(FETCHC.get(i));
+            record.add(String.format(format, AFW.get(i)));
+            record.add(String.format(format, BFW.get(i)));
+            record.add(String.format(format, CFW.get(i)));
+            record.add(String.format(format, WINDH.get(i)));
+            recordValuesList.add(record);
         }
     }
 }

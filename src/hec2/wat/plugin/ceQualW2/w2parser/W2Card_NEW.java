@@ -403,4 +403,56 @@ public abstract class W2Card_NEW {
      */
     public abstract void updateRecordValuesList();
 
+    /**
+     * Convert a list of strings to a list of integers
+     * @param stringValues List of strings
+     * @return List of integers
+     */
+    public List<Double> stringListToDoubleList(List<String> stringValues) {
+        List<Double> doubleValues = new ArrayList<>();
+        for (String value : stringValues) {
+            doubleValues.add(Double.valueOf(value));
+        }
+        return doubleValues;
+    }
+
+    /**
+     * Convert a list of strings to a list of integers
+     * @param stringValues List of strings
+     * @return List of integers
+     */
+    public List<Integer> stringListToIntegerList(List<String> stringValues) {
+        List<Integer> integerValues = new ArrayList<>();
+        for (String value : stringValues) {
+            integerValues.add(Integer.valueOf(value));
+        }
+        return integerValues;
+    }
+
+    /**
+     * Convert a list of integers to a list of strings
+     * @param integerValues List of integers
+     * @return List of strings
+     */
+    public List<String> integerListToStringList(List<Integer> integerValues) {
+        List<String> stringValues = new ArrayList<>();
+        for (Integer value : integerValues) {
+            stringValues.add(String.valueOf(value));
+        }
+        return stringValues;
+    }
+
+    /**
+     * Convert a list of doubles to a list of strings
+     * @param doubleValues List of doubles
+     * @return List of strings
+     */
+    public List<String> doubleListToStringList(List<Double> doubleValues, String format) {
+        List<String> stringValues = new ArrayList<>();
+        for (Double value : doubleValues) {
+            stringValues.add(String.format(format, value));
+        }
+        return stringValues;
+    }
+
 }

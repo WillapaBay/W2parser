@@ -44,6 +44,7 @@ public class W2Parser {
     private MultiRecordRepeatingStringCard distributedTributaryConstituentsCard;
     private MultiRecordRepeatingStringCard precipConstituentsCard;
     private SedimentCard sedimentCard;
+    private HeatExchangeCard heatExchangeCard;
 
     private W2FileCard tsrFilenameCard;
     private W2FileCard qinCard;
@@ -1255,7 +1256,7 @@ public class W2Parser {
      */
     private List<W2Parameter> fetchMeteorologyInputs() {
         List<W2Parameter> w2Parameters = new ArrayList<>();
-        HeatExchangeCard heatExchangeCard = new HeatExchangeCard(w2con, NWB);
+        heatExchangeCard = new HeatExchangeCard(w2con, NWB);
         List<String> SROC = heatExchangeCard.getSROC();
 
         metCard = new W2FileCard(w2con, "MET FILE", NWB);
