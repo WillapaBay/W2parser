@@ -12,7 +12,7 @@ public class TestResizingCards {
         W2ControlFile w2con = new W2ControlFile(infile);
         GridCard gridCard = new GridCard(w2con);
         int numBranches = gridCard.getNumBranches();
-        W2FileCard_OLD qinCard = new W2FileCard_OLD(w2con, W2CardNames.BranchInflowFilenames, numBranches);
+        W2FileCard qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames, numBranches);
         w2con.expandCard(972, 6, 3);
     }
 
@@ -22,7 +22,7 @@ public class TestResizingCards {
         W2ControlFile w2con = new W2ControlFile(infile);
         GridCard gridCard = new GridCard(w2con);
         int numBranches = gridCard.getNumBranches();
-        W2FileCard_OLD qinCard = new W2FileCard_OLD(w2con, W2CardNames.BranchInflowFilenames, numBranches);
+        W2FileCard qinCard = new W2FileCard(w2con, W2CardNames.BranchInflowFilenames, numBranches);
         w2con.shrinkCard(972, 6, 4);
     }
 }

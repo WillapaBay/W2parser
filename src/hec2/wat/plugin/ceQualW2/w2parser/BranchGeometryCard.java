@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Branch Geometry W2Card_OLD
+ * Branch Geometry Card
  */
-public class BranchGeometryCard extends W2Card_OLD {
+public class BranchGeometryCard extends W2Card_NEW {
     private List<Integer> US;         // Branch upstream segment
     private List<Integer> DS;         // Branch downstream segment
     private List<Integer> UHS;        // Upstream boundary condition
@@ -14,99 +14,20 @@ public class BranchGeometryCard extends W2Card_OLD {
     private List<Integer> UQB;        // Upstream internal flow boundary condition - IGNORE
     private List<Integer> DQB;        // Downstream internal flow boundary condition - IGNORE
     private List<Integer> NLMIN;      // Minimum number of layers for a segment to be active
-    private List<Double> slopeList;       // Branch bottom slope (actual)
-    private List<Double> slopeClist;      // Hydraulic equivalent branch slope
-    private List<String> identifiers; // identifiers
+    private List<Double> slopeList;   // Branch bottom slope (actual)
+    private List<Double> slopeClist;  // Hydraulic equivalent branch slope
+    private int numBranches;
 
     public BranchGeometryCard(W2ControlFile w2ControlFile, int numBranches) {
-        super(w2ControlFile, "BRANCH G", numBranches);
+        super(w2ControlFile, "BRANCH G", numBranches,
+                W2Globals.constants(numBranches, 9),
+                8, false);
+        this.numBranches = numBranches;
         parseTable();
+        init();
     }
 
-    public List<Integer> getUS() {
-        return US;
-    }
-
-    public void setUS(List<Integer> US) {
-        this.US = US;
-        updateText();
-    }
-
-    public List<Integer> getDS() {
-        return DS;
-    }
-
-    public void setDS(List<Integer> DS) {
-        this.DS = DS;
-        updateText();
-    }
-
-    public List<Integer> getUHS() {
-        return UHS;
-    }
-
-    public void setUHS(List<Integer> UHS) {
-        this.UHS = UHS;
-        updateText();
-    }
-
-    public List<Integer> getDHS() {
-        return DHS;
-    }
-
-    public void setDHS(List<Integer> DHS) {
-        this.DHS = DHS;
-        updateText();
-    }
-
-    public List<Integer> getUQB() {
-        return UQB;
-    }
-
-    public void setUQB(List<Integer> UQB) {
-        this.UQB = UQB;
-        updateText();
-    }
-
-    public List<Integer> getDQB() {
-        return DQB;
-    }
-
-    public void setDQB(List<Integer> DQB) {
-        this.DQB = DQB;
-        updateText();
-    }
-
-    public List<Integer> getNLMIN() {
-        return NLMIN;
-    }
-
-    public void setNLMIN(List<Integer> NLMIN) {
-        this.NLMIN = NLMIN;
-        updateText();
-    }
-
-    public List<Double> getSlopeList() {
-        return slopeList;
-    }
-
-    public void setSlopeList(List<Double> slopeList) {
-        this.slopeList = slopeList;
-        updateText();
-    }
-
-    public List<Double> getSlopeClist() {
-        return slopeClist;
-    }
-
-    public void setSlopeClist(List<Double> slopeClist) {
-        this.slopeClist = slopeClist;
-        updateText();
-    }
-
-    @Override
-    public void parseTable() {
-        identifiers = new ArrayList<>();
+    public void init() {
         US = new ArrayList<>();
         DS = new ArrayList<>();
         UHS = new ArrayList<>();
@@ -117,41 +38,121 @@ public class BranchGeometryCard extends W2Card_OLD {
         slopeList = new ArrayList<>();
         slopeClist = new ArrayList<>();
 
-        for (int i = 0; i < numCardDataLines; i++) {
-            List<String> records = parseLine(table.get(i), 8, 1, 10);
-            identifiers.add(records.get(0));
-            US.add(Integer.parseInt(records.get(1)));
-            DS.add(Integer.parseInt(records.get(2)));
-            UHS.add(Integer.parseInt(records.get(3)));
-            DHS.add(Integer.parseInt(records.get(4)));
-            UQB.add(Integer.parseInt(records.get(5)));
-            DQB.add(Integer.parseInt(records.get(6)));
-            NLMIN.add(Integer.parseInt(records.get(7)));
-            slopeList.add(Double.parseDouble(records.get(8)));
-            if (records.size() > 9) {
-                if (!records.get(9).trim().equals(""))
-                slopeClist.add(Double.parseDouble(records.get(9)));
+        for (List<String> values : recordValuesList) {
+            US.add(Integer.valueOf(values.get(0)));
+            DS.add(Integer.valueOf(values.get(1)));
+            UHS.add(Integer.valueOf(values.get(2)));
+            DHS.add(Integer.valueOf(values.get(3)));
+            UQB.add(Integer.valueOf(values.get(4)));
+            DQB.add(Integer.valueOf(values.get(5)));
+            NLMIN.add(Integer.valueOf(values.get(6)));
+            slopeList.add(Double.valueOf(values.get(7)));
+            if (values.size() > 8) {
+                slopeClist.add(Double.valueOf(values.get(8)));
+            } else {
+                // TODO: test that this is valid
+                slopeClist.add(Double.valueOf(values.get(7)));
             }
+
         }
+    }
+
+    public List<Integer> getUS() {
+        return US;
+    }
+
+    public void setUS(List<Integer> US) {
+        this.US = US;
+        updateRecordValuesList();
+    }
+
+    public List<Integer> getDS() {
+        return DS;
+    }
+
+    public void setDS(List<Integer> DS) {
+        this.DS = DS;
+        updateRecordValuesList();
+    }
+
+    public List<Integer> getUHS() {
+        return UHS;
+    }
+
+    public void setUHS(List<Integer> UHS) {
+        this.UHS = UHS;
+        updateRecordValuesList();
+    }
+
+    public List<Integer> getDHS() {
+        return DHS;
+    }
+
+    public void setDHS(List<Integer> DHS) {
+        this.DHS = DHS;
+        updateRecordValuesList();
+    }
+
+    public List<Integer> getUQB() {
+        return UQB;
+    }
+
+    public void setUQB(List<Integer> UQB) {
+        this.UQB = UQB;
+        updateRecordValuesList();
+    }
+
+    public List<Integer> getDQB() {
+        return DQB;
+    }
+
+    public void setDQB(List<Integer> DQB) {
+        this.DQB = DQB;
+        updateRecordValuesList();
+    }
+
+    public List<Integer> getNLMIN() {
+        return NLMIN;
+    }
+
+    public void setNLMIN(List<Integer> NLMIN) {
+        this.NLMIN = NLMIN;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getSlopeList() {
+        return slopeList;
+    }
+
+    public void setSlopeList(List<Double> slopeList) {
+        this.slopeList = slopeList;
+        updateRecordValuesList();
+    }
+
+    public List<Double> getSlopeClist() {
+        return slopeClist;
+    }
+
+    public void setSlopeClist(List<Double> slopeClist) {
+        this.slopeClist = slopeClist;
+        updateRecordValuesList();
     }
 
     @Override
-    public void updateText() {
-        table.clear();
-        String str;
-        for (int i = 0; i < numCardDataLines; i++) {
-            if (slopeClist.size() > 0) {
-                str = String.format("%-8s%8d%8d%8d%8d%8d%8d%8d%8.5f%8.5f",
-                        identifiers.get(i), US.get(i), DS.get(i), UHS.get(i), DHS.get(i), UQB.get(i),
-                        DQB.get(i), NLMIN.get(i), slopeList.get(i), slopeClist.get(i));
-            } else {
-                str = String.format("%-8s%8d%8d%8d%8d%8d%8d%8d%8.5f%8.5f",
-                        identifiers.get(i), US.get(i), DS.get(i), UHS.get(i), DHS.get(i), UQB.get(i),
-                        DQB.get(i), NLMIN.get(i), slopeList.get(i));
-
-            }
-            table.add(str);
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        for (int i = 0; i < numBranches; i++) {
+            List<String> values = new ArrayList<>();
+            values.add(String.valueOf(US));
+            values.add(String.valueOf(DS));
+            values.add(String.valueOf(UHS));
+            values.add(String.valueOf(DHS));
+            values.add(String.valueOf(UQB));
+            values.add(String.valueOf(DQB));
+            values.add(String.valueOf(NLMIN));
+            values.add(String.valueOf(slopeList));
+            values.add(String.valueOf(slopeClist));
+            recordValuesList.add(values);
         }
     }
 }
-

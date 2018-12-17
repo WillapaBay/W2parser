@@ -64,7 +64,6 @@ public abstract class W2Card_NEW {
 
         fetchTable();
         this.numCardDataLinesInFile = dataTable.size();
-
     }
 
     public void setTitleLine(String titleLine) {
@@ -74,6 +73,7 @@ public abstract class W2Card_NEW {
     public String getTitleLine() {
         return this.titleLine;
     }
+
 
     /**
      * Retrieve card text from the W2ControlFile list
@@ -158,6 +158,18 @@ public abstract class W2Card_NEW {
     }
 
     /**
+     * Trim white space off the right end of a string
+     * @param str String
+     * @return Trimmed string
+     */
+    private String trimEnd(String str) {
+        while (str.endsWith(" ")) {
+            str = str.substring(0, str.length() - 1);
+        }
+        return str;
+    }
+
+    /**
      * Parse a line containing fields in fixed-width format
      * As of CE-QUAL-W2 version 4.1, the field width has always been eight characters
      * and each line contains 10 fields. Most cards leave the first field blank.
@@ -168,6 +180,7 @@ public abstract class W2Card_NEW {
      * @return List of fields
      */
     public List<String> parseLine(String line, int startField, int endField) {
+        line = trimEnd(line);
         List<String> fields = new ArrayList<>();
         int start = 0;
         int end;
