@@ -53,7 +53,6 @@ public class BranchGeometryCard extends W2Card_NEW {
                 // TODO: test that this is valid
                 slopeClist.add(Double.valueOf(values.get(7)));
             }
-
         }
     }
 
