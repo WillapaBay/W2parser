@@ -1,7 +1,7 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
-import java.io.File;
+
 import java.io.IOException;
 
 public class TestTimestepControlCard {
@@ -10,15 +10,15 @@ public class TestTimestepControlCard {
         String infile = String.format("data/%s/w2_con.npt", folder);
         W2ControlFile w2con = new W2ControlFile(infile);
         TimestepControlCard card = new TimestepControlCard(w2con);
-        card.setNdt(1);
-        card.setDltMin(0.0001);
-        card.setDltIntr(W2Globals.ON);
-        card.updateTable();
+        card.setNDT(1);
+        card.setDLTMIN(0.0001);
+        card.setDLTINTR(W2Globals.ON);
+        card.updateDataTable();
+        card.updateRecordValuesList();
 
         // Write updated W2 control file
         String outpath = String.format("results/%s", folder);
-        String outfile = new File(outpath,
-                "w2_con.npt.testDltControlCard").toString();
+        String outfile = String.format("TestTimestepControlCard_w2_con.npt", folder);
         w2con.save(outfile);
     }
 

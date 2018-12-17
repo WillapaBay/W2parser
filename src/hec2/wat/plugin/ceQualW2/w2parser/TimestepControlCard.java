@@ -1,61 +1,67 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Timestep Control W2Card_OLD
+ * Timestep Control Card
  */
-public class TimestepControlCard extends W2Card_OLD {
-    private int ndt;
-    private double dltMin;
-    private String dltIntr;
+public class TimestepControlCard extends W2Card_NEW {
+    private int NDT;
+    private double DLTMIN;
+    private String DLTINTR;
+    private final String format = "%8.5f";
 
     public TimestepControlCard(W2ControlFile w2ControlFile) {
-        super(w2ControlFile, W2CardNames.TimestepControl, 1);
+        super(w2ControlFile, W2CardNames.TimestepControl, 1,
+                W2Globals.constants(1, 3),
+                8, false);
         parseTable();
+
+        List<String> values = recordValuesList.get(0);
+        NDT     = Integer.valueOf(values.get(0));
+        DLTMIN  = Double.valueOf(values.get(1));
+        if (values.size() > 2)
+            DLTINTR = values.get(2);
+        else
+            DLTINTR = "OFF";
     }
 
-    public int getNdt() {
-        return ndt;
+    public int getNDT() {
+        return NDT;
     }
 
-    public void setNdt(int ndt) {
-        this.ndt = ndt;
-        updateText();
+    public void setNDT(int NDT) {
+        this.NDT = NDT;
+        updateRecordValuesList();
     }
 
-    public double getDltMin() {
-        return dltMin;
+    public double getDLTMIN() {
+        return DLTMIN;
     }
 
-    public void setDltMin(double dltMin) {
-        this.dltMin = dltMin;
-        updateText();
+    public void setDLTMIN(double DLTMIN) {
+        this.DLTMIN = DLTMIN;
+        updateRecordValuesList();
     }
 
-    public String getDltIntr() {
-        return dltIntr;
+    public String getDLTINTR() {
+        return DLTINTR;
     }
 
-    public void setDltIntr(String dltIntr) {
-        this.dltIntr = dltIntr.toUpperCase();
-        updateText();
+    public void setDLTINTR(String DLTINTR) {
+        this.DLTINTR = DLTINTR.toUpperCase();
+        updateRecordValuesList();
     }
 
     @Override
-    public void parseTable() {
-//        String[] records = table.get(0).trim().split("\\s+");
-        List<String> fields = parseLine(table.get(0), 8, 2, 10);
-        ndt = Integer.parseInt(fields.get(0));
-        dltMin = Double.parseDouble(fields.get(1));
-        dltIntr = fields.get(2);
-    }
-
-    @Override
-    public void updateText() {
-        String str = String.format("%8s%8d%8.5f%8s", "",
-                ndt, dltMin, dltIntr);
-        table.set(0, str);
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        List<String> values = new ArrayList<>();
+        values.add(String.valueOf(NDT));
+        values.add(String.format(format, DLTMIN));
+        values.add(String.valueOf(DLTINTR));
+        recordValuesList.add(values);
     }
 }
 
