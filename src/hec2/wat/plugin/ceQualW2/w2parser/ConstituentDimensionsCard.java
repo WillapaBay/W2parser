@@ -1,11 +1,12 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * W2Constituent Dimensions W2Card_OLD
+ * Constituent Dimensions Card
  */
-public class ConstituentDimensionsCard extends W2Card_OLD {
+public class ConstituentDimensionsCard extends W2Card_NEW {
     private int NGC;  // Number of generic constituents
     private int NSS;  // Number of inorganic suspended solids
     private int NAL;  // Number of algal groups
@@ -15,8 +16,19 @@ public class ConstituentDimensionsCard extends W2Card_OLD {
     private int NZP;  // Number of zooplankton groups
 
     public ConstituentDimensionsCard(W2ControlFile w2ControlFile) {
-        super(w2ControlFile, "CONSTITU", 1);
+        super(w2ControlFile, "CONSTITU", 1,
+                W2Globals.constants(1, 7),
+                8, false);
         parseTable();
+
+        List<String> values = recordValuesList.get(0);
+        NGC  = Integer.valueOf(values.get(0));
+        NSS  = Integer.valueOf(values.get(1));
+        NAL  = Integer.valueOf(values.get(2));
+        NEP  = Integer.valueOf(values.get(3));
+        NBOD = Integer.valueOf(values.get(4));
+        NMC  = Integer.valueOf(values.get(5));
+        NZP  = Integer.valueOf(values.get(6));
     }
 
     public int getNGC() {
@@ -25,7 +37,7 @@ public class ConstituentDimensionsCard extends W2Card_OLD {
 
     public void setNGC(int ngc) {
         this.NGC = ngc;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNSS() {
@@ -34,7 +46,7 @@ public class ConstituentDimensionsCard extends W2Card_OLD {
 
     public void setNSS(int nss) {
         this.NSS = nss;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNAL() {
@@ -43,7 +55,7 @@ public class ConstituentDimensionsCard extends W2Card_OLD {
 
     public void setNAL(int nal) {
         this.NAL = nal;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNEP() {
@@ -52,7 +64,7 @@ public class ConstituentDimensionsCard extends W2Card_OLD {
 
     public void setNEP(int nep) {
         this.NEP = nep;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNBOD() {
@@ -61,7 +73,7 @@ public class ConstituentDimensionsCard extends W2Card_OLD {
 
     public void setNBOD(int nbod) {
         this.NBOD = nbod;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNMC() {
@@ -70,7 +82,7 @@ public class ConstituentDimensionsCard extends W2Card_OLD {
 
     public void setNMC(int nmc) {
         this.NMC = nmc;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getNZP() {
@@ -79,27 +91,20 @@ public class ConstituentDimensionsCard extends W2Card_OLD {
 
     public void setNZP(int nzp) {
         this.NZP = nzp;
-        updateText();
+        updateRecordValuesList();
     }
 
     @Override
-    public void parseTable() {
-        List<String> Fields = parseLine(table.get(0), 8, 2, 10);
-        NGC = Integer.parseInt(Fields.get(0));
-        NSS = Integer.parseInt(Fields.get(1));
-        NAL = Integer.parseInt(Fields.get(2));
-        NEP = Integer.parseInt(Fields.get(3));
-        NBOD = Integer.parseInt(Fields.get(4));
-        NMC = Integer.parseInt(Fields.get(5));
-        NZP = Integer.parseInt(Fields.get(6));
-    }
-
-    @Override
-    public void updateText() {
-        String str = String.format("%8s%8d%8d%8d%8d%8d%8d%8d",
-                "", NGC, NSS, NAL, NEP, NBOD, NMC, NZP);
-        table.set(0, str);
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        List<String> values = new ArrayList<>();
+        values.add(String.valueOf(NGC));
+        values.add(String.valueOf(NSS));
+        values.add(String.valueOf(NAL));
+        values.add(String.valueOf(NEP));
+        values.add(String.valueOf(NBOD));
+        values.add(String.valueOf(NMC));
+        values.add(String.valueOf(NZP));
+        recordValuesList.add(values);
     }
 }
-
-

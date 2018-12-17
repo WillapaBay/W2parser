@@ -1,7 +1,6 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
-
 import java.io.IOException;
 import java.util.List;
 

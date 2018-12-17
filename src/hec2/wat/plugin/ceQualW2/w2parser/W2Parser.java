@@ -177,7 +177,6 @@ public class W2Parser {
         if (isOn(CCC)) CONSTITUENTS = true;
         constituentDimensionsCard = new ConstituentDimensionsCard(w2con);
 
-
         // Initialized derived constituent info
         graphFileDerivedW2Constituents = w2GraphFile.getDerivedW2Constituents();
         numDerivedConstituents = graphFileDerivedW2Constituents.size();
