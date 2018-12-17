@@ -8,7 +8,7 @@ import java.util.List;
  *
  * This card has one line per water body
  */
-public class NumberStructuresCard extends W2Card_NEW {
+public class NumberStructuresCard extends W2Card {
     private List<Integer> NSTR;     // Number of branch outlet structures
     private List<String> DYNELEV;   // Use the dynamic centerline elevation for the structure?
                                     // Valid values: ON, OFF, or blank (equals OFF)

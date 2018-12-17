@@ -8,7 +8,7 @@ import java.util.List;
  *
  * This card has one line per water body
  */
-public class InitialConditionsCard extends W2Card_NEW {
+public class InitialConditionsCard extends W2Card {
     private List<Double> T2I;
     private List<Double> ICEI;
     private List<String> WTYPEC;

@@ -8,7 +8,7 @@ import java.util.List;
  *
  * This card has one line per water body
  */
-public class SedimentCard extends W2Card_NEW {
+public class SedimentCard extends W2Card {
     private List<String> SEDC;
     private List<String> SEDPRC;
     private List<Double> SEDCI;

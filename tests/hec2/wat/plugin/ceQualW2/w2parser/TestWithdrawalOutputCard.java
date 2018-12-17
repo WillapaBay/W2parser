@@ -1,20 +1,22 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
 import org.junit.Test;
-
 import java.io.IOException;
 
-public class TestTimestepControlCard {
+public class TestWithdrawalOutputCard {
 
     public void unitTest(String folder) throws IOException {
         String infile = String.format("data/%s/w2_con.npt", folder);
         W2ControlFile w2con = new W2ControlFile(infile);
-        TimestepControlCard card = new TimestepControlCard(w2con);
-        card.setNDT(1);
-        card.setDLTMIN(0.0001);
-        card.setDLTINTR(W2Globals.ON);
+        WithdrawalOutputCard card = new WithdrawalOutputCard(w2con);
+        String WDOC = card.getWDOC();
+        int NWDO = card.getNWDO();
+        int NIWDO = card.getNIWDO();
+        card.setWDOC("TEST");
+        card.setNWDO(991);
+        card.setNIWDO(992);
         card.updateDataTable();
-        card.updateRecordValuesList();
+        card.updateW2ControlFileList();
 
         // Write updated W2 control file
         String outfile = String.format("TestTimestepControlCard_w2_con.npt", folder);

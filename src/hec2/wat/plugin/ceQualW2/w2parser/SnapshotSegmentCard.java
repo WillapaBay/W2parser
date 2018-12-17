@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Snapshot Segment Card
  */
-public class SnapshotSegmentCard extends W2Card_NEW {
+public class SnapshotSegmentCard extends W2Card {
 
     private List<List<Integer>> segmentsList;
 

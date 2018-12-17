@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Branch Geometry Card
  */
-public class BranchGeometryCard extends W2Card_NEW {
+public class BranchGeometryCard extends W2Card {
     private List<Integer> US;         // Branch upstream segment
     private List<Integer> DS;         // Branch downstream segment
     private List<Integer> UHS;        // Upstream boundary condition

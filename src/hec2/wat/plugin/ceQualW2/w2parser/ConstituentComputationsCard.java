@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Constituent Computations Card
  */
-public class ConstituentComputationsCard extends W2Card_NEW {
+public class ConstituentComputationsCard extends W2Card {
     private String CCC;
     private String LIMC;
     private int CUF;

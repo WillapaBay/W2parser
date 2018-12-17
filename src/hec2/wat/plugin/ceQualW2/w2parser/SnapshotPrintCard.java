@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Snapshot Print Card
  */
-public class SnapshotPrintCard extends W2Card_NEW {
+public class SnapshotPrintCard extends W2Card {
     private List<String> SNPC; // Specifies if information is written to shapshot file (ON or OFF)
     private List<Integer> NSNP; // Number of snapshot dates
     private List<Integer> NISNP; // Number of snapshot segments

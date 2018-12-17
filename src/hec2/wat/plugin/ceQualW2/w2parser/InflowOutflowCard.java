@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Inflow/Outflow Card
  */
-public class InflowOutflowCard extends W2Card_NEW {
+public class InflowOutflowCard extends W2Card {
     private int NTR; // Number of tributaries
     private int NST; // Number of structures
     private int NIW; // Number of internal weirs

@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Restart Card
  */
-public class RestartCard extends W2Card_NEW {
+public class RestartCard extends W2Card {
     private String RSOC;
     private int NRSO;
     private String RSIC;

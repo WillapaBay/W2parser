@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Time Control Card
  */
-public class TimeControlCard extends W2Card_NEW {
+public class TimeControlCard extends W2Card {
     private double jdayMin;
     private double jdayMax;
     private int startYear;

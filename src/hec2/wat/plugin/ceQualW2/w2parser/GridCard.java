@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Grid Card
  */
-public class GridCard extends W2Card_NEW {
+public class GridCard extends W2Card {
     private int NWB;
     private int NBR;
     private int IMX;

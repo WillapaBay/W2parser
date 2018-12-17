@@ -1,9 +1,6 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static hec2.wat.plugin.ceQualW2.w2parser.W2Globals.ones;
 
 /**
  * Active Derived Constituents Card
@@ -11,7 +8,7 @@ import static hec2.wat.plugin.ceQualW2.w2parser.W2Globals.ones;
  * This card contains the status of each constituent as active (ON) or inactive (OFF).
  * There is one line per constituent.
  */
-public class ActiveDerivedConstituentsCard extends W2Card_NEW {
+public class ActiveDerivedConstituentsCard extends W2Card {
     private List<List<String>> states; // State of each constituent (ON or OFF); Variable: CAC
 
     public ActiveDerivedConstituentsCard(W2ControlFile w2ControlFile, int numConstituents,

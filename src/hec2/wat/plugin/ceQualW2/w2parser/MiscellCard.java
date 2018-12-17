@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Miscellaneous Card
  */
-public class MiscellCard extends W2Card_NEW {
+public class MiscellCard extends W2Card {
     private int NDAY;
     private String SELECTC;
     private String HABTATC;

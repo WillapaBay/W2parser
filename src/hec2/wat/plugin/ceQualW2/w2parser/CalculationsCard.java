@@ -8,7 +8,7 @@ import java.util.List;
  *
  * This card has one line per water body
  */
-public class CalculationsCard extends W2Card_NEW {
+public class CalculationsCard extends W2Card {
     private List<String> VBC; // Volume balance calculation, ON or OFF
     private List<String> EBC; // Thermal energy balance calculation, ON or OFF
     private List<String> MBC; // Mass balance calculation, ON or OFF

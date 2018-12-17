@@ -8,7 +8,7 @@ import java.util.List;
  *
  * This card has one line per water body
  */
-public class IceCoverCard extends W2Card_NEW {
+public class IceCoverCard extends W2Card {
     private List<String> ICEC;
     private List<String> SLICEC;
     private List<Double> ALBEDO;

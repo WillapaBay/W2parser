@@ -434,7 +434,8 @@ public class W2Parser {
             WDOC = W2Globals.ONS;
         }
         withdrawalOutputCard.setWDOC(WDOC);
-        withdrawalOutputCard.updateTable();
+        withdrawalOutputCard.updateDataTable();
+        withdrawalOutputCard.updateW2ControlFileList();
         withdrawalFrequencyCard.setValues(WDOF);
         withdrawalFrequencyCard.updateTable();
     }

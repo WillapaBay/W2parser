@@ -1,9 +1,6 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static hec2.wat.plugin.ceQualW2.w2parser.W2Globals.ones;
 
 /**
  * Active Constituent Fluxes Card
@@ -11,7 +8,7 @@ import static hec2.wat.plugin.ceQualW2.w2parser.W2Globals.ones;
  * This card contains the status of each constituent as active (ON) or inactive (OFF).
  * There is one line per constituent, with a value for each waterbody.
  */
-public class ActiveConstituentFluxesCard extends W2Card_NEW {
+public class ActiveConstituentFluxesCard extends W2Card {
 
     public ActiveConstituentFluxesCard(W2ControlFile w2ControlFile, int numFluxes, int numWaterBodies) {
         super(w2ControlFile,"CST FLUX", numFluxes, W2Globals.constants(numFluxes, numWaterBodies),

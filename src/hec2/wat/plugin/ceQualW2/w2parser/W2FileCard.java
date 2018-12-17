@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class W2FileCard extends W2Card_NEW {
+class W2FileCard extends W2Card {
     private List<String> branches;
     private List<String> fileNames;
 

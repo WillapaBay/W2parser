@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Timestep Control Card
  */
-public class TimestepControlCard extends W2Card_NEW {
+public class TimestepControlCard extends W2Card {
     private int NDT;
     private double DLTMIN;
     private String DLTINTR;

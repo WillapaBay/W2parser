@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Time Series Record (TSR) Plot Card
  */
-public class TsrPlotCard extends W2Card_NEW {
+public class TsrPlotCard extends W2Card {
     private String TSRC;
     private int NTSR;
     private int NITSR;

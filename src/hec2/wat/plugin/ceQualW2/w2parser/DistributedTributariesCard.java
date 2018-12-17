@@ -11,7 +11,7 @@ import static hec2.wat.plugin.ceQualW2.w2parser.W2Globals.ones;
  * This card contains the status of each constituent as active (ON) or inactive (OFF).
  * There is one line per constituent, with a value for each waterbody.
  */
-public class DistributedTributariesCard extends W2Card_NEW {
+public class DistributedTributariesCard extends W2Card {
     private List<String> states;
 
     public DistributedTributariesCard(W2ControlFile w2ControlFile, int numBranches) {

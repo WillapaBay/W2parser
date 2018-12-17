@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Constituent Dimensions Card
  */
-public class ConstituentDimensionsCard extends W2Card_NEW {
+public class ConstituentDimensionsCard extends W2Card {
     private int NGC;  // Number of generic constituents
     private int NSS;  // Number of inorganic suspended solids
     private int NAL;  // Number of algal groups

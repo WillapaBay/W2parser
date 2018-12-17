@@ -3,7 +3,7 @@ package hec2.wat.plugin.ceQualW2.w2parser;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class W2Card_NEW {
+public abstract class W2Card {
     W2ControlFile w2ControlFile;
     private String cardName;
     private String titleLine;
@@ -34,9 +34,9 @@ public abstract class W2Card_NEW {
      * @param numRecords Number of records in card
      * @param numFieldsList List of the number of fields in each record
      */
-    public W2Card_NEW(W2ControlFile w2ControlFile, String cardName, int numRecords,
-                      List<Integer> numFieldsList, int valueFieldWidth,
-                      boolean dataLeftAligned) {
+    public W2Card(W2ControlFile w2ControlFile, String cardName, int numRecords,
+                  List<Integer> numFieldsList, int valueFieldWidth,
+                  boolean dataLeftAligned) {
         this.w2ControlFile = w2ControlFile;
         this.cardName = cardName;
         this.numRecords = numRecords;
