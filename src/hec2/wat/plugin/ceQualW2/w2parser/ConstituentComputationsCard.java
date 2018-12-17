@@ -1,18 +1,24 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * W2Constituent Computations W2Card_OLD
+ * Constituent Computations Card
  */
-public class ConstituentComputationsCard extends W2Card_OLD {
+public class ConstituentComputationsCard extends W2Card_NEW {
     private String CCC;
     private String LIMC;
     private int CUF;
 
     public ConstituentComputationsCard(W2ControlFile w2ControlFile) {
-        super(w2ControlFile, W2CardNames.ConstituentComputations, 1);
+        super(w2ControlFile, W2CardNames.ConstituentComputations, 1,
+                W2Globals.constants(1, 3), 8, false);
         parseTable();
+
+        CCC = recordValuesList.get(0).get(0);
+        LIMC = recordValuesList.get(0).get(1);
+        CUF = Integer.valueOf(recordValuesList.get(0).get(2));
     }
 
     public String getCCC() {
@@ -21,7 +27,7 @@ public class ConstituentComputationsCard extends W2Card_OLD {
 
     public void setCCC(String ccc) {
         this.CCC = ccc;
-        updateText();
+        updateRecordValuesList();
     }
 
     public String getLIMC() {
@@ -30,7 +36,7 @@ public class ConstituentComputationsCard extends W2Card_OLD {
 
     public void setLIMC(String limc) {
         this.LIMC = limc;
-        updateText();
+        updateRecordValuesList();
     }
 
     public int getCUF() {
@@ -39,22 +45,20 @@ public class ConstituentComputationsCard extends W2Card_OLD {
 
     public void setCUF(int cuf) {
         this.CUF = cuf;
-        updateText();
+        updateRecordValuesList();
     }
 
     @Override
-    public void parseTable() {
-        List<String> Fields = parseLine(table.get(0), 8, 2, 10);
-        CCC = Fields.get(0);
-        LIMC = Fields.get(1);
-        CUF = Integer.parseInt(Fields.get(2));
-    }
-
-    @Override
-    public void updateText() {
-        String str = String.format("%8s%8s%8s%8d",
-                "", CCC, LIMC, CUF);
-        table.set(0, str);
+    public void updateRecordValuesList() {
+        recordValuesList.clear();
+        List<String> values = new ArrayList<>();
+        values.add(CCC);
+        values.add(LIMC);
+        values.add(String.valueOf(CUF));
+        recordValuesList.add(values);
+//        recordValuesList.add(valueToStringList(CCC));
+//        recordValuesList.add(valueToStringList(LIMC));
+//        recordValuesList.add(valueToStringList(CUF));
     }
 }
 

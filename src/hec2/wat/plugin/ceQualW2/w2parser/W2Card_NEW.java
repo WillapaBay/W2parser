@@ -385,6 +385,18 @@ public abstract class W2Card_NEW {
     }
 
     /**
+     * Wrap a value in a String list
+     * @param value Value to wrap
+     * @param <T> Type
+     * @return Wrapped value
+     */
+    public <T> List<String> valueToStringList(T value) {
+        List<String> list = new ArrayList<>();
+        list.add(String.valueOf(value));
+        return list;
+    }
+
+    /**
      * Update list of record values. Numeric types will
      * be converted to unformatted strings and stored
      * in recordValuesList.
