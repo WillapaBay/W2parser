@@ -10,11 +10,11 @@ public class TestTimeControlCard {
         String infile = String.format("data/%s/w2_con.npt", folder);
         W2ControlFile w2con = new W2ControlFile(infile);
         TimeControlCard timeControlCard = new TimeControlCard(w2con);
-        double jdayMin = timeControlCard.getJdayMin();
-        double jdayMax = timeControlCard.getJdayMax();
+        double jdayMin = timeControlCard.getStartDay();
+        double jdayMax = timeControlCard.getEndDay();
         int startYear = timeControlCard.getStartYear();
-        timeControlCard.setJdayMin(2.7);
-        timeControlCard.setJdayMin(5.4);
+        timeControlCard.setStartDay(2.7);
+        timeControlCard.setStartDay(5.4);
         timeControlCard.setStartYear(9999);
         timeControlCard.updateDataTable();
         timeControlCard.updateW2ControlFileList();

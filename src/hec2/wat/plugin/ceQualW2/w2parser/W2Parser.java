@@ -132,8 +132,8 @@ public class W2Parser {
     public void readControlFile() {
         // Initialize time window
         timeControlCard = new TimeControlCard(w2con);
-        jdayMin = timeControlCard.getJdayMin();
-        jdayMax = timeControlCard.getJdayMax();
+        jdayMin = timeControlCard.getStartDay();
+        jdayMax = timeControlCard.getEndDay();
         startYear = timeControlCard.getStartYear();
 
         // Initialize grid info
@@ -1603,7 +1603,7 @@ public class W2Parser {
      */
     public void setJdayMin(double jdayMin) {
         this.jdayMin = jdayMin;
-        timeControlCard.setJdayMin(jdayMin);
+        timeControlCard.setStartDay(jdayMin);
         timeControlCard.updateDataTable();
         timeControlCard.updateW2ControlFileList();
     }
@@ -1622,7 +1622,7 @@ public class W2Parser {
      */
     public void setJdayMax(double jdayMax) {
         this.jdayMax = jdayMax;
-        timeControlCard.setJdayMax(jdayMax);
+        timeControlCard.setEndDay(jdayMax);
         timeControlCard.updateDataTable();
         timeControlCard.updateW2ControlFileList();
     }

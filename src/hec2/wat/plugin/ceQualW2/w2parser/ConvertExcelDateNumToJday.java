@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.*;
@@ -16,7 +15,6 @@ public class ConvertExcelDateNumToJday {
 
     public ConvertExcelDateNumToJday(String folderPath, int referenceYear) throws IOException {
         this.referenceYear = referenceYear;
-//        String w2ControlFileName = String.format("data/%s/w2_con.npt", folder);
         String w2ControlFileName = String.format("%s/%s", folderPath, "w2_con.npt");
         Path w2ControlFilePath = Paths.get(w2ControlFileName).toAbsolutePath();
         Path directoryPath = w2ControlFilePath.getParent();
@@ -26,16 +24,20 @@ public class ConvertExcelDateNumToJday {
         W2Parser w2Parser = new W2Parser(w2con);
         w2Parser.readControlFile();
 
-        // Handle control file
+        // Convert time window in control file to Julian day convention
         timeControlCard = new TimeControlCard(w2con);
-        JulianDate julianDateStart = excelDateNumToJulianDay(timeControlCard.getJdayMin());
-        JulianDate julianDateEnd = excelDateNumToJulianDay(timeControlCard.getJdayMax());
-        timeControlCard.setJdayMin(julianDateStart.jday);
-        timeControlCard.setJdayMax(julianDateEnd.jday);
+        JulianDate julianDateStart = excelDateNumToJulianDay(timeControlCard.getStartDay());
+        JulianDate julianDateEnd = excelDateNumToJulianDay(timeControlCard.getEndDay());
+        double excelDayStart = timeControlCard.getStartDay();
+        double excelDayEnd = timeControlCard.getEndDay();
+        double jdayStart = julianDateStart.jday;
+        double jdayEnd = excelDayEnd - excelDayStart + jdayStart;
+        timeControlCard.setStartDay(jdayStart);
+        timeControlCard.setEndDay(jdayEnd);
         timeControlCard.setStartYear(julianDateStart.year);
         timeControlCard.updateDataTable();
         timeControlCard.updateW2ControlFileList();
-        w2con.save(w2con.getW2ControlInPath().toString() + ".NEW");
+        w2con.save(w2con.getW2ControlInPath().toString() + ".jday.npt");
 
         // Create list of input files
         HashSet<String> inputFileNameSet = new HashSet();

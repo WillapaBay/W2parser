@@ -7,8 +7,8 @@ import java.util.List;
  * Time Control Card
  */
 public class TimeControlCard extends W2Card {
-    private double jdayMin;
-    private double jdayMax;
+    private double startDay;
+    private double endDay;
     private int startYear;
     private final String format = "%8.3f";
 
@@ -22,26 +22,26 @@ public class TimeControlCard extends W2Card {
 
     public void init() {
         List<String> values = recordValuesList.get(0);
-        jdayMin = Double.valueOf(values.get(0));
-        jdayMax = Double.valueOf(values.get(1));
+        startDay = Double.valueOf(values.get(0));
+        endDay = Double.valueOf(values.get(1));
         startYear = Integer.valueOf(values.get(2));
     }
 
-    public double getJdayMin() {
-        return jdayMin;
+    public double getStartDay() {
+        return startDay;
     }
 
-    public void setJdayMin(double jdayMin) {
-        this.jdayMin = jdayMin;
+    public void setStartDay(double startDay) {
+        this.startDay = startDay;
         updateRecordValuesList();
     }
 
-    public double getJdayMax() {
-        return jdayMax;
+    public double getEndDay() {
+        return endDay;
     }
 
-    public void setJdayMax(double jdayMax) {
-        this.jdayMax = jdayMax;
+    public void setEndDay(double endDay) {
+        this.endDay = endDay;
         updateRecordValuesList();
     }
 
@@ -58,8 +58,8 @@ public class TimeControlCard extends W2Card {
     public void updateRecordValuesList() {
         recordValuesList.clear();
         List<String> values = new ArrayList<>();
-        values.add(String.format(format, jdayMin));
-        values.add(String.format(format, jdayMax));
+        values.add(String.format(format, startDay));
+        values.add(String.format(format, endDay));
         values.add(String.valueOf(startYear));
         recordValuesList.add(values);
     }

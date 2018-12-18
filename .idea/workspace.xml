@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86ca3ba8-c345-4a52-b43d-1ddf44984b0b" name="Default" comment="Minor bug fix in test.">
+    <list default="true" id="86ca3ba8-c345-4a52-b43d-1ddf44984b0b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/GCL/w2_con.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" afterDir="false" />
@@ -75,11 +75,10 @@
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimeControlCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimeControlCard.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,11 +90,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConvertExcelDateNumToJday.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConvertExcelDateNumToJday.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="209" column="43" selection-start-line="209" selection-start-column="43" selection-end-line="209" selection-end-column="43" />
+            <state relative-caret-position="321">
+              <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeControlCard.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,10 +115,19 @@
         <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="W2ControlFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -174,10 +194,10 @@
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimestepControlCard.java" />
         <option value="$PROJECT_DIR$/data/BON/HOXO_DLS_BON_2011_2015_MET_withBP.csv" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java" />
       </list>
     </option>
   </component>
@@ -192,8 +212,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,7 +256,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -662,16 +682,17 @@
       <option name="project" value="LOCAL" />
       <updated>1545090482010</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Added classes. Completed ConvertExcelDateNumToJday class to convert W2 models from Excel date number to Julian day.">
+      <created>1545100009905</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1545100009905</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestConvertExcelDateNumToJday - 2018.12.17 at 17h 52m 44s.xml">
-      <configuration name="TestConvertExcelDateNumToJday" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_TheDalles - 2018.12.17 at 17h 53m 30s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_TheDalles" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_TheDalles - 2018.12.17 at 17h 54m 34s.xml">
       <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_TheDalles" configurationId="JUnit" />
     </history-entry>
@@ -696,6 +717,12 @@
     <history-entry file="TestConvertExcelDateNumToJday - 2018.12.17 at 18h 14m 24s.xml">
       <configuration name="TestConvertExcelDateNumToJday" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestConvertExcelDateNumToJday - 2018.12.18 at 10h 34m 30s.xml">
+      <configuration name="TestConvertExcelDateNumToJday" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestConvertExcelDateNumToJday - 2018.12.18 at 10h 35m 51s.xml">
+      <configuration name="TestConvertExcelDateNumToJday" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
@@ -717,12 +744,11 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.32815534" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32815534" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.32815534" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27122876" />
       <window_info anchor="bottom" id="Run with VisualVM" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26823178" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32815534" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="7" />
@@ -730,6 +756,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Data View" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32815534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -739,7 +766,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added constructor to Parser that creates the W2 control file object. Renamed all of the non-Card classes to W2____.java" />
     <MESSAGE value="Bug fixes, new Bonneville 5 yr transition model, new folders." />
     <MESSAGE value="Added Spokane control file" />
     <MESSAGE value="Bug fixes, new data, new incomplete class to convert models using Excel date number to the legacy Julian day (day of year) format." />
@@ -764,7 +790,8 @@
     <MESSAGE value="Upudated WithdrawalOutputCard, tests, and W2Parser. Renamed W2Card_NEW to W2Card. Note: still need to update the multi-record and mult-line cards to use the new W2Card class." />
     <MESSAGE value="Replaced MultiRecordRepeatingStringCard with separate cards, added tests, and implemented in W2Parser." />
     <MESSAGE value="Minor bug fix in test." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor bug fix in test." />
+    <MESSAGE value="Added classes. Completed ConvertExcelDateNumToJday class to convert W2 models from Excel date number to Julian day." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added classes. Completed ConvertExcelDateNumToJday class to convert W2 models from Excel date number to Julian day." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -836,9 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -869,9 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="68" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -886,9 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,9 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1083">
           <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -937,9 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="95" selection-start-line="95" selection-end-line="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,9 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,10 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1091,27 +1096,6 @@
     <entry file="file://$PROJECT_DIR$/data/BON/jday_BonnevilleDam_DistributedTributaryInflow.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="53" column="29" lean-forward="true" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
-          <folding>
-            <element signature="e#1207#1208#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt.NEW">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-114" />
@@ -1131,26 +1115,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#2353#2354#0" expanded="true" />
-            <element signature="e#2378#2379#0" expanded="true" />
-            <element signature="e#2519#2520#0" expanded="true" />
-            <element signature="e#2544#2545#0" expanded="true" />
-            <element signature="e#2686#2687#0" expanded="true" />
-            <element signature="e#2712#2713#0" expanded="true" />
-            <element signature="e#2858#2859#0" expanded="true" />
-            <element signature="e#2884#2885#0" expanded="true" />
-            <element signature="e#3030#3031#0" expanded="true" />
-            <element signature="e#3056#3057#0" expanded="true" />
-            <element signature="e#3202#3203#0" expanded="true" />
-            <element signature="e#3228#3229#0" expanded="true" />
-            <element signature="e#3376#3377#0" expanded="true" />
-            <element signature="e#3404#3405#0" expanded="true" />
-            <element signature="e#3563#3564#0" expanded="true" />
-            <element signature="e#3595#3596#0" expanded="true" />
-            <element signature="e#3770#3771#0" expanded="true" />
-            <element signature="e#3803#3804#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1178,17 +1142,34 @@
     <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="209" column="43" selection-start-line="209" selection-start-column="43" selection-end-line="209" selection-end-column="43" />
+        <state relative-caret-position="321">
+          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
