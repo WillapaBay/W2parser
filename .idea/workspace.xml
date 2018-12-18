@@ -75,10 +75,7 @@
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimeControlCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTimeControlCard.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,8 +99,8 @@
       <file leaf-file-name="TimeControlCard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state relative-caret-position="171">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -689,7 +686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545100009905</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Updated ConvertExcelDateNumToJday and renamed fields in TimeControlCard.">
+      <created>1545158399316</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1545158399316</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -726,6 +730,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1166" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" weight="0.32884097" />
@@ -766,7 +771,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Bug fixes, new Bonneville 5 yr transition model, new folders." />
     <MESSAGE value="Added Spokane control file" />
     <MESSAGE value="Bug fixes, new data, new incomplete class to convert models using Excel date number to the legacy Julian day (day of year) format." />
     <MESSAGE value="New Bonneville model" />
@@ -791,7 +795,8 @@
     <MESSAGE value="Replaced MultiRecordRepeatingStringCard with separate cards, added tests, and implemented in W2Parser." />
     <MESSAGE value="Minor bug fix in test." />
     <MESSAGE value="Added classes. Completed ConvertExcelDateNumToJday class to convert W2 models from Excel date number to Julian day." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added classes. Completed ConvertExcelDateNumToJday class to convert W2 models from Excel date number to Julian day." />
+    <MESSAGE value="Updated ConvertExcelDateNumToJday and renamed fields in TimeControlCard." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated ConvertExcelDateNumToJday and renamed fields in TimeControlCard." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1041,6 +1046,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding>
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1165,8 +1174,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="171">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
