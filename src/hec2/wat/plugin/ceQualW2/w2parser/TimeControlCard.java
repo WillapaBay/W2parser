@@ -10,7 +10,7 @@ public class TimeControlCard extends W2Card {
     private double jdayMin;
     private double jdayMax;
     private int startYear;
-    private final String format = "%8.5f";
+    private final String format = "%8.3f";
 
     public TimeControlCard(W2ControlFile w2ControlFile) {
         super(w2ControlFile, "TIME CON", 1,

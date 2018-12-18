@@ -46,13 +46,14 @@ public class BranchGeometryCard extends W2Card {
             UQB.add(Integer.valueOf(values.get(4)));
             DQB.add(Integer.valueOf(values.get(5)));
             NLMIN.add(Integer.valueOf(values.get(6)));
-            slopeList.add(Double.valueOf(values.get(7)));
-            if (values.size() > 8) {
-                slopeClist.add(Double.valueOf(values.get(8)));
-            } else {
-                // TODO: test that this is valid
+            if (values.size() > 7)
+                slopeList.add(Double.valueOf(values.get(7)));
+            else
+                slopeList.add(0.0);
+            if (values.size() > 8)
                 slopeClist.add(Double.valueOf(values.get(7)));
-            }
+            else
+                slopeClist.add(0.0);
         }
     }
 

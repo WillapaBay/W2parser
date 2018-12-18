@@ -40,6 +40,10 @@ public final class W2ControlFile {
         w2ControlList.set(i, line);
     }
 
+    public Path getW2ControlInPath() {
+        return w2ControlInPath;
+    }
+
     public int size() {
         return w2ControlList.size();
     }
