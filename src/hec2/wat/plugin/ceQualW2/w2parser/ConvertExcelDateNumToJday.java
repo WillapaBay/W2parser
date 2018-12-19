@@ -34,60 +34,61 @@ public class ConvertExcelDateNumToJday {
     }
 
     public void init() throws IOException {
+        System.out.println("Processing " + w2ControlFilePath.toString());
+
         W2ControlFile w2con = new W2ControlFile(w2ControlFileName);
         W2Parser w2Parser = new W2Parser(w2con);
         w2Parser.readControlFile();
 
-        // Convert time window in control file to Julian day convention
-        System.out.println("Processing " + w2ControlFilePath.toString());
+        // If the model uses Excel date number convention, convert to Julian day
         timeControlCard = new TimeControlCard(w2con);
-        JulianDate julianDateStart = excelDateNumToJulianDay(timeControlCard.getStartDay());
-        JulianDate julianDateEnd = excelDateNumToJulianDay(timeControlCard.getEndDay());
-        double excelDayStart = timeControlCard.getStartDay();
-        double excelDayEnd = timeControlCard.getEndDay();
-        double jdayStart = julianDateStart.jday;
-        double jdayEnd = excelDayEnd - excelDayStart + jdayStart;
-        timeControlCard.setStartDay(jdayStart);
-        timeControlCard.setEndDay(jdayEnd);
-        timeControlCard.setStartYear(julianDateStart.year);
-        timeControlCard.updateDataTable();
-        timeControlCard.updateW2ControlFileList();
-        Path w2BackupPath = Paths.get(w2ControlFilePath.toString() + ".ExcelDateNum.Backup");
-        w2con.backupFile(w2ControlFilePath, w2BackupPath);
-        w2con.save(w2con.getW2ControlInPath().toString());
+        if (timeControlCard.getStartYear() == 1900) {
+            // Convert time window in control file to Julian day convention
+            JulianDate julianDateStart = excelDateNumToJulianDay(timeControlCard.getStartDay());
+            JulianDate julianDateEnd = excelDateNumToJulianDay(timeControlCard.getEndDay());
+            double excelDayStart = timeControlCard.getStartDay();
+            double excelDayEnd = timeControlCard.getEndDay();
+            double jdayStart = julianDateStart.jday;
+            double jdayEnd = excelDayEnd - excelDayStart + jdayStart;
+            timeControlCard.setStartDay(jdayStart);
+            timeControlCard.setEndDay(jdayEnd);
+            timeControlCard.setStartYear(julianDateStart.year);
+            timeControlCard.updateDataTable();
+            timeControlCard.updateW2ControlFileList();
+            Path w2BackupPath = Paths.get(w2ControlFilePath.toString() + ".ExcelDateNum.Backup");
+            w2con.backupFile(w2ControlFilePath, w2BackupPath);
+            w2con.save(w2con.getW2ControlInPath().toString());
 
-        // Create list of input files
-        HashSet<String> inputFileNameSet = new HashSet();
-        List<W2Parameter> inputW2Parameters = w2Parser.getInputW2Parameters();
-        List<W2Parameter> metW2Parameters = w2Parser.getMeteorologyW2Parameters();
-        for (W2Parameter param : inputW2Parameters) {
-            inputFileNameSet.add(param.getFileName());
-        }
-        for (W2Parameter param : metW2Parameters) {
-            inputFileNameSet.add(param.getFileName());
-        }
+            // Create list of input, output, and backup filenames
+            HashSet<String> inputFileNameSet = new HashSet();
+            List<W2Parameter> inputW2Parameters = w2Parser.getInputW2Parameters();
+            List<W2Parameter> metW2Parameters = w2Parser.getMeteorologyW2Parameters();
+            for (W2Parameter param : inputW2Parameters) {
+                inputFileNameSet.add(param.getFileName());
+            }
+            for (W2Parameter param : metW2Parameters) {
+                inputFileNameSet.add(param.getFileName());
+            }
 
-        List<String> inputFileNames = new ArrayList<>();
-        List<String> outputFileNames = new ArrayList<>();
-        List<String> backupFileNames = new ArrayList<>();
-        inputFileNames.addAll(inputFileNameSet);
-        inputFileNames.forEach(item -> {
-            outputFileNames.add(item); // Use the input filename as the output filename
-            backupFileNames.add(item + ".ExcelDateNum.Backup");
-        });
+            List<String> inputFileNames = new ArrayList<>(inputFileNameSet);
+            List<String> outputFileNames = new ArrayList<>(inputFileNames);
+            List<String> backupFileNames = new ArrayList<>();
+            inputFileNames.forEach(item -> backupFileNames.add(item + ".ExcelDateNum.Backup"));
 
-        for (int i = 0; i < inputFileNames.size(); i++) {
-            Path inputFilePath = Paths.get(directoryPath.toString() + "/" + inputFileNames.get(i));
-            Path outputFilePath = Paths.get(directoryPath.toString() + "/" + outputFileNames.get(i));
-            Path backupFilePath = Paths.get(directoryPath.toString() + "/" + backupFileNames.get(i));
-            System.out.println("Processing " + inputFilePath.toString());
-            w2con.backupFile(inputFilePath, backupFilePath); // Back up the file
-            List<String> output = convert(inputFilePath, outputFilePath, referenceYear);
-            Files.write(outputFilePath, output);
+            for (int i = 0; i < inputFileNames.size(); i++) {
+                Path inputFilePath = Paths.get(directoryPath.toString(), inputFileNames.get(i));
+                Path outputFilePath = Paths.get(directoryPath.toString(), outputFileNames.get(i));
+                Path backupFilePath = Paths.get(directoryPath.toString(), backupFileNames.get(i));
+                System.out.println("Processing " + inputFilePath.toString());
+                w2con.backupFile(inputFilePath, backupFilePath); // Back up the file
+                List<String> output = convert(inputFilePath, outputFilePath, referenceYear);
+                Files.write(outputFilePath, output);
+            }
         }
     }
 
-    public List<String> convert(Path inputFilePath, Path outputFilePath, int referenceYear) throws IOException {
+    public List<String> convert(Path inputFilePath, Path outputFilePath, int referenceYear)
+            throws IOException {
         boolean isNewFormat;
         List<String> lines = Files.readAllLines(inputFilePath);
         List<String> header = new ArrayList<>();

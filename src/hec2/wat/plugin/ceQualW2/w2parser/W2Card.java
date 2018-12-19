@@ -147,7 +147,7 @@ public abstract class W2Card {
             int numFields = numFieldsList.get(jc);
 
             List<String> values = parseRecordText(dataTable, lineIndex,
-                    numLinesPerRecord(numFields));
+                    numLinesPerRecord(numFields), fieldWidths);
 
             records.add(values);
             recordIdentifiers.add(values.get(0));
@@ -162,7 +162,7 @@ public abstract class W2Card {
      * @param str String
      * @return Trimmed string
      */
-    private String trimEnd(String str) {
+    private static String trimEnd(String str) {
         while (str.endsWith(" ")) {
             str = str.substring(0, str.length() - 1);
         }
@@ -179,7 +179,8 @@ public abstract class W2Card {
      * @param endField Last field to read (one-based)
      * @return List of fields
      */
-    public List<String> parseLine(String line, int startField, int endField) {
+    public static List<String> parseLine(String line, int startField, int endField,
+                                  List<Integer> fieldWidths) {
         line = trimEnd(line);
         List<String> fields = new ArrayList<>();
         int start = 0;
@@ -209,15 +210,16 @@ public abstract class W2Card {
      * @param numLinesPerRecord Number of lines in the current record
      * @return List of record values. The first item is the record identifier.
      */
-    private List<String> parseRecordText(List<String> dataTable, int startLine,
-                                    int numLinesPerRecord) {
+    private static List<String> parseRecordText(List<String> dataTable, int startLine,
+                                         int numLinesPerRecord,
+                                         List<Integer> fieldWidths) {
         int startField = 1;
         final int endField = 10;
         int endLine = startLine + numLinesPerRecord;
         List<String> values = new ArrayList<>();
 
         for (int i = startLine; i < endLine; i++) {
-            List<String> fields = parseLine(dataTable.get(i), startField, endField);
+            List<String> fields = parseLine(dataTable.get(i), startField, endField, fieldWidths);
             values.addAll(fields);
             // After the first record line is read, skip the first field of subsequent lines
             startField = 2;
