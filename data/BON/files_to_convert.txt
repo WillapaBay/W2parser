@@ -1,7 +1,0 @@
-QGT_BON_2011_2015_daily_DSS-scaled.csv,jday_QGT_BON_2011_2015_daily_DSS-scaled.csv
-HOXO_DLS_BON_2011_2015_MET_withBP.csv,jday_HOXO_DLS_BON_2011_2015_MET_withBP.csv
-THE DALLES_OUTFLOW.csv,jday_THE_DALLES_OUTFLOW.csv
-two_41_TDA.opt,jday_two_41_TDA.opt
-cwo_41_TDA.opt,jday_cwo_41_TDA.opt
-BonnevilleDam_DistributedTributaryInflow.npt,jday_BonnevilleDam_DistributedTributaryInflow.npt
-

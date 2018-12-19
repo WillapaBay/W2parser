@@ -115,4 +115,17 @@ public final class W2ControlFile {
             indexToRemove--;
         }
     }
+
+    /**
+     * Back up a file
+     * @param inputPath Path to input file
+     * @param backupPath Path to backup file
+     * @throws IOException
+     */
+    public static void backupFile(Path inputPath, Path backupPath) throws IOException {
+        System.out.println("Backing up " + inputPath.toString() + " to " + backupPath.toString());
+        List<String> lines = Files.readAllLines(inputPath);
+        Files.write(backupPath, lines);
+    }
+
 }

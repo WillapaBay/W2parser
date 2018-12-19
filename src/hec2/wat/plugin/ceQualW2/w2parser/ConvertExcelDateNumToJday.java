@@ -10,21 +10,36 @@ import java.util.*;
 
 public class ConvertExcelDateNumToJday {
     public static final int numHeaderLines = 3;
+    private String folderPath;
     private int referenceYear;
     private TimeControlCard timeControlCard;
+    private Path w2ControlFilePath;
+    private Path directoryPath;
+    private String w2ControlFileName;
+
+    public Path getW2ControlFilePath() {
+        return w2ControlFilePath;
+    }
+
+    public Path getDirectoryPath() {
+        return directoryPath;
+    }
 
     public ConvertExcelDateNumToJday(String folderPath, int referenceYear) throws IOException {
+        this.folderPath = folderPath;
         this.referenceYear = referenceYear;
-        String w2ControlFileName = String.format("%s/%s", folderPath, "w2_con.npt");
-        Path w2ControlFilePath = Paths.get(w2ControlFileName).toAbsolutePath();
-        Path directoryPath = w2ControlFilePath.getParent();
-        System.out.println("Processing " + w2ControlFilePath.toString());
+        w2ControlFileName = String.format("%s/%s", folderPath, "w2_con.npt");
+        w2ControlFilePath = Paths.get(w2ControlFileName).toAbsolutePath();
+        directoryPath = w2ControlFilePath.getParent();
+    }
 
+    public void init() throws IOException {
         W2ControlFile w2con = new W2ControlFile(w2ControlFileName);
         W2Parser w2Parser = new W2Parser(w2con);
         w2Parser.readControlFile();
 
         // Convert time window in control file to Julian day convention
+        System.out.println("Processing " + w2ControlFilePath.toString());
         timeControlCard = new TimeControlCard(w2con);
         JulianDate julianDateStart = excelDateNumToJulianDay(timeControlCard.getStartDay());
         JulianDate julianDateEnd = excelDateNumToJulianDay(timeControlCard.getEndDay());
@@ -37,7 +52,9 @@ public class ConvertExcelDateNumToJday {
         timeControlCard.setStartYear(julianDateStart.year);
         timeControlCard.updateDataTable();
         timeControlCard.updateW2ControlFileList();
-        w2con.save(w2con.getW2ControlInPath().toString() + ".jday.npt");
+        Path w2BackupPath = Paths.get(w2ControlFilePath.toString() + ".ExcelDateNum.Backup");
+        w2con.backupFile(w2ControlFilePath, w2BackupPath);
+        w2con.save(w2con.getW2ControlInPath().toString());
 
         // Create list of input files
         HashSet<String> inputFileNameSet = new HashSet();
@@ -52,14 +69,19 @@ public class ConvertExcelDateNumToJday {
 
         List<String> inputFileNames = new ArrayList<>();
         List<String> outputFileNames = new ArrayList<>();
+        List<String> backupFileNames = new ArrayList<>();
         inputFileNames.addAll(inputFileNameSet);
         inputFileNames.forEach(item -> {
-            outputFileNames.add("jday_" + item);
+            outputFileNames.add(item); // Use the input filename as the output filename
+            backupFileNames.add(item + ".ExcelDateNum.Backup");
         });
 
         for (int i = 0; i < inputFileNames.size(); i++) {
             Path inputFilePath = Paths.get(directoryPath.toString() + "/" + inputFileNames.get(i));
             Path outputFilePath = Paths.get(directoryPath.toString() + "/" + outputFileNames.get(i));
+            Path backupFilePath = Paths.get(directoryPath.toString() + "/" + backupFileNames.get(i));
+            System.out.println("Processing " + inputFilePath.toString());
+            w2con.backupFile(inputFilePath, backupFilePath); // Back up the file
             List<String> output = convert(inputFilePath, outputFilePath, referenceYear);
             Files.write(outputFilePath, output);
         }
@@ -88,56 +110,61 @@ public class ConvertExcelDateNumToJday {
         double jday1 = 0.0;
         double jday = 0.0;
         for (int i = numHeaderLines; i < lines.size(); i++) {
-            String line = lines.get(i).trim();
-            if (isNewFormat) {
-                // Parse as a comma-delimited file
+            try {
 
-                // First, remove trailing commas
-                while (line.endsWith(",")) {
-                    line = line.substring(0, line.length() - 1);
+                String line = lines.get(i).trim();
+                if (isNewFormat) {
+                    // Parse as a comma-delimited file
+
+                    // First, remove trailing commas
+                    while (line.endsWith(",")) {
+                        line = line.substring(0, line.length() - 1);
+                    }
+                    line = line.trim();
+
+                    List<String> fields = Arrays.asList(line.split("\\s*,\\s*"));
+                    double excelDateNum = Double.parseDouble(fields.get(0));
+
+                    if (firstLine) {
+                        JulianDate julianDate = excelDateNumToJulianDay(excelDateNum);
+                        excelDateNum1 = excelDateNum;
+                        jday1 = julianDate.jday;
+                        firstLine = false;
+                    }
+
+                    jday = excelDateNum - excelDateNum1 + jday1;
+
+                    StringBuilder outLine = new StringBuilder();
+                    fields.set(0, String.format("%.6f", jday));
+                    for (String field : fields) {
+                        outLine.append(String.format("%s,", field));
+                    }
+                    outLine = new StringBuilder(outLine.substring(0, outLine.length() - 1));
+                    data.add(outLine.toString());
+                } else {
+                    // Parse as fixed-width format
+                    line = line.trim();
+                    List<String> fields = parseLine(line, 1, 20, 8);
+                    double excelDateNum = Double.parseDouble(fields.get(0));
+
+                    if (firstLine) {
+                        JulianDate julianDate = excelDateNumToJulianDay(excelDateNum);
+                        excelDateNum1 = excelDateNum;
+                        jday1 = julianDate.jday;
+                        firstLine = false;
+                    }
+
+                    jday = excelDateNum - excelDateNum1 + jday1;
+
+                    StringBuilder outLine = new StringBuilder();
+                    fields.set(0, String.format("%8.3f", jday));
+                    for (String field : fields) {
+                        outLine.append(String.format("%8s", field));
+                    }
+                    data.add(outLine.toString());
                 }
-                line = line.trim();
-
-                List<String> fields = Arrays.asList(line.split("\\s*,\\s*"));
-                double excelDateNum = Double.parseDouble(fields.get(0));
-
-                if (firstLine) {
-                    JulianDate julianDate = excelDateNumToJulianDay(excelDateNum);
-                    excelDateNum1 = excelDateNum;
-                    jday1 = julianDate.jday;
-                    firstLine = false;
-                }
-
-                jday = excelDateNum - excelDateNum1 + jday1;
-
-                StringBuilder outLine = new StringBuilder();
-                fields.set(0, String.format("%.6f", jday));
-                for (String field : fields) {
-                    outLine.append(String.format("%s,", field));
-                }
-                outLine = new StringBuilder(outLine.substring(0, outLine.length() - 1));
-                data.add(outLine.toString());
-            } else {
-                // Parse as fixed-width format
-                line = line.trim();
-                List<String> fields = parseLine(line, 1, 20, 8);
-                double excelDateNum = Double.parseDouble(fields.get(0));
-
-                if (firstLine) {
-                    JulianDate julianDate = excelDateNumToJulianDay(excelDateNum);
-                    excelDateNum1 = excelDateNum;
-                    jday1 = julianDate.jday;
-                    firstLine = false;
-                }
-
-                jday = excelDateNum - excelDateNum1 + jday1;
-
-                StringBuilder outLine = new StringBuilder();
-                fields.set(0, String.format("%8.3f", jday));
-                for (String field : fields) {
-                    outLine.append(String.format("%8s", field));
-                }
-                data.add(outLine.toString());
+            } catch (Exception e) {
+                throw new IOException("Error parsing line " + i);
             }
         }
 
@@ -216,4 +243,5 @@ public class ConvertExcelDateNumToJday {
         }
         return fields;
     }
+
 }
