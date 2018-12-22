@@ -267,7 +267,7 @@ public class W2Parser {
             int icol = 1; // Every qwo file contains at least one data column for the combined outflow
             outputFilename = String.format("qwo_%d.opt", outputSegment);
             String locationName = String.format("Seg %d Withdrawal", outputSegment);
-            outputWaterbody = getOutputWaterbody(outputSegment, US, DS, NBR);
+            outputWaterbody = getOutputWaterBody(outputSegment, US, DS, NBR);
 
             // Number of columns equals 1 for the combined flow plus one column for each structure
             int ncol = 1;
@@ -295,7 +295,7 @@ public class W2Parser {
             icol = 1; // Every qwo file contains at least one data column for the combined outflow
             outputFilename = String.format("two_%d.opt", outputSegment);
             locationName = String.format("Seg %d Withdrawal", outputSegment);
-            outputWaterbody = getOutputWaterbody(outputSegment, US, DS, NBR);
+            outputWaterbody = getOutputWaterBody(outputSegment, US, DS, NBR);
 
             // Number of columns equals 1 for the combined flow plus one column for each structure
             ncol = 1;
@@ -325,7 +325,7 @@ public class W2Parser {
                 List<W2Parameter> constituentW2Parameters = new ArrayList<>();
                 outputFilename = String.format("cwo_%d.opt", outputSegment);
                 locationName = String.format("Seg %d Withdrawal", outputSegment);
-                outputWaterbody = getOutputWaterbody(outputSegment, US, DS, NBR);
+                outputWaterbody = getOutputWaterBody(outputSegment, US, DS, NBR);
                 constituentNames = activeConstituentsCard.getConstituentNames();
                 List<String> constituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
                 for (int jc = 0; jc < numConstituents; jc++) {
@@ -352,7 +352,7 @@ public class W2Parser {
                 List<W2Parameter> derivedConstituentW2Parameters = new ArrayList<>();
                 outputFilename = String.format("dwo_%d.opt", outputSegment);
                 locationName = String.format("Seg %d Withdrawal", outputSegment);
-//                outputWaterbody = getOutputWaterbody(outputSegment, US, DS, BS, BE, NWB);
+//                outputWaterbody = getOutputWaterBody(outputSegment, US, DS, BS, BE, NWB);
                 derivedConstituentNames = activeDerivedConstituentsCard.getConstituentNames();
                 List<String> derivedConstituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
                 for (int jc = 0; jc < numDerivedConstituents; jc++) {
@@ -385,7 +385,7 @@ public class W2Parser {
      * @param outputSegment Output segment number
      * @return Output waterbody (one-based)
      */
-    private int getOutputWaterbody(int outputSegment, List<Integer> US,
+    private int getOutputWaterBody(int outputSegment, List<Integer> US,
                                    List<Integer> DS, int numBranches) {
         int outputWaterbody = 1;
         for (int jb = 0; jb < numBranches; jb++) {
@@ -404,7 +404,7 @@ public class W2Parser {
      * @param outputSegment Output segment number
      * @return Output waterbody (one-based)
      */
-    private int getOutputWaterbody(int outputSegment, List<Integer> US, List<Integer> DS,
+    private int getOutputWaterBody(int outputSegment, List<Integer> US, List<Integer> DS,
                                    List<Integer> BS, List<Integer> BE, int numWaterbodies) {
         int outputWaterbody = 1;
         for (int jwb = 0; jwb < numWaterbodies; jwb++) {
@@ -1781,4 +1781,3 @@ public class W2Parser {
         return n;
     }
 }
-
