@@ -37,7 +37,7 @@ public class TestW2Parser {
         System.out.println("\nTable of TSR Outputs:\n");
         w2Parser.printTable(tsrOutputW2Parameters);
         System.out.println("\nTable of Withdrawal Outputs:\n");
-//        w2Parser.printTable(withdrawalOutputW2Parameters);
+        w2Parser.printTable(withdrawalOutputW2Parameters);
 
         // Write tables to output files
         w2Parser.writeTable(inputW2Parameters,
@@ -50,6 +50,7 @@ public class TestW2Parser {
 //                String.format("results/%s/W2_Withdrawal_output_parameters.txt", folder));
         w2Parser.writeInitialWaterSurfaceElevations(
                 String.format("results/%s/W2_WSEL.txt", folder));
+
 
         return w2Parser;
     }

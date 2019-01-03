@@ -1,4 +1,4 @@
-  W2 Model Version 3.7
+  PSU W2 Model Version 3.7/4.1
 
 TITLE C ...............................TITLE....................................
         Model includes North Slough and Lower Columbia Slough from MCDD#1
@@ -13,7 +13,7 @@ TITLE C ...............................TITLE....................................
         
         
 GRID         NWB     NBR     IMX     KMX   NPROC  CLOSEC
-               1       2      51      17       1      ON
+               1       2      51      17       1     OFF        
 
 IN/OUTFL     NTR     NST     NIW     NWD     NGT     NSP     NPI     NPU
               17       1       0       0       0       0       0       0
@@ -42,14 +42,14 @@ DLT FRN     DLTF    DLTF    DLTF    DLTF    DLTF    DLTF    DLTF    DLTF    DLTF
 DLT LIMI    VISC    CELC
 WB 1          ON      ON
 
-BRANCH G      US      DS     UHS     DHS     UQB     DQB   NLMIN   SLOPE
-BR1            2      45       0      -1       0       0       2 0.00000
-BR2           48      50       0      38       0       0       2 0.00000
+BRANCH G      US      DS     UHS     DHS     UQB     DQB   NLMIN   SLOPE  SLOPEC
+BR1            2      45       0      -1       0       0       2 0.00000 0.00000
+BR2           48      50       0      38       0       0       2 0.00000 0.00000
 
 LOCATION     LAT    LONG    EBOT      BS      BE    JBDN
 WB 1     45.6000 122.600 -0.9140       1       2       2
 
-INIT CND   TEMPI    ICEI  WTYPEC   GRIDC
+INIT CND     T2I    ICEI  WTYPEC   GRIDC
 WB 1     7.20000 0.00000   FRESH    RECT
 
 CALCULAT     VBC     EBC     MBC     PQC     EVC     PRC
@@ -72,14 +72,14 @@ TRANSPOR   SLTRC   THETA
 WB 1    QUICKEST 0.50000
 
 HYD COEF      AX      DX    CBHE    TSED      FI   TSEDF   FRICC      Z0
-WB 1     1.00000 1.00000   7E-08 12.0000 0.00000 0.00000   CHEZY   0.001
+WB 1     1.00000 1.00000   7E-08 12.0000 0.00000 0.00000   CHEZY 0.00100
 
 EDDY VISC    AZC   AZSLC   AZMAX     FBC       E   ARODI STRCKLR BOUNDFR  TKECAL
-WB 1          W2     EXP 0.00010       3   9.535   0.430    24.0    10.0     IMP
+WB 1          W2     EXP 0.00010       3 9.53500 0.43000 24.0000 10.0000     IMP
 
-N STRUC     NSTR
-BR1            0
-BR2            0
+N STRUC     NSTR DYNELEV
+BR1            0     OFF
+BR2            0     OFF
 
 STR INT    STRIC   STRIC   STRIC   STRIC   STRIC   STRIC   STRIC   STRIC   STRIC
 BR 1    
@@ -105,7 +105,7 @@ STR WIDT    WSTR    WSTR    WSTR    WSTR    WSTR    WSTR    WSTR    WSTR    WSTR
 BR1     
 BR2     
 
-PIPES       IUPI    IDPI    EUPI    EDPI     WPI   DLXPI     FPI  FMINPI   WTHLC
+PIPES       IUPI    IDPI    EUPI    EDPI     WPI   DLXPI     FPI  FMINPI   WTHLC DYNPIPE
 
 
 PIPE UP    PUPIC   ETUPI   EBUPI   KTUPI   KBUPI
@@ -129,7 +129,7 @@ SPILL GAS GASSPC    EQSP  AGASSP  BGASSP  CGASSP
 GATES       IUGT    IDGT     EGT    A1GT    B1GT    G1GT    A2GT    B2GT    G2GT   WTHLC
 
 
-GATE WEIR   GTA1    GTB1    GTA2    GTB2  DYNVAR
+GATE WEIR   GTA1    GTB1    GTA2    GTB2  DYNVAR    GTIC
 
 
 GATE UP    PUGTC   ETUGT   EBUGT   KTUGT   KBUGT
@@ -141,7 +141,7 @@ GATE DOWN  PDGTC   ETDGT   EBDGT   KTDGT   KBDGT
 GATE GAS  GASGTC    EQGT  AGASGT  BGASGT  CGASGT
 
 
-PUMPS 1     IUPU    IDPU     EPU  STRTPU   ENDPU   EONPU  EOFFPU     QPU   WTHLC
+PUMPS 1     IUPU    IDPU     EPU  STRTPU   ENDPU   EONPU  EOFFPU     QPU   WTHLC DYNPUMP
 
 
 PUMPS 2     PPUC    ETPU    EBPU    KTPU    KBPU
@@ -289,37 +289,37 @@ TSR PLOT    TSRC    NTSR   NITSR
               ON       1       2
 
 TSR DATE    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD
-            1.50
+         1.50000
 
 TSR FREQ    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF
-           0.200
+         0.20000
 
 TSR SEG     ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR
               45      49
 
 TSR LAYE    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR
-         1.00000     1.0
+         1.00000 1.00000
 
 WITH OUT    WDOC    NWDO   NIWDO
-             OFF       0       0
+              ON       0       0
 
 WITH DAT    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD
-        
+               1
 
 WITH FRE    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF
-        
+         0.04166
 
 WITH SEG    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO
         
 
 RESTART     RSOC    NRSO    RSIC
-             OFF       2     OFF
+              ON       2      ON
 
 RSO DATE    RSOD    RSOD    RSOD    RSOD    RSOD    RSOD    RSOD    RSOD    RSOD
-            1.00    2.00
+         40.0000 45.0000
 
 RSO FREQ    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF
-           1.000   2.000
+         100.000 100.000
 
 CST COMP     CCC    LIMC     CUF
               ON      ON      10
@@ -345,14 +345,14 @@ DO            ON
 TIC           ON
 ALK           ON
 ZOO1         OFF
-LDOM_P       OFF
-RDOM_P       OFF
-LPOM_P       OFF
-RPOM_P       OFF
-LDOM_N       OFF
-RDOM_N       OFF
-LPOM_N       OFF
-RPOM_N       OFF
+LDOM-P       OFF
+RDOM-P       OFF
+LPOM-P       OFF
+RPOM-P       OFF
+LDOM-N       OFF
+RDOM-N       OFF
+LPOM-N       OFF
+RPOM-N       OFF
 
 CST DERI   CDWBC   CDWBC   CDWBC   CDWBC   CDWBC   CDWBC   CDWBC   CDWBC   CDWBC
 DOC          OFF
@@ -474,15 +474,15 @@ ALG1     4.00000
 DO       13.0000
 TIC      14.5300
 ALK      60.0000
-ZOO1      0.1000
-LDOM_P    0.0005
-RDOM_P    0.0005
-LPOM_P    0.0005
-RPOM_P    0.0005
-LDOM_N    0.0080
-RDOM_N    0.0080
-LPOM_N    0.0080
-RPOM_N    0.0080
+ZOO1     0.10000
+LDOM-P   0.00050
+RDOM-P   0.00050
+LPOM-P   0.00050
+RPOM-P   0.00050
+LDOM-N   0.00800
+RDOM-N   0.00800
+LPOM-N   0.00800
+RPOM-N   0.00800
 
 CST PRIN  CPRWBC  CPRWBC  CPRWBC  CPRWBC  CPRWBC  CPRWBC  CPRWBC  CPRWBC  CPRWBC
 TDS           ON
@@ -505,14 +505,14 @@ DO            ON
 TIC           ON
 ALK           ON
 ZOO1         OFF
-LDOM_P       OFF
-RDOM_P       OFF
-LPOM_P       OFF
-RPOM_P       OFF
-LDOM_N       OFF
-RDOM_N       OFF
-LPOM_N       OFF
-RPOM_N       OFF
+LDOM-P       OFF
+RDOM-P       OFF
+LPOM-P       OFF
+RPOM-P       OFF
+LDOM-N       OFF
+RDOM-N       OFF
+LPOM-N       OFF
+RPOM-N       OFF
 
 CIN CON   CINBRC  CINBRC  CINBRC  CINBRC  CINBRC  CINBRC  CINBRC  CINBRC  CINBRC
 TDS           ON      ON
@@ -535,14 +535,14 @@ DO            ON      ON
 TIC           ON      ON
 ALK           ON      ON
 ZOO1         OFF     OFF
-LDOM_P       OFF     OFF
-RDOM_P       OFF     OFF
-LPOM_P       OFF     OFF
-RPOM_P       OFF     OFF
-LDOM_N       OFF     OFF
-RDOM_N       OFF     OFF
-LPOM_N       OFF     OFF
-RPOM_N       OFF     OFF
+LDOM-P       OFF     OFF
+RDOM-P       OFF     OFF
+LPOM-P       OFF     OFF
+RPOM-P       OFF     OFF
+LDOM-N       OFF     OFF
+RDOM-N       OFF     OFF
+LPOM-N       OFF     OFF
+RPOM-N       OFF     OFF
 
 CTR CON   CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC
 TDS           ON      ON      ON      ON      ON      ON      ON      ON      ON
@@ -623,14 +623,14 @@ DO            ON      ON
 TIC           ON      ON
 ALK           ON      ON
 ZOO1         OFF     OFF
-LDOM_P       OFF     OFF
-RDOM_P       OFF     OFF
-LPOM_P       OFF     OFF
-RPOM_P       OFF     OFF
-LDOM_N       OFF     OFF
-RDOM_N       OFF     OFF
-LPOM_N       OFF     OFF
-RPOM_N       OFF     OFF
+LDOM-P       OFF     OFF
+RDOM-P       OFF     OFF
+LPOM-P       OFF     OFF
+RPOM-P       OFF     OFF
+LDOM-N       OFF     OFF
+RDOM-N       OFF     OFF
+LPOM-N       OFF     OFF
+RPOM-N       OFF     OFF
 
 CPR CON   CPRBRC  CPRBRC  CPRBRC  CPRBRC  CPRBRC  CPRBRC  CPRBRC  CPRBRC  CPRBRC
 TDS          OFF     OFF
@@ -653,14 +653,14 @@ DO           OFF     OFF
 TIC          OFF     OFF
 ALK          OFF     OFF
 ZOO1         OFF     OFF
-LDOM_P       OFF     OFF
-RDOM_P       OFF     OFF
-LPOM_P       OFF     OFF
-RPOM_P       OFF     OFF
-LDOM_N       OFF     OFF
-RDOM_N       OFF     OFF
-LPOM_N       OFF     OFF
-RPOM_N       OFF     OFF
+LDOM-P       OFF     OFF
+RDOM-P       OFF     OFF
+LPOM-P       OFF     OFF
+RPOM-P       OFF     OFF
+LDOM-N       OFF     OFF
+RDOM-N       OFF     OFF
+LPOM-N       OFF     OFF
+RPOM-N       OFF     OFF
 
 EX COEF    EXH2O    EXSS    EXOM    BETA     EXC    EXIC
 WB 1     0.75000 0.01000 0.40000 0.45000     OFF     OFF
@@ -669,15 +669,15 @@ ALG EX       EXA     EXA     EXA     EXA     EXA     EXA
          0.20000
 
 ZOO EX       EXZ     EXZ     EXZ     EXZ     EXZ     EXZ
-             0.2     0.2     0.2
+         0.20000
 
 MACRO EX     EXM     EXM     EXM     EXM     EXM     EXM
-          0.0100
+         0.01000
 
-GENERIC    CGQ10   CG0DK   CG1DK     CGS
-CG 1     0.00000 0.00000 0.00000 0.00000
-CG 2     0.00000 -1.0000 0.00000 0.00000
-CG 3     1.04000 0.00000 1.40000 0.00000
+GENERIC    CGQ10   CG0DK   CG1DK     CGS   CGLDK   CGKLF    CGCS
+CG 1     0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000
+CG 2     0.00000 -1.0000 0.00000 0.00000 0.00000 0.00000 0.00000
+CG 3     1.04000 0.00000 1.40000 0.00000 0.00000 0.00000 0.00000
 
 S SOLIDS     SSS   SEDRC   TAUCR
 SS# 1    1.00000     OFF .15E-04
@@ -713,46 +713,46 @@ EPI STOI      EP      EN      EC     ESI   ECHLA    EPOM
 EPI1     0.00500 0.08000 0.45000 0.00000 0.06500 0.80000
 
 ZOOP RATE     ZG      ZR      ZM    ZEFF   PREFP  ZOOMIN    ZS2P
-Zoo1        1.50    0.10   0.010    0.50    0.50  0.0100    0.30            
+Zoo1     1.50000 0.10000 0.01000 0.50000 0.50000 0.01000 0.30000
 
 ZOOP ALGP  PREFA   PREFA   PREFA   PREFA   PREFA   PREFA   PREFA   PREFA   PREFA
-Zoo1        1.00    0.50    0.50
+Zoo1     1.00000
 
 ZOOP ZOOP  PREFZ   PREFZ   PREFZ   PREFZ   PREFZ   PREFZ   PREFZ   PREFZ   PREFZ
-Zoo1        0.00    0.00    0.00    
+Zoo1     0.00000
 
 ZOOP TEMP    ZT1     ZT2     ZT3     ZT4     ZK1     ZK2     ZK3     ZK4
-             0.0    15.0    20.0    36.0     0.1     0.9    0.98   0.100
- 
-ZOOP STOI     ZP      ZN      ZC
-         0.01500 0.08000 0.45000
- 
-MACROPHYT MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC
-Mac1         OFF     OFF     OFF 
+Zoo1     0.00000 15.0000 20.0000 36.0000 0.10000 0.90000 0.98000 0.10000
 
-MAC PRINT MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC
-Mac1         OFF     OFF     OFF
+ZOOP STOI     ZP      ZN      ZC
+Zoo1     0.01500 0.08000 0.45000
+
+MACROPHY  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC  MACWBC
+Mac1         OFF
+
+MAC PRIN  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC  MPRWBC
+Mac1         OFF
 
 MAC INI  MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI MACWBCI
-Mac1     0.00000     0.1     0.5  
+Mac1     0.00000
 
 MAC RATE      MG      MR      MM    MSAT    MHSP    MHSN    MHSC    MPOM  LRPMAC
-Mac 1       0.30    0.05    0.05    30.0     0.0     0.0     0.0     0.9     0.2
+Mac1     0.30000 0.05000 0.05000 30.0000 0.00000 0.00000 0.00000 0.90000 0.20000
 
 MAC SED     PSED    NSED
-MAC 1        0.5     0.5
+Mac1     0.50000 0.50000
 
 MAC DIST    MBMP    MMAX
-Mac 1       40.0   500.0
+Mac1     40.0000 500.000
 
-MAC DRAG  CDDRAG     DWV    DWSA   ANORM
-Mac 1        3.0 7.0E+04     8.0     0.3
+MAC DRAG  CDDRAG     DMV    DWSA   ANORM
+Mac1     3.00000 70000.0 8.00000 0.30000
 
 MAC TEMP     MT1     MT2     MT3     MT4     MK1     MK2     MK3     MK4
-Mac 1        7.0    15.0    24.0    34.0     0.1    0.99    0.99    0.01
+Mac1     7.00000 15.0000 24.0000 34.0000 0.10000 0.99000 0.99000 0.01000
 
 MAC STOICH    MP      MN      MC
-Mac 1      0.005    0.08    0.45
+Mac1     0.00500 0.08000 0.45000
 
 DOM       LDOMDK  RDOMDK   LRDDK
 WB 1     0.05000 0.00500 0.00100
@@ -767,7 +767,7 @@ OM RATE     OMT1    OMT2    OMK1    OMK2
 WB 1     5.00000 20.0000 0.10000 0.99000
 
 CBOD        KBOD    TBOD    RBOD   CBODS
-BOD 1    0.25000 1.01500 1.85000     0.0
+BOD 1    0.25000 1.01500 1.85000 0.00000
 
 CBOD STOIC  BODP    BODN    BODC
 BOD 1    0.00500 0.08000 0.45000
@@ -782,7 +782,7 @@ NH4 RATE   NH4T1   NH4T2   NH4K1   NH4K2
 WB 1     5.00000 20.0000 0.10000 0.99000
 
 NITRATE    NO3DK    NO3S FNO3SED
-WB 1     0.05000 0.00000    0.37
+WB 1     0.05000 0.00000 0.37000
 
 NO3 RATE   NO3T1   NO3T2   NO3K1   NO3K2
 WB 1     5.00000 20.0000 0.10000 0.99000
@@ -806,16 +806,16 @@ STOICH 3    O2ER    O2EG
 EPI1     1.10000 1.40000
 
 STOICH 4    O2ZR
-ZOO1     1.10000
+Zoop1    1.10000
 
 STOICH 5    O2MR    O2MG
-MAC1         1.1     1.4
+Mac1     1.10000 1.40000
 
 O2 LIMIT   O2LIM
          0.10000
 
-SEDIMENT    SEDC  SEDPRC   SEDCI    SEDK    SEDS    FSOD    FSED    SEDB DYNSEDK
-WB 1          ON     OFF 0.00000 0.08000     0.1 1.00000 1.00000     0.0     OFF
+SEDIMENT    SEDC  SEDPRC   SEDCI    SEDS    SEDK    FSOD    FSED   SEDBR DYNSEDK
+WB 1          ON     OFF 0.00000 0.08000 0.10000 1.00000 1.00000 0.00000     OFF
 
 SOD RATE   SODT1   SODT2   SODK1   SODK2
 WB 1     5.00000 20.0000 0.10000 0.99000
@@ -832,7 +832,7 @@ REAERATION  TYPE    EQN#   COEF1   COEF2   COEF3   COEF4
 WB 1        LAKE       2 0.00000 0.00000 0.00000 0.00000
 
 RSI FILE..................................RSIFN.................................
-        rsi.npt - not used
+        rso40.opt
 
 QWD FILE..................................QWDFN.................................
         qwd.npt - not used

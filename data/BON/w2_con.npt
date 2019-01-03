@@ -25,7 +25,7 @@ MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL  SYSTDG   N2BND   DOBND
              100     OFF     OFF     OFF     OFF     OFF      ON     OFF     OFF     OFF
 
 TIME CON  TMSTRT   TMEND    YEAR
-           40544   42369    1900
+            1.00 1826.00    2011
 
 DLT CON      NDT  DLTMIN DLTINTR
                1     1.0     OFF
@@ -908,7 +908,7 @@ CTR FILE..................................CTRFN.................................
 TR 1    ctr_tr1.npt - not used
 
 QDT FILE..................................QDTFN.................................
-BR 1    BonnevilleDam_DistributedTributaryInflow.csv
+BR 1    BonnevilleDam_DistributedTributaryInflow.npt
 
 TDT FILE..................................TDTFN.................................
 BR 1    two_41_TDA.opt

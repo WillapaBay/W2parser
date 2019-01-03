@@ -2,8 +2,141 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86ca3ba8-c345-4a52-b43d-1ddf44984b0b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/data/BON/BON_spr_volw.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_1_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_2_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_3_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_4_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_5_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_6_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/ELWS_Compare_BON_2011-2015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/ELWS_Compare_BON_2011-2015_linearFit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/ELWS_Compare_BON_2011-2015_linearFit_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/ELWS_Compare_BON_2011-2015_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TDG_FB_Compare_BON_Temp_TDG_2011-2015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TDG_FB_Compare_BON_Temp_TDG_2011-2015_linearFit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TDG_FB_Compare_BON_Temp_TDG_2011-2015_linearFit_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TDG_FB_Compare_BON_Temp_TDG_2011-2015_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TDG_TW_Compare_BON_2011-2015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TDG_TW_Compare_BON_2011-2015_linearFit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TDG_TW_Compare_BON_2011-2015_linearFit_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TDG_TW_Compare_BON_2011-2015_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TOUT_Compare_BON_2011-2015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TOUT_Compare_BON_2011-2015_linearFit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TOUT_Compare_BON_2011-2015_linearFit_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/TOUT_Compare_BON_2011-2015_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/W2_SYSTDG.npt.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/WBConsole64.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate10_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate11_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate12_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate13_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate14_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate15_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate16_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate17_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate18_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate19_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate1_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate20_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate2_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate3_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate4_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate5_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate6_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate7_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate8_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate9_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate10_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate11_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate12_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate13_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate14_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate15_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate16_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate17_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate18_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate19_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate1_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate20_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate2_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate3_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate4_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate5_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate6_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate7_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate8_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate9_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/preW2-v4_64_092718.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/qwo_76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/rso.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate10_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate11_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate12_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate13_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate14_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate15_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate16_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate17_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate18_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate19_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate1_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate20_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate2_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate3_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate4_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate5_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate6_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate7_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate8_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/two_gate9_seg76.opt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/w2v4.2_systdg.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/BON/wl.opt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/GCL/w2_con.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/W2Parser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/W2Parser.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/.BON_TDG_Temp_2011-2015.csv.swp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/BonnevilleDam_DistributedTributaryInflow.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/BonnevilleDam_DistributedTributaryInflow.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/BonnevilleDam_DistributedTributaryInflow.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/HOXO_DLS_BON_2011_2015_MET_withBP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/HOXO_DLS_BON_2011_2015_MET_withBP.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/QGT_BON_2011_2015_daily_DSS-scaled.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/QGT_BON_2011_2015_daily_DSS-scaled.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/THE DALLES_OUTFLOW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/THE DALLES_OUTFLOW.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/cwo_41_TDA.opt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/cwo_41_TDA.opt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/pre.opt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/pre.opt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BON/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CHJ/CHJ_NAVD88_BTH_2014.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CHJ/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/CHJ/graph.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CHJ/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/CHJ/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ColumbiaSlough/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ColumbiaSlough/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/DWR/DWR_NAVD88_BTH_2014_PEST.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/DWR/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/DWR/graph.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/DWR/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/DWR/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/GCL/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/GCL/graph.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/GCL/w2_con_alternate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/IHR/IHR_NAVD88_BTH_2014.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/IHR/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/IHR/graph.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/IHR/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/IHR/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JDA/JDA_NAVD88_BTH_2014.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JDA/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/JDA/graph.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/JDA/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/JDA/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/LGS/LGS_NAVD88_BTH_2014.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/LGS/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LGS/graph.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/LGS/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LGS/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/LMN/LMN_NAVD88_BTH_2014.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/LMN/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LMN/graph.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/LMN/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LMN/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/LWG/LWG_NAVD88_BTH_2014.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/LWG/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LWG/graph.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/LWG/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LWG/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/MCN/MCN_NAVD88_BTH_2014.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/MCN/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/MCN/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ParticleTracking/ImportantCards.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ParticleTracking/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ParticleTracking/graph.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ParticleTracking/table_output_files.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ParticleTracking/table_output_files.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/CouleeT01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/CouleeT01.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/HangT01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/HangT01.npt" afterDir="false" />
@@ -75,7 +208,44 @@
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TDA/TDA_NAVD88_BTH_2014_121117.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/TDA/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/TDA/w2_con.npt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.NEW" beforeDir="false" afterPath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.NEW" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testDltControlCard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testMiscell" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testReadInfiles" beforeDir="false" afterPath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testReadInfiles" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testRestart" beforeDir="false" afterPath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testRestart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ParticleTracking/W2_TSR_output_parameters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results/ParticleTracking/W2_TSR_output_parameters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/ParticleTracking/W2_Withdrawal_output_parameters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestActiveDerivedConstituentsCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestBathymetry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestBranchGeometryCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestCalculationsCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestConstituentComputationsCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestDltControlCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestFileCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestGraphFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestGridCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestHeatExchangeCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestIceCoverCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestInitialConditionsCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestLocationCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestMiscellCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestMultiLineCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestNumberStructuresCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestParserCards.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestRepeatingDoubleCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestRepeatingIntegerCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestRestartCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestSedimentCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestTimeControlCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestW2ControlFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/W2Parser/_TestingTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBathymetry.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBathymetry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,68 +260,48 @@
       <file leaf-file-name="W2Parser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="1782" selection-start-line="1782" selection-end-line="1782" />
+            <state relative-caret-position="247">
+              <caret line="1753" column="6" selection-start-line="1753" selection-start-column="6" selection-end-line="1753" selection-end-column="6" />
               <folding>
-                <element signature="e#41606#41607#0" expanded="true" />
-                <element signature="e#41640#41641#0" expanded="true" />
-                <element signature="e#43912#43913#0" expanded="true" />
-                <element signature="e#43965#43966#0" expanded="true" />
-                <element signature="e#44019#44020#0" expanded="true" />
-                <element signature="e#44061#44062#0" expanded="true" />
-                <element signature="e#44121#44122#0" expanded="true" />
-                <element signature="e#44178#44179#0" expanded="true" />
-                <element signature="e#44385#44386#0" expanded="true" />
-                <element signature="e#44438#44439#0" expanded="true" />
-                <element signature="e#44646#44647#0" expanded="true" />
-                <element signature="e#44695#44696#0" expanded="true" />
-                <element signature="e#69381#69382#0" expanded="true" />
-                <element signature="e#69426#69427#0" expanded="true" />
-                <element signature="e#69596#69597#0" expanded="true" />
-                <element signature="e#69647#69648#0" expanded="true" />
-                <element signature="e#69827#69828#0" expanded="true" />
-                <element signature="e#69871#69872#0" expanded="true" />
-                <element signature="e#70058#70059#0" expanded="true" />
-                <element signature="e#70109#70110#0" expanded="true" />
-                <element signature="e#70303#70304#0" expanded="true" />
-                <element signature="e#70345#70346#0" expanded="true" />
-                <element signature="e#70539#70540#0" expanded="true" />
-                <element signature="e#70583#70584#0" expanded="true" />
-                <element signature="e#70769#70770#0" expanded="true" />
-                <element signature="e#70808#70809#0" expanded="true" />
-                <element signature="e#71078#71079#0" expanded="true" />
-                <element signature="e#71130#71131#0" expanded="true" />
-                <element signature="e#71254#71255#0" expanded="true" />
-                <element signature="e#71284#71285#0" expanded="true" />
-                <element signature="e#71725#71726#0" expanded="true" />
-                <element signature="e#71755#71756#0" expanded="true" />
-                <element signature="e#72195#72196#0" expanded="true" />
-                <element signature="e#72227#72228#0" expanded="true" />
-                <element signature="e#72678#72679#0" expanded="true" />
-                <element signature="e#72704#72705#0" expanded="true" />
-                <element signature="e#72833#72834#0" expanded="true" />
-                <element signature="e#72859#72860#0" expanded="true" />
-                <element signature="e#72977#72978#0" expanded="true" />
-                <element signature="e#73003#73004#0" expanded="true" />
-                <element signature="e#73115#73116#0" expanded="true" />
-                <element signature="e#73141#73142#0" expanded="true" />
-                <element signature="e#73268#73269#0" expanded="true" />
-                <element signature="e#73294#73295#0" expanded="true" />
-                <element signature="e#73418#73419#0" expanded="true" />
-                <element signature="e#73444#73445#0" expanded="true" />
-                <element signature="e#73571#73572#0" expanded="true" />
-                <element signature="e#73597#73598#0" expanded="true" />
-                <element signature="e#73706#73707#0" expanded="true" />
-                <element signature="e#73732#73733#0" expanded="true" />
-                <element signature="e#73862#73863#0" expanded="true" />
-                <element signature="e#73900#73901#0" expanded="true" />
-                <element signature="e#74063#74064#0" expanded="true" />
-                <element signature="e#74122#74123#0" expanded="true" />
-                <element signature="e#74654#74655#0" expanded="true" />
-                <element signature="e#74714#74715#0" expanded="true" />
-                <element signature="e#75286#75287#0" expanded="true" />
-                <element signature="e#75347#75348#0" expanded="true" />
+                <element signature="e#70076#70077#0" expanded="true" />
+                <element signature="e#70127#70128#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="W2Globals.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Globals.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestW2Parser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="W2_WAT_parser.f90" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/W2_WAT_parser.f90">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="1859" column="98" selection-start-line="1859" selection-start-column="98" selection-end-line="1859" selection-end-column="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="w2_con.npt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="368" selection-start-line="368" selection-end-line="368" />
             </state>
           </provider>
         </entry>
@@ -171,10 +321,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MiscellCard_NEW.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiRecordRepeatingDoubleCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiRecordRepeatingStringCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/RepeatingDoubleCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/RepeatingIntegerCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/NumberStructuresCard_NEW.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestNumberStructuresCard.java" />
@@ -218,18 +364,22 @@
         <option value="$PROJECT_DIR$/data/BON/HOXO_DLS_BON_2011_2015_MET_withBP.csv" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/TimeControlCard.java" />
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestConvertExcelDateNumToJday.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" />
+        <option value="$PROJECT_DIR$/data/GCL/w2_con.npt" />
+        <option value="$PROJECT_DIR$/data/Spokane/w2_con.npt" />
+        <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBathymetry.java" />
+        <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2551" />
-    <option name="y" value="-9" />
-    <option name="width" value="2578" />
-    <option name="height" value="1458" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="2580" />
+    <option name="height" value="1460" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -237,13 +387,28 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="BON" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
@@ -255,11 +420,6 @@
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="w2parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
@@ -277,17 +437,19 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="kotlin&#9;FILE&#9;file://C:/Users/q0hectes/Documents/IdeaProjects/W2Parser/.idea/kotlinc.xml" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SoilPhysics" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.36393443" />
-    <property name="settings.editor.selected.configurable" value="pyconsole" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -319,70 +481,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_TheDalles">
+  <component name="RunManager" selected="JUnit.All in W2Parser">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LittleGoose" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in W2Parser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="W2Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
-      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestConvertExcelDateNumToJday" />
-      <option name="METHOD_NAME" value="testConvertExcelDateNumToJday_LittleGoose" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerGranite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="W2Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
-      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestConvertExcelDateNumToJday" />
-      <option name="METHOD_NAME" value="testConvertExcelDateNumToJday_LowerGranite" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerMonumental" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="W2Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
-      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestConvertExcelDateNumToJday" />
-      <option name="METHOD_NAME" value="testConvertExcelDateNumToJday_LowerMonumental" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -438,6 +548,52 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="TestW2Parser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="W2Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
+      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestW2Parser" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestW2Parser.testParserChiefJoseph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="W2Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hec2.wat.plugin.ceQualW2.w2parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="hec2.wat.plugin.ceQualW2.w2parser" />
+      <option name="MAIN_CLASS_NAME" value="hec2.wat.plugin.ceQualW2.w2parser.TestW2Parser" />
+      <option name="METHOD_NAME" value="testParserChiefJoseph" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -476,20 +632,36 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <module name="" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="0" />
+      <module name="" />
+    </configuration>
     <list>
-      <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LittleGoose" />
-      <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerMonumental" />
-      <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerGranite" />
       <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_McNary" />
       <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_TheDalles" />
+      <item itemvalue="JUnit.All in W2Parser" />
+      <item itemvalue="JUnit.TestW2Parser" />
+      <item itemvalue="JUnit.TestW2Parser.testParserChiefJoseph" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in W2Parser" />
+        <item itemvalue="JUnit.TestW2Parser.testParserChiefJoseph" />
+        <item itemvalue="JUnit.TestW2Parser" />
         <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_TheDalles" />
         <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_McNary" />
-        <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerGranite" />
-        <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerMonumental" />
-        <item itemvalue="JUnit.TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LittleGoose" />
       </list>
     </recent_temporary>
   </component>
@@ -735,59 +907,66 @@
       <option name="project" value="LOCAL" />
       <updated>1545184719512</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Minor updates">
+      <created>1545442344159</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1545442344159</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_LittleGoose - 2018.12.18 at 17h 05m 44s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LittleGoose" configurationId="JUnit" />
+    <history-entry file="All_in_W2Parser - 2019.01.02 at 11h 17m 43s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_LowerMonumental - 2018.12.18 at 17h 08m 45s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerMonumental" configurationId="JUnit" />
+    <history-entry file="All_in_W2Parser - 2019.01.02 at 11h 20m 11s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_LowerMonumental - 2018.12.18 at 17h 09m 31s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerMonumental" configurationId="JUnit" />
+    <history-entry file="All_in_W2Parser - 2019.01.02 at 11h 21m 27s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_LowerGranite - 2018.12.18 at 17h 14m 30s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerGranite" configurationId="JUnit" />
+    <history-entry file="All_in_W2Parser - 2019.01.02 at 11h 23m 15s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_LowerGranite - 2018.12.18 at 17h 17m 35s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_LowerGranite" configurationId="JUnit" />
+    <history-entry file="All_in_W2Parser - 2019.01.02 at 11h 23m 39s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_McNary - 2018.12.18 at 17h 20m 37s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_McNary" configurationId="JUnit" />
+    <history-entry file="TestW2Parser - 2019.01.02 at 15h 37m 53s.xml">
+      <configuration name="TestW2Parser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_TheDalles - 2018.12.18 at 17h 22m 48s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_TheDalles" configurationId="JUnit" />
+    <history-entry file="TestW2Parser_testParserChiefJoseph - 2019.01.02 at 15h 40m 20s.xml">
+      <configuration name="TestW2Parser.testParserChiefJoseph" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_TheDalles - 2018.12.18 at 17h 24m 44s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_TheDalles" configurationId="JUnit" />
+    <history-entry file="TestW2Parser_testParserChiefJoseph - 2019.01.02 at 15h 40m 34s.xml">
+      <configuration name="TestW2Parser.testParserChiefJoseph" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_TheDalles - 2018.12.18 at 17h 25m 09s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_TheDalles" configurationId="JUnit" />
+    <history-entry file="TestW2Parser_testParserChiefJoseph - 2019.01.03 at 13h 54m 52s.xml">
+      <configuration name="TestW2Parser.testParserChiefJoseph" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestConvertExcelDateNumToJday_testConvertExcelDateNumToJday_TheDalles - 2018.12.18 at 17h 28m 49s.xml">
-      <configuration name="TestConvertExcelDateNumToJday.testConvertExcelDateNumToJday_TheDalles" configurationId="JUnit" />
+    <history-entry file="TestW2Parser_testParserChiefJoseph - 2019.01.03 at 13h 55m 03s.xml">
+      <configuration name="TestW2Parser.testParserChiefJoseph" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2553" y="-7" width="2062" height="1166" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49798658" weight="0.37184465" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" weight="0.32884097" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="right" id="REPL" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32815534" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32815534" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32815534" />
-      <window_info anchor="right" id="Leiningen" order="3" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27722278" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38456374" />
       <window_info anchor="bottom" id="Run with VisualVM" order="7" />
       <window_info anchor="bottom" id="Tail" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -795,24 +974,24 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39805827" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.5525606" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="7" />
       <window_info anchor="bottom" id="Dependency Viewer" order="8" weight="0.32884097" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49798658" weight="0.37184465" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="REPL" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32815534" />
+      <window_info anchor="right" id="Leiningen" order="3" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New Bonneville model" />
     <MESSAGE value="Added Spokane model" />
     <MESSAGE value="Implemented new W2Card in three classes and parser, and added some tests and documentation." />
     <MESSAGE value="Added" />
@@ -837,7 +1016,8 @@
     <MESSAGE value="Updated ConvertExcelDateNumToJday and renamed fields in TimeControlCard." />
     <MESSAGE value="Changed format to two decimal places in TimeControlCard." />
     <MESSAGE value="Major updates to ConvertExcelDateNumToJday and tests. Added new test code to finish converting the W2 transition models from Excel date number to Julian day." />
-    <option name="LAST_COMMIT_MESSAGE" value="Major updates to ConvertExcelDateNumToJday and tests. Added new test code to finish converting the W2 transition models from Excel date number to Julian day." />
+    <MESSAGE value="Minor updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -896,68 +1076,32 @@
           <properties />
           <option name="timeStamp" value="103" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java</url>
+          <line>264</line>
+          <properties />
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java</url>
+          <line>241</line>
+          <properties />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java</url>
+          <line>172</line>
+          <properties />
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="104" />
+      <option name="time" value="109" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTsrPlotCard.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestRepeatingDoubleCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestRepeatingIntegerCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2FileCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2GraphFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/WithdrawalOutputCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/GridCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestWithdrawalOutputCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiRecordRepeatingStringCard.java" />
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/MultiRecordRepeatingStringCard_NEW.java" />
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ActiveConstituentFluxesCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -1057,11 +1201,7 @@
     <entry file="file://$PROJECT_DIR$/data/BON/jday_HOXO_DLS_BON_2011_2015_MET_withBP.csv" />
     <entry file="file://$PROJECT_DIR$/data/BON/jday_cwo_41_TDA.opt" />
     <entry file="file://$PROJECT_DIR$/data/BON/jday_BonnevilleDam_DistributedTributaryInflow.csv" />
-    <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt.NEW">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt.NEW" />
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchGeometryCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1087,27 +1227,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-152">
           <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/W2_WAT_parser.f90">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2204">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="378" selection-start-line="378" selection-end-line="378" />
         </state>
       </provider>
     </entry>
@@ -1141,27 +1260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/GCL/w2_con.npt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="3827" column="8" selection-start-line="3827" selection-start-column="8" selection-end-line="3827" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/Spokane/w2_con.npt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="2011" column="8" selection-start-line="2011" selection-start-column="8" selection-end-line="2011" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/BON/W2_SYSTDG.npt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1189,69 +1287,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/CHJ/w2_con.npt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ColumbiaSlough/w2_con.npt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/GCL/w2_con.npt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="2916" column="23" selection-start-line="2916" selection-start-column="23" selection-end-line="2916" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/W2Parser/TestParser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#3487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestTsrPlotCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/Spokane/w2_con.npt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/BON/W2_TSR_output_parameters.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/BON/W2_input_parameters.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBathymetry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/CHJ/W2_TSR_output_parameters.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/W2_WAT_parser.f90">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="1859" column="98" selection-start-line="1859" selection-start-column="98" selection-end-line="1859" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="368" selection-start-line="368" selection-end-line="368" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/kotlinc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Globals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="1782" selection-start-line="1782" selection-end-line="1782" />
+        <state relative-caret-position="247">
+          <caret line="1753" column="6" selection-start-line="1753" selection-start-column="6" selection-end-line="1753" selection-end-column="6" />
           <folding>
-            <element signature="e#41606#41607#0" expanded="true" />
-            <element signature="e#41640#41641#0" expanded="true" />
-            <element signature="e#43912#43913#0" expanded="true" />
-            <element signature="e#43965#43966#0" expanded="true" />
-            <element signature="e#44019#44020#0" expanded="true" />
-            <element signature="e#44061#44062#0" expanded="true" />
-            <element signature="e#44121#44122#0" expanded="true" />
-            <element signature="e#44178#44179#0" expanded="true" />
-            <element signature="e#44385#44386#0" expanded="true" />
-            <element signature="e#44438#44439#0" expanded="true" />
-            <element signature="e#44646#44647#0" expanded="true" />
-            <element signature="e#44695#44696#0" expanded="true" />
-            <element signature="e#69381#69382#0" expanded="true" />
-            <element signature="e#69426#69427#0" expanded="true" />
-            <element signature="e#69596#69597#0" expanded="true" />
-            <element signature="e#69647#69648#0" expanded="true" />
-            <element signature="e#69827#69828#0" expanded="true" />
-            <element signature="e#69871#69872#0" expanded="true" />
-            <element signature="e#70058#70059#0" expanded="true" />
-            <element signature="e#70109#70110#0" expanded="true" />
-            <element signature="e#70303#70304#0" expanded="true" />
-            <element signature="e#70345#70346#0" expanded="true" />
-            <element signature="e#70539#70540#0" expanded="true" />
-            <element signature="e#70583#70584#0" expanded="true" />
-            <element signature="e#70769#70770#0" expanded="true" />
-            <element signature="e#70808#70809#0" expanded="true" />
-            <element signature="e#71078#71079#0" expanded="true" />
-            <element signature="e#71130#71131#0" expanded="true" />
-            <element signature="e#71254#71255#0" expanded="true" />
-            <element signature="e#71284#71285#0" expanded="true" />
-            <element signature="e#71725#71726#0" expanded="true" />
-            <element signature="e#71755#71756#0" expanded="true" />
-            <element signature="e#72195#72196#0" expanded="true" />
-            <element signature="e#72227#72228#0" expanded="true" />
-            <element signature="e#72678#72679#0" expanded="true" />
-            <element signature="e#72704#72705#0" expanded="true" />
-            <element signature="e#72833#72834#0" expanded="true" />
-            <element signature="e#72859#72860#0" expanded="true" />
-            <element signature="e#72977#72978#0" expanded="true" />
-            <element signature="e#73003#73004#0" expanded="true" />
-            <element signature="e#73115#73116#0" expanded="true" />
-            <element signature="e#73141#73142#0" expanded="true" />
-            <element signature="e#73268#73269#0" expanded="true" />
-            <element signature="e#73294#73295#0" expanded="true" />
-            <element signature="e#73418#73419#0" expanded="true" />
-            <element signature="e#73444#73445#0" expanded="true" />
-            <element signature="e#73571#73572#0" expanded="true" />
-            <element signature="e#73597#73598#0" expanded="true" />
-            <element signature="e#73706#73707#0" expanded="true" />
-            <element signature="e#73732#73733#0" expanded="true" />
-            <element signature="e#73862#73863#0" expanded="true" />
-            <element signature="e#73900#73901#0" expanded="true" />
-            <element signature="e#74063#74064#0" expanded="true" />
-            <element signature="e#74122#74123#0" expanded="true" />
-            <element signature="e#74654#74655#0" expanded="true" />
-            <element signature="e#74714#74715#0" expanded="true" />
-            <element signature="e#75286#75287#0" expanded="true" />
-            <element signature="e#75347#75348#0" expanded="true" />
+            <element signature="e#70076#70077#0" expanded="true" />
+            <element signature="e#70127#70128#0" expanded="true" />
           </folding>
         </state>
       </provider>

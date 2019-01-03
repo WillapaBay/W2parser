@@ -105,12 +105,13 @@ public class W2Parser {
     private boolean TIME_SERIES = false;
     private boolean DOWNSTREAM_OUTFLOW = false;
     private static final int NUM_FLUXES = 73;   // Currently, this must be hard-coded.
-                                                // Version 4.1 has 73 fluxes.
+    // Version 4.1 has 73 fluxes.
     private List<Boolean> SEDIMENT_CALC;
 
     /**
      * Handles reading and updating the CE-QUAL-W2 control file and
      * associated bathymetry files
+     *
      * @param w2con CE-QUAL-W2 control file object
      */
     public W2Parser(W2ControlFile w2con) {
@@ -120,6 +121,7 @@ public class W2Parser {
     /**
      * Handles reading and updating the CE-QUAL-W2 control file and
      * associated bathymetry files
+     *
      * @param inPath Path to CE-QUAL-W2 control file
      */
     public W2Parser(String inPath) throws IOException {
@@ -127,8 +129,8 @@ public class W2Parser {
     }
 
     /**
-    * Read the CE-QUAL-W2 control file
-    */
+     * Read the CE-QUAL-W2 control file
+     */
     public void readControlFile() {
         // Initialize time window
         timeControlCard = new TimeControlCard(w2con);
@@ -193,7 +195,7 @@ public class W2Parser {
         List<List<String>> CDWBC = activeDerivedConstituentsCard.getStates();
 
         List<Boolean> derivedIsOn = new ArrayList<>();
-        for (List<String> values: CDWBC) {
+        for (List<String> values : CDWBC) {
             values.forEach(value -> derivedIsOn.add(isOn(value)));
         }
         if (any(derivedIsOn) && CONSTITUENTS) DERIVED_CALC = true;
@@ -247,7 +249,7 @@ public class W2Parser {
 
     /**
      * Create withdrawal Parameters
-     *
+     * <p>
      * Outputs include:
      * QWD: Withdrawal output flow
      *
@@ -381,7 +383,8 @@ public class W2Parser {
 
     /**
      * Determine number of output waterbody based on DS and US parameters
-     * @param numBranches Number of branches
+     *
+     * @param numBranches   Number of branches
      * @param outputSegment Output segment number
      * @return Output waterbody (one-based)
      */
@@ -391,7 +394,8 @@ public class W2Parser {
         for (int jb = 0; jb < numBranches; jb++) {
             if (outputSegment >= US.get(jb) && outputSegment <= DS.get(jb)) {
                 return outputWaterbody;
-            } else {
+            }
+            else {
                 outputWaterbody++;
             }
         }
@@ -400,8 +404,9 @@ public class W2Parser {
 
     /**
      * Determine number of output waterbody based on DS, US, BS, and BE parameters
+     *
      * @param numWaterbodies Number of waterbodies
-     * @param outputSegment Output segment number
+     * @param outputSegment  Output segment number
      * @return Output waterbody (one-based)
      */
     private int getOutputWaterBody(int outputSegment, List<Integer> US, List<Integer> DS,
@@ -410,7 +415,8 @@ public class W2Parser {
         for (int jwb = 0; jwb < numWaterbodies; jwb++) {
             if (outputSegment >= US.get(BS.get(jwb)) && outputSegment <= DS.get(BE.get(jwb))) {
                 return outputWaterbody;
-            } else {
+            }
+            else {
                 outputWaterbody++;
             }
         }
@@ -419,7 +425,8 @@ public class W2Parser {
 
     /**
      * Set the model output timestep
-     * @param interval Output time interval
+     *
+     * @param interval    Output time interval
      * @param granularity Output granularity (days, hours, or seconds)
      */
     public void setOutputTimestep(double interval, W2Globals.Granularity granularity) {
@@ -432,9 +439,11 @@ public class W2Parser {
 
         if (granularity == W2Globals.Granularity.DAYS) {
             WDOC = W2Globals.ON;
-        } else if (granularity == W2Globals.Granularity.HOURS) {
+        }
+        else if (granularity == W2Globals.Granularity.HOURS) {
             WDOC = W2Globals.ONH;
-        } else if (granularity == W2Globals.Granularity.SECONDS) {
+        }
+        else if (granularity == W2Globals.Granularity.SECONDS) {
             WDOC = W2Globals.ONS;
         }
         withdrawalOutputCard.setWDOC(WDOC);
@@ -446,7 +455,7 @@ public class W2Parser {
 
     /**
      * Create output time series (TSR) Parameters
-     *
+     * <p>
      * Outputs include:
      * DLT: Current time step (s)
      * ELWS: Water surface elevation for the cell's segment location (m)
@@ -458,8 +467,8 @@ public class W2Parser {
      * DEPTH: Depth from water surface to channel bottom (m)
      * WIDTH: Surface width (m)*
      * SHADE: Shade (shade factor multiplied by SRON)
-     *   if SHADE = 1 then no shade
-     *   if shade = 0 then no short wave solar reaches the water surface
+     * if SHADE = 1 then no shade
+     * if shade = 0 then no short wave solar reaches the water surface
      * ICETH: Ice thickness (if ice calculations are turned on) -- This isn't listed in output in the user's manual
      * Tvolavg: Vertically volume-weighted temperature at the specified model segment
      * NetRad: Net radiation at surface of segment (W/m^2)
@@ -472,7 +481,7 @@ public class W2Parser {
      * Derived constituent concentrations (multiple columns)
      * Instantaneous kinetic flux rates (kg/day)
      * Instantaneous algae growth rate limitation fractions for P, N, and light [0 to 1] for each algal group
-     *   (if LIMC is turned on under the CST COMP card)
+     * (if LIMC is turned on under the CST COMP card)
      *
      * @return List of TSR output parameters
      */
@@ -700,7 +709,7 @@ public class W2Parser {
                 // zero-based indexing.
                 int upstreamSegment = US.get(startBranch - 1);
                 int downstreamSegment = DS.get(endBranch - 1);
-                if (outputSegment >= upstreamSegment && outputSegment <= downstreamSegment){
+                if (outputSegment >= upstreamSegment && outputSegment <= downstreamSegment) {
                     break;
                 }
                 outputWaterbody++;
@@ -837,15 +846,15 @@ public class W2Parser {
                 }
             }
 
-            // Add CO2GASX flux manually - I don't really understand this in the parser.exe source code
-            w2Parameter = new W2Parameter(tsrLocation, "CO2GASX", "CO2GASX", "kg/d",
-                    outputColumn, 0, tsrFilename, "outflow", "output");
-            w2Parameter.setWaterBody(outputWaterbody);
-            w2Parameter.setVerticalLocation(verticalLocation);
-            w2Parameter.setSegment(segment);
-            w2Parameters.add(w2Parameter);
-            outputColumn++;
-            paramIndex++;
+//            // Add CO2GASX flux manually - I don't really understand this in the parser.exe source code
+//            w2Parameter = new W2Parameter(tsrLocation, "CO2GASX", "CO2GASX", "kg/d",
+//                    outputColumn, 0, tsrFilename, "outflow", "output");
+//            w2Parameter.setWaterBody(outputWaterbody);
+//            w2Parameter.setVerticalLocation(verticalLocation);
+//            w2Parameter.setSegment(segment);
+//            w2Parameters.add(w2Parameter);
+//            outputColumn++;
+//            paramIndex++;
 
             // Set total number of columns
             outputColumn -= 1; // correct for the extra increment in the flux loop above
@@ -873,14 +882,16 @@ public class W2Parser {
 
     /**
      * Save the changes to the CE-QUAL-W2 file
+     *
      * @param outfile CE-QUAL-W2 control filename
      */
     public void saveControlFile(String outfile) {
-       w2con.save(outfile);
+        w2con.save(outfile);
     }
 
     /**
      * Read initial water temperatures from the initial conditions card
+     *
      * @return List of initial water temperatures, one per water body
      */
     private List<Double> fetchInitialTemperatures() {
@@ -890,6 +901,7 @@ public class W2Parser {
 
     /**
      * Read constituent names obtained from the graph.npt flie
+     *
      * @return List of constituent names (i.e., "long" names)
      */
     private List<String> fetchConstituentNames() {
@@ -902,6 +914,7 @@ public class W2Parser {
 
     /**
      * Read initial constituent concentrations from the CST ICON card
+     *
      * @return List of initial constituent concentrations, one list per water body
      */
     private List<List<Double>> fetchInitialConcentrations() {
@@ -913,6 +926,7 @@ public class W2Parser {
     /**
      * Write initial water surface elevations fetched from the bathymetery file(s)
      * to a table in a separate output file, e.g., a log file.
+     *
      * @param outfileName Output filename
      */
     public void writeInitialWaterSurfaceElevations(String outfileName) {
@@ -1175,11 +1189,11 @@ public class W2Parser {
                                     graphFileW2Constituents.get(jc);
                             W2Parameter w2Parameter =
                                     new W2Parameter(distTributaryLocationName(branch),
-                                    distributedTributaryConstituentNames.get(jc) +
-                                            "-CDT", graphFileW2Constituent.getLongName(),
-                                    graphFileW2Constituent.getUnits(), icol, numColumns,
+                                            distributedTributaryConstituentNames.get(jc) +
+                                                    "-CDT", graphFileW2Constituent.getLongName(),
+                                            graphFileW2Constituent.getUnits(), icol, numColumns,
                                             cdtCard.getFileNames().get(jbr),
-                                    "inflow", "input");
+                                            "inflow", "input");
                             w2Parameters.add(w2Parameter);
                         }
                     }
@@ -1205,11 +1219,11 @@ public class W2Parser {
                         W2Constituent graphFileW2Constituent = graphFileW2Constituents.get(jc);
                         W2Parameter w2Parameter =
                                 new W2Parameter(tributaryLocationName(tributary),
-                                tributaryConstituentNames.get(jc) +
-                                        "-CTR", graphFileW2Constituent.getLongName(),
-                                graphFileW2Constituent.getUnits(), icol, numColumns,
+                                        tributaryConstituentNames.get(jc) +
+                                                "-CTR", graphFileW2Constituent.getLongName(),
+                                        graphFileW2Constituent.getUnits(), icol, numColumns,
                                         ctrCard.getFileNames().get(jtr),
-                                "inflow", "input");
+                                        "inflow", "input");
                         w2Parameters.add(w2Parameter);
                     }
                 }
@@ -1220,7 +1234,7 @@ public class W2Parser {
         precipConstituentsCard = new PrecipConstituentsCard(w2con, numConstituents, NBR);
         List<String> precipConstituentNames = precipConstituentsCard.getConstituentNames();
         List<List<String>> CPRBRC = precipConstituentsCard.getStates();
-        cprCard = new W2FileCard(w2con,"CPR FILE", NBR);
+        cprCard = new W2FileCard(w2con, "CPR FILE", NBR);
         if (CONSTITUENTS) {
             for (int jwb = 0; jwb < NWB; jwb++) {
                 if (isOn(PRC.get(jwb))) {
@@ -1237,11 +1251,11 @@ public class W2Parser {
                                         graphFileW2Constituents.get(jc);
                                 W2Parameter w2Parameter =
                                         new W2Parameter(precipLocationName(branch),
-                                        precipConstituentNames.get(jc) + "-CPR",
-                                        graphFileW2Constituent.getLongName(),
+                                                precipConstituentNames.get(jc) + "-CPR",
+                                                graphFileW2Constituent.getLongName(),
                                                 graphFileW2Constituent.getUnits(),
-                                        icol, numColumns, cprCard.getFileNames().get(branch - 1),
-                                        "inflow", "input");
+                                                icol, numColumns, cprCard.getFileNames().get(branch - 1),
+                                                "inflow", "input");
                                 w2Parameters.add(w2Parameter);
                             }
                         }
@@ -1267,7 +1281,8 @@ public class W2Parser {
             int nColumns;
             if (isOn(sroc)) {
                 nColumns = 6;
-            } else {
+            }
+            else {
                 nColumns = 5;
             }
             W2Parameter w2Parameter = new W2Parameter(metLocationName(waterbody),
@@ -1423,8 +1438,9 @@ public class W2Parser {
 
     /**
      * Update the CE-QUAL-W2 simulation time window
-     * @param jdayMin Start time
-     * @param jdayMax End time
+     *
+     * @param jdayMin   Start time
+     * @param jdayMax   End time
      * @param startYear Start year
      */
     public void setTimeWindow(double jdayMin, double jdayMax, int startYear) {
@@ -1435,19 +1451,22 @@ public class W2Parser {
 
     /**
      * Create a formatted table of w2Parameters for writing to file or console
+     *
      * @param w2Parameters List of w2Parameters
      * @return List of formatted output lines
      */
     private List<String> createTable(List<W2Parameter> w2Parameters) {
         List<String> outputList = new ArrayList<>();
         String headerFormat = "%-28s%-17s%-42s%-10s%-8s%-10s%-30s%-15s%-13s";
-        String dataFormat   = "%-28s%-17s%-42s%-10s%-8d%-10d%-30s%-15s%-13s";
+        String dataFormat = "%-28s%-17s%-42s%-10s%-8d%-10d%-30s%-15s%-13s";
         String header = String.format(headerFormat, "Location", "Short Name",
                 "Long Name", "Units", "Column", "#Columns", "Filename", "Inflow/Outflow",
                 "Input/Output");
         outputList.add(header);
         StringBuilder horizontalBar = new StringBuilder();
-        for (int i = 0; i < header.length(); i++) { horizontalBar.append("-"); }
+        for (int i = 0; i < header.length(); i++) {
+            horizontalBar.append("-");
+        }
         outputList.add(horizontalBar.toString());
 
         for (W2Parameter p : w2Parameters) {
@@ -1461,6 +1480,7 @@ public class W2Parser {
 
     /**
      * Print a table of w2Parameters to the console
+     *
      * @param w2Parameters List of w2Parameters
      */
     public void printTable(List<W2Parameter> w2Parameters) {
@@ -1471,8 +1491,9 @@ public class W2Parser {
 
     /**
      * Write a table of w2Parameters
+     *
      * @param w2Parameters List of w2Parameters
-     * @param outfileName Output filename
+     * @param outfileName  Output filename
      */
     public void writeTable(List<W2Parameter> w2Parameters, String outfileName) {
         List<String> lines = createTable(w2Parameters);
@@ -1487,9 +1508,10 @@ public class W2Parser {
 
     /**
      * Compute number of columns in a constituent file
+     *
      * @param constituentSettings Specifies if a parameter is turned on or off
-     * @param column Column in the settings record in the control file. This typically corresponds to a branch.
-     * @param numConstituents Number of constituents in the model
+     * @param column              Column in the settings record in the control file. This typically corresponds to a branch.
+     * @param numConstituents     Number of constituents in the model
      * @return Number of columns in the constituent file for the given column (e.g., branch)
      */
     private int computeNumberConstituentColumns(List<List<String>> constituentSettings,
@@ -1507,7 +1529,7 @@ public class W2Parser {
     /**
      * Retrieve initial water surface elevations from the bathymetry file
      * TODO Add support for multiple water bodies
-      */
+     */
     private List<List<Double>> fetchInitialWaterSurfaceElevations() {
         bathyFileCard = new W2FileCard(w2con, "BTH FILE", NWB);
         List<List<Double>> waterSurfaceElevations = new ArrayList<>();
@@ -1517,7 +1539,8 @@ public class W2Parser {
                 W2BathymetryFile bathyFile = new W2BathymetryFile(w2con, bathyFilename, KMX);
                 List<Double> ELWS = bathyFile.getELWS().getValues();
                 waterSurfaceElevations.add(ELWS);
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -1526,6 +1549,7 @@ public class W2Parser {
 
     /**
      * Return a list of model input parameters
+     *
      * @return List of model input parameters
      */
     public List<W2Parameter> getInputW2Parameters() {
@@ -1534,6 +1558,7 @@ public class W2Parser {
 
     /**
      * Return a list of meteorology parameters
+     *
      * @return List of meteorology parameters
      */
     public List<W2Parameter> getMeteorologyW2Parameters() {
@@ -1542,6 +1567,7 @@ public class W2Parser {
 
     /**
      * Return a list of TSR (time series) output parameters
+     *
      * @return List of TSR output parameters
      */
     public List<W2Parameter> getTsrOutputW2Parameters() {
@@ -1550,6 +1576,7 @@ public class W2Parser {
 
     /**
      * Return a list of withdrawal output parameters
+     *
      * @return List of withdrawal output parameters
      */
     public List<W2Parameter> getWithdrawalOutputW2Parameters() {
@@ -1558,6 +1585,7 @@ public class W2Parser {
 
     /**
      * Return a list of initial water temperatures
+     *
      * @return List of initial water temperatures, one list per water body
      */
     public List<Double> getInitialTemperatures() {
@@ -1566,6 +1594,7 @@ public class W2Parser {
 
     /**
      * Return a list of initial concentrations
+     *
      * @return List of initial concentrations, one list per water body
      */
     public List<List<Double>> getInitialConcentrations() {
@@ -1574,13 +1603,16 @@ public class W2Parser {
 
     /**
      * Return a list of constituent names, as they appear in the graph.npt file
+     *
      * @return List of constituent names
      */
     public List<String> getConstituentNames() {
         return constituentNames;
     }
 
-    /** Return a list of initial water surface elevations
+    /**
+     * Return a list of initial water surface elevations
+     *
      * @return List of water surface elevations. The list
      * contains a list of water surface elevations
      * for each waterbody.
@@ -1591,6 +1623,7 @@ public class W2Parser {
 
     /**
      * Get Julian start day of simulation
+     *
      * @return Julian start day
      */
     public double getJdayMin() {
@@ -1599,6 +1632,7 @@ public class W2Parser {
 
     /**
      * Set Julian start day of simulation
+     *
      * @param jdayMin Julian start day
      */
     public void setJdayMin(double jdayMin) {
@@ -1610,6 +1644,7 @@ public class W2Parser {
 
     /**
      * Get Julian end day of simulation
+     *
      * @return Julian end day
      */
     public double getJdayMax() {
@@ -1618,6 +1653,7 @@ public class W2Parser {
 
     /**
      * Set Julian end day of simulation
+     *
      * @param jdayMax Julian end day
      */
     public void setJdayMax(double jdayMax) {
@@ -1629,6 +1665,7 @@ public class W2Parser {
 
     /**
      * Get start year of simulation
+     *
      * @return Start year of simulation
      */
     public int getStartYear() {
@@ -1637,6 +1674,7 @@ public class W2Parser {
 
     /**
      * Set start year of simulation
+     *
      * @param startYear Start year of simulation
      */
     public void setStartYear(int startYear) {
@@ -1648,6 +1686,7 @@ public class W2Parser {
 
     /**
      * Return number of branches
+     *
      * @return Number of branches
      */
     public int getNumBranches() {
@@ -1656,6 +1695,7 @@ public class W2Parser {
 
     /**
      * Return number of water bodies
+     *
      * @return Number of water bodies
      */
     public int getNumWaterbodies() {
@@ -1664,6 +1704,7 @@ public class W2Parser {
 
     /**
      * Return number of segments
+     *
      * @return Number of segments
      */
     public int getNumSegments() {
@@ -1672,6 +1713,7 @@ public class W2Parser {
 
     /**
      * Return number of layers
+     *
      * @return Number of layers
      */
     public int getNumLayers() {
@@ -1680,6 +1722,7 @@ public class W2Parser {
 
     /**
      * Return number of tributaries
+     *
      * @return Number of tributaries
      */
     public int getNumTributaries() {
@@ -1688,6 +1731,7 @@ public class W2Parser {
 
     /**
      * Return number of structures
+     *
      * @return Number of structures
      */
     public int getNumStructures() {
@@ -1696,6 +1740,7 @@ public class W2Parser {
 
     /**
      * Return number of withdrawals
+     *
      * @return Number of withdrawals
      */
     public int getNumWithdrawals() {
@@ -1704,6 +1749,7 @@ public class W2Parser {
 
     /**
      * Return number of gates
+     *
      * @return Number of gates
      */
     public int getNumGates() {
@@ -1712,6 +1758,7 @@ public class W2Parser {
 
     /**
      * Return number of constituents
+     *
      * @return Number of constituents
      */
     public int getNumConstituents() {
@@ -1720,15 +1767,23 @@ public class W2Parser {
 
     /**
      * Determine if value is "ON"
+     *
      * @param value "ON" or "OFF"
      * @return True if value is "ON"
      */
     private boolean isOn(String value) {
-        return value.equalsIgnoreCase(W2Globals.ON);
+        if (value.equalsIgnoreCase(W2Globals.ON) ||
+                value.equalsIgnoreCase(W2Globals.ONH) ||
+                value.equalsIgnoreCase(W2Globals.ONS)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
      * Determine if each value in a list is "ON"
+     *
      * @param values List of values ("ON" or "OFF")
      * @return List of booleans: True if a value is "ON"
      */
@@ -1740,6 +1795,7 @@ public class W2Parser {
 
     /**
      * Determine if value is "OFF"
+     *
      * @param value "ON" or "OFF"
      * @return True if value is "OFF"
      */
@@ -1749,6 +1805,7 @@ public class W2Parser {
 
     /**
      * Determine if a value is "OFF"
+     *
      * @param values List of values ("ON" or "OFF")
      * @return List of booleans: True if value is "OFF"
      */
@@ -1760,6 +1817,7 @@ public class W2Parser {
 
     /**
      * Determine if any value in the list is true
+     *
      * @param values List of boolean values
      * @return True if any value is true; otherwise false
      */
@@ -1769,6 +1827,7 @@ public class W2Parser {
 
     /**
      * Count number of true values
+     *
      * @param values List of boolean values
      * @return Number of true values
      */

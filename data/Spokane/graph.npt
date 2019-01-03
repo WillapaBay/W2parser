@@ -1,4 +1,4 @@
-Hydrodynamic, w2Constituent, and derived w2Constituent names, formats, multipliers, and array viewer controls
+Hydrodynamic, constituent, and derived constituent names, formats, multipliers, and array viewer controls 
                                                                                                          
 ....................HNAME...................     FMTH   HMULT    HMIN    HMAX   HPLTC       #
 Timestep violations [NVIOL]                     (I10)     1.0    -1.0     1.0     OFF       1

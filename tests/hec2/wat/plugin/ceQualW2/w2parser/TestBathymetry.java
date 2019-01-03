@@ -14,7 +14,7 @@ public class TestBathymetry {
         GridCard gridCard = new GridCard(w2con);
         int numLayers = gridCard.setNumLayers();
         W2BathymetryFile w2BathymetryFile =
-                new W2BathymetryFile(w2con, "TDA_NAVD88_BTH_2014_121117.csv",
+                new W2BathymetryFile(w2con, "TDA_NAVD88_BTH_020918_2011.csv",
                         numLayers); // Uses path from w2con
         W2BathymetryRecord<Integer> Segments = w2BathymetryFile.getSegments();
         W2BathymetryRecord<Double> ELWS = new W2BathymetryRecord<>("ELWS");

@@ -1,4 +1,4 @@
-Hydrodynamic, w2Constituent, and derived w2Constituent names, formats, multipliers, and array viewer controls
+Hydrodynamic, constituent, and derived constituent names, formats, multipliers, and array viewer controls
 
 ....................HNAME...................     FMTH   HMULT    HMIN    HMAX   HPLTC       #
 Timestep violations [NVIOL]                     (I10)     1.0    -1.0     1.0     OFF       1
@@ -59,23 +59,23 @@ LPOM N, g/m^3                                 (g10.3)     1.0     0.0     1.0   
 RPOM N, g/m^3                                 (g10.3)     1.0     0.0     1.0     OFF      39
 
 ....................CDNAME...................   FMTCD  CDMULT   CDMIN   CDMAX  CDPLTC       #
-Dissolved Organic Carbon, g/m^3               (g10.3)     1.0    -1.0    25.0     OFF       1
-Particulate Organic Carbon, g/m^3             (g10.3)     1.0    -1.0    50.0     OFF       2
-Total Organic Carbon, g/m^3                   (g10.3)     1.0    -1.0    25.0     OFF       3
-Dissolved Organic Nitrogen, g/m^3             (g10.3)     1.0    -1.0    25.0     OFF       4
-Particulate Organic Nitrogen, g/m^3           (g10.3)     1.0    -1.0    25.0     OFF       5
-Total Organic Nitrogen, g/m^3                 (g10.3)     1.0    -1.0    50.0     OFF       6
-Total Kjeldahl Nitrogen, g/m^3                (g10.3)     1.0    -1.0    15.0     OFF       7
-Total Nitrogen, g/m^3                         (g10.3)     1.0    -1.0    15.0     OFF       8
-Dissolved Organic Phosphorus, g/m^3           (g10.3)     1.0    -1.0    25.0     OFF       9
-Particulate Organic Phosphorus, g/m^3         (g10.3)     1.0    -1.0    -1.0     OFF      10
-Total Organic Phosphorus, g/m^3               (g10.3)     1.0    -1.0     5.0     OFF      11
-Total Phosphorus, g/m^3                       (g10.3)     1.0    -1.0    20.0     OFF      12
-Algal Production, g/m^2/day                   (g10.3)     1.0    -1.0     5.0     OFF      13
+Dissolved organic carbon, g/m^3               (g10.3)     1.0    -1.0    25.0     OFF       1
+Particulate organic carbon, g/m^3             (g10.3)     1.0    -1.0    50.0     OFF       2
+Total organic carbon, g/m^3                   (g10.3)     1.0    -1.0    25.0     OFF       3
+Dissolved organic nitrogen, g/m^3             (g10.3)     1.0    -1.0    25.0     OFF       4
+Particulate organic nitrogen, g/m^3           (g10.3)     1.0    -1.0    25.0     OFF       5
+Total organic nitrogen, g/m^3                 (g10.3)     1.0    -1.0    50.0     OFF       6
+Total Kheldahl Nitrogen, g/m^3                (g10.3)     1.0    -1.0    15.0     OFF       7
+Total nitrogen, g/m^3                         (g10.3)     1.0    -1.0    15.0     OFF       8
+Dissolved organic phosphorus, g/m^3           (g10.3)     1.0    -1.0    25.0     OFF       9
+Particulate organic phosphorus, g/m^3         (g10.3)     1.0    -1.0    -1.0     OFF      10
+Total organic phosphorus, g/m^3               (g10.3)     1.0    -1.0     5.0     OFF      11
+Total phosphorus, g/m^3                       (g10.3)     1.0    -1.0    20.0     OFF      12
+Algal production, g/m^2/day                   (g10.3)     1.0    -1.0     5.0     OFF      13
 Chlorophyll a, ug/m^3                         (g10.3)     1.0    -5.0   145.0     OFF      14
-Total Algae, g/m^3                            (g10.3)     1.0    -1.0    60.0     OFF      15
+Total algae, g/m^3                            (g10.3)     1.0    -1.0    60.0     OFF      15
 Oxygen % Gas Saturation                       (g10.3)     1.0    -1.0    50.0     OFF      16
-Total Suspended Solids, g/m^3                 (g10.3)     1.0    -1.0     5.0     OFF      17
+Total suspended Solids, g/m^3                 (g10.3)     1.0    -1.0     5.0     OFF      17
 Total Inorganic Suspended Solids,g/m^3        (g10.3)     1.0    -1.0    20.0     OFF      18
 Carbonaceous Ultimate BOD, g/m^3              (g10.3)     1.0     5.0     9.0     OFF      19
 pH                                            (g10.3)     1.0    -1.0    10.0     OFF      20

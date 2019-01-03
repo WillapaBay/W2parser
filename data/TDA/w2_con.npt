@@ -1,15 +1,15 @@
-  W2 Model Version 4.0
+  W2 Model Version 8.0 TRANSITION MODEL 2011-2015 (Dec 2018)
 
 TITLE C ...............................TITLE....................................
-        The Dalles Pool, Columbia River;  1/1/2014 - 12/30/2014 (JDAY 1-365)
+        The Dalles Pool, Columbia River;  Transition Model 2011-2015
         WEST Consultants, Inc., Bellevue, WA for NWD, USACE
         
         updated to W2v4 by DGade - USACE
-        updated by Tammy Threadgill - USACE-ERDC
+        updated to W2v8 by Tammy Threadgill - USACE-ERDC
         
         NAVD88 -> NGVD29+3.3
-        **used original bathymetry with corrected angles and shifted EBOT to -9.0
-        **reduced KMX = 66
+        W2v4.2_systdg.exe (Dec 04 2018)
+
         DT = ON
  ..................................................................................
 GRID         NWB     NBR     IMX     KMX   NPROC  CLOSEC
@@ -21,11 +21,11 @@ IN/OUTFL     NTR     NST     NIW     NWD     NGT     NSP     NPI     NPU
 CONSTITU     NGC     NSS     NAL     NEP    NBOD     NMC     NZP
                1       0       0       0       0       0       0
 
-MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL
-             100     OFF     OFF     OFF     OFF     OFF
+MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL  SYSTDG   N2BND   DOBND   TDGTA
+             100     OFF     OFF     OFF     OFF     OFF      ON     OFF     OFF     OFF
 
 TIME CON  TMSTRT   TMEND    YEAR
-               1     365    2014
+            1.00  1826.0    2011
 
 DLT CON      NDT  DLTMIN DLTINTR
                1     1.0     OFF
@@ -34,7 +34,7 @@ DLT DATE    DLTD    DLTD    DLTD    DLTD    DLTD    DLTD    DLTD    DLTD    DLTD
                1 
 
 DLT MAX   DLTMAX  DLTMAX  DLTMAX  DLTMAX  DLTMAX  DLTMAX  DLTMAX  DLTMAX  DLTMAX
-            3600
+             900
 
 DLT FRN     DLTF    DLTF    DLTF    DLTF    DLTF    DLTF    DLTF    DLTF    DLTF
              0.9
@@ -42,14 +42,14 @@ DLT FRN     DLTF    DLTF    DLTF    DLTF    DLTF    DLTF    DLTF    DLTF    DLTF
 DLT LIMIT   VISC    CELC
 WB 1          ON      ON
 
-BRANCH G      US      DS     UHS     DHS     UQB     DQB   NLMIN   SLOPE
-BR 1           2      41       0       0       0       0       2    0.00
+BRANCH G      US      DS     UHS     DHS     UQB     DQB   NLMIN   SLOPE  SLOPEC
+BR 1           2      41       0       0       0       0       2
 
 LOCATION     LAT    LONG    EBOT      BS      BE    JBDN
-WB 1      45.614 121.134   -15.5       1       1       1
+WB 1      45.614 121.134   -9.50       1       1       1
 
 INIT CND     T2I  ICETHI  WTYPEC   GRIDC
-WB 1         5.3     0.0   FRESH    RECT
+WB 1        5.10     0.0   FRESH    RECT
 
 CALCULAT     VBC     EBC     MBC     PQC     EVC     PRC
 WB 1          ON     OFF     OFF     OFF     OFF     OFF
@@ -118,7 +118,7 @@ SPILL GAS GASSPC    EQSP  AGASSP  BGASSP  CGASSP
 
 
 GATES       IUGT    IDGT     EGT    A1GT    B1GT    G1GT    A2GT    B2GT    G2GT   WTHLC
-POWER         41       0  14.630    10.0     1.5     1.0    10.0     1.5     1.0    DOWN
+POWER         41       0  20.500    10.0     1.5     1.0    10.0     1.5     1.0    DOWN
 SB1           41       0  37.887    10.0     1.5     1.0    10.0     1.5     1.0    DOWN
 SB2           41       0  37.887    10.0     1.5     1.0    10.0     1.5     1.0    DOWN
 SB3           41       0  37.887    10.0     1.5     1.0    10.0     1.5     1.0    DOWN
@@ -172,85 +172,85 @@ SB23        10.0     1.5    10.0     1.5    FLOW      ON
 MISC        10.0     1.5    10.0     1.5    FLOW      ON
 
 GATE UP    PUGTC   ETUGT   EBUGT   KTUGT   KBUGT
-POWER      DISTR                       2      65 
-SB1        DISTR                       2      65 
-SB2        DISTR                       2      65 
-SB3        DISTR                       2      65 
-SB4        DISTR                       2      65 
-SB5        DISTR                       2      65 
-SB6        DISTR                       2      65 
-SB7        DISTR                       2      65 
-SB8        DISTR                       2      65 
-SB9        DISTR                       2      65 
-SB10       DISTR                       2      65 
-SB11       DISTR                       2      65 
-SB12       DISTR                       2      65 
-SB13       DISTR                       2      65 
-SB14       DISTR                       2      65 
-SB15       DISTR                       2      65 
-SB16       DISTR                       2      65 
-SB17       DISTR                       2      65 
-SB18       DISTR                       2      65 
-SB19       DISTR                       2      65 
-SB20       DISTR                       2      65 
-SB21       DISTR                       2      65 
-SB22       DISTR                       2      65 
-SB23       DISTR                       2      65 
-MISC       DISTR                       2      65 
+POWER      DISTR                       2      36 
+SB1        DISTR                       2      36 
+SB2        DISTR                       2      36 
+SB3        DISTR                       2      36 
+SB4        DISTR                       2      36 
+SB5        DISTR                       2      36 
+SB6        DISTR                       2      36 
+SB7        DISTR                       2      36 
+SB8        DISTR                       2      36 
+SB9        DISTR                       2      36 
+SB10       DISTR                       2      36 
+SB11       DISTR                       2      36 
+SB12       DISTR                       2      36 
+SB13       DISTR                       2      36 
+SB14       DISTR                       2      36 
+SB15       DISTR                       2      36 
+SB16       DISTR                       2      36 
+SB17       DISTR                       2      36 
+SB18       DISTR                       2      36 
+SB19       DISTR                       2      36 
+SB20       DISTR                       2      36 
+SB21       DISTR                       2      36 
+SB22       DISTR                       2      36 
+SB23       DISTR                       2      36 
+MISC       DISTR                       2      36 
 
 GATE DOWN  PDGTC   ETDGT   EBDGT   KTDGT   KBDGT
-POWER      DISTR                       2      65
-SB1        DISTR                       2      65 
-SB2        DISTR                       2      65 
-SB3        DISTR                       2      65 
-SB4        DISTR                       2      65 
-SB5        DISTR                       2      65 
-SB6        DISTR                       2      65 
-SB7        DISTR                       2      65 
-SB8        DISTR                       2      65 
-SB9        DISTR                       2      65 
-SB10       DISTR                       2      65 
-SB11       DISTR                       2      65 
-SB12       DISTR                       2      65 
-SB13       DISTR                       2      65 
-SB14       DISTR                       2      65 
-SB15       DISTR                       2      65 
-SB16       DISTR                       2      65 
-SB17       DISTR                       2      65 
-SB18       DISTR                       2      65 
-SB19       DISTR                       2      65 
-SB20       DISTR                       2      65 
-SB21       DISTR                       2      65 
-SB22       DISTR                       2      65 
-SB23       DISTR                       2      65 
-MISC       DISTR                       2      65 
+POWER      DISTR                       2      36
+SB1        DISTR                       2      36 
+SB2        DISTR                       2      36 
+SB3        DISTR                       2      36 
+SB4        DISTR                       2      36 
+SB5        DISTR                       2      36 
+SB6        DISTR                       2      36 
+SB7        DISTR                       2      36 
+SB8        DISTR                       2      36 
+SB9        DISTR                       2      36 
+SB10       DISTR                       2      36 
+SB11       DISTR                       2      36 
+SB12       DISTR                       2      36 
+SB13       DISTR                       2      36 
+SB14       DISTR                       2      36 
+SB15       DISTR                       2      36 
+SB16       DISTR                       2      36 
+SB17       DISTR                       2      36 
+SB18       DISTR                       2      36 
+SB19       DISTR                       2      36 
+SB20       DISTR                       2      36 
+SB21       DISTR                       2      36 
+SB22       DISTR                       2      36 
+SB23       DISTR                       2      36 
+MISC       DISTR                       2      36 
 
-GATE GAS  GASGTC    EQGT  AGASGT  BGASGT  CGASGT
-POWER        OFF       2135.0000-35.0000-.100000
-SB1           ON       2135.0000-35.0000-.100000
-SB2           ON       2135.0000-35.0000-.100000
-SB3           ON       2135.0000-35.0000-.100000
-SB4           ON       2135.0000-35.0000-.100000
-SB5           ON       2135.0000-35.0000-.100000
-SB6           ON       2135.0000-35.0000-.100000
-SB7           ON       2135.0000-35.0000-.100000
-SB8           ON       2135.0000-35.0000-.100000
-SB9           ON       2135.0000-35.0000-.100000
-SB10          ON       2135.0000-35.0000-.100000
-SB11          ON       2135.0000-35.0000-.100000
-SB12          ON       2135.0000-35.0000-.100000
-SB13          ON       2135.0000-35.0000-.100000
-SB14          ON       2135.0000-35.0000-.100000
-SB15          ON       2135.0000-35.0000-.100000
-SB16          ON       2135.0000-35.0000-.100000
-SB17          ON       2135.0000-35.0000-.100000
-SB18          ON       2135.0000-35.0000-.100000
-SB19          ON       2135.0000-35.0000-.100000
-SB20          ON       2135.0000-35.0000-.100000
-SB21          ON       2135.0000-35.0000-.100000
-SB22          ON       2135.0000-35.0000-.100000
-SB23          ON       2135.0000-35.0000-.100000
-MISC         OFF       2135.0000-35.0000-.100000
+GATE GAS  GASGTC    EQGT  AGASGT  BGASGT  CGASGT  GTTYPE    SPBC
+POWER        OFF       2  135.00  -35.00  -.1000     POW           
+SB1           ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB2           ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB3           ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB4           ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB5           ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB6           ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB7           ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB8           ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB9           ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB10          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB11          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB12          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB13          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB14          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB15          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB16          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB17          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB18          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB19          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB20          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB21          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB22          ON       2  135.00  -35.00  -.1000     SPB    1.87
+SB23          ON       2  135.00  -35.00  -.1000     SPB    1.87
+MISC         OFF       2  135.00  -35.00  -.1000
 
 PUMPS 1     IUPU    IDPU     EPU  STRTPU   ENDPU   EONPU  EOFFPU     QPU   WTHLC
 
@@ -324,7 +324,7 @@ SNP DATE    SNPD    SNPD    SNPD    SNPD    SNPD    SNPD    SNPD    SNPD    SNPD
 WB 1           1      
 
 SNP FREQ    SNPF    SNPF    SNPF    SNPF    SNPF    SNPF    SNPF    SNPF    SNPF
-WB 1    .0416667
+WB 1         1.0
 
 SNP SEG     ISNP    ISNP    ISNP    ISNP    ISNP    ISNP    ISNP    ISNP    ISNP
 WB 1          41
@@ -351,7 +351,7 @@ PRF SEG     IPRF    IPRF    IPRF    IPRF    IPRF    IPRF    IPRF    IPRF    IPRF
 WB 1                
 
 SPR PLOT    SPRC    NSPR   NISPR
-WB 1          ON       1       1
+WB 1         ONV       1      40
 
 SPR DATE    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD
 WB 1         0.5
@@ -360,7 +360,11 @@ SPR FREQ    SPRF    SPRF    SPRF    SPRF    SPRF    SPRF    SPRF    SPRF    SPRF
 WB 1        1.00
 
 SPR SEG     ISPR    ISPR    ISPR    ISPR    ISPR    ISPR    ISPR    ISPR    ISPR
-WB 1          41
+WB 1           2       3       4       5       6       7       8       9      10
+              11      12      13      14      15      16      17      18      19
+              20      21      22      23      24      25      26      27      28
+              29      30      31      32      33      34      35      36      37
+              38      39      40      41
 
 VPL PLOT    VPLC    NVPL
 WB 1          ON       1
@@ -372,10 +376,10 @@ VPL FREQ    VPLF    VPLF    VPLF    VPLF    VPLF    VPLF    VPLF    VPLF    VPLF
 WB 1         1.0
 
 CPL PLOT    CPLC    NCPL TECPLOT
-WB 1         OFF       1     OFF
+WB 1          ON       1     OFF
 
 CPL DATE    CPLD    CPLD    CPLD    CPLD    CPLD    CPLD    CPLD    CPLD    CPLD
-WB 1           1
+WB 1         0.5
 
 CPL FREQ    CPLF    CPLF    CPLF    CPLF    CPLF    CPLF    CPLF    CPLF    CPLF
 WB 1     1.00000
@@ -390,19 +394,19 @@ FLX FREQ    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF
 WB 1    
 
 TSR PLOT    TSRC    NTSR   NITSR
-              ON       1       3
+              ON       1       7
 
 TSR DATE    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD
-               1       1       1
+               1 
 
 TSR FREQ    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF
-        .0416667.0416667.0416667   
+        .0416667
 
 TSR SEG     ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR
-              41      41      41
+              41      41      41      41      41      41      41 
 
 TSR LAYER   ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR
-             0.5     1.0     7.0
+             0.5     3.0     5.0    10.0    15.0    20.0    30.0
 
 WITH OUT    WDOC    NWDO   NIWDO
               ON       1       1
@@ -426,7 +430,7 @@ RSO FREQ    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF
         
 
 CST COMP     CCC    LIMC     CUF
-             OFF     OFF       1
+              ON     OFF       1
 
 CST ACTIVE   CAC
 TDS          OFF
@@ -555,7 +559,7 @@ SODDK        OFF
 
 CST ICON   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB
 TDS      0.00000
-N2       20.1804
+N2       19.8031
 PO4      0.00000
 NH4      0.00000
 NO3      0.00000
@@ -566,7 +570,7 @@ LDOM     0.00000
 RDOM     0.00000
 LPOM     0.00000
 RPOM     0.00000
-DO       12.4990
+DO       12.0530
 TIC      0.00000
 ALK      0.00000
 LDOM_P    0.0000
@@ -867,7 +871,7 @@ S DEMAND     SOD     SOD     SOD     SOD     SOD     SOD     SOD     SOD     SOD
          0.30000 0.30000 0.30000 0.30000 0.30000 0.30000
 
 REAERATION  TYPE     EQN   COEF1   COEF2   COEF3   COEF4
-WB 1        LAKE      14.5000000.05000002.000000 0.00000
+WB 1        LAKE      14 0.10969 0.01979 0.72200   0.000
 
 RSI FILE..................................RSIFN.................................
         rsi.npt - not used
@@ -876,19 +880,19 @@ QWD FILE..................................QWDFN.................................
         qwd.npt - not used
 
 QGT FILE..................................QGTFN.................................
-        TDA_2014_QGT_121117.csv
+        QGT_TDA_2011_2015_daily_DSS-scaled.csv
 
 WSC FILE..................................WSCFN.................................
         TDA_WSC.npt
 
 SHD FILE..................................SHDFN.................................
-        TDA_SHD.npt
+        TDA_SHD_1.npt
 
 BTH FILE..................................BTHFN.................................
-WB 1    TDA_NAVD88_BTH_2014_121117.csv
+WB 1    TDA_NAVD88_BTH_020918_2011.csv
 
 MET FILE..................................METFN.................................
-WB 1    GOLW_DLS_MET_2014.csv
+WB 1    DLS_TDA_2011_2015_MET_withBP.csv
 
 EXT FILE..................................EXTFN.................................
 WB 1    ext_1.npt - not used
@@ -900,34 +904,34 @@ LPR FILE..................................LPRFN.................................
 WB 1    lpr.npt - not used
 
 QIN FILE..................................QINFN.................................
-BR 1    qwo_101.opt_2014_daily.csv
+BR 1    JOHN DAY_OUTFLOW.csv
 
 TIN FILE..................................TINFN.................................
-BR 1    two_101.opt_2014
+BR 1    two_101_JDA.opt
 
 CIN FILE..................................CINFN.................................
-BR 1    cin_br1.npt - not used 
+BR 1    cwo_101_JDA.opt
 
 QOT FILE..................................QOTFN.................................
 BR 1    qot_br1.npt -- not used
 
 QTR FILE..................................QTRFN.................................
-TR 1    TDA_2014_DeschutesR_QTR.csv
+TR 1    TheDalles_TributaryInflow.npt
 
 TTR FILE..................................TTRFN.................................
-TR 1    TDA_2014_DeschutesR_TTR.csv
+TR 1    JHAW_temp_2011_2015.csv
 
 CTR FILE..................................CTRFN.................................
-TR 1    ctr_br1.npt - not used
+TR 1    cwo_101_JDA.opt
 
 QDT FILE..................................QDTFN.................................
-BR 1    TDA_SystemModel_2014_NAVD88_121117_qwb.opt_qdt
+BR 1    THE DALLES_INFLOW-LOC.npt
 
 TDT FILE..................................TDTFN.................................
-BR 1    two_101.opt_2014_tdt
+BR 1    two_101_JDA.opt
 
 CDT FILE..................................CDTFN.................................
-BR 1    cdt_br1.npt - not used 
+BR 1    cwo_101_JDA.opt
 
 PRE FILE..................................PREFN.................................
 BR 1    pre_br1.npt - not used
@@ -957,25 +961,26 @@ CDH FILE..................................CDHFN.................................
 BR 1    cdh_br1.npt - not used
 
 SNP FILE..................................SNPFN.................................
-WB 1    TDA_SystemModel_2014_NAVD88_121117_DT_snp.opt
+WB 1    TDA_snp.opt
 
 PRF FILE..................................PRFFN.................................
-WB 1    TDA_SystemModel_2014_NAVD88_121117_DT_prf.opt
+WB 1    TDA_prf.opt
 
 VPL FILE..................................VPLFN.................................
-WB 1    TDA_SystemModel_2014_NAVD88_121117_DT_vpl.w2l
+WB 1    TDA_vpl.w2l
 
 CPL FILE..................................CPLFN.................................
-WB 1    TDA_SystemModel_2014_NAVD88_121117_DT_cpl.opt
+WB 1    TDA_cpl.opt
 
 SPR FILE..................................SPRFN.................................
-WB 1    TDA_SystemModel_2014_NAVD88_121117_DT_spr.opt
+WB 1    TDA_spr.opt
 
 FLX FILE..................................FLXFN.................................
-WB 1    TDA_SystemModel_2014_NAVD88_121117_DT_flx.opt - not used
+WB 1    TDA_flx.opt - not used
 
 TSR FILE..................................TSRFN.................................
-        TDA_SystemModel_2014_NAVD88_121117_DT_tsr.opt
+        TDA_tsr.opt
 
 WDO FILE..................................WDOFN.................................
-        TDA_SystemModel_2014_NAVD88_121117_DT_wdo.opt
+        TDA_wdo.opt
+

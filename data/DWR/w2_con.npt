@@ -1,16 +1,16 @@
-  W2 Model Version 4.0 (February 2017)
+  W2 TRANSITION MODEL 2011-2015 (Nov 2018)
  
 TITLE C ...............................TITLE....................................
-        Dworshak Pool  - Jan 1, 2014 to Dec 31, 2014
+        Dworshak Pool  - Jan 1, 2011 to Dec 31, 2015
             - Originally Developed by Mike Schneider USACE
-            - Updated to W2 v4.0 by Tammy Threadgill - USACE-ERDC-EL
-            -
+            - Updated to W2 v8.0 by Tammy Threadgill - USACE-ERDC-EL
+            - w2v4.2_systdg_12042018.exe
             -
             - DT = ON
-            - w2Parameters passed from Best Paramters from PEST run - 12/12/17.
-            - (SEE PEST/Executables/DWR_2014_PEST)
+            - Parameters passed from Best Paramters from PEST run (Dan)- 12/19/17.
+            - 
             -
-            - VPR set as initial conditions and PEST re-run
+            - 
 ........................................................................................
 GRID         NWB     NBR     IMX     KMX   NPROC  CLOSEC
                1       3      64     145       1      ON
@@ -21,12 +21,12 @@ IN/OUTFL     NTR     NST     NIW     NWD     NGT     NSP     NPI     NPU
 CONSTITU     NGC     NSS     NAL     NEP    NBOD     NMC     NZP
                1       0       0       0       0       0       0
  
-MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL
-             100     OFF     OFF     OFF     OFF     OFF
+MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL  SYSTDG   N2BND   DOBND   TDGTA
+             100     OFF     OFF     OFF     OFF     OFF      ON     OFF     OFF     OFF
  
 TIME CON  TMSTRT   TMEND    YEAR
-             1.0   365.0    2014
- 
+            1.00 1826.00    2011
+
 DLT CON      NDT  DLTMIN DLTINTR
                1   1.000     OFF
  
@@ -54,7 +54,7 @@ INIT CND   TEMPI    ICEI  WTYPEC   GRIDC
 WB 1        -1.0    0.00   FRESH    RECT
  
 CALCULAT     VBC     EBC     MBC     PQC     EVC     PRC
-WB 1         OFF      ON     OFF     OFF     OFF     OFF
+WB 1         OFF      ON     OFF      ON     OFF     OFF
  
 DEAD SEA   WINDC    QINC   QOUTC   HEATC
               ON      ON      ON      ON
@@ -65,7 +65,7 @@ BR2           ON      ON      ON
 BR3           ON      ON      ON
  
 HEAT EXCH  SLHTC    SROC  RHEVAP   METIC  FETCHC     AFW     BFW     CFW   WINDH
-WB 1        TERM     OFF     OFF      ON     OFF 9.00000 .400000 1.90000  3.0000
+WB 1        TERM     OFF     OFF      ON     OFF     9.2    0.46     2.0     3.0
  
 ICE COVE    ICEC  SLICEC  ALBEDO   HWICE    BICE    GICE  ICEMIN   ICET2
 WB 1         OFF  DETAIL 0.25000 10.0000 0.60000 0.07000 0.05000 3.00000
@@ -74,10 +74,10 @@ TRANSPOR   SLTRC   THETA
 WB 1    QUICKEST 0.55000
  
 HYD COEF      AX      DX    CBHE    TSED      FI   TSEDF   FRICC      Z0
-WB 1     .900000 .900000 .400000 11.0000 .010000 1.00000    MANN 9.59E-4
+WB 1         1.0     1.0     0.3  10.489 .010000 1.00000    MANN   0.001
  
 EDDY VISC    AZC   AZSLC   AZMAX     FBC       E   ARODI STRCKLR BOUNDFR  TKECAL
-WB 1         TKE     IMP    1.00       3   9.535   0.430   24.00   10.00     IMP
+WB 1         TKE     IMP    1.00       3   9.535   0.431   24.00   10.00     IMP
  
 N STRUC     NSTR
 BR1            0
@@ -158,15 +158,15 @@ SPB2        10.0     1.5    10.0     1.5    FLOW      ON
 MISC        10.0     1.5    10.0     1.5    FLOW      ON
  
 GATE UP    PUGTC   ETUGT   EBUGT   KTUGT   KBUGT
-POW3-B   SPECIFY     1.0     1.0       2     144
-POW12-B  SPECIFY     1.0     1.0       2     144
-POW-S    SPECIFY     1.0     1.0       2     144
-RO1      SPECIFY     1.0     1.0       2     144
-RO2      SPECIFY     1.0     1.0       2     144
-RO3      SPECIFY     1.0     1.0       2     144
-SPB1     SPECIFY     1.0     1.0       2     144
-SPB2     SPECIFY     1.0     1.0       2     144
-MISC     SPECIFY     1.0     1.0       2     144
+POW3-B     DISTR                       2     144
+POW12-B    DISTR                       2     144
+POW-S      DISTR                       2     144
+RO1        DISTR                       2     144
+RO2        DISTR                       2     144
+RO3        DISTR                       2     144
+SPB1       DISTR                       2     144
+SPB2       DISTR                       2     144
+MISC       DISTR                       2     144
  
 GATE DOWN  PDGTC   ETDGT   EBDGT   KTDGT   KBDGT
 POW3-B     DISTR                       2     144
@@ -179,16 +179,16 @@ SPB1       DISTR                       2     144
 SPB2       DISTR                       2     144
 MISC       DISTR                       2     144
  
-GATE GAS  GASGTC    EQGT  AGASGT  BGASGT  CGASGT
-POW3-B       OFF
-POW12-B      OFF
-POW-S        OFF
-RO1          OFF
-RO2          OFF
-RO3          OFF
-SPB1         OFF
-SPB2         OFF
-MISC         OFF
+GATE GAS  GASGTC    EQGT  AGASGT  BGASGT  CGASGT  GTTYPE    SPBC
+POW3-B       OFF       2   132.0   -45.0 -0.2000     POW     
+POW12-B      OFF       2   132.0   -45.0 -0.2000     POW     
+POW-S        OFF       2   132.0   -45.0 -0.2000     POW     
+RO1           ON       2   132.0   -45.0 -0.2000      RO     
+RO2           ON       2   132.0   -45.0 -0.2000      RO     
+RO3           ON       2   132.0   -45.0 -0.2000      RO     
+SPB1          ON       2   132.0   -45.0 -0.2000     SPB     1.0
+SPB2          ON       2   132.0   -45.0 -0.2000     SPB     1.0
+MISC         OFF       2   132.0   -45.0 -0.2000             
  
 PUMPS 1     IUPU    IDPU     EPU  STRTPU   ENDPU   EONPU  EOFFPU     QPU   WTHLC
  
@@ -291,10 +291,10 @@ PRF SEG     IPRF    IPRF    IPRF    IPRF    IPRF    IPRF    IPRF    IPRF    IPRF
 WB 1          45
  
 SPR PLOT    SPRC    NSPR   NISPR
-WB 1          ON       1      58
+WB 1         ONV       1      58
  
 SPR DATE    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD    SPRD
-WB 1         1.0
+WB 1         0.5
  
 SPR FREQ    SPRF    SPRF    SPRF    SPRF    SPRF    SPRF    SPRF    SPRF    SPRF
 WB 1        1.00
@@ -336,7 +336,7 @@ FLX FREQ    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF    FLXF
 WB 1
  
 TSR PLOT    TSRC    NTSR   NITSR
-              ON       1      16
+              ON       1      17
  
 TSR DATE    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD    TSRD
             1.00
@@ -346,20 +346,20 @@ TSR FREQ    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF    TSRF
  
 TSR SEG     ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR    ITSR
               45      45      45      45      45      45      45      45      45
-              45      45      45      45      45      45      45
+              45      45      45      45      45      45      45      44
  
 TSR LAYE    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR
              0.5     1.5     3.0     5.0    10.0    15.0    20.0    25.0    30.0
-            35.0    40.0    45.0    50.0    60.0    80.0   100.0
+            35.0    40.0    45.0    50.0    60.0    80.0   100.0     0.0
  
 WITH OUT    WDOC    NWDO   NIWDO
-              ON       1       1
+             ONH       1       1
  
 WITH DAT    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD
              1.0
  
 WITH FRE    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF
-         0.04167
+             1.0
  
 WITH SEG    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO
               45
@@ -374,7 +374,7 @@ RSO FREQ    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF    RSOF
  
  
 CST COMP     CCC    LIMC     CUF
-             OFF     OFF       1
+              ON     OFF       1
  
 CST ACTIVE   CAC
 TDS          OFF
@@ -503,7 +503,7 @@ SODDK        OFF
  
 CST ICON   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB   C2IWB
 TDS      0.00000
-N2       14.7222
+N2       18.8000
 PO4      0.00000
 NH4      0.00000
 NO3      0.00000
@@ -514,7 +514,7 @@ LDOM     0.00000
 RDOM     0.00000
 LPOM     0.00000
 RPOM     0.00000
-DO       8.89698
+DO       11.2000
 TIC      0.00000
 ALK      0.00000
 LDOM-P   0.00000
@@ -552,29 +552,29 @@ LPOM-N       OFF
 RPOM-N       OFF
  
 CIN CON   CINBRC  CINBRC  CINBRC  CINBRC  CINBRC  CINBRC  CINBRC  CINBRC  CINBRC
-TDS          OFF
-N2            ON
-PO4          OFF
-NH4          OFF
-NO3          OFF
-DSI          OFF
-PSI          OFF
-FE           OFF
-LDOM         OFF
-RDOM         OFF
-LPOM         OFF
-RPOM         OFF
-DO            ON
-TIC          OFF
-ALK          OFF
-LDOM-P       OFF
-RDOM-P       OFF
-LPOM-P       OFF
-RPOM-P       OFF
-LDOM-N       OFF
-RDOM-N       OFF
-LPOM-N       OFF
-RPOM-N       OFF
+TDS          OFF     OFF     OFF
+N2            ON      ON      ON
+PO4          OFF     OFF     OFF
+NH4          OFF     OFF     OFF
+NO3          OFF     OFF     OFF
+DSI          OFF     OFF     OFF
+PSI          OFF     OFF     OFF
+FE           OFF     OFF     OFF
+LDOM         OFF     OFF     OFF
+RDOM         OFF     OFF     OFF
+LPOM         OFF     OFF     OFF
+RPOM         OFF     OFF     OFF
+DO            ON      ON      ON
+TIC          OFF     OFF     OFF
+ALK          OFF     OFF     OFF
+LDOM-P       OFF     OFF     OFF
+RDOM-P       OFF     OFF     OFF
+LPOM-P       OFF     OFF     OFF
+RPOM-P       OFF     OFF     OFF
+LDOM-N       OFF     OFF     OFF
+RDOM-N       OFF     OFF     OFF
+LPOM-N       OFF     OFF     OFF
+RPOM-N       OFF     OFF     OFF
  
 CTR CON   CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC  CTRTRC
 TDS          OFF
@@ -603,7 +603,7 @@ RPOM-N       OFF
  
 CDT CON   CDTBRC  CDTBRC  CDTBRC  CDTBRC  CDTBRC  CDTBRC  CDTBRC  CDTBRC  CDTBRC
 TDS          OFF
-N2           OFF
+N2            ON
 PO4          OFF
 NH4          OFF
 NO3          OFF
@@ -614,7 +614,7 @@ LDOM         OFF
 RDOM         OFF
 LPOM         OFF
 RPOM         OFF
-DO           OFF
+DO            ON
 TIC          OFF
 ALK          OFF
 LDOM-P       OFF
@@ -652,8 +652,8 @@ LPOM-N       OFF
 RPOM-N       OFF
  
 EX COEF    EXH2O    EXSS    EXOM    BETA     EXC    EXIC
-WB 1     .300000 0.01000 0.10000 .550000     OFF     OFF
- 
+WB 1        0.45     0.1     0.1    0.45     OFF     OFF
+
 ALG EX       EXA     EXA     EXA     EXA     EXA     EXA
          0.20000
  
@@ -667,7 +667,7 @@ GENERIC    CGQ10   CG0DK   CG1DK     CGS   CGLDK   CGKLF    CGCS
 CG 1     0.00000 0.00000 0.00000 0.00000 0.00000 1.03400 -1.0000 ! N2 Gas and TDG
  
 S SOLIDS     SSS   SEDRC   TAUCR
-SS1      1.00000     OFF .15E-04
+SS1      1.00000     OFF     1.0
  
 ALGAL RATE    AG      AR      AE      AM      AS    AHSP    AHSN   AHSSI    ASAT
 ALG1     2.00000 0.04000 0.04000 0.10000 0.10000 0.00300 0.01400 0.00000 100.000
@@ -808,17 +808,17 @@ SOD RATE   SODT1   SODT2   SODK1   SODK2
 WB 1     5.00000 30.0000 0.10000 0.99000
  
 S DEMAND     SOD     SOD     SOD     SOD     SOD     SOD     SOD     SOD     SOD
-         0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000
-         0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000
-         0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000
-         0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000
-         0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000
-         0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000
-         0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000
-         0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000 0.30000
+            1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00
+            1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00
+            1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00
+            1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00
+            1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00
+            1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00
+            1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00    1.00
+            1.00
  
 REAERATION  TYPE     EQN   COEF1   COEF2   COEF3   COEF4
-WB 1        LAKE       2 0.00000 0.00000 0.00000 0.00000
+WB 1        LAKE      14   7.500   4.500   0.750   0.000
  
 RSI FILE..................................RSIFN.................................
         rsi.npt - not used
@@ -827,43 +827,43 @@ QWD FILE..................................QWDFN.................................
         qwd.npt - not used
  
 QGT FILE..................................QGTFN.................................
-        DWR_2014_BOT_QGT.csv
- 
+        QGT_DWR_2011_2015_daily_DSS-scaled.csv
+
 WSC FILE..................................WSCFN.................................
-        DWR_PEST_WSC.npt
+        DWR_WSC_1.npt
  
 SHD FILE..................................SHDFN.................................
-        DWR_PEST_SHD.npt
+        DWR_SHD_1.npt
  
 BTH FILE..................................BTHFN.................................
-WB 1    DWR_NAVD88_BTH_2014_PEST.csv
- 
+WB 1    DWR_NAVD88_BTH_2011.csv
+
 MET FILE..................................METFN.................................
-WB 1    MET_DENI_LWS_2014.csv
- 
+WB 1    DENI_LWS_DWQI_2011_2015_MET_withBP.csv
+
 EXT FILE..................................EXTFN.................................
 WB 1    ext.npt - not used
- 
+
 VPR FILE..................................VPRFN.................................
-WB 1    DWR_2014_VPR.csv
- 
+WB 1    DWR_2011_VPR.csv
+
 LPR FILE..................................LPRFN.................................
 WB 1    lpr.npt - not used
- 
+
 QIN FILE..................................QINFN.................................
-BR1     Qin_DWR_inflow_2014.csv
-BR2     DWR_BR2_QIN.npt
-BR3     DWR_BR3_QIN.npt
- 
+BR1     DWORSHAK_INFLOW.csv
+BR2     DWR-BR2-2011-2015-QIN.npt
+BR3     DWR-BR3-2011-2015-QIN.npt 
+
 TIN FILE..................................TINFN.................................
-BR1     CRSI_temp_2014.csv
-BR2     CRSI_temp_2014_1.csv
-BR3     CRSI_temp_2014_2.csv
+BR1     DWR-2011-2015-TIN.csv
+BR2     DWR-2011-2015-TIN.csv
+BR3     DWR-2011-2015-TIN.csv
  
 CIN FILE..................................CINFN.................................
-BR1     cin_br1.npt - not used
-BR2     cin_br2.npt - not used
-BR3     cin_br3.npt - not used
+BR1     DWR-2011-2015-CIN-DWQI.csv
+BR2     DWR-2011-2015-CIN-DWQI.csv
+BR3     DWR-2011-2015-CIN-DWQI.csv
  
 QOT FILE..................................QOTFN.................................
 BR1     qot_br1.npt - not used
@@ -880,17 +880,17 @@ CTR FILE..................................CTRFN.................................
 TR1     ctr_tr1.npt - not used
  
 QDT FILE..................................QDTFN.................................
-BR1     DWR_SystemModel_2014_v1_qwb.opt_qdt
+BR1     DWR_QDT.npt
 BR2     qdt_br2.npt - not used
 BR3     qdt_br3.npt - not used
  
 TDT FILE..................................TDTFN.................................
-BR1     CRSI_temp_2014_tdt.csv
+BR1     DWR-2011-2015-TIN.csv
 BR2     tdt_br2.npt - not used
 BR3     tdt_br3.npt - not used
  
 CDT FILE..................................CDTFN.................................
-BR1     cdt_br1.npt - not used
+BR1     DWR-2011-2015-CIN-DWQI.csv
 BR2     cdt_br2.npt - not used
 BR3     cdt_br3.npt - not used
  
@@ -940,25 +940,28 @@ BR2     cdh_br2.npt - not used
 BR3     cdh_br3.npt - not used
  
 SNP FILE..................................SNPFN.................................
-WB 1    DWR_SystemModel_2014_v1_DT_PEST_VPR_snp.opt
- 
+WB 1    DWR_v1_snp.opt
+
 PRF FILE..................................PRFFN.................................
-WB 1    DWR_SystemModel_2014_v1_DT_PEST_VPR_prf.opt
- 
+WB 1    DWR_v1_prf.opt
+
 VPL FILE..................................VPLFN.................................
-WB 1    DWR_SystemModel_2014_v1_DT_PEST_VPR_vpl.w2l
- 
+WB 1    DWR_v1_vpl.w2l
+
 CPL FILE..................................CPLFN.................................
-WB 1    DWR_SystemModel_2014_v1_DT_PEST_VPR_cpl.opt
- 
+WB 1    DWR_v1_cpl.opt
+
 SPR FILE..................................SPRFN.................................
-WB 1    DWR_SystemModel_2014_v1_DT_PEST_VPR_spr.opt
- 
+WB 1    DWR_v1_spr.opt
+
 FLX FILE..................................FLXFN.................................
-WB 1    DWR_SystemModel_2014_v1_DT_PEST_VPR_flx.opt
- 
+WB 1    DWR_v1_flx.opt
+
 TSR FILE..................................TSRFN.................................
-        DWR_SystemModel_2014_v1_DT_PEST_VPR_tsr.opt
- 
+        DWR_v1_tsr.opt
+
 WDO FILE..................................WDOFN.................................
-        DWR_SystemModel_2014_v1_DT_PEST_VPR_wdo.opt
+        DWR_v1_wdo.opt
+
+TWETS FILE................................TWEFN.................................
+SPB1    DWR-TW-ELEV-2011-2015.csv

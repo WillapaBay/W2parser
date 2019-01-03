@@ -54,7 +54,8 @@ public final class W2ControlFile {
         // If the file contains any tabs, throw an exception
         for (int i = 0; i < w2ControlList.size(); i++) {
             if (w2ControlList.get(i).contains("\t")) {
-                throw new IOException("Error: line " + (i + 1) + " in w2_con.npt contains tabs, " +
+                throw new IOException("Error: line " + (i + 1) + " in " +
+                        getW2ControlInPath() + " contains tabs, " +
                         "which are not supported. Replace all tabs with spaces.");
             }
         }
