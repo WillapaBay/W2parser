@@ -46,8 +46,8 @@ public class TestW2Parser {
                 String.format("results/%s/W2_met_parameters.txt", folder));
         w2Parser.writeTable(tsrOutputW2Parameters,
                 String.format("results/%s/W2_TSR_output_parameters.txt", folder));
-//        w2Parser.writeTable(withdrawalOutputW2Parameters,
-//                String.format("results/%s/W2_Withdrawal_output_parameters.txt", folder));
+        w2Parser.writeTable(withdrawalOutputW2Parameters,
+                String.format("results/%s/W2_Withdrawal_output_parameters.txt", folder));
         w2Parser.writeInitialWaterSurfaceElevations(
                 String.format("results/%s/W2_WSEL.txt", folder));
 

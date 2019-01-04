@@ -2,141 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86ca3ba8-c345-4a52-b43d-1ddf44984b0b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data/BON/BON_spr_volw.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_1_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_2_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_3_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_4_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_5_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/BON_tsr_6_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/ELWS_Compare_BON_2011-2015.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/ELWS_Compare_BON_2011-2015_linearFit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/ELWS_Compare_BON_2011-2015_linearFit_old.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/ELWS_Compare_BON_2011-2015_old.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TDG_FB_Compare_BON_Temp_TDG_2011-2015.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TDG_FB_Compare_BON_Temp_TDG_2011-2015_linearFit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TDG_FB_Compare_BON_Temp_TDG_2011-2015_linearFit_old.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TDG_FB_Compare_BON_Temp_TDG_2011-2015_old.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TDG_TW_Compare_BON_2011-2015.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TDG_TW_Compare_BON_2011-2015_linearFit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TDG_TW_Compare_BON_2011-2015_linearFit_old.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TDG_TW_Compare_BON_2011-2015_old.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TOUT_Compare_BON_2011-2015.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TOUT_Compare_BON_2011-2015_linearFit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TOUT_Compare_BON_2011-2015_linearFit_old.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/TOUT_Compare_BON_2011-2015_old.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/W2_SYSTDG.npt.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/WBConsole64.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate10_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate11_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate12_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate13_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate14_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate15_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate16_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate17_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate18_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate19_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate1_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate20_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate2_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate3_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate4_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate5_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate6_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate7_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate8_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/cwo_gate9_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate10_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate11_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate12_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate13_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate14_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate15_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate16_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate17_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate18_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate19_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate1_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate20_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate2_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate3_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate4_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate5_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate6_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate7_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate8_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/dwo_gate9_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/preW2-v4_64_092718.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/qwo_76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/rso.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate10_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate11_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate12_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate13_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate14_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate15_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate16_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate17_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate18_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate19_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate1_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate20_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate2_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate3_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate4_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate5_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate6_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate7_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate8_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/two_gate9_seg76.opt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/w2v4.2_systdg.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/BON/wl.opt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/W2Parser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/W2Parser.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BON/.BON_TDG_Temp_2011-2015.csv.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BON/BonnevilleDam_DistributedTributaryInflow.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BON/BonnevilleDam_DistributedTributaryInflow.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/BonnevilleDam_DistributedTributaryInflow.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BON/HOXO_DLS_BON_2011_2015_MET_withBP.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/HOXO_DLS_BON_2011_2015_MET_withBP.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BON/QGT_BON_2011_2015_daily_DSS-scaled.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/QGT_BON_2011_2015_daily_DSS-scaled.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BON/THE DALLES_OUTFLOW.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/THE DALLES_OUTFLOW.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BON/cwo_41_TDA.opt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/cwo_41_TDA.opt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BON/pre.opt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/pre.opt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BON/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BON/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/CHJ/CHJ_NAVD88_BTH_2014.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/CHJ/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/CHJ/graph.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/CHJ/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/CHJ/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ColumbiaSlough/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ColumbiaSlough/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/DWR/DWR_NAVD88_BTH_2014_PEST.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/DWR/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/DWR/graph.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/DWR/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/DWR/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/GCL/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/GCL/graph.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/GCL/w2_con.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/GCL/w2_con_alternate.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/IHR/IHR_NAVD88_BTH_2014.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/IHR/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/IHR/graph.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/IHR/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/IHR/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JDA/JDA_NAVD88_BTH_2014.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JDA/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/JDA/graph.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/JDA/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/JDA/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/LGS/LGS_NAVD88_BTH_2014.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/LGS/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LGS/graph.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/LGS/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LGS/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/LMN/LMN_NAVD88_BTH_2014.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/LMN/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LMN/graph.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/LMN/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LMN/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/LWG/LWG_NAVD88_BTH_2014.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/LWG/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LWG/graph.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/LWG/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/LWG/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/MCN/MCN_NAVD88_BTH_2014.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/MCN/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/MCN/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ParticleTracking/ImportantCards.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ParticleTracking/graph.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ParticleTracking/graph.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ParticleTracking/table_output_files.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ParticleTracking/table_output_files.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/CouleeQ01.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/CouleeT01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/CouleeT01.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/HangT01.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/HangT01.npt" afterDir="false" />
@@ -208,43 +74,8 @@
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br5.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br6.npt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Spokane/qin_br8.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/TDA/TDA_NAVD88_BTH_2014_121117.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/TDA/w2_con.npt" beforeDir="false" afterPath="$PROJECT_DIR$/data/TDA/w2_con.npt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.NEW" beforeDir="false" afterPath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.NEW" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testDltControlCard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testMiscell" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testReadInfiles" beforeDir="false" afterPath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testReadInfiles" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testRestart" beforeDir="false" afterPath="$PROJECT_DIR$/results/ColumbiaSlough/w2_con.npt.testRestart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ParticleTracking/W2_TSR_output_parameters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results/ParticleTracking/W2_TSR_output_parameters.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ParticleTracking/W2_Withdrawal_output_parameters.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2ControlFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parameter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestActiveDerivedConstituentsCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestBathymetry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestBranchGeometryCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestCalculationsCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestConstituentComputationsCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestDltControlCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestFileCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestGraphFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestGridCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestHeatExchangeCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestIceCoverCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestInitialConditionsCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestLocationCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestMiscellCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestMultiLineCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestNumberStructuresCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestParserCards.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestRepeatingDoubleCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestRepeatingIntegerCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestRestartCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestSedimentCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestTimeControlCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/TestW2ControlFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/W2Parser/_TestingTemplate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBathymetry.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBathymetry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -257,11 +88,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="W2_WAT_parser.f90" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/W2_WAT_parser.f90">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="4756" column="8" selection-start-line="4756" selection-start-column="8" selection-end-line="4756" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="W2Parser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="1753" column="6" selection-start-line="1753" selection-start-column="6" selection-end-line="1753" selection-end-column="6" />
+            <state>
               <folding>
                 <element signature="e#70076#70077#0" expanded="true" />
                 <element signature="e#70127#70128#0" expanded="true" />
@@ -270,40 +109,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="W2Globals.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Globals.java">
+      <file leaf-file-name="W2Parameter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="95">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestW2Parser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-            </state>
+      <file leaf-file-name="table_inflows_outflows.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/BON/table_inflows_outflows.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" rowLines="3" />
           </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="W2_WAT_parser.f90" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/W2_WAT_parser.f90">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="1859" column="98" selection-start-line="1859" selection-start-column="98" selection-end-line="1859" selection-end-column="98" />
-            </state>
+      <file leaf-file-name="table_output_files.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/BON/table_output_files.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" rowLines="3" />
           </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="w2_con.npt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="368" selection-start-line="368" selection-end-line="368" />
-            </state>
+      <file leaf-file-name="table_meteorology.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/BON/table_meteorology.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" rowLines="3" />
           </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="table_initial_water_surface_elevation.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/BON/table_initial_water_surface_elevation.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" rowLines="3" />
+          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="table_initial_concentrations.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/BON/table_initial_concentrations.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" rowLines="3" />
+          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="table_water_quality.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/BON/table_water_quality.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" rowLines="3" />
+          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
         </entry>
       </file>
     </leaf>
@@ -321,7 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/RepeatingIntegerCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/NumberStructuresCard_NEW.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestNumberStructuresCard.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/DistributedTributariesCard.java" />
@@ -371,6 +230,7 @@
         <option value="$PROJECT_DIR$/data/Spokane/w2_con.npt" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBathymetry.java" />
         <option value="$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java" />
+        <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parameter.java" />
         <option value="$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java" />
       </list>
     </option>
@@ -413,23 +273,17 @@
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="w2parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="W2Parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="W2Parser" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="w2parser" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -914,19 +768,17 @@
       <option name="project" value="LOCAL" />
       <updated>1545442344159</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Corrected isOn function to return true if the value is ONH or ONS.">
+      <created>1546552907007</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1546552907007</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_W2Parser - 2019.01.02 at 11h 17m 43s.xml">
-      <configuration name="All in W2Parser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_W2Parser - 2019.01.02 at 11h 20m 11s.xml">
-      <configuration name="All in W2Parser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_W2Parser - 2019.01.02 at 11h 21m 27s.xml">
-      <configuration name="All in W2Parser" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_W2Parser - 2019.01.02 at 11h 23m 15s.xml">
       <configuration name="All in W2Parser" configurationId="JUnit" />
     </history-entry>
@@ -948,6 +800,15 @@
     <history-entry file="TestW2Parser_testParserChiefJoseph - 2019.01.03 at 13h 55m 03s.xml">
       <configuration name="TestW2Parser.testParserChiefJoseph" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestW2Parser_testParserChiefJoseph - 2019.01.03 at 13h 59m 55s.xml">
+      <configuration name="TestW2Parser.testParserChiefJoseph" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_W2Parser - 2019.01.03 at 14h 00m 14s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_W2Parser - 2019.01.03 at 14h 03m 01s.xml">
+      <configuration name="All in W2Parser" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -962,19 +823,20 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" weight="0.32884097" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32815534" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32815534" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32749325" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38456374" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22483222" />
       <window_info anchor="bottom" id="Run with VisualVM" order="7" />
       <window_info anchor="bottom" id="Tail" order="7" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32749325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.5525606" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5525606" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="7" />
       <window_info anchor="bottom" id="Dependency Viewer" order="8" weight="0.32884097" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -984,7 +846,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32815534" />
       <window_info anchor="right" id="Leiningen" order="3" />
     </layout>
   </component>
@@ -992,7 +853,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Spokane model" />
     <MESSAGE value="Implemented new W2Card in three classes and parser, and added some tests and documentation." />
     <MESSAGE value="Added" />
     <MESSAGE value="Updated GridCard" />
@@ -1017,7 +877,8 @@
     <MESSAGE value="Changed format to two decimal places in TimeControlCard." />
     <MESSAGE value="Major updates to ConvertExcelDateNumToJday and tests. Added new test code to finish converting the W2 transition models from Excel date number to Julian day." />
     <MESSAGE value="Minor updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
+    <MESSAGE value="Corrected isOn function to return true if the value is ONH or ONS." />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected isOn function to return true if the value is ONH or ONS." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1078,12 +939,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java</url>
-          <line>264</line>
-          <properties />
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java</url>
           <line>241</line>
           <properties />
           <option name="timeStamp" value="107" />
@@ -1102,51 +957,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ActiveConstituentFluxesCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestBranchConstituentsCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestDistributedTributaryConstituentsCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" column="91" selection-start-line="18" selection-start-column="91" selection-end-line="18" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/DistributedTributaryConstituentsCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestPrecipConstituentsCard.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/PrecipConstituentsCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="14" column="63" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/BranchConstituentsCard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/JDA/w2_con.npt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
@@ -1269,13 +1079,6 @@
     <entry file="file://$PROJECT_DIR$/data/BON/el_stats.opt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/ConvertExcelDateNumToJday.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1361,24 +1164,10 @@
         <state relative-caret-position="-57" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/W2_WAT_parser.f90">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="1859" column="98" selection-start-line="1859" selection-start-column="98" selection-end-line="1859" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/BON/w2_con.npt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="368" selection-start-line="368" selection-end-line="368" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1392,10 +1181,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/hec2/wat/plugin/ceQualW2/w2parser/TestW2Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/BON/W2_Withdrawal_output_parameters.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/table_water_quality.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/table_meteorology.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/table_initial_water_surface_elevation.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/table_initial_concentrations.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/table_output_files.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/BON/table_inflows_outflows.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/W2_WAT_parser.f90">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="4756" column="8" selection-start-line="4756" selection-start-column="8" selection-end-line="4756" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hec2/wat/plugin/ceQualW2/w2parser/W2Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="1753" column="6" selection-start-line="1753" selection-start-column="6" selection-end-line="1753" selection-end-column="6" />
+        <state>
           <folding>
             <element signature="e#70076#70077#0" expanded="true" />
             <element signature="e#70127#70128#0" expanded="true" />
