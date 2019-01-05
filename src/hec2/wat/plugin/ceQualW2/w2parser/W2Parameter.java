@@ -1,8 +1,7 @@
 package hec2.wat.plugin.ceQualW2.w2parser;
 
 public class W2Parameter {
-    private String ioName;              // I/O Name a.k.a short location name (used by original parser.exe program)
-    private String longLocation;        // Location (waterbody, branch, segment, depth, flow type, etc.)
+    private String location;        // Location (waterbody, branch, segment, depth, flow type, etc.)
     private String shortName;           // Short name of parameter - to display in model linking editor
     private String longName;            // Long name of parameter - to display in plots and tool tip of model linking editor
     private String w2Name;              // Parameter name in CE-QUAL-W2 program and user's manual
@@ -15,13 +14,15 @@ public class W2Parameter {
     private int waterBody;              // Waterbody number (optional)
     private int branch;                 // Branch number (optional)
     private int segment;                // Segment number (optional)
-    private String verticalLocation;    // String containing vertical longLocation (either depth or layer number, optional)
+    private String verticalLocation;    // String containing vertical location (either depth or layer number, optional)
+    private String ioName;              // I/O Name a.k.a short location name (used by original parser.exe program)
+    private String ioType;              // I/O type (precipitation, consituents, derived constituents, flow, stage, temperature)
 
-    public W2Parameter(String ioName, String longLocation, String shortName, String longName,
-                       String w2Name, String units, int columnNumber, int numColumns, String fileName,
-                       String inflowOutflow, String inputOutput) {
+    public W2Parameter(String location, String shortName, String longName, String w2Name,
+                       String units, int columnNumber, int numColumns, String fileName, String inflowOutflow,
+                       String inputOutput, String ioName, String ioType) {
         this.ioName = ioName;
-        this.longLocation = longLocation;
+        this.location = location;
         this.shortName = shortName;
         this.longName = longName;
         this.w2Name = w2Name;
@@ -35,11 +36,21 @@ public class W2Parameter {
         this.branch = 0;
         this.segment = 0;
         this.verticalLocation = "";
+        this.ioType = ioType;
+    }
+
+    public W2Parameter(String location, String shortName, String longName, String w2Name,
+                       String units, int columnNumber, int numColumns, String fileName, String inflowOutflow,
+                       String inputOutput, String ioName) {
+        new W2Parameter(location, shortName, longName, w2Name, units, columnNumber, numColumns,
+                fileName, inflowOutflow, inputOutput, ioName, "");
     }
 
     public String getIoName() { return ioName; }
 
-    public String getLongLocation() { return longLocation; }
+    public String getIoType() { return ioType; }
+
+    public String getLocation() { return location; }
 
     public String getShortName() { return shortName; }
 

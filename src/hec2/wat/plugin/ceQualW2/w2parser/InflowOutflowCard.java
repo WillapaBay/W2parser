@@ -107,6 +107,14 @@ public class InflowOutflowCard extends W2Card {
         updateRecordValuesList();
     }
 
+    public int getNTRT() {
+        return NTR+NGT+NSP+NPI+NPU;
+
+    }
+    public int getNWDT() {
+        return NWD+NGT+NSP+NPI+NPU;
+    }
+
     @Override
     public void updateRecordValuesList() {
         recordValuesList.clear();

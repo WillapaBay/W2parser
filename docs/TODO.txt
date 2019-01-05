@@ -14,3 +14,4 @@ Parser To do:
 - Look at adding getters for Cards or setters for fields
 - Add save method once I add w2con as a field to the Parser
 - Update methods?
+- Add if block to init() method in each card to handle cases where there are no records and/or fields. See TributarySegmentCard.java.

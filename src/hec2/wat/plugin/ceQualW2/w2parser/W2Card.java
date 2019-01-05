@@ -48,9 +48,10 @@ public abstract class W2Card {
         for (int numFields : numFieldsList) {
             int numDataLines = (int) Math.ceil(numFields/9.0);
             numLinesList.add(numDataLines);
-            this.numCardDataLines += numDataLines;
+            numCardDataLines += numDataLines;
         }
-        this.numCardDataLinesInFile = this.numCardDataLines;
+        numCardDataLines = Math.max(0, this.numCardDataLines);
+        numCardDataLinesInFile = numCardDataLines;
 
         records = new ArrayList<>();
         recordIdentifiers = new ArrayList<>();
@@ -150,8 +151,12 @@ public abstract class W2Card {
                     numLinesPerRecord(numFields), fieldWidths);
 
             records.add(values);
-            recordIdentifiers.add(values.get(0));
-            recordValuesList.add(values.subList(1, values.size()));
+            if (values.size() > 0) {
+                recordIdentifiers.add(values.get(0));
+                recordValuesList.add(values.subList(1, values.size()));
+            } else {
+                recordIdentifiers.add("");
+            }
 
             lineIndex += numLinesPerRecord(numFields);
         }
