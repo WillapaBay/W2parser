@@ -16,12 +16,35 @@ public class W2Parameter {
     private int segment;                // Segment number (optional)
     private String verticalLocation;    // String containing vertical location (either depth or layer number, optional)
     private String ioName;              // I/O Name a.k.a short location name (used by original parser.exe program)
-    private String ioType;              // I/O type (precipitation, consituents, derived constituents, flow, stage, temperature)
+    private String ioType;              // I/O type (precipitation, distributed tributary, meteorology, etc.)
+    /** Parameter type:
+     * constituents
+     * derived constituents
+     * temperature
+     * flow
+     * elevation
+     * stage depth
+     * width
+     * shade
+     * coefficient
+     * velocity
+     * thickness
+     * precip-flow
+     * precip-temperature
+     * precip-constituent
+     * meteorology (includes air temperature, radiation, etc., but not precip)
+     * epiphyton
+     * macrophytes
+     * sediment-flow
+     * sediment-constituent
+     * flux
+     */
+    private String paramType;
+
 
     public W2Parameter(String location, String shortName, String longName, String w2Name,
                        String units, int columnNumber, int numColumns, String fileName, String inflowOutflow,
-                       String inputOutput, String ioName, String ioType) {
-        this.ioName = ioName;
+                       String inputOutput, String ioName, String ioType, String paramType) {
         this.location = location;
         this.shortName = shortName;
         this.longName = longName;
@@ -37,18 +60,10 @@ public class W2Parameter {
         this.segment = 0;
         this.verticalLocation = "";
         this.ioType = ioType;
+        this.ioName = ioName;
+        this.paramType = paramType;
     }
 
-    public W2Parameter(String location, String shortName, String longName, String w2Name,
-                       String units, int columnNumber, int numColumns, String fileName, String inflowOutflow,
-                       String inputOutput, String ioName) {
-        new W2Parameter(location, shortName, longName, w2Name, units, columnNumber, numColumns,
-                fileName, inflowOutflow, inputOutput, ioName, "");
-    }
-
-    public String getIoName() { return ioName; }
-
-    public String getIoType() { return ioType; }
 
     public String getLocation() { return location; }
 
@@ -69,6 +84,12 @@ public class W2Parameter {
     public String getInflowOutflow() { return inflowOutflow; }
 
     public String getInputOutput() { return inputOutput; }
+
+    public String getIoName() { return ioName; }
+
+    public String getIoType() { return ioType; }
+
+    public String getParamType() { return paramType; }
 
     public void setNumColumns(int numColumns) {
         this.numColumns = numColumns;

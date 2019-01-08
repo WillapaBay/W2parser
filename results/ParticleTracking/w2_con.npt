@@ -25,7 +25,7 @@ MISCELL     NDAY SELECTC HABTATC ENVIRPC AERATEC INITUWL  PHBUFC  NCALK
              100     OFF      ON      ON     OFF     OFF     OFF    OFF
 
 TIME CON  TMSTRT   TMEND    YEAR
-         4384.00 4410.00    2000
+            1.50   52.00    2019
 
 DLT CON      NDT  DLTMIN DLTINTR
                3 1.00000     OFF
@@ -341,13 +341,13 @@ TSR LAYE    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR    ETSR
          0.00000     0.0
 
 WITH OUT    WDOC    NWDO   NIWDO
-              ON       1       2
+             ONH       1       2
 
 WITH DAT    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD    WDOD
          1.00000
 
 WITH FRE    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF    WDOF
-         0.10000
+         2.00000
 
 WITH SEG    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO    IWDO
               64      84
