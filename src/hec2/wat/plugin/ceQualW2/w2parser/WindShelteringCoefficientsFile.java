@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -31,14 +32,15 @@ public class WindShelteringCoefficientsFile {
 
         Path wscPath = w2con.getDirectoryPath().resolve(wscFilename);
         List<String> lines = Files.readAllLines(wscPath);
-        List<String> header = lines.subList(0, 3);
-        List<String> data = lines.subList(3, lines.size());
+        List<String> header = subListCopy(lines, 0, 2);
+        List<String> data = subListCopy(lines, 3, lines.size() - 1);
 
         // Remove any blank lines from the end of the data
-        for (int i = data.size() - 1; i > 0; i--) {
-            String line = data.get(i);
-            if (line.trim() == "") {
-                data.remove(i);
+        Iterator<String> iter = data.iterator();
+        while (iter.hasNext()) {
+            String str = iter.next();
+            if (str.trim().equals("")) {
+                iter.remove();
             }
         }
 
@@ -61,17 +63,23 @@ public class WindShelteringCoefficientsFile {
             julianDays.add(Double.valueOf(record.get(0)));
             List<Double> fields = new ArrayList<>();
             for (String field : record.subList(1, record.size())) {
-                fields.add(Double.valueOf(field));
+                if (!field.trim().equals(""))
+                    fields.add(Double.valueOf(field));
             }
             wscList.add(fields);
             lineNum += numLinesPerRecord;
         }
-
-        System.out.println("here");
     }
 
     public void parseCSV(List<String> data) {
         // TODO
     }
 
+    private List<String> subListCopy(List<String> input, int firstIndex, int lastIndex) {
+        ArrayList<String> output = new ArrayList<>();
+        for (int i = firstIndex; i <= lastIndex; i++) {
+            output.add(input.get(i));
+        }
+        return output;
+    }
 }

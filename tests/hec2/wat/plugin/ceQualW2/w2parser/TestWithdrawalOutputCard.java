@@ -19,7 +19,7 @@ public class TestWithdrawalOutputCard {
         card.updateW2ControlFileList();
 
         // Write updated W2 control file
-        String outfile = String.format("TestTimestepControlCard_w2_con.npt", folder);
+        String outfile = String.format("results/%s/TestWithdrawalOutputCard.npt", folder);
         w2con.save(outfile);
     }
 

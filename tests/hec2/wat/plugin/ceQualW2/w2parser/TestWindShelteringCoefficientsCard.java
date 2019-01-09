@@ -30,7 +30,7 @@ public class TestWindShelteringCoefficientsCard {
 
     @Test
     public void testParserDworshak() throws IOException {
-        unitTest("DWR", "DWR_WSC.npt");
+        unitTest("DWR", "DWR_WSC_1.npt");
     }
 
     @Test
