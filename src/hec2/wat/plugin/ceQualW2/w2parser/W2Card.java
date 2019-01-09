@@ -133,8 +133,18 @@ public abstract class W2Card {
      * @param numFields Number of fields
      * @return Number of lines per record
      */
-    private int numLinesPerRecord(int numFields) {
+    public static int numLinesPerRecord(int numFields) {
         return (int) Math.ceil(numFields/9.0);
+    }
+
+    /**
+     * Compute number of records
+     * @param numLines Total number of lines in a list
+     * @param numLinesPerRecord Number of lines per record
+     * @return Number of records
+     */
+    public static int numRecords(int numLines, int numLinesPerRecord) {
+        return numLines / numLinesPerRecord;
     }
 
     /**
@@ -167,7 +177,7 @@ public abstract class W2Card {
      * @param str String
      * @return Trimmed string
      */
-    private static String trimEnd(String str) {
+    public static String trimEnd(String str) {
         while (str.endsWith(" ")) {
             str = str.substring(0, str.length() - 1);
         }
@@ -215,7 +225,7 @@ public abstract class W2Card {
      * @param numLinesPerRecord Number of lines in the current record
      * @return List of record values. The first item is the record identifier.
      */
-    private static List<String> parseRecordText(List<String> dataTable, int startLine,
+    public static List<String> parseRecordText(List<String> dataTable, int startLine,
                                          int numLinesPerRecord,
                                          List<Integer> fieldWidths) {
         int startField = 1;
