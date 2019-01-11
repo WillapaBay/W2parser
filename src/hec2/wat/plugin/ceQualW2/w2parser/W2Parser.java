@@ -370,12 +370,14 @@ public class W2Parser {
                 outputFilename = String.format("dwo_%d.opt", outputSegment);
                 location = String.format("Seg %d Withdrawal", outputSegment);
 //                outputWaterbody = getOutputWaterBody(outputSegment, US, DS, BS, BE, NWB);
+                outputWaterbody = getOutputWaterBody(outputSegment, US, DS, NBR);
+                constituentNames = activeConstituentsCard.getConstituentNames();
                 derivedConstituentNames = activeDerivedConstituentsCard.getConstituentNames();
 //                List<String> derivedConstituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
                 List<List<String>> derivedConstituentSettings = activeDerivedConstituentsCard.getStates();
                 List<List<String>> states = activeDerivedConstituentsCard.getStates();
                 for (int jc = 0; jc < numDerivedConstituents; jc++) {
-                    if (isOn(derivedConstituentSettings.get(jc).get(0))) {
+                    if (isOn(derivedConstituentSettings.get(jc).get(outputWaterbody - 1))) {
                         W2Constituent w2Constituent = graphFileDerivedW2Constituents.get(jc);
                         w2Parameter = new W2Parameter(location, derivedConstituentNames.get(jc),
                                 w2Constituent.getLongName(), derivedConstituentNames.get(jc),
