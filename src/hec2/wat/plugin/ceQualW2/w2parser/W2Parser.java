@@ -365,15 +365,17 @@ public class W2Parser {
             }
 
             if (DERIVED_CALC) {
-                icol = 1; // Every qwo file contains at least one data column for the combined outflow
+                icol = 1;
                 List<W2Parameter> derivedConstituentW2Parameters = new ArrayList<>();
                 outputFilename = String.format("dwo_%d.opt", outputSegment);
                 location = String.format("Seg %d Withdrawal", outputSegment);
 //                outputWaterbody = getOutputWaterBody(outputSegment, US, DS, BS, BE, NWB);
                 derivedConstituentNames = activeDerivedConstituentsCard.getConstituentNames();
-                List<String> derivedConstituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
+//                List<String> derivedConstituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
+                List<List<String>> derivedConstituentSettings = activeDerivedConstituentsCard.getStates();
+                List<List<String>> states = activeDerivedConstituentsCard.getStates();
                 for (int jc = 0; jc < numDerivedConstituents; jc++) {
-                    if (isOn(derivedConstituentSettings.get(jc))) {
+                    if (isOn(derivedConstituentSettings.get(jc).get(0))) {
                         W2Constituent w2Constituent = graphFileDerivedW2Constituents.get(jc);
                         w2Parameter = new W2Parameter(location, derivedConstituentNames.get(jc),
                                 w2Constituent.getLongName(), derivedConstituentNames.get(jc),
