@@ -153,6 +153,11 @@ public class W2Parser {
         US = branchGeometryCard.getUS();
         DS = branchGeometryCard.getDS();
 
+        // Get lists of starting and ending branches for each waterbody
+        locationCard = new LocationCard(w2con, NWB);
+        BS = locationCard.getBS();
+        BE = locationCard.getBE();
+
         // Initialize Inflow/Outflow info
         inOutflowCard = new InflowOutflowCard(w2con);
         NTR = inOutflowCard.getNumTributaries();
@@ -267,13 +272,13 @@ public class W2Parser {
         String outputFilename;
         for (int jwd = 0; jwd < NIWDO; jwd++) {
             outputSegment = IWDO.get(jwd);
+            outputWaterbody = getOutputWaterbody(outputSegment, US, DS, BS, BE, NWB); // 1/12/19
 
             // Withdrawal flow, QWD (qwo)
             int icol = 1; // Every qwo file contains at least one data column for the combined outflow
             outputFilename = String.format("qwo_%d.opt", outputSegment);
             String location = String.format("Seg %d Withdrawal", outputSegment);
             String ioName = "wd_" + jwd + "_seg" + outputSegment;
-            outputWaterbody = getOutputWaterBody(outputSegment, US, DS, NBR);
 
             // Number of columns equals 1 for the combined flow plus one column for each structure
             int ncol = 1;
@@ -306,7 +311,6 @@ public class W2Parser {
             icol = 1; // Every qwo file contains at least one data column for the combined outflow
             outputFilename = String.format("two_%d.opt", outputSegment);
             location = String.format("Seg %d Withdrawal", outputSegment);
-            outputWaterbody = getOutputWaterBody(outputSegment, US, DS, NBR);
 
             // Number of columns equals 1 for the combined flow plus one column for each structure
             ncol = 1;
@@ -341,7 +345,6 @@ public class W2Parser {
                 List<W2Parameter> constituentW2Parameters = new ArrayList<>();
                 outputFilename = String.format("cwo_%d.opt", outputSegment);
                 location = String.format("Seg %d Withdrawal", outputSegment);
-                outputWaterbody = getOutputWaterBody(outputSegment, US, DS, NBR);
                 constituentNames = activeConstituentsCard.getConstituentNames();
                 List<String> constituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
                 for (int jc = 0; jc < numConstituents; jc++) {
@@ -369,8 +372,6 @@ public class W2Parser {
                 List<W2Parameter> derivedConstituentW2Parameters = new ArrayList<>();
                 outputFilename = String.format("dwo_%d.opt", outputSegment);
                 location = String.format("Seg %d Withdrawal", outputSegment);
-//                outputWaterbody = getOutputWaterBody(outputSegment, US, DS, BS, BE, NWB);
-                outputWaterbody = getOutputWaterBody(outputSegment, US, DS, NBR);
                 constituentNames = activeConstituentsCard.getConstituentNames();
                 derivedConstituentNames = activeDerivedConstituentsCard.getConstituentNames();
 //                List<String> derivedConstituentSettings = activeConstituentsCard.getCAC(); // Active/inactive status of constituents (ON/OFF)
@@ -401,39 +402,27 @@ public class W2Parser {
         return w2Parameters;
     }
 
-    /**
-     * Determine number of output waterbody based on DS and US parameters
-     *
-     * @param numBranches   Number of branches
-     * @param outputSegment Output segment number
-     * @return Output waterbody (one-based)
-     */
-    private int getOutputWaterBody(int outputSegment, List<Integer> US,
-                                   List<Integer> DS, int numBranches) {
-        int outputWaterbody = 1;
-        for (int jb = 0; jb < numBranches; jb++) {
-            if (outputSegment >= US.get(jb) && outputSegment <= DS.get(jb)) {
-                return outputWaterbody;
-            }
-            else {
-                outputWaterbody++;
-            }
-        }
-        return -99;
-    }
 
     /**
-     * Determine number of output waterbody based on DS, US, BS, and BE parameters
+     * Determine output waterbody for the given output segment
      *
-     * @param numWaterbodies Number of waterbodies
      * @param outputSegment  Output segment number
-     * @return Output waterbody (one-based)
+     * @param US  List of upstream segment for each branch
+     * @param DS  List of downstream segment for each branch
+     * @param BS  List of start branch for each waterbody
+     * @param BE  List of end branch for each waterbody
+     * @param numWaterbodies Number of waterbodies
+     * @return Output waterbody index (one-based)
      */
-    private int getOutputWaterBody(int outputSegment, List<Integer> US, List<Integer> DS,
+    private int getOutputWaterbody(int outputSegment, List<Integer> US, List<Integer> DS,
                                    List<Integer> BS, List<Integer> BE, int numWaterbodies) {
         int outputWaterbody = 1;
-        for (int jwb = 0; jwb < numWaterbodies; jwb++) {
-            if (outputSegment >= US.get(BS.get(jwb)) && outputSegment <= DS.get(BE.get(jwb))) {
+        for (int i = 0; i < numWaterbodies; i++) {
+            int bs = BS.get(i); // start branch of waterbody
+            int be = BE.get(i); // end branch of waterbody
+            int us = US.get(bs - 1); // upstream segment of start branch of waterbody
+            int ds = DS.get(be - 1); // downstream segment of end branch of waterbody
+            if (us <= outputSegment && outputSegment <= ds) {
                 return outputWaterbody;
             }
             else {
@@ -1164,9 +1153,6 @@ public class W2Parser {
         // Precipitation (inflow)
         calculationsCard = new CalculationsCard(w2con, NWB);
         List<String> PRC = calculationsCard.getPRC();
-        locationCard = new LocationCard(w2con, NWB);
-        BS = locationCard.getBS();
-        BE = locationCard.getBE();
         for (int jwb = 0; jwb < NWB; jwb++) {
             if (isOn(PRC.get(jwb))) {
                 int waterbody = jwb + 1;
